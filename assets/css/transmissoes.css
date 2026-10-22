@@ -1,0 +1,343 @@
+/* ============================================================
+   TRANSMISSÕES — página dedicada ao canal da federação.
+   ============================================================ */
+
+.pagina-cabecalho {
+  background: var(--cor-azul);
+  color: var(--texto-no-escuro);
+  padding-block: var(--s-10) var(--s-12);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.pagina-cabecalho::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--linha-mesa) 1px, transparent 1px),
+    linear-gradient(90deg, var(--linha-mesa) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, #000 55%, transparent 95%);
+}
+.pagina-cabecalho__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--s-6);
+}
+.pagina-cabecalho__rotulo {
+  font-family: var(--fonte-mono);
+  font-size: var(--ts-sm);
+  color: var(--cor-amarelo);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+}
+.pagina-cabecalho__rotulo::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--cor-amarelo);
+}
+.pagina-cabecalho__titulo {
+  color: var(--texto-no-escuro);
+  font-size: var(--ts-3xl);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--s-4);
+  max-width: 20ch;
+}
+.pagina-cabecalho__frase {
+  font-size: var(--ts-md);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 54ch;
+  margin-bottom: var(--s-6);
+}
+.pagina-cabecalho__acoes {
+  display: flex;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+
+/* -------- Faixa "AO VIVO" --------------------------------- */
+
+.ao-vivo-faixa {
+  background: var(--bg-superficie);
+  border-bottom: 1px solid var(--borda);
+  padding-block: var(--s-6);
+}
+.ao-vivo-faixa__caixa {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--s-5);
+  border: 1px solid var(--borda);
+  border-left: 3px solid var(--neutro-300);
+  border-radius: var(--raio-md);
+  background: var(--neutro-50);
+}
+.ao-vivo-faixa__caixa--ativa {
+  border-left-color: #B9091A;
+  background: #FDECEE;
+}
+.ao-vivo-faixa__rotulo {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  font-weight: var(--peso-semi);
+  padding: 4px 8px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio-sm);
+  background: var(--bg-superficie);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.ao-vivo-faixa__rotulo--ativa {
+  color: #B9091A;
+  border-color: #E7A6AE;
+  background: #fff;
+}
+.ao-vivo-faixa__rotulo--ativa::before {
+  content: '';
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #B9091A;
+  animation: pulso-vivo 1.4s ease-in-out infinite;
+}
+@keyframes pulso-vivo { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) {
+  .ao-vivo-faixa__rotulo--ativa::before { animation: none; }
+}
+.ao-vivo-faixa__texto {
+  font-size: var(--ts-sm);
+  color: var(--texto-corpo);
+}
+.ao-vivo-faixa__texto strong { color: var(--texto-forte); font-weight: var(--peso-semi); }
+
+/* -------- Grid de vídeos --------------------------------- */
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--s-6);
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--anim-media), transform var(--anim-media);
+}
+.video-card:hover {
+  border-color: var(--cor-azul);
+  color: inherit;
+}
+
+.video-card__thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--cor-azul);
+  overflow: hidden;
+  isolation: isolate;
+}
+.video-card__thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(var(--linha-mesa) 1px, transparent 1px),
+    linear-gradient(90deg, var(--linha-mesa) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.video-card__thumb img, .video-card__thumb iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  z-index: 1;
+}
+/* Triângulo de play — construído em CSS */
+.video-card__play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 54px; height: 54px;
+  background: rgba(246, 221, 11, 0.95);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  transition: transform var(--anim-rapida);
+}
+.video-card__play::before {
+  content: '';
+  width: 0; height: 0;
+  border-left: 14px solid var(--cor-azul);
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  margin-left: 4px;
+}
+.video-card:hover .video-card__play { transform: translate(-50%, -50%) scale(1.08); }
+
+.video-card__duracao {
+  position: absolute;
+  bottom: var(--s-2);
+  right: var(--s-2);
+  z-index: 2;
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  background: rgba(15, 18, 34, 0.85);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: var(--raio-sm);
+}
+
+.video-card__corpo {
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  flex: 1;
+}
+.video-card__rotulo {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+.video-card__titulo {
+  font-size: var(--ts-base);
+  font-weight: var(--peso-semi);
+  color: var(--texto-forte);
+  line-height: 1.3;
+}
+.video-card__meta {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  margin-top: auto;
+  padding-top: var(--s-3);
+  display: flex;
+  gap: var(--s-3);
+}
+
+/* -------- Playlist destacada ------------------------------ */
+
+.playlist-destaque {
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  overflow: hidden;
+}
+.playlist-destaque__player {
+  aspect-ratio: 16 / 9;
+  background: var(--cor-azul);
+  position: relative;
+}
+.playlist-destaque__player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.playlist-destaque__placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,0.6);
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  text-align: center;
+  padding: var(--s-5);
+}
+.playlist-destaque__info {
+  padding: var(--s-6);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+  align-items: end;
+}
+.playlist-destaque__info-rotulo {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  margin-bottom: var(--s-2);
+  display: block;
+}
+.playlist-destaque__info-titulo {
+  font-size: var(--ts-lg);
+  color: var(--texto-forte);
+  font-weight: var(--peso-forte);
+}
+
+/* -------- Faixa CTA inscrever-se -------------------------- */
+
+.canal-cta {
+  background: var(--cor-azul);
+  color: var(--texto-no-escuro);
+  padding-block: var(--s-10);
+  position: relative;
+}
+.canal-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background:
+    linear-gradient(to bottom,
+      var(--cor-verde) 0 50%,
+      var(--cor-amarelo) 50% 100%);
+}
+.canal-cta__grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-6);
+  flex-wrap: wrap;
+}
+.canal-cta__texto { max-width: 60ch; }
+.canal-cta__rotulo {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--cor-amarelo);
+  display: block;
+  margin-bottom: var(--s-2);
+}
+.canal-cta__titulo {
+  color: var(--texto-no-escuro);
+  font-size: var(--ts-xl);
+  margin-bottom: var(--s-2);
+}
+.canal-cta__frase {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--ts-base);
+}

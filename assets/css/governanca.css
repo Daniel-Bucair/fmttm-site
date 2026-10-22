@@ -1,0 +1,162 @@
+/* ============================================================
+   GOVERNANÇA — diretoria, conselho fiscal e documentos.
+   ============================================================ */
+
+.pagina-cabecalho { background: var(--cor-azul); color: var(--texto-no-escuro); padding-block: var(--s-10) var(--s-12); position: relative; overflow: hidden; isolation: isolate; }
+.pagina-cabecalho::before { content: ''; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(var(--linha-mesa) 1px, transparent 1px), linear-gradient(90deg, var(--linha-mesa) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse at center, #000 55%, transparent 95%); }
+.pagina-cabecalho__rotulo { font-family: var(--fonte-mono); font-size: var(--ts-sm); color: var(--cor-amarelo); letter-spacing: var(--tracking-mono); text-transform: uppercase; display: inline-flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-5); }
+.pagina-cabecalho__rotulo::before { content: ''; width: 24px; height: 1px; background: var(--cor-amarelo); }
+.pagina-cabecalho__titulo { color: var(--texto-no-escuro); font-size: var(--ts-3xl); letter-spacing: -0.02em; margin-bottom: var(--s-4); max-width: 22ch; }
+.pagina-cabecalho__frase { font-size: var(--ts-md); color: rgba(255, 255, 255, 0.85); max-width: 60ch; }
+
+/* Faixa de mandato */
+.mandato-faixa {
+  background: var(--bg-superficie);
+  border-bottom: 1px solid var(--borda);
+  padding-block: var(--s-5);
+}
+.mandato-faixa__caixa {
+  display: flex;
+  gap: var(--s-5);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.mandato-faixa__rot {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  padding: 4px 10px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio-sm);
+  font-weight: var(--peso-semi);
+}
+.mandato-faixa__texto {
+  font-size: var(--ts-sm);
+  color: var(--texto-corpo);
+}
+.mandato-faixa__texto strong {
+  color: var(--texto-forte);
+  font-weight: var(--peso-semi);
+}
+
+/* -------- Diretoria --------------------------------------- */
+
+.diretoria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--s-4);
+}
+.diretor-card {
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  min-height: 160px;
+}
+.diretor-card__cargo {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--cor-azul);
+  font-weight: var(--peso-semi);
+  padding-bottom: var(--s-2);
+  border-bottom: 1px solid var(--borda);
+}
+.diretor-card__nome {
+  font-size: var(--ts-base);
+  font-weight: var(--peso-forte);
+  color: var(--texto-forte);
+  line-height: 1.3;
+}
+.diretor-card__mandato {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  color: var(--texto-fraco);
+  margin-top: auto;
+}
+
+/* -------- Lista de documentos ----------------------------- */
+
+.docs-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--s-3);
+}
+.doc-card {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: var(--s-4);
+  padding: var(--s-5);
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  text-decoration: none;
+  color: inherit;
+  align-items: center;
+  transition: border-color var(--anim-rapida), background var(--anim-rapida);
+}
+.doc-card:hover { border-color: var(--cor-azul); background: var(--neutro-100); color: inherit; }
+
+.doc-card__icone {
+  width: 48px;
+  height: 56px;
+  background: var(--cor-azul);
+  color: var(--texto-no-escuro);
+  border-radius: var(--raio-sm);
+  display: grid;
+  place-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+.doc-card__icone::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  background: var(--neutro-50);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+.doc-card__icone-texto {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  font-weight: var(--peso-semi);
+  position: relative;
+  z-index: 1;
+}
+
+.doc-card__corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.doc-card__titulo {
+  font-size: var(--ts-sm);
+  font-weight: var(--peso-semi);
+  color: var(--texto-forte);
+  line-height: 1.3;
+}
+.doc-card__meta {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.doc-card__seta {
+  color: var(--texto-fraco);
+  font-family: var(--fonte-mono);
+  transition: color var(--anim-rapida);
+}
+.doc-card:hover .doc-card__seta { color: var(--cor-azul); }

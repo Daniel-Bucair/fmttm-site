@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clubes filiados · Federação de Tênis de Mesa de Mato Grosso</title>
+  <meta name="description" content="Clubes filiados à Federação de Tênis de Mesa de Mato Grosso. Encontre local de treino, responsável e contato.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo-symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/clubes.css">
+</head>
+<body>
+
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <span class="faixa-marca faixa-marca--fina" aria-hidden="true"></span>
+    <div class="container site-header__barra">
+      <a href="index.html" class="site-header__marca" aria-label="Página inicial — Federação de Tênis de Mesa de Mato Grosso">
+        <img src="assets/img/logo-symbol.svg" alt="" class="site-header__logo" width="36" height="36">
+        <span class="site-header__titulo">
+          <span class="site-header__titulo-forte">FTMMT</span>
+          <span class="site-header__titulo-apoio">Federação Mato-Grossense</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="menu-principal" onclick="const n=this.closest('.site-nav'); const o=n.dataset.aberto==='true'; n.dataset.aberto=!o; this.setAttribute('aria-expanded',!o);">
+          <span class="site-nav__toggle-icone" aria-hidden="true"></span> Menu
+        </button>
+        <ul class="site-nav__lista" id="menu-principal">
+          <li><a class="site-nav__link" href="index.html">Início</a></li>
+          <li><a class="site-nav__link" href="eventos.html">Eventos</a></li>
+          <li><a class="site-nav__link" href="calendario.html">Calendário</a></li>
+          <li><a class="site-nav__link" href="clubes.html" aria-current="page">Clubes</a></li>
+          <li><a class="site-nav__link" href="transmissoes.html">Transmissões</a></li>
+          <li><a class="site-nav__link" href="governanca.html">Governança</a></li>
+          <li><a class="site-nav__link" href="transparencia.html">Transparência</a></li>
+          <li><a class="site-nav__link" href="notas.html">Notas Oficiais</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="pagina-cabecalho">
+      <div class="container">
+        <span class="pagina-cabecalho__rotulo">18 clubes filiados</span>
+        <h1 class="pagina-cabecalho__titulo">Clubes filiados em todo o estado.</h1>
+        <p class="pagina-cabecalho__frase">Todos os clubes com registro ativo junto à federação. A ordem é alfabética e cada clube é apresentado da mesma forma, sem distinção de porte ou localização.</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+
+        <div class="busca-barra">
+          <input type="search" id="busca" class="busca-barra__campo" placeholder="Buscar por nome do clube…" aria-label="Buscar clube por nome">
+          <select id="filtro-cidade" class="busca-barra__select" aria-label="Filtrar por cidade">
+            <option value="todas">Todas as cidades</option>
+            <option value="cuiaba">Cuiabá</option>
+            <option value="varzea grande">Várzea Grande</option>
+            <option value="rondonopolis">Rondonópolis</option>
+            <option value="sinop">Sinop</option>
+            <option value="caceres">Cáceres</option>
+          </select>
+          <span class="busca-barra__contador" id="contador">8 clubes</span>
+        </div>
+
+        <div class="clubes-grid" id="grid">
+
+          <article class="clube-card" data-nome="Associação Cuiabana de Tênis de Mesa" data-cidade="cuiaba">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">ACT</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">Associação Cuiabana de Tênis de Mesa</span>
+                <span class="clube-card__cidade">Cuiabá / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>João da Silva Exemplo</dd>
+              <dt>Treinos</dt>     <dd>Ginásio Aecim Tocantins — ter, qui, sáb</dd>
+              <dt>Contato</dt>     <dd>(65) 90000-0000</dd>
+              <dt>Instagram</dt>   <dd><a href="#">@act_oficial</a></dd>
+            </dl>
+          </article>
+
+          <article class="clube-card" data-nome="Clube Atlético de Rondonópolis" data-cidade="rondonopolis">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">CAR</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">Clube Atlético de Rondonópolis</span>
+                <span class="clube-card__cidade">Rondonópolis / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>Maria Oliveira Exemplo</dd>
+              <dt>Treinos</dt>     <dd>Ginásio Municipal — seg, qua, sex</dd>
+              <dt>Contato</dt>     <dd>(66) 90000-0000</dd>
+              <dt>Instagram</dt>   <dd><a href="#">@car_tm</a></dd>
+            </dl>
+          </article>
+
+          <article class="clube-card" data-nome="Clube Esportivo Várzea Grande" data-cidade="varzea grande">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">CEV</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">Clube Esportivo Várzea Grande</span>
+                <span class="clube-card__cidade">Várzea Grande / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>Carlos Mendes Exemplo</dd>
+              <dt>Treinos</dt>     <dd>Clube XV — ter, qui</dd>
+              <dt>Contato</dt>     <dd>(65) 90000-0000</dd>
+              <dt>Instagram</dt>   <dd><a href="#">@cev_vg</a></dd>
+            </dl>
+          </article>
+
+          <article class="clube-card" data-nome="Clube Pantanal Tênis de Mesa" data-cidade="cuiaba">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">CPT</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">Clube Pantanal Tênis de Mesa</span>
+                <span class="clube-card__cidade">Cuiabá / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>Ana Paula Exemplo</dd>
+              <dt>Treinos</dt>     <dd>Centro de Treinamento Pantanal — seg a sex</dd>
+              <dt>Contato</dt>     <dd>(65) 90000-0000</dd>
+              <dt>Instagram</dt>   <dd><a href="#">@cpt_oficial</a></dd>
+            </dl>
+          </article>
+
+          <article class="clube-card" data-nome="Instituto de Tênis de Mesa Sinop" data-cidade="sinop">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">ITS</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">Instituto de Tênis de Mesa Sinop</span>
+                <span class="clube-card__cidade">Sinop / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>Rafael Souza Exemplo</dd>
+              <dt>Treinos</dt>     <dd>Ginásio Universitário — qua, sex, sáb</dd>
+              <dt>Contato</dt>     <dd>(66) 90000-0000</dd>
+              <dt>Instagram</dt>   <dd><a href="#">@its_sinop</a></dd>
+            </dl>
+          </article>
+
+          <article class="clube-card" data-nome="Mato Grosso Tênis Clube" data-cidade="cuiaba">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">MTC</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">Mato Grosso Tênis Clube</span>
+                <span class="clube-card__cidade">Cuiabá / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>Patrícia Nunes Exemplo</dd>
+              <dt>Treinos</dt>     <dd>Sede do clube — ter, qui, sáb</dd>
+              <dt>Contato</dt>     <dd>(65) 90000-0000</dd>
+              <dt>Instagram</dt>   <dd><a href="#">@mtc_oficial</a></dd>
+            </dl>
+          </article>
+
+          <article class="clube-card" data-nome="Sociedade Esportiva Cáceres" data-cidade="caceres">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">SEC</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">Sociedade Esportiva Cáceres</span>
+                <span class="clube-card__cidade">Cáceres / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>Felipe Araújo Exemplo</dd>
+              <dt>Treinos</dt>     <dd>Ginásio Paroquial — seg, qua</dd>
+              <dt>Contato</dt>     <dd>(65) 90000-0000</dd>
+              <dt>Instagram</dt>   <dd><a href="#">@sec_caceres</a></dd>
+            </dl>
+          </article>
+
+          <article class="clube-card" data-nome="Tênis de Mesa Universitário UFMT" data-cidade="cuiaba">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">TMU</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">Tênis de Mesa Universitário UFMT</span>
+                <span class="clube-card__cidade">Cuiabá / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>Beatriz Lima Exemplo</dd>
+              <dt>Treinos</dt>     <dd>Ginásio da UFMT — qua, sex</dd>
+              <dt>Contato</dt>     <dd>(65) 90000-0000</dd>
+              <dt>Instagram</dt>   <dd><a href="#">@tmu_ufmt</a></dd>
+            </dl>
+          </article>
+
+        </div>
+
+        <div class="estado" id="vazio" hidden style="margin-top: var(--s-6);">
+          Nenhum clube encontrado com os filtros atuais.
+        </div>
+
+      </div>
+    </section>
+
+    <section class="container" style="padding-bottom: var(--s-16);">
+      <div class="aviso" role="status">
+        <span class="aviso__rotulo">Amostra</span>
+        <span>Nomes de clubes, responsáveis e contatos são fictícios. Serão substituídos pelos dados oficiais dos clubes filiados.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__marca">
+          <img src="assets/img/logo-symbol.svg" alt="" class="site-footer__marca-logo" width="44" height="44">
+          <div class="site-footer__nome">Federação de Tênis de Mesa<br>de Mato Grosso</div>
+          <div class="site-footer__meta">
+            <span class="mono">CNPJ 00.000.000/0001-00</span>
+            <span>Cuiabá — Mato Grosso</span>
+            <span>contato@ftmmt.org.br</span>
+            <span>Instagram · @ftmmt_oficial</span>
+            <span>YouTube · /@ftmmt</span>
+          </div>
+        </div>
+        <div class="site-footer__bloco">
+          <h3>Institucional</h3>
+          <ul class="site-footer__lista">
+            <li><a href="governanca.html">Governança</a></li>
+            <li><a href="transparencia.html">Transparência</a></li>
+            <li><a href="notas.html">Notas Oficiais</a></li>
+            <li><a href="clubes.html">Clubes filiados</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__bloco">
+          <h3>Parceiros</h3>
+          <div class="site-footer__parceiros">
+            <div class="site-footer__parceiro-caixa">Governo de Mato Grosso</div>
+            <div class="site-footer__parceiro-caixa">Secretaria de Estado</div>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__base">
+        <span>© 2026 FTMMT · Todos os direitos reservados</span>
+        <span>Última atualização · 22 OUT 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const busca = document.getElementById('busca');
+    const filtro = document.getElementById('filtro-cidade');
+    const cards = document.querySelectorAll('.clube-card');
+    const vazio = document.getElementById('vazio');
+    const contador = document.getElementById('contador');
+
+    function normalizar(s) {
+      return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+
+    function filtrar() {
+      const termo = normalizar(busca.value.trim());
+      const cidade = filtro.value;
+      let visiveis = 0;
+      cards.forEach(c => {
+        const nome = normalizar(c.dataset.nome);
+        const okNome = !termo || nome.includes(termo);
+        const okCidade = cidade === 'todas' || c.dataset.cidade === cidade;
+        const mostrar = okNome && okCidade;
+        c.style.display = mostrar ? '' : 'none';
+        if (mostrar) visiveis++;
+      });
+      vazio.hidden = visiveis > 0;
+      contador.textContent = `${visiveis} ${visiveis === 1 ? 'clube' : 'clubes'}`;
+    }
+
+    busca.addEventListener('input', filtrar);
+    filtro.addEventListener('change', filtrar);
+  </script>
+
+</body>
+</html>

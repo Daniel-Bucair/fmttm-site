@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Federação de Tênis de Mesa de Mato Grosso</title>
+  <meta name="description" content="Órgão oficial do tênis de mesa em Mato Grosso. Calendário, eventos, clubes filiados, governança e transparência.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo-symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <span class="faixa-marca faixa-marca--fina" aria-hidden="true"></span>
+    <div class="container site-header__barra">
+      <a href="index.html" class="site-header__marca" aria-label="Página inicial — Federação de Tênis de Mesa de Mato Grosso">
+        <img src="assets/img/logo-symbol.svg" alt="" class="site-header__logo" width="36" height="36">
+        <span class="site-header__titulo">
+          <span class="site-header__titulo-forte">FTMMT</span>
+          <span class="site-header__titulo-apoio">Federação Mato-Grossense</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="menu-principal" onclick="const n=this.closest('.site-nav'); const o=n.dataset.aberto==='true'; n.dataset.aberto=!o; this.setAttribute('aria-expanded',!o);">
+          <span class="site-nav__toggle-icone" aria-hidden="true"></span> Menu
+        </button>
+        <ul class="site-nav__lista" id="menu-principal">
+          <li><a class="site-nav__link" href="index.html" aria-current="page">Início</a></li>
+          <li><a class="site-nav__link" href="eventos.html">Eventos</a></li>
+          <li><a class="site-nav__link" href="calendario.html">Calendário</a></li>
+          <li><a class="site-nav__link" href="clubes.html">Clubes</a></li>
+          <li><a class="site-nav__link" href="transmissoes.html">Transmissões</a></li>
+          <li><a class="site-nav__link" href="governanca.html">Governança</a></li>
+          <li><a class="site-nav__link" href="transparencia.html">Transparência</a></li>
+          <li><a class="site-nav__link" href="notas.html">Notas Oficiais</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__conteudo">
+        <div>
+          <span class="hero__rotulo">Temporada 2026 · Órgão oficial</span>
+          <h1 class="hero__titulo">O tênis de mesa de Mato Grosso em <span>um só lugar</span>.</h1>
+          <p class="hero__frase">Calendário completo da temporada, clubes filiados, notas oficiais e prestação de contas da federação. Informação direta, sem rodeios.</p>
+          <div class="hero__acoes">
+            <a href="calendario.html" class="btn btn--sobre-escuro">Ver calendário 2026</a>
+            <a href="transparencia.html" class="btn btn--linha" style="color:#fff;border-color:rgba(255,255,255,0.4);">Transparência</a>
+          </div>
+        </div>
+
+        <!-- Card do próximo evento -->
+        <article class="hero__proximo" aria-labelledby="proximo-evento">
+          <span class="hero__proximo-rotulo">Próximo evento</span>
+          <h2 class="hero__proximo-nome" id="proximo-evento">Copa Mato Grosso de Tênis de Mesa — 3ª Etapa</h2>
+          <dl class="hero__proximo-meta">
+            <dt>Data</dt>  <dd>15 e 16 de novembro de 2026</dd>
+            <dt>Local</dt> <dd>Ginásio Aecim Tocantins — Cuiabá/MT</dd>
+            <dt>Status</dt><dd><span class="badge badge--aberto">INSCRIÇÕES ABERTAS</span></dd>
+          </dl>
+          <div class="hero__contagem" aria-label="Faltam para o evento">
+            <div class="hero__contagem-item">
+              <span class="hero__contagem-num">25</span>
+              <span class="hero__contagem-rot">Dias</span>
+            </div>
+            <div class="hero__contagem-item">
+              <span class="hero__contagem-num">14</span>
+              <span class="hero__contagem-rot">Horas</span>
+            </div>
+            <div class="hero__contagem-item">
+              <span class="hero__contagem-num">32</span>
+              <span class="hero__contagem-rot">Min</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- NÚMEROS -->
+    <section class="numeros" aria-label="A federação em números">
+      <div class="container numeros__grid">
+        <div class="numeros__item">
+          <span class="numeros__num">18</span>
+          <span class="numeros__rot">Clubes filiados</span>
+        </div>
+        <div class="numeros__item">
+          <span class="numeros__num">412</span>
+          <span class="numeros__rot">Atletas federados</span>
+        </div>
+        <div class="numeros__item">
+          <span class="numeros__num">09</span>
+          <span class="numeros__rot">Eventos na temporada</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTAS + ATALHOS -->
+    <section class="secao">
+      <div class="container home-dupla">
+
+        <div>
+          <div class="secao__cabecalho" style="margin-bottom: var(--s-5);">
+            <div>
+              <span class="secao__rotulo">Comunicação oficial</span>
+              <h2 class="secao__titulo">Últimas notas oficiais</h2>
+            </div>
+            <a href="notas.html" class="btn btn--ghost">Todas as notas →</a>
+          </div>
+
+          <div class="notas-lista" role="list">
+            <a class="nota-item" href="notas.html#003-2026" role="listitem">
+              <span class="nota-item__num">NO 003/2026</span>
+              <span class="nota-item__assunto">Convocação de atletas para o Campeonato Brasileiro Interclubes 2026</span>
+              <span class="nota-item__data">14 OUT 2026</span>
+            </a>
+            <a class="nota-item" href="notas.html#002-2026" role="listitem">
+              <span class="nota-item__num">NO 002/2026</span>
+              <span class="nota-item__assunto">Alteração no regulamento da Copa Mato Grosso — 3ª Etapa</span>
+              <span class="nota-item__data">02 OUT 2026</span>
+            </a>
+            <a class="nota-item" href="notas.html#001-2026" role="listitem">
+              <span class="nota-item__num">NO 001/2026</span>
+              <span class="nota-item__assunto">Calendário oficial da temporada 2026 e tabela de taxas</span>
+              <span class="nota-item__data">11 SET 2026</span>
+            </a>
+          </div>
+        </div>
+
+        <aside>
+          <div class="secao__cabecalho" style="margin-bottom: var(--s-5);">
+            <div>
+              <span class="secao__rotulo">Acesso rápido</span>
+              <h2 class="secao__titulo">Atalhos</h2>
+            </div>
+          </div>
+          <div class="atalhos-lista">
+            <a href="eventos.html" class="atalho">
+              <span class="atalho__texto">
+                <span class="atalho__nome">Eventos</span>
+                <span class="atalho__descricao">Competições e etapas da temporada</span>
+              </span>
+              <span class="atalho__seta" aria-hidden="true">→</span>
+            </a>
+            <a href="clubes.html" class="atalho">
+              <span class="atalho__texto">
+                <span class="atalho__nome">Clubes filiados</span>
+                <span class="atalho__descricao">18 clubes em todo o estado</span>
+              </span>
+              <span class="atalho__seta" aria-hidden="true">→</span>
+            </a>
+            <a href="governanca.html" class="atalho">
+              <span class="atalho__texto">
+                <span class="atalho__nome">Governança</span>
+                <span class="atalho__descricao">Diretoria, estatuto e atas</span>
+              </span>
+              <span class="atalho__seta" aria-hidden="true">→</span>
+            </a>
+            <a href="transparencia.html" class="atalho">
+              <span class="atalho__texto">
+                <span class="atalho__nome">Transparência</span>
+                <span class="atalho__descricao">Convênios, parcerias e balanços</span>
+              </span>
+              <span class="atalho__seta" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- AVISO DE AMOSTRA -->
+    <section class="container" style="padding-bottom: var(--s-16);">
+      <div class="aviso" role="status">
+        <span class="aviso__rotulo">Amostra</span>
+        <span>Esta é uma prévia visual com dados fictícios. Nenhum nome, data ou valor exibido corresponde a informação oficial.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__marca">
+          <img src="assets/img/logo-symbol.svg" alt="" class="site-footer__marca-logo" width="44" height="44">
+          <div class="site-footer__nome">Federação de Tênis de Mesa<br>de Mato Grosso</div>
+          <div class="site-footer__meta">
+            <span class="mono">CNPJ 00.000.000/0001-00</span>
+            <span>Cuiabá — Mato Grosso</span>
+            <span>contato@ftmmt.org.br</span>
+            <span>Instagram · @ftmmt_oficial</span>
+            <span>YouTube · /@ftmmt</span>
+          </div>
+        </div>
+
+        <div class="site-footer__bloco">
+          <h3>Institucional</h3>
+          <ul class="site-footer__lista">
+            <li><a href="governanca.html">Governança</a></li>
+            <li><a href="transparencia.html">Transparência</a></li>
+            <li><a href="notas.html">Notas Oficiais</a></li>
+            <li><a href="clubes.html">Clubes filiados</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__bloco">
+          <h3>Parceiros</h3>
+          <div class="site-footer__parceiros">
+            <div class="site-footer__parceiro-caixa">Governo de Mato Grosso</div>
+            <div class="site-footer__parceiro-caixa">Secretaria de Estado</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="site-footer__base">
+        <span>© 2026 FTMMT · Todos os direitos reservados</span>
+        <span>Última atualização · 21 OUT 2026</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

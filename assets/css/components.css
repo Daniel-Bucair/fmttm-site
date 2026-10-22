@@ -1,0 +1,225 @@
+/* ============================================================
+   COMPONENTES BASE — botão, badge, card, tabela, aviso.
+   ============================================================ */
+
+/* -------- Botão ------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  padding: 0.6rem 1rem;
+  font-weight: var(--peso-semi);
+  font-size: var(--ts-base);
+  line-height: 1;
+  border-radius: var(--raio-md);
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: background var(--anim-rapida), border-color var(--anim-rapida), color var(--anim-rapida);
+  min-height: 44px;  /* alvo de toque confortável */
+}
+
+.btn--primario {
+  background: var(--cor-azul);
+  color: var(--texto-no-escuro);
+}
+.btn--primario:hover { background: var(--cor-azul-escuro); color: var(--texto-no-escuro); }
+
+.btn--linha {
+  background: transparent;
+  color: var(--cor-azul);
+  border-color: var(--borda-forte);
+}
+.btn--linha:hover { border-color: var(--cor-azul); background: var(--neutro-100); color: var(--cor-azul); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--cor-azul);
+  padding-inline: 0;
+}
+
+.btn--sobre-escuro {
+  background: var(--cor-amarelo);
+  color: var(--cor-azul);
+}
+.btn--sobre-escuro:hover { background: #FFE93A; color: var(--cor-azul); }
+
+/* Pequeno marcador em V — ângulo do logo, uso parcimonioso */
+.marca-v::before {
+  content: '';
+  display: inline-block;
+  width: 10px; height: 10px;
+  margin-right: var(--s-2);
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg) translateY(-2px);
+}
+
+/* -------- Badge de status --------------------------------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.55rem;
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;  /* 11px */
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  font-weight: var(--peso-medio);
+  border-radius: var(--raio-sm);
+  background: var(--neutro-100);
+  color: var(--neutro-700);
+  border: 1px solid var(--borda);
+  white-space: nowrap;
+  line-height: 1;
+}
+.badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.75;
+}
+
+.badge--aberto     { background: var(--status-aberto-bg);    color: var(--status-aberto-fg);    border-color: #BEE4CB; }
+.badge--confirmado { background: #E3E6F4;                     color: var(--status-confirmado);   border-color: #BFC5E4; }
+.badge--pendente   { background: var(--status-pendente-bg);  color: var(--status-pendente-fg);  border-color: #EBD98A; }
+.badge--encerrado  { background: var(--status-encerrado-bg); color: var(--status-encerrado-fg); border-color: var(--borda); }
+.badge--vigente    { background: var(--status-aberto-bg);    color: var(--status-aberto-fg);    border-color: #BEE4CB; }
+.badge--prestacao  { background: var(--status-pendente-bg);  color: var(--status-pendente-fg);  border-color: #EBD98A; }
+
+/* -------- Card -------------------------------------------- */
+
+.card {
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  padding: var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  transition: border-color var(--anim-media), transform var(--anim-media);
+}
+.card:hover {
+  border-color: var(--borda-forte);
+}
+.card--link {
+  text-decoration: none;
+  color: inherit;
+}
+.card--link:hover { color: inherit; }
+
+.card__rotulo {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+
+.card__titulo {
+  font-size: var(--ts-lg);
+  color: var(--texto-forte);
+  font-weight: var(--peso-forte);
+  line-height: 1.25;
+}
+
+.card__meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem var(--s-3);
+  font-size: var(--ts-sm);
+  color: var(--texto-corpo);
+}
+.card__meta dt {
+  font-family: var(--fonte-mono);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-mono);
+  font-size: 0.6875rem;
+  color: var(--texto-fraco);
+  padding-top: 2px;
+}
+.card__meta dd { margin: 0; }
+
+/* -------- Tabela ------------------------------------------ */
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--ts-sm);
+}
+.tabela th, .tabela td {
+  text-align: left;
+  padding: var(--s-3) var(--s-4);
+  border-bottom: 1px solid var(--borda);
+  vertical-align: top;
+}
+.tabela th {
+  font-family: var(--fonte-mono);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-mono);
+  font-size: 0.6875rem;
+  color: var(--texto-fraco);
+  font-weight: var(--peso-medio);
+  background: var(--neutro-50);
+  border-top: 1px solid var(--borda);
+}
+.tabela tbody tr:hover { background: var(--neutro-100); }
+
+/* -------- Aviso ------------------------------------------- */
+
+.aviso {
+  display: flex;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid #EBD98A;
+  background: #FFF8D9;
+  color: #4A3800;
+  border-radius: var(--raio-md);
+  font-size: var(--ts-sm);
+  align-items: flex-start;
+}
+.aviso__rotulo {
+  font-family: var(--fonte-mono);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  font-weight: var(--peso-semi);
+  background: #4A3800;
+  color: #FFF8D9;
+  padding: 2px 6px;
+  border-radius: var(--raio-sm);
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+/* -------- Estados de lista (loading/erro/vazio) ------------ */
+
+.estado {
+  padding: var(--s-6);
+  border: 1px dashed var(--borda-forte);
+  border-radius: var(--raio-md);
+  text-align: center;
+  color: var(--texto-fraco);
+  font-size: var(--ts-sm);
+  background: var(--bg-superficie);
+}
+.estado--erro { border-color: #D29B9B; color: #7A1F1F; background: #FBECEC; }
+
+/* -------- Skeleton (carregando) --------------------------- */
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.skeleton {
+  background: var(--neutro-200);
+  border-radius: var(--raio-sm);
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+.skeleton--linha { height: 1em; }
+.skeleton--bloco { height: 120px; }
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; opacity: 0.6; }
+}

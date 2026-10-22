@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transparência · Federação de Tênis de Mesa de Mato Grosso</title>
+  <meta name="description" content="Convênios, parcerias e demonstrativos financeiros da Federação de Tênis de Mesa de Mato Grosso.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo-symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/transparencia.css">
+</head>
+<body>
+
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <span class="faixa-marca faixa-marca--fina" aria-hidden="true"></span>
+    <div class="container site-header__barra">
+      <a href="index.html" class="site-header__marca" aria-label="Página inicial — Federação de Tênis de Mesa de Mato Grosso">
+        <img src="assets/img/logo-symbol.svg" alt="" class="site-header__logo" width="36" height="36">
+        <span class="site-header__titulo">
+          <span class="site-header__titulo-forte">FTMMT</span>
+          <span class="site-header__titulo-apoio">Federação Mato-Grossense</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="menu-principal" onclick="const n=this.closest('.site-nav'); const o=n.dataset.aberto==='true'; n.dataset.aberto=!o; this.setAttribute('aria-expanded',!o);">
+          <span class="site-nav__toggle-icone" aria-hidden="true"></span> Menu
+        </button>
+        <ul class="site-nav__lista" id="menu-principal">
+          <li><a class="site-nav__link" href="index.html">Início</a></li>
+          <li><a class="site-nav__link" href="eventos.html">Eventos</a></li>
+          <li><a class="site-nav__link" href="calendario.html">Calendário</a></li>
+          <li><a class="site-nav__link" href="clubes.html">Clubes</a></li>
+          <li><a class="site-nav__link" href="transmissoes.html">Transmissões</a></li>
+          <li><a class="site-nav__link" href="governanca.html">Governança</a></li>
+          <li><a class="site-nav__link" href="transparencia.html" aria-current="page">Transparência</a></li>
+          <li><a class="site-nav__link" href="notas.html">Notas Oficiais</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="pagina-cabecalho">
+      <div class="container">
+        <span class="pagina-cabecalho__rotulo">Convênios · Parcerias · Balanços</span>
+        <h1 class="pagina-cabecalho__titulo">Transparência pública.</h1>
+        <p class="pagina-cabecalho__frase">A FTMMT publica integralmente os recursos recebidos, suas aplicações e os documentos de prestação de contas junto aos órgãos parceiros.</p>
+      </div>
+    </section>
+
+    <!-- PAINEL -->
+    <section class="painel-resumo" aria-label="Resumo de convênios">
+      <div class="container painel-resumo__grid">
+        <div class="painel-resumo__item">
+          <span class="painel-resumo__rot">Convênios vigentes</span>
+          <span class="painel-resumo__num">3</span>
+          <span class="painel-resumo__sub">Termos ativos</span>
+        </div>
+        <div class="painel-resumo__item">
+          <span class="painel-resumo__rot">Valor total conveniado</span>
+          <span class="painel-resumo__num">R$ 0,00</span>
+          <span class="painel-resumo__sub">Soma dos termos vigentes</span>
+        </div>
+        <div class="painel-resumo__item">
+          <span class="painel-resumo__rot">Contrapartida FTMMT</span>
+          <span class="painel-resumo__num">R$ 0,00</span>
+          <span class="painel-resumo__sub">Contrapartida institucional</span>
+        </div>
+        <div class="painel-resumo__item">
+          <span class="painel-resumo__rot">Período coberto</span>
+          <span class="painel-resumo__num">2026 — 2027</span>
+          <span class="painel-resumo__sub">Vigência agregada</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONVÊNIOS -->
+    <section class="secao">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <div>
+            <span class="secao__rotulo">Instrumentos firmados</span>
+            <h2 class="secao__titulo">Convênios e parcerias</h2>
+          </div>
+          <span class="atualizacao-faixa">Atualizado em <strong>&nbsp;22 OUT 2026</strong></span>
+        </div>
+
+        <div class="convenios-wrap">
+          <table class="convenios-tabela" aria-describedby="descricao-convenios">
+            <caption id="descricao-convenios" class="sr-only">Relação de convênios e parcerias firmados pela FTMMT, com número do termo, concedente, objeto, valor, contrapartida, vigência, status e documentos associados.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nº do termo</th>
+                <th scope="col">Concedente</th>
+                <th scope="col">Objeto</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Contrapartida</th>
+                <th scope="col">Vigência</th>
+                <th scope="col">Status</th>
+                <th scope="col">Documentos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="convenios-tabela__termo" data-rot="Nº do termo">000/2026 (ex.)</td>
+                <td data-rot="Concedente">[NOME OFICIAL DA SECRETARIA DE ESTADO]</td>
+                <td data-rot="Objeto">Fomento à realização da temporada estadual 2026 de tênis de mesa</td>
+                <td class="convenios-tabela__valor" data-rot="Valor">R$ 0,00</td>
+                <td class="convenios-tabela__valor" data-rot="Contrapartida">R$ 0,00</td>
+                <td data-rot="Vigência"><span class="mono" style="font-size:0.6875rem;">JAN 2026 — DEZ 2026</span></td>
+                <td data-rot="Status"><span class="badge badge--vigente">VIGENTE</span></td>
+                <td data-rot="Documentos">
+                  <div class="convenios-tabela__docs">
+                    <a href="#" class="convenios-tabela__doc-link">Termo</a>
+                    <a href="#" class="convenios-tabela__doc-link">Plano</a>
+                    <a href="#" class="convenios-tabela__doc-link">PC parcial</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="convenios-tabela__termo" data-rot="Nº do termo">000/2026 (ex.)</td>
+                <td data-rot="Concedente">[NOME OFICIAL DA SECRETARIA DE ESTADO]</td>
+                <td data-rot="Objeto">Apoio ao Programa Estadual de Base — categorias Sub-11 a Sub-15</td>
+                <td class="convenios-tabela__valor" data-rot="Valor">R$ 0,00</td>
+                <td class="convenios-tabela__valor" data-rot="Contrapartida">R$ 0,00</td>
+                <td data-rot="Vigência"><span class="mono" style="font-size:0.6875rem;">MAR 2026 — FEV 2027</span></td>
+                <td data-rot="Status"><span class="badge badge--vigente">VIGENTE</span></td>
+                <td data-rot="Documentos">
+                  <div class="convenios-tabela__docs">
+                    <a href="#" class="convenios-tabela__doc-link">Termo</a>
+                    <a href="#" class="convenios-tabela__doc-link">Plano</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="convenios-tabela__termo" data-rot="Nº do termo">000/2025 (ex.)</td>
+                <td data-rot="Concedente">[PARCEIRO INSTITUCIONAL]</td>
+                <td data-rot="Objeto">Patrocínio da Copa Mato Grosso 2026 — três etapas</td>
+                <td class="convenios-tabela__valor" data-rot="Valor">R$ 0,00</td>
+                <td class="convenios-tabela__valor" data-rot="Contrapartida">R$ 0,00</td>
+                <td data-rot="Vigência"><span class="mono" style="font-size:0.6875rem;">AGO 2025 — DEZ 2026</span></td>
+                <td data-rot="Status"><span class="badge badge--prestacao">EM PRESTAÇÃO DE CONTAS</span></td>
+                <td data-rot="Documentos">
+                  <div class="convenios-tabela__docs">
+                    <a href="#" class="convenios-tabela__doc-link">Termo</a>
+                    <a href="#" class="convenios-tabela__doc-link">PC parcial</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="convenios-tabela__termo" data-rot="Nº do termo">000/2024 (ex.)</td>
+                <td data-rot="Concedente">[NOME OFICIAL DA SECRETARIA DE ESTADO]</td>
+                <td data-rot="Objeto">Fomento à realização da temporada estadual 2025</td>
+                <td class="convenios-tabela__valor" data-rot="Valor">R$ 0,00</td>
+                <td class="convenios-tabela__valor" data-rot="Contrapartida">R$ 0,00</td>
+                <td data-rot="Vigência"><span class="mono" style="font-size:0.6875rem;">JAN 2025 — DEZ 2025</span></td>
+                <td data-rot="Status"><span class="badge badge--encerrado">ENCERRADO</span></td>
+                <td data-rot="Documentos">
+                  <div class="convenios-tabela__docs">
+                    <a href="#" class="convenios-tabela__doc-link">Termo</a>
+                    <a href="#" class="convenios-tabela__doc-link">PC final</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMONSTRATIVOS -->
+    <section class="secao" style="padding-top: 0;">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <div>
+            <span class="secao__rotulo">Balanços e relatórios</span>
+            <h2 class="secao__titulo">Demonstrativos financeiros</h2>
+          </div>
+        </div>
+
+        <div class="demonstrativos-grid">
+          <a href="#" class="demonstrativo-card">
+            <span class="demonstrativo-card__ano">2025</span>
+            <span class="demonstrativo-card__titulo">Balanço Patrimonial e DRE</span>
+            <span class="demonstrativo-card__meta"><span>PDF</span><span>Publicado</span></span>
+          </a>
+          <a href="#" class="demonstrativo-card">
+            <span class="demonstrativo-card__ano">2024</span>
+            <span class="demonstrativo-card__titulo">Balanço Patrimonial e DRE</span>
+            <span class="demonstrativo-card__meta"><span>PDF</span><span>Publicado</span></span>
+          </a>
+          <a href="#" class="demonstrativo-card">
+            <span class="demonstrativo-card__ano">2023</span>
+            <span class="demonstrativo-card__titulo">Balanço Patrimonial e DRE</span>
+            <span class="demonstrativo-card__meta"><span>PDF</span><span>Publicado</span></span>
+          </a>
+          <a href="#" class="demonstrativo-card">
+            <span class="demonstrativo-card__ano">2026</span>
+            <span class="demonstrativo-card__titulo">Prestação de contas parcial</span>
+            <span class="demonstrativo-card__meta"><span>PDF</span><span>1º semestre</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="padding-bottom: var(--s-16);">
+      <div class="aviso" role="status">
+        <span class="aviso__rotulo">Amostra</span>
+        <span>Valores exibidos como R$ 0,00 e termos marcados como "(ex.)" indicam placeholders. Serão substituídos pelos valores e números de termo oficiais da federação e da secretaria parceira.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__marca">
+          <img src="assets/img/logo-symbol.svg" alt="" class="site-footer__marca-logo" width="44" height="44">
+          <div class="site-footer__nome">Federação de Tênis de Mesa<br>de Mato Grosso</div>
+          <div class="site-footer__meta">
+            <span class="mono">CNPJ 00.000.000/0001-00</span>
+            <span>Cuiabá — Mato Grosso</span>
+            <span>contato@ftmmt.org.br</span>
+            <span>Instagram · @ftmmt_oficial</span>
+            <span>YouTube · /@ftmmt</span>
+          </div>
+        </div>
+        <div class="site-footer__bloco">
+          <h3>Institucional</h3>
+          <ul class="site-footer__lista">
+            <li><a href="governanca.html">Governança</a></li>
+            <li><a href="transparencia.html">Transparência</a></li>
+            <li><a href="notas.html">Notas Oficiais</a></li>
+            <li><a href="clubes.html">Clubes filiados</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__bloco">
+          <h3>Parceiros</h3>
+          <div class="site-footer__parceiros">
+            <div class="site-footer__parceiro-caixa">Governo de Mato Grosso</div>
+            <div class="site-footer__parceiro-caixa">Secretaria de Estado</div>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__base">
+        <span>© 2026 FTMMT · Todos os direitos reservados</span>
+        <span>Última atualização · 22 OUT 2026</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

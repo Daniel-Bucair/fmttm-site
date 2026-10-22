@@ -1,0 +1,226 @@
+/* ============================================================
+   CALENDÁRIO — linha do tempo agrupada por mês.
+   ============================================================ */
+
+.pagina-cabecalho { background: var(--cor-azul); color: var(--texto-no-escuro); padding-block: var(--s-10) var(--s-12); position: relative; overflow: hidden; isolation: isolate; }
+.pagina-cabecalho::before { content: ''; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(var(--linha-mesa) 1px, transparent 1px), linear-gradient(90deg, var(--linha-mesa) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse at center, #000 55%, transparent 95%); }
+.pagina-cabecalho__rotulo { font-family: var(--fonte-mono); font-size: var(--ts-sm); color: var(--cor-amarelo); letter-spacing: var(--tracking-mono); text-transform: uppercase; display: inline-flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-5); }
+.pagina-cabecalho__rotulo::before { content: ''; width: 24px; height: 1px; background: var(--cor-amarelo); }
+.pagina-cabecalho__titulo { color: var(--texto-no-escuro); font-size: var(--ts-3xl); letter-spacing: -0.02em; margin-bottom: var(--s-4); max-width: 22ch; }
+.pagina-cabecalho__frase { font-size: var(--ts-md); color: rgba(255, 255, 255, 0.85); max-width: 60ch; }
+
+/* -------- Filtros ----------------------------------------- */
+
+.filtros {
+  display: flex;
+  gap: var(--s-6);
+  flex-wrap: wrap;
+  padding-block: var(--s-5);
+  border-bottom: 1px solid var(--borda);
+  margin-bottom: var(--s-10);
+  align-items: center;
+}
+.filtros__grupo {
+  display: flex;
+  gap: var(--s-2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.filtros__rotulo {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  font-weight: var(--peso-medio);
+}
+.filtros__btn {
+  padding: 0.4rem 0.8rem;
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-corpo);
+  background: transparent;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio-sm);
+  cursor: pointer;
+  transition: all var(--anim-rapida);
+  font-weight: var(--peso-medio);
+}
+.filtros__btn:hover { color: var(--texto-forte); border-color: var(--cor-azul); }
+.filtros__btn.ativo {
+  background: var(--cor-azul);
+  color: var(--texto-no-escuro);
+  border-color: var(--cor-azul);
+}
+
+/* -------- Linha do tempo por mês -------------------------- */
+
+.timeline-mes {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--s-8);
+  padding-block: var(--s-8);
+  border-top: 1px solid var(--borda);
+}
+.timeline-mes:last-child { border-bottom: 1px solid var(--borda); }
+.timeline-mes--atual { background: linear-gradient(to right, rgba(246, 221, 11, 0.08) 0%, transparent 60%); }
+
+@media (max-width: 760px) {
+  .timeline-mes { grid-template-columns: 1fr; gap: var(--s-4); }
+}
+
+.timeline-mes__cabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  position: sticky;
+  top: 88px;
+  align-self: start;
+  height: fit-content;
+}
+.timeline-mes__nome {
+  font-size: var(--ts-xl);
+  color: var(--texto-forte);
+  font-weight: var(--peso-forte);
+  line-height: 1;
+}
+.timeline-mes__ano {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-mono);
+  color: var(--texto-fraco);
+}
+.timeline-mes__marca-atual {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--s-2);
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--cor-azul);
+  font-weight: var(--peso-semi);
+}
+.timeline-mes__marca-atual::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--cor-amarelo);
+  border-radius: 50%;
+}
+
+.timeline-mes__eventos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.timeline-evento {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: var(--s-5);
+  padding: var(--s-5);
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-left: 3px solid var(--neutro-300);
+  border-radius: var(--raio-md);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--anim-rapida);
+}
+.timeline-evento:hover { border-color: var(--cor-azul); border-left-color: var(--cor-azul); color: inherit; }
+.timeline-evento--estadual { border-left-color: var(--cor-azul); }
+.timeline-evento--regional { border-left-color: var(--cor-verde); }
+.timeline-evento--nacional { border-left-color: var(--cor-amarelo); }
+
+.timeline-evento__data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-right: 1px solid var(--borda);
+  padding-right: var(--s-4);
+}
+.timeline-evento__data-dia {
+  font-family: var(--fonte-mono);
+  font-size: 1.75rem;
+  color: var(--texto-forte);
+  font-weight: var(--peso-semi);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.timeline-evento__data-sub {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  margin-top: 4px;
+}
+
+.timeline-evento__corpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  min-width: 0;
+}
+.timeline-evento__nome {
+  font-size: var(--ts-base);
+  font-weight: var(--peso-semi);
+  color: var(--texto-forte);
+  line-height: 1.3;
+}
+.timeline-evento__local {
+  font-size: var(--ts-sm);
+  color: var(--texto-corpo);
+}
+
+.timeline-evento__status {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  align-items: flex-end;
+}
+@media (max-width: 640px) {
+  .timeline-evento { grid-template-columns: 60px 1fr; }
+  .timeline-evento__status {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: var(--s-2);
+    border-top: 1px solid var(--borda);
+    flex-wrap: wrap;
+  }
+}
+
+/* -------- Legenda ----------------------------------------- */
+
+.legenda {
+  display: flex;
+  gap: var(--s-5);
+  flex-wrap: wrap;
+  padding: var(--s-4) var(--s-5);
+  background: var(--neutro-100);
+  border-radius: var(--raio-md);
+  margin-bottom: var(--s-8);
+}
+.legenda__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-corpo);
+}
+.legenda__cor {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+.legenda__cor--estadual { background: var(--cor-azul); }
+.legenda__cor--regional { background: var(--cor-verde); }
+.legenda__cor--nacional { background: var(--cor-amarelo); }

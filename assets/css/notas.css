@@ -1,0 +1,156 @@
+/* ============================================================
+   NOTAS OFICIAIS — lista e detalhe por âncora.
+   ============================================================ */
+
+.pagina-cabecalho { background: var(--cor-azul); color: var(--texto-no-escuro); padding-block: var(--s-10) var(--s-12); position: relative; overflow: hidden; isolation: isolate; }
+.pagina-cabecalho::before { content: ''; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(var(--linha-mesa) 1px, transparent 1px), linear-gradient(90deg, var(--linha-mesa) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse at center, #000 55%, transparent 95%); }
+.pagina-cabecalho__rotulo { font-family: var(--fonte-mono); font-size: var(--ts-sm); color: var(--cor-amarelo); letter-spacing: var(--tracking-mono); text-transform: uppercase; display: inline-flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-5); }
+.pagina-cabecalho__rotulo::before { content: ''; width: 24px; height: 1px; background: var(--cor-amarelo); }
+.pagina-cabecalho__titulo { color: var(--texto-no-escuro); font-size: var(--ts-3xl); letter-spacing: -0.02em; margin-bottom: var(--s-4); max-width: 22ch; }
+.pagina-cabecalho__frase { font-size: var(--ts-md); color: rgba(255, 255, 255, 0.85); max-width: 60ch; }
+
+/* -------- Barra de busca ---------------------------------- */
+
+.busca-barra { display: flex; gap: var(--s-4); align-items: center; padding-block: var(--s-5); border-bottom: 1px solid var(--borda); margin-bottom: var(--s-8); flex-wrap: wrap; }
+.busca-barra__campo { flex: 1 1 240px; min-width: 240px; padding: 0.65rem 0.9rem; font: inherit; font-size: var(--ts-sm); color: var(--texto-forte); border: 1px solid var(--borda-forte); border-radius: var(--raio-md); background: var(--bg-superficie); transition: border-color var(--anim-rapida); }
+.busca-barra__campo:focus { outline: none; border-color: var(--cor-azul); box-shadow: 0 0 0 3px rgba(38, 45, 106, 0.12); }
+.busca-barra__select { padding: 0.65rem 2rem 0.65rem 0.9rem; font: inherit; font-size: var(--ts-sm); color: var(--texto-forte); border: 1px solid var(--borda-forte); border-radius: var(--raio-md); background: var(--bg-superficie) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path fill='none' stroke='%23515151' stroke-width='1.5' d='M1 1l4 4 4-4'/></svg>") no-repeat right 0.75rem center; background-size: 10px 6px; appearance: none; cursor: pointer; }
+
+/* -------- Lista de notas (padrão timeline) ---------------- */
+
+.notas-lista-full {
+  border-top: 1px solid var(--borda);
+}
+
+.nota-linha {
+  display: grid;
+  grid-template-columns: 130px 1fr 110px 110px;
+  gap: var(--s-4);
+  padding-block: var(--s-5);
+  border-bottom: 1px solid var(--borda);
+  align-items: baseline;
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--anim-rapida);
+}
+.nota-linha:hover { background: var(--neutro-100); color: inherit; }
+.nota-linha__num {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--cor-azul);
+  font-weight: var(--peso-semi);
+}
+.nota-linha__assunto {
+  color: var(--texto-forte);
+  font-weight: var(--peso-medio);
+  line-height: 1.35;
+}
+.nota-linha__categoria {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+.nota-linha__data {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  text-align: right;
+  white-space: nowrap;
+}
+@media (max-width: 760px) {
+  .nota-linha { grid-template-columns: 1fr auto; gap: var(--s-1) var(--s-3); padding-block: var(--s-4); }
+  .nota-linha__num { grid-column: 1 / -1; }
+  .nota-linha__assunto { grid-column: 1 / -1; }
+  .nota-linha__categoria { grid-column: 1; }
+  .nota-linha__data { grid-column: 2; text-align: right; }
+}
+
+/* -------- Detalhe de nota (modal/âncora) ------------------ */
+
+.nota-detalhe {
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  padding: var(--s-10);
+  margin-bottom: var(--s-6);
+}
+@media (max-width: 640px) {
+  .nota-detalhe { padding: var(--s-6); }
+}
+.nota-detalhe__cabecalho {
+  padding-bottom: var(--s-5);
+  border-bottom: 1px solid var(--borda);
+  margin-bottom: var(--s-6);
+}
+.nota-detalhe__num {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--cor-azul);
+  font-weight: var(--peso-semi);
+  display: block;
+  margin-bottom: var(--s-2);
+}
+.nota-detalhe__titulo {
+  font-size: var(--ts-xl);
+  color: var(--texto-forte);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--s-3);
+}
+.nota-detalhe__meta {
+  display: flex;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+.nota-detalhe__corpo p {
+  margin-bottom: var(--s-4);
+  color: var(--texto-corpo);
+  line-height: 1.7;
+}
+.nota-detalhe__assinatura {
+  margin-top: var(--s-8);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--borda);
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+.nota-detalhe__assinatura strong { color: var(--texto-forte); font-weight: var(--peso-semi); }
+.nota-detalhe__anexo {
+  margin-top: var(--s-5);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio-md);
+  background: var(--neutro-100);
+  color: var(--cor-azul);
+  text-decoration: none;
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  font-weight: var(--peso-semi);
+}
+.nota-detalhe__anexo:hover { background: var(--cor-azul); color: var(--texto-no-escuro); border-color: var(--cor-azul); }
+
+/* Destaca âncora */
+.nota-detalhe:target {
+  box-shadow: 0 0 0 3px var(--cor-amarelo);
+  transition: box-shadow var(--anim-media);
+}

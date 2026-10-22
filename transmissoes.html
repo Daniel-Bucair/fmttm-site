@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transmissões · Federação de Tênis de Mesa de Mato Grosso</title>
+  <meta name="description" content="Transmissões ao vivo, melhores momentos, premiações e conteúdo oficial da Federação de Tênis de Mesa de Mato Grosso.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo-symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/transmissoes.css">
+</head>
+<body>
+
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <span class="faixa-marca faixa-marca--fina" aria-hidden="true"></span>
+    <div class="container site-header__barra">
+      <a href="index.html" class="site-header__marca" aria-label="Página inicial — Federação de Tênis de Mesa de Mato Grosso">
+        <img src="assets/img/logo-symbol.svg" alt="" class="site-header__logo" width="36" height="36">
+        <span class="site-header__titulo">
+          <span class="site-header__titulo-forte">FTMMT</span>
+          <span class="site-header__titulo-apoio">Federação Mato-Grossense</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="menu-principal" onclick="const n=this.closest('.site-nav'); const o=n.dataset.aberto==='true'; n.dataset.aberto=!o; this.setAttribute('aria-expanded',!o);">
+          <span class="site-nav__toggle-icone" aria-hidden="true"></span> Menu
+        </button>
+        <ul class="site-nav__lista" id="menu-principal">
+          <li><a class="site-nav__link" href="index.html">Início</a></li>
+          <li><a class="site-nav__link" href="eventos.html">Eventos</a></li>
+          <li><a class="site-nav__link" href="calendario.html">Calendário</a></li>
+          <li><a class="site-nav__link" href="clubes.html">Clubes</a></li>
+          <li><a class="site-nav__link" href="transmissoes.html" aria-current="page">Transmissões</a></li>
+          <li><a class="site-nav__link" href="governanca.html">Governança</a></li>
+          <li><a class="site-nav__link" href="transparencia.html">Transparência</a></li>
+          <li><a class="site-nav__link" href="notas.html">Notas Oficiais</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- CABEÇALHO DA PÁGINA -->
+    <section class="pagina-cabecalho">
+      <div class="container">
+        <div class="pagina-cabecalho__topo">
+          <span class="pagina-cabecalho__rotulo">Canal oficial · YouTube</span>
+        </div>
+        <h1 class="pagina-cabecalho__titulo">Transmissões, melhores momentos e conteúdo oficial.</h1>
+        <p class="pagina-cabecalho__frase">Assista às competições estaduais ao vivo, reveja partidas marcantes e acompanhe entrevistas e premiações do tênis de mesa mato-grossense.</p>
+        <div class="pagina-cabecalho__acoes">
+          <a href="#" class="btn btn--sobre-escuro">Inscrever-se no canal</a>
+          <a href="#destaque" class="btn btn--linha" style="color:#fff;border-color:rgba(255,255,255,0.4);">Ver último vídeo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAIXA AO VIVO -->
+    <section class="ao-vivo-faixa" aria-label="Status de transmissão ao vivo">
+      <div class="container">
+        <div class="ao-vivo-faixa__caixa">
+          <span class="ao-vivo-faixa__rotulo">Fora do ar</span>
+          <p class="ao-vivo-faixa__texto">
+            Nenhuma transmissão ao vivo no momento. <strong>Próxima transmissão:</strong> Copa Mato Grosso — 3ª Etapa, dia 15 de novembro, a partir das 09h.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VÍDEO DE DESTAQUE -->
+    <section class="secao" id="destaque">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <div>
+            <span class="secao__rotulo">Em destaque</span>
+            <h2 class="secao__titulo">Última transmissão oficial</h2>
+          </div>
+          <a href="#" class="btn btn--ghost">Abrir no YouTube →</a>
+        </div>
+
+        <article class="playlist-destaque">
+          <div class="playlist-destaque__player">
+            <!-- Troque o src pelo ID do vídeo real quando for enviado:
+                 <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+                         title="..." allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                         allowfullscreen></iframe>
+            -->
+            <div class="playlist-destaque__placeholder">
+              Área reservada para o player do YouTube.<br>
+              Envie a URL do canal e o ID do vídeo para integrar.
+            </div>
+          </div>
+          <div class="playlist-destaque__info">
+            <div>
+              <span class="playlist-destaque__info-rotulo">Final · Categoria Absoluta</span>
+              <h3 class="playlist-destaque__info-titulo">Copa Mato Grosso — 2ª Etapa 2026</h3>
+            </div>
+            <div class="playlist-destaque__info-rotulo mono" style="margin:0;">02 OUT 2026 · 1h 48min</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- GRID DE VÍDEOS -->
+    <section class="secao" style="padding-top: 0;">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <div>
+            <span class="secao__rotulo">Vídeos recentes</span>
+            <h2 class="secao__titulo">Últimas publicações do canal</h2>
+          </div>
+        </div>
+
+        <div class="videos-grid">
+
+          <a href="#" class="video-card">
+            <div class="video-card__thumb">
+              <span class="video-card__play" aria-hidden="true"></span>
+              <span class="video-card__duracao">1:48:22</span>
+            </div>
+            <div class="video-card__corpo">
+              <span class="video-card__rotulo">Partida completa</span>
+              <h3 class="video-card__titulo">Final Absoluto — Copa MT 2ª Etapa</h3>
+              <div class="video-card__meta">
+                <span>02 OUT 2026</span>
+                <span>· 1,2 mil visualizações</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="video-card">
+            <div class="video-card__thumb">
+              <span class="video-card__play" aria-hidden="true"></span>
+              <span class="video-card__duracao">07:12</span>
+            </div>
+            <div class="video-card__corpo">
+              <span class="video-card__rotulo">Melhores momentos</span>
+              <h3 class="video-card__titulo">Semifinais Sub-15 — melhores lances</h3>
+              <div class="video-card__meta">
+                <span>29 SET 2026</span>
+                <span>· 820 visualizações</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="video-card">
+            <div class="video-card__thumb">
+              <span class="video-card__play" aria-hidden="true"></span>
+              <span class="video-card__duracao">12:04</span>
+            </div>
+            <div class="video-card__corpo">
+              <span class="video-card__rotulo">Entrevista</span>
+              <h3 class="video-card__titulo">Bate-papo com a diretoria técnica</h3>
+              <div class="video-card__meta">
+                <span>22 SET 2026</span>
+                <span>· 540 visualizações</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="video-card">
+            <div class="video-card__thumb">
+              <span class="video-card__play" aria-hidden="true"></span>
+              <span class="video-card__duracao">03:48</span>
+            </div>
+            <div class="video-card__corpo">
+              <span class="video-card__rotulo">Resumo</span>
+              <h3 class="video-card__titulo">Resumo da 1ª Etapa — Rondonópolis</h3>
+              <div class="video-card__meta">
+                <span>14 AGO 2026</span>
+                <span>· 2,1 mil visualizações</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="video-card">
+            <div class="video-card__thumb">
+              <span class="video-card__play" aria-hidden="true"></span>
+              <span class="video-card__duracao">02:14</span>
+            </div>
+            <div class="video-card__corpo">
+              <span class="video-card__rotulo">Premiação</span>
+              <h3 class="video-card__titulo">Premiação Veteranos — 1ª Etapa 2026</h3>
+              <div class="video-card__meta">
+                <span>12 AGO 2026</span>
+                <span>· 380 visualizações</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="video-card">
+            <div class="video-card__thumb">
+              <span class="video-card__play" aria-hidden="true"></span>
+              <span class="video-card__duracao">02:34:51</span>
+            </div>
+            <div class="video-card__corpo">
+              <span class="video-card__rotulo">Transmissão arquivada</span>
+              <h3 class="video-card__titulo">Transmissão completa — 1ª Etapa 2026 (dia 2)</h3>
+              <div class="video-card__meta">
+                <span>11 AGO 2026</span>
+                <span>· 3,4 mil visualizações</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA DO CANAL -->
+    <section class="canal-cta">
+      <div class="container canal-cta__grid">
+        <div class="canal-cta__texto">
+          <span class="canal-cta__rotulo">Canal oficial no YouTube</span>
+          <h2 class="canal-cta__titulo">Acompanhe tudo em primeira mão.</h2>
+          <p class="canal-cta__frase">Inscreva-se para receber avisos de transmissões ao vivo, resultados e conteúdos exclusivos da federação.</p>
+        </div>
+        <a href="#" class="btn btn--sobre-escuro">Ir para o canal</a>
+      </div>
+    </section>
+
+    <!-- AVISO AMOSTRA -->
+    <section class="container" style="padding-block: var(--s-10) var(--s-16);">
+      <div class="aviso" role="status">
+        <span class="aviso__rotulo">Amostra</span>
+        <span>Thumbnails, títulos e durações são fictícios. Envie a URL do canal para integrar os vídeos reais via embed oficial do YouTube.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__marca">
+          <img src="assets/img/logo-symbol.svg" alt="" class="site-footer__marca-logo" width="44" height="44">
+          <div class="site-footer__nome">Federação de Tênis de Mesa<br>de Mato Grosso</div>
+          <div class="site-footer__meta">
+            <span class="mono">CNPJ 00.000.000/0001-00</span>
+            <span>Cuiabá — Mato Grosso</span>
+            <span>contato@ftmmt.org.br</span>
+            <span>Instagram · @ftmmt_oficial</span>
+            <span>YouTube · /@ftmmt</span>
+          </div>
+        </div>
+
+        <div class="site-footer__bloco">
+          <h3>Institucional</h3>
+          <ul class="site-footer__lista">
+            <li><a href="governanca.html">Governança</a></li>
+            <li><a href="transparencia.html">Transparência</a></li>
+            <li><a href="notas.html">Notas Oficiais</a></li>
+            <li><a href="clubes.html">Clubes filiados</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__bloco">
+          <h3>Parceiros</h3>
+          <div class="site-footer__parceiros">
+            <div class="site-footer__parceiro-caixa">Governo de Mato Grosso</div>
+            <div class="site-footer__parceiro-caixa">Secretaria de Estado</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="site-footer__base">
+        <span>© 2026 FTMMT · Todos os direitos reservados</span>
+        <span>Última atualização · 21 OUT 2026</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

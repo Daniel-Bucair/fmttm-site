@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página não encontrada · FTMMT</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo-symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <style>
+    .erro {
+      min-height: calc(100vh - 180px);
+      display: grid;
+      place-items: center;
+      padding: var(--s-10);
+      text-align: center;
+    }
+    .erro__num {
+      font-family: var(--fonte-mono);
+      font-size: clamp(5rem, 20vw, 10rem);
+      font-weight: var(--peso-semi);
+      color: var(--cor-azul);
+      line-height: 1;
+      margin-bottom: var(--s-4);
+      letter-spacing: -0.03em;
+    }
+    .erro__titulo {
+      font-size: var(--ts-xl);
+      margin-bottom: var(--s-3);
+    }
+    .erro__frase {
+      font-size: var(--ts-base);
+      color: var(--texto-fraco);
+      max-width: 42ch;
+      margin: 0 auto var(--s-6);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <span class="faixa-marca faixa-marca--fina" aria-hidden="true"></span>
+    <div class="container site-header__barra">
+      <a href="index.html" class="site-header__marca">
+        <img src="assets/img/logo-symbol.svg" alt="" class="site-header__logo" width="36" height="36">
+        <span class="site-header__titulo">
+          <span class="site-header__titulo-forte">FTMMT</span>
+          <span class="site-header__titulo-apoio">Federação Mato-Grossense</span>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <main class="erro">
+    <div>
+      <div class="erro__num">404</div>
+      <h1 class="erro__titulo">Página não encontrada</h1>
+      <p class="erro__frase">O endereço que você acessou não existe ou foi movido. Volte para o início e tente novamente.</p>
+      <a href="index.html" class="btn btn--primario">Voltar ao início</a>
+    </div>
+  </main>
+
+</body>
+</html>

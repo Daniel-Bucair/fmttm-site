@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário · Federação de Tênis de Mesa de Mato Grosso</title>
+  <meta name="description" content="Calendário completo da temporada 2026 e 2027 do tênis de mesa em Mato Grosso.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo-symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/calendario.css">
+</head>
+<body>
+
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <span class="faixa-marca faixa-marca--fina" aria-hidden="true"></span>
+    <div class="container site-header__barra">
+      <a href="index.html" class="site-header__marca" aria-label="Página inicial — Federação de Tênis de Mesa de Mato Grosso">
+        <img src="assets/img/logo-symbol.svg" alt="" class="site-header__logo" width="36" height="36">
+        <span class="site-header__titulo">
+          <span class="site-header__titulo-forte">FTMMT</span>
+          <span class="site-header__titulo-apoio">Federação Mato-Grossense</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="menu-principal" onclick="const n=this.closest('.site-nav'); const o=n.dataset.aberto==='true'; n.dataset.aberto=!o; this.setAttribute('aria-expanded',!o);">
+          <span class="site-nav__toggle-icone" aria-hidden="true"></span> Menu
+        </button>
+        <ul class="site-nav__lista" id="menu-principal">
+          <li><a class="site-nav__link" href="index.html">Início</a></li>
+          <li><a class="site-nav__link" href="eventos.html">Eventos</a></li>
+          <li><a class="site-nav__link" href="calendario.html" aria-current="page">Calendário</a></li>
+          <li><a class="site-nav__link" href="clubes.html">Clubes</a></li>
+          <li><a class="site-nav__link" href="transmissoes.html">Transmissões</a></li>
+          <li><a class="site-nav__link" href="governanca.html">Governança</a></li>
+          <li><a class="site-nav__link" href="transparencia.html">Transparência</a></li>
+          <li><a class="site-nav__link" href="notas.html">Notas Oficiais</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="pagina-cabecalho">
+      <div class="container">
+        <span class="pagina-cabecalho__rotulo">Temporada 2026 / 2027</span>
+        <h1 class="pagina-cabecalho__titulo">Calendário oficial.</h1>
+        <p class="pagina-cabecalho__frase">Toda a temporada em uma linha do tempo mês a mês. Filtre por abrangência ou por status para encontrar o que você procura.</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+
+        <div class="legenda" aria-hidden="true">
+          <span class="legenda__item"><span class="legenda__cor legenda__cor--estadual"></span> Estadual</span>
+          <span class="legenda__item"><span class="legenda__cor legenda__cor--regional"></span> Regional</span>
+          <span class="legenda__item"><span class="legenda__cor legenda__cor--nacional"></span> Nacional</span>
+        </div>
+
+        <div class="filtros" role="toolbar" aria-label="Filtros do calendário">
+          <div class="filtros__grupo">
+            <span class="filtros__rotulo">Abrangência</span>
+            <button class="filtros__btn ativo" data-filtro="abrangencia" data-valor="todas">Todas</button>
+            <button class="filtros__btn" data-filtro="abrangencia" data-valor="estadual">Estadual</button>
+            <button class="filtros__btn" data-filtro="abrangencia" data-valor="regional">Regional</button>
+            <button class="filtros__btn" data-filtro="abrangencia" data-valor="nacional">Nacional</button>
+          </div>
+          <div class="filtros__grupo">
+            <span class="filtros__rotulo">Status</span>
+            <button class="filtros__btn ativo" data-filtro="status" data-valor="todos">Todos</button>
+            <button class="filtros__btn" data-filtro="status" data-valor="confirmado">Confirmados</button>
+            <button class="filtros__btn" data-filtro="status" data-valor="pendente">A confirmar</button>
+            <button class="filtros__btn" data-filtro="status" data-valor="aberto">Inscrições abertas</button>
+          </div>
+        </div>
+
+        <div id="timeline">
+
+          <!-- OUTUBRO 2026 (passado) -->
+          <section class="timeline-mes">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Outubro</span>
+              <span class="timeline-mes__ano">2026</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <a href="evento.html" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="encerrado">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">02</span>
+                  <span class="timeline-evento__data-sub">Sex</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Copa Mato Grosso — 2ª Etapa</span>
+                  <span class="timeline-evento__local">Ginásio Aecim Tocantins · Cuiabá/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--encerrado">ENCERRADO</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- NOVEMBRO 2026 (atual) -->
+          <section class="timeline-mes timeline-mes--atual">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Novembro</span>
+              <span class="timeline-mes__ano">2026</span>
+              <span class="timeline-mes__marca-atual">Mês atual</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <a href="evento.html" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="aberto">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">15</span>
+                  <span class="timeline-evento__data-sub">Dom · 2 dias</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Copa Mato Grosso — 3ª Etapa</span>
+                  <span class="timeline-evento__local">Ginásio Aecim Tocantins · Cuiabá/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--aberto">INSCRIÇÕES ABERTAS</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- DEZEMBRO 2026 -->
+          <section class="timeline-mes">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Dezembro</span>
+              <span class="timeline-mes__ano">2026</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <a href="evento.html" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="confirmado">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">06</span>
+                  <span class="timeline-evento__data-sub">Dom</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Torneio Fim de Ano FTMMT</span>
+                  <span class="timeline-evento__local">Clube XV · Várzea Grande/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--confirmado">CONFIRMADO</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- JANEIRO 2027 -->
+          <section class="timeline-mes">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Janeiro</span>
+              <span class="timeline-mes__ano">2027</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <a href="evento.html" class="timeline-evento timeline-evento--regional" data-abrangencia="regional" data-status="pendente">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">24</span>
+                  <span class="timeline-evento__data-sub">Dom</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Torneio de Abertura — Interior</span>
+                  <span class="timeline-evento__local">A definir · Rondonópolis/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--pendente">A CONFIRMAR</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- FEVEREIRO 2027 -->
+          <section class="timeline-mes">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Fevereiro</span>
+              <span class="timeline-mes__ano">2027</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <a href="evento.html" class="timeline-evento timeline-evento--regional" data-abrangencia="regional" data-status="pendente">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">21</span>
+                  <span class="timeline-evento__data-sub">Dom</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Torneio Regional Oeste</span>
+                  <span class="timeline-evento__local">A definir · Cáceres/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--pendente">A CONFIRMAR</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- MARÇO 2027 -->
+          <section class="timeline-mes">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Março</span>
+              <span class="timeline-mes__ano">2027</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <a href="evento.html" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="confirmado">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">14</span>
+                  <span class="timeline-evento__data-sub">Dom · 2 dias</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Copa Mato Grosso — 1ª Etapa 2027</span>
+                  <span class="timeline-evento__local">Ginásio Fiotão · Cuiabá/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--confirmado">CONFIRMADO</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- ABRIL 2027 -->
+          <section class="timeline-mes">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Abril</span>
+              <span class="timeline-mes__ano">2027</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <a href="evento.html" class="timeline-evento timeline-evento--nacional" data-abrangencia="nacional" data-status="pendente">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">18</span>
+                  <span class="timeline-evento__data-sub">Dom</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Seletiva Brasileiro Interclubes</span>
+                  <span class="timeline-evento__local">A definir · Cuiabá/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--pendente">A CONFIRMAR</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="container" style="padding-bottom: var(--s-16);">
+      <div class="aviso" role="status">
+        <span class="aviso__rotulo">Amostra</span>
+        <span>Datas e locais são fictícios. Serão substituídos pelo calendário oficial da temporada.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__marca">
+          <img src="assets/img/logo-symbol.svg" alt="" class="site-footer__marca-logo" width="44" height="44">
+          <div class="site-footer__nome">Federação de Tênis de Mesa<br>de Mato Grosso</div>
+          <div class="site-footer__meta">
+            <span class="mono">CNPJ 00.000.000/0001-00</span>
+            <span>Cuiabá — Mato Grosso</span>
+            <span>contato@ftmmt.org.br</span>
+            <span>Instagram · @ftmmt_oficial</span>
+            <span>YouTube · /@ftmmt</span>
+          </div>
+        </div>
+        <div class="site-footer__bloco">
+          <h3>Institucional</h3>
+          <ul class="site-footer__lista">
+            <li><a href="governanca.html">Governança</a></li>
+            <li><a href="transparencia.html">Transparência</a></li>
+            <li><a href="notas.html">Notas Oficiais</a></li>
+            <li><a href="clubes.html">Clubes filiados</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__bloco">
+          <h3>Parceiros</h3>
+          <div class="site-footer__parceiros">
+            <div class="site-footer__parceiro-caixa">Governo de Mato Grosso</div>
+            <div class="site-footer__parceiro-caixa">Secretaria de Estado</div>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__base">
+        <span>© 2026 FTMMT · Todos os direitos reservados</span>
+        <span>Última atualização · 22 OUT 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Filtros do calendário — alterna classe "ativo" por grupo e esconde eventos.
+    const estado = { abrangencia: 'todas', status: 'todos' };
+    document.querySelectorAll('.filtros__btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const grupo = btn.dataset.filtro;
+        document.querySelectorAll(`.filtros__btn[data-filtro="${grupo}"]`).forEach(b => b.classList.remove('ativo'));
+        btn.classList.add('ativo');
+        estado[grupo] = btn.dataset.valor;
+        aplicarFiltros();
+      });
+    });
+    function aplicarFiltros() {
+      document.querySelectorAll('.timeline-evento').forEach(ev => {
+        const okAbr = estado.abrangencia === 'todas' || ev.dataset.abrangencia === estado.abrangencia;
+        const okSt  = estado.status === 'todos' || ev.dataset.status === estado.status;
+        ev.style.display = (okAbr && okSt) ? '' : 'none';
+      });
+      // Esconder meses vazios
+      document.querySelectorAll('.timeline-mes').forEach(mes => {
+        const temVisivel = Array.from(mes.querySelectorAll('.timeline-evento')).some(e => e.style.display !== 'none');
+        mes.style.display = temVisivel ? '' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>

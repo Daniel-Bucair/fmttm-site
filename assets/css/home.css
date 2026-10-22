@@ -1,0 +1,311 @@
+/* ============================================================
+   HOME — hero, próximo evento, notas, atalhos, números.
+   ============================================================ */
+
+/* -------- Hero -------------------------------------------- */
+
+.hero {
+  position: relative;
+  background: var(--cor-azul);
+  color: var(--texto-no-escuro);
+  overflow: hidden;
+  padding-block: var(--s-16) var(--s-20);
+  isolation: isolate;
+}
+/* Grid de linhas finas — eco da mesa vista de cima */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--linha-mesa) 1px, transparent 1px),
+    linear-gradient(90deg, var(--linha-mesa) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
+  mask-image: radial-gradient(ellipse at center, #000 55%, transparent 95%);
+}
+/* Linha central da mesa */
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(246, 221, 11, 0.3);
+  z-index: -1;
+}
+
+.hero__conteudo {
+  display: grid;
+  gap: var(--s-10);
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .hero__conteudo { grid-template-columns: 1fr; }
+}
+
+.hero__rotulo {
+  font-family: var(--fonte-mono);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-mono);
+  font-size: var(--ts-sm);
+  color: var(--cor-amarelo);
+  margin-bottom: var(--s-5);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+}
+.hero__rotulo::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--cor-amarelo);
+}
+
+.hero__titulo {
+  color: var(--texto-no-escuro);
+  font-size: var(--ts-3xl);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--s-5);
+  max-width: 18ch;
+}
+.hero__titulo span { color: var(--cor-amarelo); }
+
+.hero__frase {
+  font-size: var(--ts-md);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 48ch;
+  margin-bottom: var(--s-8);
+}
+
+.hero__acoes { display: flex; gap: var(--s-3); flex-wrap: wrap; }
+
+/* Card do próximo evento no hero */
+.hero__proximo {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--raio-md);
+  padding: var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  backdrop-filter: blur(4px);
+}
+.hero__proximo-rotulo {
+  font-family: var(--fonte-mono);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-mono);
+  font-size: 0.6875rem;
+  color: var(--cor-amarelo);
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.hero__proximo-rotulo::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--cor-amarelo);
+  border-radius: 50%;
+}
+.hero__proximo-nome {
+  font-size: var(--ts-lg);
+  color: var(--texto-no-escuro);
+  font-weight: var(--peso-forte);
+  line-height: 1.25;
+}
+.hero__proximo-meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.3rem var(--s-3);
+  font-size: var(--ts-sm);
+  color: rgba(255, 255, 255, 0.85);
+}
+.hero__proximo-meta dt {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  padding-top: 2px;
+}
+.hero__proximo-meta dd { margin: 0; }
+
+.hero__contagem {
+  display: flex;
+  gap: var(--s-3);
+  padding-top: var(--s-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.hero__contagem-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 56px;
+}
+.hero__contagem-num {
+  font-family: var(--fonte-mono);
+  font-size: 1.75rem;
+  font-weight: var(--peso-semi);
+  color: var(--texto-no-escuro);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.hero__contagem-rot {
+  font-family: var(--fonte-mono);
+  font-size: 0.625rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* -------- Faixa de números -------------------------------- */
+
+.numeros {
+  background: var(--bg-superficie);
+  border-block: 1px solid var(--borda);
+  padding-block: var(--s-10);
+}
+.numeros__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+@media (max-width: 640px) {
+  .numeros__grid { grid-template-columns: 1fr; }
+  .numeros__item { border-right: none !important; border-bottom: 1px solid var(--borda); padding-block: var(--s-5); }
+  .numeros__item:last-child { border-bottom: none; }
+}
+.numeros__item {
+  padding-inline: var(--s-6);
+  border-right: 1px solid var(--borda);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.numeros__item:last-child { border-right: none; }
+.numeros__num {
+  font-family: var(--fonte-mono);
+  font-size: clamp(2.5rem, 1.8rem + 2.5vw, 3.5rem);
+  color: var(--cor-azul);
+  font-weight: var(--peso-semi);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.numeros__rot {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+/* -------- Grid Notas + Atalhos --------------------------- */
+
+.home-dupla {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--s-10);
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .home-dupla { grid-template-columns: 1fr; }
+}
+
+.notas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--borda);
+}
+.nota-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--s-4);
+  padding-block: var(--s-5);
+  border-bottom: 1px solid var(--borda);
+  align-items: baseline;
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--anim-rapida);
+}
+.nota-item:hover { background: var(--neutro-100); color: inherit; }
+.nota-item__num {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--cor-azul);
+  font-weight: var(--peso-semi);
+  min-width: 108px;
+}
+.nota-item__assunto {
+  color: var(--texto-forte);
+  font-weight: var(--peso-medio);
+  font-size: var(--ts-base);
+  line-height: 1.35;
+}
+.nota-item__data {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .nota-item { grid-template-columns: 1fr; gap: var(--s-1); padding-block: var(--s-4); }
+}
+
+.atalhos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.atalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-4) var(--s-5);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  text-decoration: none;
+  color: var(--texto-forte);
+  background: var(--bg-superficie);
+  transition: border-color var(--anim-rapida), background var(--anim-rapida);
+}
+.atalho:hover {
+  border-color: var(--cor-azul);
+  background: var(--neutro-100);
+  color: var(--texto-forte);
+}
+.atalho__texto { display: flex; flex-direction: column; gap: 2px; }
+.atalho__nome { font-weight: var(--peso-semi); font-size: var(--ts-base); }
+.atalho__descricao { font-size: var(--ts-sm); color: var(--texto-fraco); font-weight: var(--peso-regular); }
+.atalho__seta {
+  font-family: var(--fonte-mono);
+  font-size: var(--ts-md);
+  color: var(--texto-fraco);
+  transition: transform var(--anim-rapida), color var(--anim-rapida);
+}
+.atalho:hover .atalho__seta { color: var(--cor-azul); transform: translateX(4px); }
+
+/* -------- Faixa do próximo evento (quando passar do hero) -- */
+/* usada em outras páginas; mantemos aqui a classe para reuso */
+.faixa-azul {
+  background: var(--cor-azul);
+  color: var(--texto-no-escuro);
+  padding-block: var(--s-8);
+  position: relative;
+}
+.faixa-azul::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background:
+    linear-gradient(to bottom,
+      var(--cor-verde) 0 50%,
+      var(--cor-amarelo) 50% 100%);
+}

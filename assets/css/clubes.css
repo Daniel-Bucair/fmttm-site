@@ -1,0 +1,139 @@
+/* ============================================================
+   CLUBES — grid uniforme, nenhum destaque.
+   ============================================================ */
+
+.pagina-cabecalho { background: var(--cor-azul); color: var(--texto-no-escuro); padding-block: var(--s-10) var(--s-12); position: relative; overflow: hidden; isolation: isolate; }
+.pagina-cabecalho::before { content: ''; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(var(--linha-mesa) 1px, transparent 1px), linear-gradient(90deg, var(--linha-mesa) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse at center, #000 55%, transparent 95%); }
+.pagina-cabecalho__rotulo { font-family: var(--fonte-mono); font-size: var(--ts-sm); color: var(--cor-amarelo); letter-spacing: var(--tracking-mono); text-transform: uppercase; display: inline-flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-5); }
+.pagina-cabecalho__rotulo::before { content: ''; width: 24px; height: 1px; background: var(--cor-amarelo); }
+.pagina-cabecalho__titulo { color: var(--texto-no-escuro); font-size: var(--ts-3xl); letter-spacing: -0.02em; margin-bottom: var(--s-4); max-width: 22ch; }
+.pagina-cabecalho__frase { font-size: var(--ts-md); color: rgba(255, 255, 255, 0.85); max-width: 60ch; }
+
+/* -------- Barra de busca e filtros ------------------------ */
+
+.busca-barra {
+  display: flex;
+  gap: var(--s-4);
+  align-items: center;
+  padding-block: var(--s-5);
+  border-bottom: 1px solid var(--borda);
+  margin-bottom: var(--s-8);
+  flex-wrap: wrap;
+}
+.busca-barra__campo {
+  flex: 1 1 240px;
+  min-width: 240px;
+  padding: 0.65rem 0.9rem;
+  font: inherit;
+  font-size: var(--ts-sm);
+  color: var(--texto-forte);
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio-md);
+  background: var(--bg-superficie);
+  transition: border-color var(--anim-rapida);
+}
+.busca-barra__campo:focus {
+  outline: none;
+  border-color: var(--cor-azul);
+  box-shadow: 0 0 0 3px rgba(38, 45, 106, 0.12);
+}
+.busca-barra__campo::placeholder { color: var(--texto-fraco); }
+
+.busca-barra__select {
+  padding: 0.65rem 2rem 0.65rem 0.9rem;
+  font: inherit;
+  font-size: var(--ts-sm);
+  color: var(--texto-forte);
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio-md);
+  background: var(--bg-superficie)
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'><path fill='none' stroke='%23515151' stroke-width='1.5' d='M1 1l4 4 4-4'/></svg>")
+    no-repeat right 0.75rem center;
+  background-size: 10px 6px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.busca-barra__contador {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  margin-left: auto;
+}
+
+/* -------- Grid de clubes --------------------------------- */
+
+.clubes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--s-4);
+}
+
+.clube-card {
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  padding: var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  min-height: 240px;  /* altura mínima igual pra todos */
+}
+.clube-card__cabecalho {
+  display: flex;
+  gap: var(--s-3);
+  align-items: center;
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid var(--borda);
+}
+.clube-card__sigla {
+  width: 42px;
+  height: 42px;
+  background: var(--cor-azul);
+  color: var(--cor-amarelo);
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  font-weight: var(--peso-semi);
+  display: grid;
+  place-items: center;
+  border-radius: var(--raio-sm);
+  flex-shrink: 0;
+}
+.clube-card__titulo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.clube-card__nome {
+  font-size: var(--ts-base);
+  font-weight: var(--peso-forte);
+  color: var(--texto-forte);
+  line-height: 1.25;
+}
+.clube-card__cidade {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.clube-card__meta {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0.4rem var(--s-3);
+  font-size: var(--ts-sm);
+}
+.clube-card__meta dt {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  padding-top: 2px;
+}
+.clube-card__meta dd { margin: 0; color: var(--texto-corpo); }
+.clube-card__meta dd a { color: var(--cor-azul); }

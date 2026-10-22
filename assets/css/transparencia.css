@@ -1,0 +1,218 @@
+/* ============================================================
+   TRANSPARÊNCIA — painel, tabela de convênios, demonstrativos.
+   ============================================================ */
+
+.pagina-cabecalho { background: var(--cor-azul); color: var(--texto-no-escuro); padding-block: var(--s-10) var(--s-12); position: relative; overflow: hidden; isolation: isolate; }
+.pagina-cabecalho::before { content: ''; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(var(--linha-mesa) 1px, transparent 1px), linear-gradient(90deg, var(--linha-mesa) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse at center, #000 55%, transparent 95%); }
+.pagina-cabecalho__rotulo { font-family: var(--fonte-mono); font-size: var(--ts-sm); color: var(--cor-amarelo); letter-spacing: var(--tracking-mono); text-transform: uppercase; display: inline-flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-5); }
+.pagina-cabecalho__rotulo::before { content: ''; width: 24px; height: 1px; background: var(--cor-amarelo); }
+.pagina-cabecalho__titulo { color: var(--texto-no-escuro); font-size: var(--ts-3xl); letter-spacing: -0.02em; margin-bottom: var(--s-4); max-width: 22ch; }
+.pagina-cabecalho__frase { font-size: var(--ts-md); color: rgba(255, 255, 255, 0.85); max-width: 60ch; }
+
+/* -------- Painel de resumo -------------------------------- */
+
+.painel-resumo {
+  background: var(--bg-superficie);
+  border-bottom: 1px solid var(--borda);
+  padding-block: var(--s-10);
+}
+.painel-resumo__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+@media (max-width: 860px) { .painel-resumo__grid { grid-template-columns: repeat(2, 1fr); } .painel-resumo__item:nth-child(2) { border-right: none; } .painel-resumo__item:nth-child(1), .painel-resumo__item:nth-child(2) { border-bottom: 1px solid var(--borda); padding-bottom: var(--s-5); margin-bottom: var(--s-5); } }
+@media (max-width: 480px) { .painel-resumo__grid { grid-template-columns: 1fr; } .painel-resumo__item { border-right: none !important; border-bottom: 1px solid var(--borda); padding-block: var(--s-4); margin: 0; } .painel-resumo__item:last-child { border-bottom: none; } }
+
+.painel-resumo__item {
+  padding-inline: var(--s-5);
+  border-right: 1px solid var(--borda);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.painel-resumo__item:last-child { border-right: none; }
+.painel-resumo__rot {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  font-weight: var(--peso-medio);
+}
+.painel-resumo__num {
+  font-family: var(--fonte-mono);
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  color: var(--cor-azul);
+  font-weight: var(--peso-semi);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.painel-resumo__sub {
+  font-size: var(--ts-xs);
+  color: var(--texto-fraco);
+}
+
+/* -------- Tabela de convênios ----------------------------- */
+
+.convenios-wrap {
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  overflow: hidden;
+}
+
+.convenios-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--ts-sm);
+}
+.convenios-tabela th, .convenios-tabela td {
+  padding: var(--s-4);
+  border-bottom: 1px solid var(--borda);
+  vertical-align: top;
+  text-align: left;
+}
+.convenios-tabela th {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  background: var(--neutro-50);
+  font-weight: var(--peso-medio);
+  white-space: nowrap;
+}
+.convenios-tabela tbody tr:last-child td { border-bottom: none; }
+.convenios-tabela tbody tr:hover { background: var(--neutro-100); }
+
+.convenios-tabela__termo {
+  font-family: var(--fonte-mono);
+  color: var(--cor-azul);
+  font-weight: var(--peso-semi);
+  white-space: nowrap;
+}
+.convenios-tabela__valor {
+  font-family: var(--fonte-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.convenios-tabela__docs { display: flex; gap: var(--s-2); flex-wrap: wrap; }
+.convenios-tabela__doc-link {
+  font-family: var(--fonte-mono);
+  font-size: 0.625rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio-sm);
+  text-decoration: none;
+  color: var(--cor-azul);
+  background: var(--bg-superficie);
+  transition: background var(--anim-rapida), border-color var(--anim-rapida);
+}
+.convenios-tabela__doc-link:hover { background: var(--cor-azul); color: var(--texto-no-escuro); border-color: var(--cor-azul); }
+
+/* -------- No mobile, converter em cards ------------------- */
+
+@media (max-width: 860px) {
+  .convenios-wrap { border: none; }
+  .convenios-tabela,
+  .convenios-tabela thead,
+  .convenios-tabela tbody,
+  .convenios-tabela tr,
+  .convenios-tabela th,
+  .convenios-tabela td { display: block; }
+  .convenios-tabela thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+  .convenios-tabela tr {
+    background: var(--bg-superficie);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio-md);
+    margin-bottom: var(--s-3);
+    padding: var(--s-4);
+  }
+  .convenios-tabela td {
+    padding: var(--s-2) 0;
+    border-bottom: 1px dashed var(--borda);
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: var(--s-3);
+    white-space: normal;
+  }
+  .convenios-tabela td:last-child { border-bottom: none; }
+  .convenios-tabela td::before {
+    content: attr(data-rot);
+    font-family: var(--fonte-mono);
+    font-size: 0.6875rem;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--texto-fraco);
+    font-weight: var(--peso-medio);
+  }
+  .convenios-tabela__docs { flex-direction: column; align-items: flex-start; }
+}
+
+/* -------- Demonstrativos financeiros --------------------- */
+
+.demonstrativos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--s-3);
+}
+.demonstrativo-card {
+  display: block;
+  padding: var(--s-5);
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--anim-rapida);
+}
+.demonstrativo-card:hover { border-color: var(--cor-azul); color: inherit; }
+.demonstrativo-card__ano {
+  font-family: var(--fonte-mono);
+  font-size: 1.5rem;
+  color: var(--cor-azul);
+  font-weight: var(--peso-semi);
+  line-height: 1;
+}
+.demonstrativo-card__titulo {
+  font-size: var(--ts-sm);
+  color: var(--texto-forte);
+  font-weight: var(--peso-semi);
+  margin-top: var(--s-2);
+}
+.demonstrativo-card__meta {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  margin-top: var(--s-3);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* -------- Carimbo de atualização ------------------------- */
+
+.atualizacao-faixa {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  background: var(--neutro-100);
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+.atualizacao-faixa strong { color: var(--texto-forte); font-weight: var(--peso-semi); }
+.atualizacao-faixa::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--cor-verde);
+}

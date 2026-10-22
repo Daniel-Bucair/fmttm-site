@@ -1,0 +1,128 @@
+/* ============================================================
+   TOKENS DE DESIGN — fonte única da verdade visual.
+   Mudar aqui propaga pro site inteiro. Quando o manual oficial
+   da marca chegar, só os valores aqui mudam.
+   ============================================================ */
+
+:root {
+  /* -------- Cores da marca (extraídas do logo, aproximadas) -- */
+  --cor-azul:            #262D6A;
+  --cor-azul-escuro:     #1B2150;  /* hover de áreas azuis */
+  --cor-azul-claro:      #3A42A0;
+  --cor-verde:           #089448;  /* NÃO usar em texto pequeno sobre branco */
+  --cor-verde-escuro:    #056A30;  /* variação acessível p/ texto sobre branco */
+  --cor-amarelo:         #F6DD0B;  /* só sobre azul ou em faixas/detalhes */
+  --cor-cinza-texto:     #515151;
+
+  /* -------- Escala neutra puxada pro azul ------------------- */
+  --neutro-0:   #FFFFFF;
+  --neutro-50:  #F7F8FB;  /* fundo da página */
+  --neutro-100: #EEF0F6;  /* fundo alternativo, hover sutil */
+  --neutro-200: #DDE1EC;  /* bordas suaves */
+  --neutro-300: #C3C8D8;
+  --neutro-400: #8A90A4;
+  --neutro-500: #5B6177;  /* texto secundário */
+  --neutro-700: #2E3243;  /* texto forte alternativo ao azul */
+  --neutro-900: #0F1222;
+
+  /* -------- Papéis semânticos ------------------------------- */
+  --bg-pagina:        var(--neutro-50);
+  --bg-superficie:    var(--neutro-0);
+  --bg-escuro:        var(--cor-azul);
+  --texto-forte:      var(--cor-azul);
+  --texto-corpo:      var(--cor-cinza-texto);
+  --texto-fraco:      var(--neutro-500);
+  --texto-no-escuro:  var(--neutro-0);
+  --borda:            var(--neutro-200);
+  --borda-forte:      var(--neutro-300);
+  --linha-mesa:       rgba(255, 255, 255, 0.08);  /* grid no hero azul */
+
+  /* Status (badges) */
+  --status-aberto-bg:    #E6F4EC;
+  --status-aberto-fg:    var(--cor-verde-escuro);
+  --status-confirmado:   var(--cor-azul);
+  --status-pendente-bg:  #FFF8D9;
+  --status-pendente-fg:  #6B5500;  /* amarelo escuro p/ passar AA */
+  --status-encerrado-bg: var(--neutro-100);
+  --status-encerrado-fg: var(--neutro-500);
+
+  /* -------- Tipografia -------------------------------------- */
+  --fonte-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont,
+                'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --fonte-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular,
+                'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  /* escala tipográfica (base 16px, clamp para responsividade) */
+  --ts-xs:   0.75rem;    /* 12px — micro-rótulos */
+  --ts-sm:   0.8125rem;  /* 13px — rótulos mono */
+  --ts-base: 1rem;       /* 16px — corpo */
+  --ts-md:   1.125rem;   /* 18px — intro */
+  --ts-lg:   clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --ts-xl:   clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --ts-2xl:  clamp(2rem, 1.6rem + 2vw, 2.75rem);
+  --ts-3xl:  clamp(2.5rem, 2rem + 2.8vw, 3.75rem);  /* hero */
+
+  --peso-regular: 400;
+  --peso-medio:   500;
+  --peso-semi:    600;
+  --peso-forte:   700;
+
+  --leading-aperto: 1.15;
+  --leading-corpo:  1.55;
+  --tracking-mono:  0.06em;
+
+  /* -------- Espaço (escala 4px) ----------------------------- */
+  --s-1:  0.25rem;
+  --s-2:  0.5rem;
+  --s-3:  0.75rem;
+  --s-4:  1rem;
+  --s-5:  1.25rem;
+  --s-6:  1.5rem;
+  --s-8:  2rem;
+  --s-10: 2.5rem;
+  --s-12: 3rem;
+  --s-16: 4rem;
+  --s-20: 5rem;
+  --s-24: 6rem;
+
+  /* -------- Formas ------------------------------------------ */
+  --raio-sm: 2px;
+  --raio-md: 4px;   /* padrão de cards e botões — sóbrio */
+  --raio-lg: 6px;
+  --borda-fina: 1px solid var(--borda);
+
+  /* -------- Sombras discretas ------------------------------- */
+  --sombra-sutil: 0 1px 2px rgba(15, 18, 34, 0.04),
+                  0 0 0 1px rgba(15, 18, 34, 0.04);
+  --sombra-media: 0 2px 6px rgba(15, 18, 34, 0.06),
+                  0 0 0 1px rgba(15, 18, 34, 0.05);
+
+  /* -------- Layout ------------------------------------------ */
+  --largura-max: 1200px;
+  --gutter: var(--s-4);
+
+  /* -------- Movimento --------------------------------------- */
+  --anim-rapida: 120ms ease-out;
+  --anim-media:  200ms ease-out;
+  --fade-entrada: 400ms ease-out;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: var(--s-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: var(--s-8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --anim-rapida: 0ms;
+    --anim-media:  0ms;
+    --fade-entrada: 0ms;
+  }
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notas Oficiais · Federação de Tênis de Mesa de Mato Grosso</title>
+  <meta name="description" content="Comunicados oficiais da Federação de Tênis de Mesa de Mato Grosso. Notas por categoria e ano.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo-symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/notas.css">
+</head>
+<body>
+
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <span class="faixa-marca faixa-marca--fina" aria-hidden="true"></span>
+    <div class="container site-header__barra">
+      <a href="index.html" class="site-header__marca" aria-label="Página inicial — Federação de Tênis de Mesa de Mato Grosso">
+        <img src="assets/img/logo-symbol.svg" alt="" class="site-header__logo" width="36" height="36">
+        <span class="site-header__titulo">
+          <span class="site-header__titulo-forte">FTMMT</span>
+          <span class="site-header__titulo-apoio">Federação Mato-Grossense</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="menu-principal" onclick="const n=this.closest('.site-nav'); const o=n.dataset.aberto==='true'; n.dataset.aberto=!o; this.setAttribute('aria-expanded',!o);">
+          <span class="site-nav__toggle-icone" aria-hidden="true"></span> Menu
+        </button>
+        <ul class="site-nav__lista" id="menu-principal">
+          <li><a class="site-nav__link" href="index.html">Início</a></li>
+          <li><a class="site-nav__link" href="eventos.html">Eventos</a></li>
+          <li><a class="site-nav__link" href="calendario.html">Calendário</a></li>
+          <li><a class="site-nav__link" href="clubes.html">Clubes</a></li>
+          <li><a class="site-nav__link" href="transmissoes.html">Transmissões</a></li>
+          <li><a class="site-nav__link" href="governanca.html">Governança</a></li>
+          <li><a class="site-nav__link" href="transparencia.html">Transparência</a></li>
+          <li><a class="site-nav__link" href="notas.html" aria-current="page">Notas Oficiais</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="pagina-cabecalho">
+      <div class="container">
+        <span class="pagina-cabecalho__rotulo">Comunicação oficial</span>
+        <h1 class="pagina-cabecalho__titulo">Notas oficiais da federação.</h1>
+        <p class="pagina-cabecalho__frase">Comunicados oficiais numerados, com assunto, categoria e data de publicação. Clique em uma nota para abrir o conteúdo completo e o PDF assinado quando houver.</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+
+        <div class="busca-barra">
+          <input type="search" id="busca" class="busca-barra__campo" placeholder="Buscar por assunto ou número…" aria-label="Buscar nota">
+          <select id="filtro-categoria" class="busca-barra__select" aria-label="Filtrar por categoria">
+            <option value="todas">Todas as categorias</option>
+            <option value="competicao">Competição</option>
+            <option value="arbitragem">Arbitragem</option>
+            <option value="administrativo">Administrativo</option>
+            <option value="institucional">Institucional</option>
+          </select>
+          <select id="filtro-ano" class="busca-barra__select" aria-label="Filtrar por ano">
+            <option value="todos">Todos os anos</option>
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+          </select>
+        </div>
+
+        <!-- NOTA DESTACADA (quando #id ativo) -->
+        <div id="detalhe-ancora">
+
+          <article class="nota-detalhe" id="003-2026">
+            <div class="nota-detalhe__cabecalho">
+              <span class="nota-detalhe__num">NOTA OFICIAL Nº 003/2026</span>
+              <h2 class="nota-detalhe__titulo">Convocação de atletas para o Campeonato Brasileiro Interclubes 2026</h2>
+              <div class="nota-detalhe__meta">
+                <span>14 OUT 2026</span>
+                <span>Categoria · Competição</span>
+              </div>
+            </div>
+            <div class="nota-detalhe__corpo">
+              <p>A Federação de Tênis de Mesa de Mato Grosso convoca os atletas abaixo relacionados para integrar a seleção estadual que representará Mato Grosso no Campeonato Brasileiro Interclubes 2026.</p>
+              <p>Os atletas deverão apresentar-se ao local da competição com antecedência mínima de 2 (duas) horas em relação ao início de sua primeira partida, portando documento oficial com foto, uniforme oficial do clube filiado e material esportivo em condições regulamentares.</p>
+              <p>A lista completa de convocados, as datas, o cronograma de deslocamento e as orientações logísticas estão detalhados no PDF em anexo.</p>
+              <a href="#" class="nota-detalhe__anexo">↓ Baixar PDF assinado (240 KB)</a>
+            </div>
+            <div class="nota-detalhe__assinatura">
+              <strong>Presidência</strong> · Federação de Tênis de Mesa de Mato Grosso
+            </div>
+          </article>
+
+        </div>
+
+        <!-- LISTA COMPLETA -->
+        <div class="notas-lista-full" id="lista">
+
+          <a href="#003-2026" class="nota-linha" data-cat="competicao" data-ano="2026" data-txt="convocacao atletas brasileiro interclubes">
+            <span class="nota-linha__num">NO 003/2026</span>
+            <span class="nota-linha__assunto">Convocação de atletas para o Campeonato Brasileiro Interclubes 2026</span>
+            <span class="nota-linha__categoria">Competição</span>
+            <span class="nota-linha__data">14 OUT 2026</span>
+          </a>
+
+          <a href="#002-2026" class="nota-linha" data-cat="competicao" data-ano="2026" data-txt="alteracao regulamento copa mato grosso 3 etapa">
+            <span class="nota-linha__num">NO 002/2026</span>
+            <span class="nota-linha__assunto">Alteração no regulamento da Copa Mato Grosso — 3ª Etapa</span>
+            <span class="nota-linha__categoria">Competição</span>
+            <span class="nota-linha__data">02 OUT 2026</span>
+          </a>
+
+          <a href="#001-2026" class="nota-linha" data-cat="administrativo" data-ano="2026" data-txt="calendario oficial temporada 2026 tabela de taxas">
+            <span class="nota-linha__num">NO 001/2026</span>
+            <span class="nota-linha__assunto">Calendário oficial da temporada 2026 e tabela de taxas</span>
+            <span class="nota-linha__categoria">Administrativo</span>
+            <span class="nota-linha__data">11 SET 2026</span>
+          </a>
+
+          <a href="#004-2025" class="nota-linha" data-cat="arbitragem" data-ano="2025" data-txt="credenciamento arbitros temporada">
+            <span class="nota-linha__num">NO 004/2025</span>
+            <span class="nota-linha__assunto">Credenciamento de árbitros para a temporada estadual</span>
+            <span class="nota-linha__categoria">Arbitragem</span>
+            <span class="nota-linha__data">10 DEZ 2025</span>
+          </a>
+
+          <a href="#003-2025" class="nota-linha" data-cat="institucional" data-ano="2025" data-txt="assembleia geral ordinaria eleicao gestao 2025 2028">
+            <span class="nota-linha__num">NO 003/2025</span>
+            <span class="nota-linha__assunto">Convocação para Assembleia Geral Ordinária — eleição da gestão 2025/2028</span>
+            <span class="nota-linha__categoria">Institucional</span>
+            <span class="nota-linha__data">20 NOV 2025</span>
+          </a>
+
+          <a href="#002-2025" class="nota-linha" data-cat="administrativo" data-ano="2025" data-txt="pagamento anuidade clubes filiados">
+            <span class="nota-linha__num">NO 002/2025</span>
+            <span class="nota-linha__assunto">Prazos de pagamento de anuidade dos clubes filiados</span>
+            <span class="nota-linha__categoria">Administrativo</span>
+            <span class="nota-linha__data">05 OUT 2025</span>
+          </a>
+
+          <a href="#001-2025" class="nota-linha" data-cat="institucional" data-ano="2025" data-txt="posicionamento transparencia convenios">
+            <span class="nota-linha__num">NO 001/2025</span>
+            <span class="nota-linha__assunto">Posicionamento sobre transparência e prestação de contas de convênios</span>
+            <span class="nota-linha__categoria">Institucional</span>
+            <span class="nota-linha__data">22 AGO 2025</span>
+          </a>
+
+        </div>
+
+        <div class="estado" id="vazio" hidden style="margin-top: var(--s-6);">
+          Nenhuma nota oficial encontrada com os filtros atuais.
+        </div>
+
+      </div>
+    </section>
+
+    <section class="container" style="padding-bottom: var(--s-16);">
+      <div class="aviso" role="status">
+        <span class="aviso__rotulo">Amostra</span>
+        <span>Conteúdos das notas são fictícios e servem apenas para prévia visual. Serão substituídos pelos textos oficiais e PDFs assinados pela presidência.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__marca">
+          <img src="assets/img/logo-symbol.svg" alt="" class="site-footer__marca-logo" width="44" height="44">
+          <div class="site-footer__nome">Federação de Tênis de Mesa<br>de Mato Grosso</div>
+          <div class="site-footer__meta">
+            <span class="mono">CNPJ 00.000.000/0001-00</span>
+            <span>Cuiabá — Mato Grosso</span>
+            <span>contato@ftmmt.org.br</span>
+            <span>Instagram · @ftmmt_oficial</span>
+            <span>YouTube · /@ftmmt</span>
+          </div>
+        </div>
+        <div class="site-footer__bloco">
+          <h3>Institucional</h3>
+          <ul class="site-footer__lista">
+            <li><a href="governanca.html">Governança</a></li>
+            <li><a href="transparencia.html">Transparência</a></li>
+            <li><a href="notas.html">Notas Oficiais</a></li>
+            <li><a href="clubes.html">Clubes filiados</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__bloco">
+          <h3>Parceiros</h3>
+          <div class="site-footer__parceiros">
+            <div class="site-footer__parceiro-caixa">Governo de Mato Grosso</div>
+            <div class="site-footer__parceiro-caixa">Secretaria de Estado</div>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__base">
+        <span>© 2026 FTMMT · Todos os direitos reservados</span>
+        <span>Última atualização · 22 OUT 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const busca = document.getElementById('busca');
+    const fCat  = document.getElementById('filtro-categoria');
+    const fAno  = document.getElementById('filtro-ano');
+    const linhas = document.querySelectorAll('.nota-linha');
+    const vazio  = document.getElementById('vazio');
+
+    function normalizar(s){ return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+
+    function filtrar(){
+      const termo = normalizar(busca.value.trim());
+      const cat   = fCat.value;
+      const ano   = fAno.value;
+      let v = 0;
+      linhas.forEach(l => {
+        const okT = !termo || normalizar(l.dataset.txt + ' ' + l.textContent).includes(termo);
+        const okC = cat === 'todas' || l.dataset.cat === cat;
+        const okA = ano === 'todos' || l.dataset.ano === ano;
+        const show = okT && okC && okA;
+        l.style.display = show ? '' : 'none';
+        if (show) v++;
+      });
+      vazio.hidden = v > 0;
+    }
+    busca.addEventListener('input', filtrar);
+    fCat.addEventListener('change', filtrar);
+    fAno.addEventListener('change', filtrar);
+  </script>
+
+</body>
+</html>
