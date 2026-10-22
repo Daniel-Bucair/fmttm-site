@@ -54,9 +54,15 @@
 
     <!-- HERO showroom -->
     <section class="hero" aria-label="Federação de Tênis de Mesa de Mato Grosso">
-      <!-- Troque pelo <img> real quando enviar a foto de atleta:
-           <div class="hero__foto"><img src="assets/img/hero-atleta.jpg" alt="Atleta em competição oficial da FTMMT"></div> -->
-      <div class="hero__placeholder" aria-hidden="true"></div>
+      <!-- Carrossel de fundo (crossfade a cada 5s).
+           Pra colocar fotos reais: troque o conteúdo de cada .hero__slide por
+           <img src="assets/img/hero-atleta-1.jpg" alt=""> — mantenha a classe .ativa só no primeiro. -->
+      <div class="hero__carrossel" id="hero-carrossel" aria-hidden="true">
+        <div class="hero__slide hero__slide--p1 ativa"></div>
+        <div class="hero__slide hero__slide--p2"></div>
+        <div class="hero__slide hero__slide--p3"></div>
+        <div class="hero__slide hero__slide--p4"></div>
+      </div>
 
       <!-- Marca d'água em V (ângulo do logo) -->
       <svg class="hero__marca-dagua" viewBox="0 0 200 200" aria-hidden="true" fill="none">
@@ -194,8 +200,8 @@
       <div class="container">
         <div class="carrossel-secao__cabecalho">
           <div>
-            <span class="secao__rotulo">Nossos atletas · Em imagens</span>
-            <h2 class="secao__titulo">Showroom da federação</h2>
+            <span class="secao__rotulo">Em imagens</span>
+            <h2 class="secao__titulo">Destaques da temporada</h2>
           </div>
           <span class="carrossel__meta"><span id="carrossel-indice">01</span> / <span id="carrossel-total">05</span></span>
         </div>
@@ -424,6 +430,20 @@
     </div>
   </footer>
 
+  <script>
+    // Carrossel de fundo do hero — crossfade entre slides a cada 5s
+    (function () {
+      const slides = document.querySelectorAll('#hero-carrossel .hero__slide');
+      if (slides.length < 2) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      let i = 0;
+      setInterval(() => {
+        slides[i].classList.remove('ativa');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('ativa');
+      }, 5000);
+    })();
+  </script>
   <script src="assets/js/carrossel.js" defer></script>
   <script src="assets/js/animacoes.js" defer></script>
 </body>
