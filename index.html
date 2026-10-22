@@ -52,43 +52,140 @@
 
   <main id="conteudo">
 
-    <!-- HERO -->
-    <section class="hero">
+    <!-- HERO showroom -->
+    <section class="hero" aria-label="Federação de Tênis de Mesa de Mato Grosso">
+      <!-- Troque pelo <img> real quando enviar a foto de atleta:
+           <div class="hero__foto"><img src="assets/img/hero-atleta.jpg" alt="Atleta em competição oficial da FTMMT"></div> -->
+      <div class="hero__placeholder" aria-hidden="true"></div>
+
+      <!-- Marca d'água em V (ângulo do logo) -->
+      <svg class="hero__marca-dagua" viewBox="0 0 200 200" aria-hidden="true" fill="none">
+        <path d="M30 20 L100 170 L170 20" stroke="currentColor" stroke-width="22" stroke-linecap="square" stroke-linejoin="miter"/>
+      </svg>
+
       <div class="container hero__conteudo">
-        <div>
-          <span class="hero__rotulo">Temporada 2026 · Órgão oficial</span>
-          <h1 class="hero__titulo">O tênis de mesa de Mato Grosso em <span>um só lugar</span>.</h1>
-          <p class="hero__frase">Calendário completo da temporada, clubes filiados, notas oficiais e prestação de contas da federação. Informação direta, sem rodeios.</p>
-          <div class="hero__acoes">
-            <a href="calendario.html" class="btn btn--sobre-escuro">Ver calendário 2026</a>
-            <a href="transparencia.html" class="btn btn--linha" style="color:#fff;border-color:rgba(255,255,255,0.4);">Transparência</a>
+        <span class="hero__rotulo">Órgão oficial · Temporada 2026</span>
+        <h1 class="hero__titulo">
+          Federação de Tênis de Mesa
+          <span class="hero__titulo-apoio">de Mato Grosso</span>
+        </h1>
+
+        <div class="hero__base">
+          <div>
+            <span>Temporada</span>
+            <strong>2026 / 2027</strong>
+          </div>
+          <div>
+            <span>Clubes filiados</span>
+            <strong>18 clubes</strong>
+          </div>
+          <div>
+            <span>Atletas federados</span>
+            <strong>412 atletas</strong>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Card do próximo evento -->
-        <article class="hero__proximo" aria-labelledby="proximo-evento">
-          <span class="hero__proximo-rotulo">Próximo evento</span>
-          <h2 class="hero__proximo-nome" id="proximo-evento">Copa Mato Grosso de Tênis de Mesa — 3ª Etapa</h2>
-          <dl class="hero__proximo-meta">
-            <dt>Data</dt>  <dd>15 e 16 de novembro de 2026</dd>
-            <dt>Local</dt> <dd>Ginásio Aecim Tocantins — Cuiabá/MT</dd>
-            <dt>Status</dt><dd><span class="badge badge--aberto">INSCRIÇÕES ABERTAS</span></dd>
-          </dl>
-          <div class="hero__contagem" aria-label="Faltam para o evento">
-            <div class="hero__contagem-item">
-              <span class="hero__contagem-num">25</span>
-              <span class="hero__contagem-rot">Dias</span>
-            </div>
-            <div class="hero__contagem-item">
-              <span class="hero__contagem-num">14</span>
-              <span class="hero__contagem-rot">Horas</span>
-            </div>
-            <div class="hero__contagem-item">
-              <span class="hero__contagem-num">32</span>
-              <span class="hero__contagem-rot">Min</span>
-            </div>
+    <!-- TORNEIOS EM DESTAQUE (próximos) -->
+    <section class="torneios-destaque" aria-label="Próximos torneios">
+      <div class="container">
+        <div class="torneios-destaque__cabecalho">
+          <div>
+            <span class="secao__rotulo">Próximos torneios</span>
+            <h2 class="secao__titulo">Agenda da federação</h2>
           </div>
-        </article>
+          <a href="eventos.html" class="btn btn--ghost">Ver todos os eventos →</a>
+        </div>
+
+        <div class="torneios-grid">
+
+          <a href="evento.html" class="torneio-flyer">
+            <div class="torneio-flyer__capa">
+              <!-- Troque por: <img src="assets/img/flyer-copa-3-etapa.jpg" alt="Flyer da 3ª Etapa"> -->
+              <div class="torneio-flyer__data-bloco">
+                <span class="torneio-flyer__data-mes">NOV</span>
+                <span class="torneio-flyer__data-dia">15</span>
+                <span class="torneio-flyer__data-ano">2026</span>
+              </div>
+              <div class="torneio-flyer__badge">
+                <span class="badge badge--aberto">INSCRIÇÕES ABERTAS</span>
+              </div>
+              <div class="torneio-flyer__capa-txt">
+                <span class="torneio-flyer__capa-local">Ginásio Aecim Tocantins</span>
+                <span class="torneio-flyer__capa-cidade">Cuiabá / MT</span>
+              </div>
+            </div>
+            <div class="torneio-flyer__corpo">
+              <h3 class="torneio-flyer__nome">Copa Mato Grosso — 3ª Etapa</h3>
+              <div class="torneio-flyer__meta">
+                <span>Estadual</span>
+                <span>· 8 categorias</span>
+                <span>· 2 dias</span>
+              </div>
+              <span class="torneio-flyer__cta">
+                Inscreva-se <span class="torneio-flyer__cta-seta">→</span>
+              </span>
+            </div>
+          </a>
+
+          <a href="evento.html" class="torneio-flyer">
+            <div class="torneio-flyer__capa">
+              <div class="torneio-flyer__data-bloco">
+                <span class="torneio-flyer__data-mes">DEZ</span>
+                <span class="torneio-flyer__data-dia">06</span>
+                <span class="torneio-flyer__data-ano">2026</span>
+              </div>
+              <div class="torneio-flyer__badge">
+                <span class="badge badge--confirmado">CONFIRMADO</span>
+              </div>
+              <div class="torneio-flyer__capa-txt">
+                <span class="torneio-flyer__capa-local">Clube XV</span>
+                <span class="torneio-flyer__capa-cidade">Várzea Grande / MT</span>
+              </div>
+            </div>
+            <div class="torneio-flyer__corpo">
+              <h3 class="torneio-flyer__nome">Torneio Fim de Ano FTMMT</h3>
+              <div class="torneio-flyer__meta">
+                <span>Estadual</span>
+                <span>· 6 categorias</span>
+                <span>· 1 dia</span>
+              </div>
+              <span class="torneio-flyer__cta">
+                Ver detalhes <span class="torneio-flyer__cta-seta">→</span>
+              </span>
+            </div>
+          </a>
+
+          <a href="evento.html" class="torneio-flyer">
+            <div class="torneio-flyer__capa">
+              <div class="torneio-flyer__data-bloco">
+                <span class="torneio-flyer__data-mes">MAR</span>
+                <span class="torneio-flyer__data-dia">14</span>
+                <span class="torneio-flyer__data-ano">2027</span>
+              </div>
+              <div class="torneio-flyer__badge">
+                <span class="badge badge--confirmado">CONFIRMADO</span>
+              </div>
+              <div class="torneio-flyer__capa-txt">
+                <span class="torneio-flyer__capa-local">Ginásio Fiotão</span>
+                <span class="torneio-flyer__capa-cidade">Cuiabá / MT</span>
+              </div>
+            </div>
+            <div class="torneio-flyer__corpo">
+              <h3 class="torneio-flyer__nome">Copa Mato Grosso — 1ª Etapa 2027</h3>
+              <div class="torneio-flyer__meta">
+                <span>Estadual</span>
+                <span>· 8 categorias</span>
+                <span>· 2 dias</span>
+              </div>
+              <span class="torneio-flyer__cta">
+                Ver detalhes <span class="torneio-flyer__cta-seta">→</span>
+              </span>
+            </div>
+          </a>
+
+        </div>
       </div>
     </section>
 
@@ -97,8 +194,8 @@
       <div class="container">
         <div class="carrossel-secao__cabecalho">
           <div>
-            <span class="secao__rotulo">Em imagens</span>
-            <h2 class="secao__titulo">Destaques da temporada</h2>
+            <span class="secao__rotulo">Nossos atletas · Em imagens</span>
+            <h2 class="secao__titulo">Showroom da federação</h2>
           </div>
           <span class="carrossel__meta"><span id="carrossel-indice">01</span> / <span id="carrossel-total">05</span></span>
         </div>

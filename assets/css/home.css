@@ -1,49 +1,102 @@
 /* ============================================================
-   HOME — hero, próximo evento, notas, atalhos, números.
+   HOME — hero showroom, torneios em destaque, notas, atalhos.
    ============================================================ */
 
-/* -------- Hero -------------------------------------------- */
+/* -------- HERO showroom (foto + nome sobreposto) ---------- */
 
 .hero {
   position: relative;
   background: var(--cor-azul);
   color: var(--texto-no-escuro);
   overflow: hidden;
-  padding-block: var(--s-16) var(--s-20);
   isolation: isolate;
+  min-height: 72vh;
+  max-height: 820px;
+  display: grid;
+  align-items: end;
 }
-/* Grid de linhas finas — eco da mesa vista de cima */
+@media (max-width: 860px) {
+  .hero { min-height: 70vh; max-height: 720px; }
+}
+@media (max-width: 480px) {
+  .hero { min-height: 64vh; }
+}
+
+/* Grid de linhas (eco de mesa) ao fundo */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
   background-image:
     linear-gradient(var(--linha-mesa) 1px, transparent 1px),
     linear-gradient(90deg, var(--linha-mesa) 1px, transparent 1px);
   background-size: 48px 48px;
-  background-position: -1px -1px;
   mask-image: radial-gradient(ellipse at center, #000 55%, transparent 95%);
 }
-/* Linha central da mesa */
+
+/* Camada de foto (ou placeholder) */
+.hero__foto {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* Placeholder enquanto não tem foto */
+.hero__placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(246, 221, 11, 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(8, 148, 72, 0.18) 0%, transparent 50%),
+    var(--cor-azul);
+}
+
+/* Vinheta escura pra garantir legibilidade do nome */
 .hero::after {
   content: '';
   position: absolute;
-  left: 0; right: 0;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    rgba(15, 18, 34, 0.86) 0%,
+    rgba(15, 18, 34, 0.55) 30%,
+    rgba(15, 18, 34, 0.15) 60%,
+    rgba(15, 18, 34, 0.35) 100%
+  );
+}
+
+/* "V" marca d'água grande à direita, estilo FTMP */
+.hero__marca-dagua {
+  position: absolute;
+  right: -4%;
   top: 50%;
-  height: 1px;
-  background: rgba(246, 221, 11, 0.3);
-  z-index: -1;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: clamp(240px, 36vw, 520px);
+  height: auto;
+  opacity: 0.08;
+  color: var(--texto-no-escuro);
+  pointer-events: none;
+}
+@media (max-width: 640px) {
+  .hero__marca-dagua { right: -20%; opacity: 0.07; }
 }
 
 .hero__conteudo {
-  display: grid;
-  gap: var(--s-10);
-  grid-template-columns: 1.3fr 1fr;
-  align-items: center;
+  position: relative;
+  z-index: 4;
+  padding-block: var(--s-16) var(--s-12);
 }
-@media (max-width: 860px) {
-  .hero__conteudo { grid-template-columns: 1fr; }
+@media (max-width: 640px) {
+  .hero__conteudo { padding-block: var(--s-12) var(--s-8); }
 }
 
 .hero__rotulo {
@@ -59,105 +112,230 @@
 }
 .hero__rotulo::before {
   content: '';
-  width: 24px; height: 1px;
+  width: 32px; height: 1px;
   background: var(--cor-amarelo);
 }
 
 .hero__titulo {
   color: var(--texto-no-escuro);
-  font-size: var(--ts-3xl);
-  letter-spacing: -0.02em;
-  margin-bottom: var(--s-5);
-  max-width: 18ch;
+  font-size: clamp(2.25rem, 2rem + 3.5vw, 4.5rem);
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  font-weight: var(--peso-forte);
+  max-width: 20ch;
 }
-.hero__titulo span { color: var(--cor-amarelo); }
+.hero__titulo-apoio {
+  display: block;
+  color: var(--cor-amarelo);
+}
 
-.hero__frase {
-  font-size: var(--ts-md);
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 48ch;
+/* Faixa inferior do hero com meta (temporada, atualizado em) */
+.hero__base {
+  margin-top: var(--s-10);
+  padding-top: var(--s-5);
+  border-top: 1px solid rgba(255,255,255,0.14);
+  display: flex;
+  gap: var(--s-6);
+  flex-wrap: wrap;
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.72);
+}
+.hero__base strong {
+  color: var(--texto-no-escuro);
+  font-weight: var(--peso-semi);
+  display: block;
+  margin-top: 2px;
+  letter-spacing: 0;
+  font-size: var(--ts-base);
+  font-family: var(--fonte-sans);
+  text-transform: none;
+}
+
+/* -------- TORNEIOS EM DESTAQUE (flyers) ------------------- */
+
+.torneios-destaque {
+  padding-block: var(--s-12) var(--s-10);
+  background: var(--bg-pagina);
+}
+
+.torneios-destaque__cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: var(--s-4);
+  flex-wrap: wrap;
   margin-bottom: var(--s-8);
 }
 
-.hero__acoes { display: flex; gap: var(--s-3); flex-wrap: wrap; }
-
-/* Card do próximo evento no hero */
-.hero__proximo {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--raio-md);
-  padding: var(--s-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-4);
-  backdrop-filter: blur(4px);
-}
-.hero__proximo-rotulo {
-  font-family: var(--fonte-mono);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-mono);
-  font-size: 0.6875rem;
-  color: var(--cor-amarelo);
-  display: flex;
-  align-items: center;
-  gap: var(--s-2);
-}
-.hero__proximo-rotulo::before {
-  content: '';
-  width: 6px; height: 6px;
-  background: var(--cor-amarelo);
-  border-radius: 50%;
-}
-.hero__proximo-nome {
-  font-size: var(--ts-lg);
-  color: var(--texto-no-escuro);
-  font-weight: var(--peso-forte);
-  line-height: 1.25;
-}
-.hero__proximo-meta {
+.torneios-grid {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.3rem var(--s-3);
-  font-size: var(--ts-sm);
-  color: rgba(255, 255, 255, 0.85);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--s-5);
 }
-.hero__proximo-meta dt {
+
+.torneio-flyer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  min-height: 400px;
+  isolation: isolate;
+}
+
+.torneio-flyer__capa {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--cor-azul);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.torneio-flyer__capa::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at center, #000 50%, transparent 95%);
+}
+.torneio-flyer__capa img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.torneio-flyer__capa::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(15, 18, 34, 0.9) 0%, rgba(15, 18, 34, 0.3) 45%, transparent 70%);
+}
+
+.torneio-flyer__data-bloco {
+  position: absolute;
+  top: var(--s-4);
+  left: var(--s-4);
+  z-index: 3;
+  background: var(--cor-amarelo);
+  color: var(--cor-azul);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--raio-sm);
+  text-align: center;
+  min-width: 76px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.torneio-flyer__data-mes {
+  display: block;
   font-family: var(--fonte-mono);
   font-size: 0.6875rem;
   letter-spacing: var(--tracking-mono);
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-  padding-top: 2px;
-}
-.hero__proximo-meta dd { margin: 0; }
-
-.hero__contagem {
-  display: flex;
-  gap: var(--s-3);
-  padding-top: var(--s-4);
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-}
-.hero__contagem-item {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 56px;
-}
-.hero__contagem-num {
-  font-family: var(--fonte-mono);
-  font-size: 1.75rem;
   font-weight: var(--peso-semi);
-  color: var(--texto-no-escuro);
   line-height: 1;
+}
+.torneio-flyer__data-dia {
+  display: block;
+  font-family: var(--fonte-mono);
+  font-size: 2rem;
+  font-weight: var(--peso-semi);
+  line-height: 1;
+  margin: 2px 0;
   font-variant-numeric: tabular-nums;
 }
-.hero__contagem-rot {
+.torneio-flyer__data-ano {
+  display: block;
   font-family: var(--fonte-mono);
   font-size: 0.625rem;
   letter-spacing: var(--tracking-mono);
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  opacity: 0.75;
+  line-height: 1;
 }
+
+.torneio-flyer__badge {
+  position: absolute;
+  top: var(--s-4);
+  right: var(--s-4);
+  z-index: 3;
+}
+
+.torneio-flyer__capa-txt {
+  position: absolute;
+  left: var(--s-4);
+  right: var(--s-4);
+  bottom: var(--s-4);
+  z-index: 3;
+  color: var(--texto-no-escuro);
+}
+.torneio-flyer__capa-local {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  display: block;
+  margin-bottom: 4px;
+}
+.torneio-flyer__capa-cidade {
+  font-size: var(--ts-md);
+  color: var(--texto-no-escuro);
+  font-weight: var(--peso-semi);
+  line-height: 1.2;
+}
+
+.torneio-flyer__corpo {
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  flex: 1;
+}
+.torneio-flyer__nome {
+  font-size: var(--ts-base);
+  font-weight: var(--peso-forte);
+  color: var(--texto-forte);
+  line-height: 1.3;
+}
+.torneio-flyer__meta {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  display: flex;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+
+.torneio-flyer__cta {
+  margin-top: auto;
+  padding-top: var(--s-3);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--cor-azul);
+  font-weight: var(--peso-semi);
+  border-top: 1px solid var(--borda);
+}
+.torneio-flyer__cta-seta {
+  transition: transform var(--anim-rapida);
+}
+.torneio-flyer:hover .torneio-flyer__cta-seta { transform: translateX(4px); }
 
 /* -------- Faixa de números -------------------------------- */
 
@@ -290,22 +468,3 @@
   transition: transform var(--anim-rapida), color var(--anim-rapida);
 }
 .atalho:hover .atalho__seta { color: var(--cor-azul); transform: translateX(4px); }
-
-/* -------- Faixa do próximo evento (quando passar do hero) -- */
-/* usada em outras páginas; mantemos aqui a classe para reuso */
-.faixa-azul {
-  background: var(--cor-azul);
-  color: var(--texto-no-escuro);
-  padding-block: var(--s-8);
-  position: relative;
-}
-.faixa-azul::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background:
-    linear-gradient(to bottom,
-      var(--cor-verde) 0 50%,
-      var(--cor-amarelo) 50% 100%);
-}
