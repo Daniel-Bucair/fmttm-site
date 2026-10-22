@@ -122,3 +122,25 @@ hr {
 @media (prefers-reduced-motion: reduce) {
   .fade-entrada { opacity: 1; transform: none; transition: none; }
 }
+
+/* -------- Rótulos sobre fundo azul (brancos + DM Sans) ---- */
+/* Padroniza todos os rótulos pequenos de cabeçalho e similares.
+   !important porque esses rótulos têm CSS próprio em cada página. */
+.pagina-cabecalho__rotulo,
+.hero__rotulo,
+.carrossel__categoria,
+.evento-hero__voltar {
+  font-family: var(--fonte-sans) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  letter-spacing: 0.08em !important;
+  font-weight: var(--peso-medio) !important;
+  text-transform: uppercase;
+}
+.pagina-cabecalho__rotulo::before,
+.hero__rotulo::before,
+.carrossel__categoria::before {
+  background: rgba(255, 255, 255, 0.75) !important;
+}
+.evento-hero__voltar:hover {
+  color: var(--texto-no-escuro) !important;
+}
