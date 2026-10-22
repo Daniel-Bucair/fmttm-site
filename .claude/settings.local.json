@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sI \"https://fmttm-site.vercel.app\")",
+      "Bash(curl -s \"https://fmttm-site.vercel.app\")"
+    ]
+  }
+}
