@@ -58,33 +58,48 @@
   object-position: center;
 }
 
-/* Placeholders visuais variados (gradientes azul + verde + amarelo) */
+/* Placeholders bem distintos — cada um com uma identidade visual própria.
+   Quando as fotos reais chegarem, estes blocos somem e viram <img>. */
 .hero__slide--p1 {
   background:
-    radial-gradient(ellipse at 70% 40%, rgba(246, 221, 11, 0.16) 0%, transparent 55%),
-    radial-gradient(ellipse at 10% 90%, rgba(8, 148, 72, 0.18) 0%, transparent 50%),
-    var(--cor-azul);
+    radial-gradient(circle at 75% 35%, rgba(246, 221, 11, 0.55) 0%, transparent 42%),
+    linear-gradient(135deg, var(--cor-azul) 0%, var(--cor-azul-escuro) 100%);
 }
 .hero__slide--p2 {
   background:
-    radial-gradient(ellipse at 25% 65%, rgba(8, 148, 72, 0.25) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 25%, rgba(246, 221, 11, 0.14) 0%, transparent 55%),
-    var(--cor-azul-escuro);
+    radial-gradient(circle at 20% 70%, rgba(8, 148, 72, 0.7) 0%, transparent 45%),
+    linear-gradient(315deg, var(--cor-azul-escuro) 0%, var(--cor-azul) 100%);
 }
 .hero__slide--p3 {
   background:
-    radial-gradient(ellipse at 55% 35%, rgba(246, 221, 11, 0.2) 0%, transparent 50%),
-    radial-gradient(ellipse at 15% 85%, rgba(38, 45, 106, 0.6) 0%, transparent 55%),
+    linear-gradient(180deg, transparent 0%, transparent 48%, rgba(246, 221, 11, 0.35) 49%, rgba(246, 221, 11, 0.35) 51%, transparent 52%, transparent 100%),
+    radial-gradient(ellipse at 50% 50%, rgba(8, 148, 72, 0.3) 0%, transparent 60%),
     var(--cor-azul);
 }
 .hero__slide--p4 {
   background:
-    radial-gradient(ellipse at 80% 70%, rgba(8, 148, 72, 0.18) 0%, transparent 55%),
-    radial-gradient(ellipse at 30% 20%, rgba(246, 221, 11, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 30% 30%, rgba(246, 221, 11, 0.4) 0%, transparent 38%),
+    radial-gradient(circle at 70% 70%, rgba(8, 148, 72, 0.5) 0%, transparent 40%),
     var(--cor-azul-escuro);
 }
 
-/* Vinheta escura pra garantir legibilidade do nome */
+/* Pequeno marcador de slide no canto (indica que trocou) — some com foto real */
+.hero__slide::after {
+  content: '';
+  position: absolute;
+  left: var(--s-5);
+  top: var(--s-5);
+  width: 24px;
+  height: 24px;
+  background: var(--cor-amarelo);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  opacity: 0.6;
+}
+.hero__slide--p2::after { background: var(--cor-verde); clip-path: polygon(100% 0, 100% 100%, 0 100%); }
+.hero__slide--p3::after { background: var(--cor-amarelo); clip-path: circle(50%); }
+.hero__slide--p4::after { background: var(--cor-verde); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+
+/* Vinheta mais suave — deixa o carrossel aparecer */
 .hero::after {
   content: '';
   position: absolute;
@@ -92,10 +107,10 @@
   z-index: 2;
   background: linear-gradient(
     to top,
-    rgba(15, 18, 34, 0.86) 0%,
-    rgba(15, 18, 34, 0.55) 30%,
-    rgba(15, 18, 34, 0.15) 60%,
-    rgba(15, 18, 34, 0.35) 100%
+    rgba(15, 18, 34, 0.78) 0%,
+    rgba(15, 18, 34, 0.35) 35%,
+    rgba(15, 18, 34, 0.05) 60%,
+    rgba(15, 18, 34, 0.25) 100%
   );
 }
 
