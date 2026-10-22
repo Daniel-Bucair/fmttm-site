@@ -1,0 +1,254 @@
+/* ============================================================
+   CARROSSEL — destaques da temporada (fotos de atletas, jogos).
+   Autoplay suave, pausa no hover, acessível por teclado.
+   ============================================================ */
+
+.carrossel-secao {
+  padding-block: var(--s-12);
+  background: var(--bg-pagina);
+}
+
+.carrossel-secao__cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--s-6);
+}
+
+.carrossel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--raio-md);
+  background: var(--cor-azul);
+  isolation: isolate;
+}
+
+.carrossel__pista {
+  display: flex;
+  transition: transform 700ms cubic-bezier(.2, .7, .2, 1);
+  will-change: transform;
+}
+
+.carrossel__slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 100%;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+}
+@media (max-width: 860px) { .carrossel__slide { aspect-ratio: 4 / 3; } }
+@media (max-width: 480px) { .carrossel__slide { aspect-ratio: 3 / 4; } }
+
+.carrossel__slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Placeholder visual enquanto não há foto real */
+.carrossel__placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.9);
+  background:
+    linear-gradient(135deg, rgba(246, 221, 11, 0.08) 0%, transparent 45%),
+    linear-gradient(315deg, rgba(8, 148, 72, 0.1) 0%, transparent 50%),
+    var(--cor-azul);
+}
+.carrossel__placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, #000 50%, transparent 95%);
+}
+.carrossel__placeholder-rot {
+  position: relative;
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  padding: var(--s-5);
+  max-width: 24ch;
+  line-height: 1.6;
+}
+
+/* Overlay escuro p/ garantir legibilidade da legenda */
+.carrossel__slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    rgba(15, 18, 34, 0.75) 0%,
+    rgba(15, 18, 34, 0.35) 40%,
+    rgba(15, 18, 34, 0) 70%
+  );
+}
+
+/* Legenda do slide */
+.carrossel__legenda {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 3;
+  padding: var(--s-8) var(--s-8) var(--s-10);
+  color: var(--texto-no-escuro);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  max-width: 70ch;
+}
+@media (max-width: 640px) {
+  .carrossel__legenda { padding: var(--s-5) var(--s-5) var(--s-6); }
+}
+
+.carrossel__categoria {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--cor-amarelo);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.carrossel__categoria::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--cor-amarelo);
+}
+
+.carrossel__titulo {
+  font-size: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+  color: var(--texto-no-escuro);
+  font-weight: var(--peso-forte);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.carrossel__descricao {
+  font-size: var(--ts-sm);
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 54ch;
+}
+
+/* -------- Controles (setas) ------------------------------- */
+
+.carrossel__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(6px);
+  color: var(--texto-no-escuro);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 180ms, border-color 180ms, transform 220ms;
+}
+.carrossel__btn:hover {
+  background: var(--cor-amarelo);
+  color: var(--cor-azul);
+  border-color: var(--cor-amarelo);
+}
+.carrossel__btn--anterior { left: var(--s-5); }
+.carrossel__btn--proximo  { right: var(--s-5); }
+@media (max-width: 640px) {
+  .carrossel__btn { width: 38px; height: 38px; }
+  .carrossel__btn--anterior { left: var(--s-3); }
+  .carrossel__btn--proximo  { right: var(--s-3); }
+}
+.carrossel__btn-seta {
+  width: 0; height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+.carrossel__btn--anterior .carrossel__btn-seta {
+  border-right: 9px solid currentColor;
+  margin-right: 3px;
+}
+.carrossel__btn--proximo .carrossel__btn-seta {
+  border-left: 9px solid currentColor;
+  margin-left: 3px;
+}
+
+/* -------- Barra de progresso + pontos --------------------- */
+
+.carrossel__base {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-4) 0 0;
+}
+
+.carrossel__pontos {
+  display: flex;
+  gap: var(--s-2);
+}
+
+.carrossel__ponto {
+  width: 28px;
+  height: 3px;
+  background: var(--neutro-200);
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  transition: background 160ms;
+}
+.carrossel__ponto:hover { background: var(--borda-forte); }
+.carrossel__ponto[aria-current="true"] {
+  background: var(--borda-forte);
+}
+.carrossel__ponto[aria-current="true"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cor-azul);
+  transform-origin: left;
+  animation: carrossel-progress 6s linear forwards;
+}
+.carrossel.pausado .carrossel__ponto[aria-current="true"]::after {
+  animation-play-state: paused;
+}
+
+@keyframes carrossel-progress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.carrossel__meta {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carrossel__pista { transition: none; }
+  .carrossel__ponto[aria-current="true"]::after { animation: none; }
+}

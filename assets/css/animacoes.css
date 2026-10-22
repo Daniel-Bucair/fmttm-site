@@ -1,0 +1,325 @@
+/* ============================================================
+   ANIMAÇÕES — entradas suaves, hovers vivos, expansões fluidas.
+   Toda animação respeita prefers-reduced-motion no final.
+   ============================================================ */
+
+/* -------- Curvas de easing padronizadas ------------------- */
+:root {
+  --easing-saida:     cubic-bezier(.4, 0, .2, 1);
+  --easing-entrada:   cubic-bezier(.2, .7, .2, 1);
+  --easing-elastico:  cubic-bezier(.34, 1.3, .5, 1);
+  --dur-rapida:  180ms;
+  --dur-media:   340ms;
+  --dur-longa:   520ms;
+}
+
+/* -------- Entrada por scroll (fade + slide up) ------------ */
+
+.anima-entrada {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--dur-longa) var(--easing-entrada),
+    transform var(--dur-longa) var(--easing-entrada);
+  transition-delay: var(--d, 0ms);
+  will-change: opacity, transform;
+}
+.anima-entrada.visivel {
+  opacity: 1;
+  transform: none;
+}
+
+/* -------- Entrada do hero por palavras -------------------- */
+
+.palavra {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: palavra-sobe 700ms var(--easing-entrada) forwards;
+  animation-delay: calc(var(--i, 0) * 70ms + 150ms);
+}
+.palavra--espaco { width: 0.28em; }
+
+@keyframes palavra-sobe {
+  0%   { opacity: 0; transform: translateY(100%); }
+  60%  { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* -------- Entrada em cascata de uma lista ----------------- */
+
+.anima-cascata > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity var(--dur-longa) var(--easing-entrada),
+    transform var(--dur-longa) var(--easing-entrada);
+}
+.anima-cascata.visivel > * { opacity: 1; transform: none; }
+.anima-cascata.visivel > *:nth-child(1) { transition-delay: 60ms; }
+.anima-cascata.visivel > *:nth-child(2) { transition-delay: 120ms; }
+.anima-cascata.visivel > *:nth-child(3) { transition-delay: 180ms; }
+.anima-cascata.visivel > *:nth-child(4) { transition-delay: 240ms; }
+.anima-cascata.visivel > *:nth-child(5) { transition-delay: 300ms; }
+.anima-cascata.visivel > *:nth-child(6) { transition-delay: 360ms; }
+.anima-cascata.visivel > *:nth-child(7) { transition-delay: 420ms; }
+.anima-cascata.visivel > *:nth-child(8) { transition-delay: 480ms; }
+.anima-cascata.visivel > *:nth-child(n+9) { transition-delay: 540ms; }
+
+/* -------- Hovers mais vivos (desktop) --------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+
+  /* Cards em geral: leve lift + aro azul + sombra azulada */
+  .card,
+  .evento-card,
+  .clube-card,
+  .nota-item,
+  .atalho,
+  .video-card,
+  .demonstrativo-card,
+  .doc-card,
+  .diretor-card,
+  .timeline-evento {
+    transition:
+      transform var(--dur-media) var(--easing-entrada),
+      box-shadow var(--dur-media) var(--easing-entrada),
+      border-color var(--dur-rapida) var(--easing-saida),
+      background var(--dur-rapida) var(--easing-saida);
+  }
+
+  .evento-card:hover,
+  .clube-card:hover,
+  .video-card:hover,
+  .demonstrativo-card:hover,
+  .doc-card:hover,
+  .atalho:hover,
+  .timeline-evento:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 10px 24px -8px rgba(38, 45, 106, 0.18),
+      0 2px 6px rgba(38, 45, 106, 0.06);
+  }
+
+  .clube-card:hover {
+    border-color: var(--cor-azul);
+  }
+
+  .nota-item,
+  .nota-linha {
+    transition:
+      background var(--dur-rapida) var(--easing-saida),
+      padding-left var(--dur-media) var(--easing-entrada);
+  }
+  .nota-item:hover,
+  .nota-linha:hover {
+    padding-left: var(--s-3);
+  }
+
+  /* Botões ganham lift sutil + sombra colorida */
+  .btn {
+    transition:
+      transform var(--dur-rapida) var(--easing-entrada),
+      background var(--dur-rapida) var(--easing-saida),
+      box-shadow var(--dur-rapida) var(--easing-saida),
+      border-color var(--dur-rapida) var(--easing-saida),
+      color var(--dur-rapida) var(--easing-saida);
+  }
+  .btn--primario:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px -6px rgba(38, 45, 106, 0.45);
+  }
+  .btn--sobre-escuro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px -6px rgba(246, 221, 11, 0.5);
+  }
+  .btn--linha:hover {
+    transform: translateY(-2px);
+  }
+  .btn:active { transform: translateY(0); transition-duration: 60ms; }
+
+  /* Links do menu com underline deslizante */
+  .site-nav__link {
+    position: relative;
+  }
+  .site-nav__link::before {
+    content: '';
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 6px;
+    height: 2px;
+    background: var(--cor-azul);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-media) var(--easing-entrada);
+  }
+  .site-nav__link:hover::before { transform: scaleX(1); }
+  .site-nav__link[aria-current="page"]::before { display: none; }
+
+  /* Thumbnail de vídeo com leve zoom */
+  .video-card__thumb {
+    overflow: hidden;
+  }
+  .video-card__thumb::before {
+    transition: transform var(--dur-longa) var(--easing-entrada);
+  }
+  .video-card:hover .video-card__thumb::before {
+    transform: scale(1.04);
+  }
+
+  /* Logo da marca pulsa sutilmente no hover */
+  .site-header__marca {
+    transition: transform var(--dur-rapida) var(--easing-entrada);
+  }
+  .site-header__marca:hover { transform: translateY(-1px); }
+
+  /* Setas e símbolos deslizam */
+  .atalho__seta {
+    transition: transform var(--dur-media) var(--easing-entrada), color var(--dur-rapida) var(--easing-saida);
+  }
+  .atalho:hover .atalho__seta { transform: translateX(6px); }
+
+  /* Filtros */
+  .filtros__btn {
+    transition:
+      background var(--dur-rapida) var(--easing-saida),
+      border-color var(--dur-rapida) var(--easing-saida),
+      color var(--dur-rapida) var(--easing-saida),
+      transform var(--dur-rapida) var(--easing-entrada);
+  }
+  .filtros__btn:hover { transform: translateY(-1px); }
+
+  /* Abas: barra inferior cresce */
+  .abas__item { position: relative; transition: color var(--dur-rapida) var(--easing-saida); }
+  .abas__item::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 2px;
+    background: var(--cor-azul);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--dur-media) var(--easing-entrada);
+  }
+  .abas__item:hover::after { transform: scaleX(0.6); }
+  .abas__item[aria-selected="true"]::after,
+  .abas__item.ativo::after { transform: scaleX(1); }
+
+  /* Linhas de tabela de convênios */
+  .convenios-tabela tbody tr {
+    transition: background var(--dur-rapida) var(--easing-saida);
+  }
+}
+
+/* -------- Expansão suave: menu mobile --------------------- */
+
+@media (max-width: 860px) {
+  .site-nav__lista {
+    /* Começa colapsado via grid-rows em 0fr → 1fr */
+    display: grid !important;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      grid-template-rows var(--dur-media) var(--easing-entrada),
+      opacity var(--dur-media) var(--easing-entrada);
+    overflow: hidden;
+  }
+  .site-nav__lista > li,
+  .site-nav__lista > * {
+    min-height: 0;
+  }
+  .site-nav[data-aberto="true"] .site-nav__lista {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  /* Esconde o conteúdo interno quando grid colapsado para que fique de fato invisível */
+  .site-nav__lista > * {
+    overflow: hidden;
+  }
+
+  /* Links do menu aparecem em cascata quando o menu abre */
+  .site-nav__link {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      opacity var(--dur-media) var(--easing-entrada),
+      transform var(--dur-media) var(--easing-entrada);
+  }
+  .site-nav[data-aberto="true"] .site-nav__link {
+    opacity: 1; transform: none;
+  }
+  .site-nav[data-aberto="true"] li:nth-child(1) .site-nav__link { transition-delay: 60ms; }
+  .site-nav[data-aberto="true"] li:nth-child(2) .site-nav__link { transition-delay: 110ms; }
+  .site-nav[data-aberto="true"] li:nth-child(3) .site-nav__link { transition-delay: 160ms; }
+  .site-nav[data-aberto="true"] li:nth-child(4) .site-nav__link { transition-delay: 210ms; }
+  .site-nav[data-aberto="true"] li:nth-child(5) .site-nav__link { transition-delay: 260ms; }
+  .site-nav[data-aberto="true"] li:nth-child(6) .site-nav__link { transition-delay: 310ms; }
+  .site-nav[data-aberto="true"] li:nth-child(7) .site-nav__link { transition-delay: 360ms; }
+  .site-nav[data-aberto="true"] li:nth-child(8) .site-nav__link { transition-delay: 410ms; }
+}
+
+/* -------- Expansão suave: detalhe de nota ---------------- */
+
+.nota-detalhe:target {
+  animation: destaque-entrada 1.1s var(--easing-entrada);
+}
+@keyframes destaque-entrada {
+  0%   { box-shadow: 0 0 0 0 var(--cor-amarelo); }
+  40%  { box-shadow: 0 0 0 6px var(--cor-amarelo); }
+  100% { box-shadow: 0 0 0 3px var(--cor-amarelo); }
+}
+
+/* -------- Filtros no calendário: fade dos cards ----------- */
+
+.timeline-evento,
+.clube-card,
+.nota-linha {
+  transition:
+    opacity var(--dur-media) var(--easing-saida),
+    transform var(--dur-media) var(--easing-saida),
+    background var(--dur-rapida) var(--easing-saida),
+    border-color var(--dur-rapida) var(--easing-saida),
+    box-shadow var(--dur-media) var(--easing-entrada),
+    padding-left var(--dur-media) var(--easing-entrada);
+}
+
+/* -------- Grid de linhas do hero com pan contínuo lento --- */
+
+.hero::before,
+.pagina-cabecalho::before,
+.evento-hero::before {
+  animation: grid-pan 60s linear infinite;
+}
+@keyframes grid-pan {
+  0%   { background-position: 0 0, 0 0; }
+  100% { background-position: 48px 48px, 48px 48px; }
+}
+
+/* -------- Faixa amarelo/verde do footer com brilho sutil - */
+
+.site-footer::before,
+.faixa-marca {
+  position: relative;
+  overflow: hidden;
+}
+
+/* -------- Respeita quem pediu menos movimento ------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .anima-entrada,
+  .anima-cascata > *,
+  .palavra {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

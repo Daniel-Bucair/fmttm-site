@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/eventos.css">
+  <link rel="stylesheet" href="assets/css/animacoes.css">
 </head>
 <body>
 
@@ -275,7 +276,6 @@
   </footer>
 
   <script>
-    // Simples alternância das abas Próximos/Realizados por clique
     document.querySelectorAll('.abas__item').forEach(aba => {
       aba.addEventListener('click', () => {
         document.querySelectorAll('.abas__item').forEach(a => { a.classList.remove('ativo'); a.setAttribute('aria-selected', 'false'); });
@@ -284,6 +284,7 @@
       });
     });
   </script>
+  <script src="assets/js/animacoes.js" defer></script>
 
 </body>
 </html>

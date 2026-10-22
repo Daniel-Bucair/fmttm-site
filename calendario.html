@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/calendario.css">
+  <link rel="stylesheet" href="assets/css/animacoes.css">
 </head>
 <body>
 
@@ -317,13 +318,13 @@
         const okSt  = estado.status === 'todos' || ev.dataset.status === estado.status;
         ev.style.display = (okAbr && okSt) ? '' : 'none';
       });
-      // Esconder meses vazios
       document.querySelectorAll('.timeline-mes').forEach(mes => {
         const temVisivel = Array.from(mes.querySelectorAll('.timeline-evento')).some(e => e.style.display !== 'none');
         mes.style.display = temVisivel ? '' : 'none';
       });
     }
   </script>
+  <script src="assets/js/animacoes.js" defer></script>
 
 </body>
 </html>

@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/carrossel.css">
+  <link rel="stylesheet" href="assets/css/animacoes.css">
 </head>
 <body>
 
@@ -87,6 +89,95 @@
             </div>
           </div>
         </article>
+      </div>
+    </section>
+
+    <!-- CARROSSEL DE DESTAQUES -->
+    <section class="carrossel-secao" aria-label="Destaques da temporada">
+      <div class="container">
+        <div class="carrossel-secao__cabecalho">
+          <div>
+            <span class="secao__rotulo">Em imagens</span>
+            <h2 class="secao__titulo">Destaques da temporada</h2>
+          </div>
+          <span class="carrossel__meta"><span id="carrossel-indice">01</span> / <span id="carrossel-total">05</span></span>
+        </div>
+
+        <div class="carrossel" id="carrossel" aria-roledescription="carrossel" aria-label="Fotos de atletas, jogos e melhores momentos">
+
+          <div class="carrossel__pista" id="carrossel-pista">
+
+            <article class="carrossel__slide" role="group" aria-roledescription="slide" aria-label="1 de 5">
+              <!-- Troque este placeholder por: <img src="assets/img/foto-1.jpg" alt="Descrição da foto"> -->
+              <div class="carrossel__placeholder">
+                <span class="carrossel__placeholder-rot">Foto 1 · Final absoluta<br>Copa Mato Grosso 2ª Etapa</span>
+              </div>
+              <div class="carrossel__legenda">
+                <span class="carrossel__categoria">Finais · Absoluto A</span>
+                <h3 class="carrossel__titulo">Decisão emocionante marca o encerramento da 2ª Etapa</h3>
+                <p class="carrossel__descricao">Partida foi definida em 7 sets, com reviravolta no último game.</p>
+              </div>
+            </article>
+
+            <article class="carrossel__slide" role="group" aria-roledescription="slide" aria-label="2 de 5">
+              <div class="carrossel__placeholder">
+                <span class="carrossel__placeholder-rot">Foto 2 · Categorias de base<br>Sub-13 em ação</span>
+              </div>
+              <div class="carrossel__legenda">
+                <span class="carrossel__categoria">Base · Sub-13</span>
+                <h3 class="carrossel__titulo">Nova geração em destaque nas quadras</h3>
+                <p class="carrossel__descricao">Mais de 60 atletas sub-13 inscritos na última etapa estadual.</p>
+              </div>
+            </article>
+
+            <article class="carrossel__slide" role="group" aria-roledescription="slide" aria-label="3 de 5">
+              <div class="carrossel__placeholder">
+                <span class="carrossel__placeholder-rot">Foto 3 · Premiação<br>Pódio da 2ª Etapa</span>
+              </div>
+              <div class="carrossel__legenda">
+                <span class="carrossel__categoria">Premiação</span>
+                <h3 class="carrossel__titulo">Pódio completo em todas as categorias</h3>
+                <p class="carrossel__descricao">Troféus e medalhas entregues a atletas de 8 clubes diferentes do estado.</p>
+              </div>
+            </article>
+
+            <article class="carrossel__slide" role="group" aria-roledescription="slide" aria-label="4 de 5">
+              <div class="carrossel__placeholder">
+                <span class="carrossel__placeholder-rot">Foto 4 · Veteranos<br>Highlight da temporada</span>
+              </div>
+              <div class="carrossel__legenda">
+                <span class="carrossel__categoria">Veteranos · 50+</span>
+                <h3 class="carrossel__titulo">Categoria veteranos cresce e ganha palco próprio</h3>
+                <p class="carrossel__descricao">Chaves exclusivas para +40 e +50 trouxeram recorde de participação.</p>
+              </div>
+            </article>
+
+            <article class="carrossel__slide" role="group" aria-roledescription="slide" aria-label="5 de 5">
+              <div class="carrossel__placeholder">
+                <span class="carrossel__placeholder-rot">Foto 5 · Arbitragem<br>Bastidores do evento</span>
+              </div>
+              <div class="carrossel__legenda">
+                <span class="carrossel__categoria">Bastidores</span>
+                <h3 class="carrossel__titulo">Arbitragem credenciada garante nível técnico das etapas</h3>
+                <p class="carrossel__descricao">Equipe de 12 árbitros oficiais atuou nas três últimas competições estaduais.</p>
+              </div>
+            </article>
+
+          </div>
+
+          <button type="button" class="carrossel__btn carrossel__btn--anterior" aria-label="Slide anterior">
+            <span class="carrossel__btn-seta" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="carrossel__btn carrossel__btn--proximo" aria-label="Próximo slide">
+            <span class="carrossel__btn-seta" aria-hidden="true"></span>
+          </button>
+
+        </div>
+
+        <div class="carrossel__base">
+          <div class="carrossel__pontos" id="carrossel-pontos" role="tablist" aria-label="Selecionar slide"></div>
+          <span class="carrossel__meta"><span class="mono">AUTOPLAY</span> · 6s / slide</span>
+        </div>
       </div>
     </section>
 
@@ -236,5 +327,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/carrossel.js" defer></script>
+  <script src="assets/js/animacoes.js" defer></script>
 </body>
 </html>
