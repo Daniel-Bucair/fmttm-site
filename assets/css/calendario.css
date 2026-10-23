@@ -224,3 +224,22 @@
 .legenda__cor--estadual { background: var(--cor-azul); }
 .legenda__cor--regional { background: var(--cor-verde); }
 .legenda__cor--nacional { background: var(--cor-amarelo); }
+
+/* -------- Celular ----------------------------------------- */
+
+@media (max-width: 640px) {
+  .filtros { gap: var(--s-4); }
+  .filtros__grupo {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .filtros__grupo::-webkit-scrollbar { display: none; }
+  .filtros__btn, .filtros__rotulo { flex-shrink: 0; white-space: nowrap; }
+
+  .timeline-evento { grid-template-columns: 68px 1fr; gap: var(--s-4); padding: var(--s-4); }
+  .timeline-evento__data { padding-right: var(--s-3); }
+  .timeline-evento__data-sub { font-size: 0.625rem; letter-spacing: 0.02em; }
+}

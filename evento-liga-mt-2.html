@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liga Mato Grosso — 2ª Etapa · FMTTM</title>
+  <meta name="description" content="TMB Regional 2026 — 2ª Etapa da Liga Mato Grosso de Tênis de Mesa, 27 de junho em Primavera do Leste, Sorriso e Confresa.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo-symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css?v=5">
+  <link rel="stylesheet" href="assets/css/eventos.css?v=2">
+  <link rel="stylesheet" href="assets/css/animacoes.css">
+</head>
+<body>
+
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <span class="faixa-marca faixa-marca--fina" aria-hidden="true"></span>
+    <div class="container site-header__barra">
+      <a href="index.html" class="site-header__marca" aria-label="Página inicial — Federação Matogrossense de Tênis de Mesa">
+        <img src="assets/img/logo-symbol.svg" alt="" class="site-header__logo" width="36" height="36">
+        <span class="site-header__titulo">
+          <span class="site-header__titulo-forte">FMTTM</span>
+          <span class="site-header__titulo-apoio">Federação Matogrossense</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Principal">
+        <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="menu-principal" onclick="const n=this.closest('.site-nav'); const o=n.dataset.aberto==='true'; n.dataset.aberto=!o; this.setAttribute('aria-expanded',!o);">
+          <span class="site-nav__toggle-icone" aria-hidden="true"></span> Menu
+        </button>
+        <ul class="site-nav__lista" id="menu-principal">
+          <li><a class="site-nav__link" href="index.html">Início</a></li>
+          <li><a class="site-nav__link" href="eventos.html" aria-current="page">Eventos</a></li>
+          <li><a class="site-nav__link" href="calendario.html">Calendário</a></li>
+          <li><a class="site-nav__link" href="clubes.html">Clubes</a></li>
+          <li><a class="site-nav__link" href="transmissoes.html">Transmissões</a></li>
+          <li><a class="site-nav__link" href="governanca.html">Governança</a></li>
+          <li><a class="site-nav__link" href="transparencia.html">Transparência</a></li>
+          <li><a class="site-nav__link" href="notas.html">Notas Oficiais</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="evento-hero">
+      <div class="container">
+        <a href="eventos.html" class="evento-hero__voltar">← Voltar para eventos</a>
+        <div class="evento-hero__status">
+          <span class="badge badge--encerrado">ENCERRADO</span>
+          <span class="badge">REGIONAL · 2ª ETAPA</span>
+        </div>
+        <h1 class="evento-hero__titulo">TMB Regional 2026 — Liga Mato Grosso, 2ª Etapa</h1>
+
+        <div class="evento-hero__meta">
+          <div class="evento-hero__meta-item">
+            <span class="evento-hero__meta-rot">Data</span>
+            <span class="evento-hero__meta-val">27 · JUN 2026</span>
+          </div>
+          <div class="evento-hero__meta-item">
+            <span class="evento-hero__meta-rot">Cidade</span>
+            <span class="evento-hero__meta-val">Primavera do Leste, Sorriso e Confresa / MT</span>
+          </div>
+          <div class="evento-hero__meta-item">
+            <span class="evento-hero__meta-rot">Local</span>
+            <span class="evento-hero__meta-val">3 sedes simultâneas</span>
+          </div>
+          <div class="evento-hero__meta-item">
+            <span class="evento-hero__meta-rot">Inscrições até</span>
+            <span class="evento-hero__meta-val mono">19 JUN 2026</span>
+          </div>
+        </div>
+
+        <div class="evento-hero__acoes">
+          <a href="#resultados" class="btn btn--sobre-escuro">Resultados</a>
+          <a href="assets/docs/circulares/circular-liga-mt-2026-2a-etapa.pdf" target="_blank" rel="noopener" class="btn btn--contorno-escuro">Ver circular</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container evento-detalhe">
+
+        <div>
+          <h2>Categorias</h2>
+          <div class="categorias-blocos">
+            <div class="categoria-bloco">
+              <span class="categoria-bloco__nome">Sub 9 – 21</span>
+              <span class="categoria-bloco__detalhe">Masculino e feminino</span>
+            </div>
+            <div class="categoria-bloco">
+              <span class="categoria-bloco__nome">Adulto – Master 75</span>
+              <span class="categoria-bloco__detalhe">Masculino e feminino</span>
+            </div>
+            <div class="categoria-bloco">
+              <span class="categoria-bloco__nome">Absoluto A – G</span>
+              <span class="categoria-bloco__detalhe">A–D masc/fem · E–G masc</span>
+            </div>
+          </div>
+          <p class="evento-detalhe__nota">Somente individual. Todas as partidas em melhor de 5 sets de 11 pontos. Categoria com menos de 3 inscritos é remanejada.</p>
+
+          <h2>Sedes</h2>
+          <div class="cronograma-lista cronograma-lista--sedes evento-detalhe__bloco">
+            <div class="cronograma-item">
+              <span class="cronograma-item__hora">Primavera do Leste</span>
+              <span class="cronograma-item__descricao">Ginásio Pienão</span>
+            </div>
+            <div class="cronograma-item">
+              <span class="cronograma-item__hora">Sorriso</span>
+              <span class="cronograma-item__descricao">Ginásio Domingão</span>
+            </div>
+            <div class="cronograma-item">
+              <span class="cronograma-item__hora">Confresa</span>
+              <span class="cronograma-item__descricao">Escola 29 de Julho</span>
+            </div>
+          </div>
+
+          <h2>Valores de inscrição</h2>
+          <div class="cronograma-lista evento-detalhe__bloco">
+            <div class="cronograma-item">
+              <span class="cronograma-item__hora">R$ 40</span>
+              <span class="cronograma-item__descricao">Individual — 1 categoria</span>
+              <span class="cronograma-item__local">1 ranking</span>
+            </div>
+            <div class="cronograma-item">
+              <span class="cronograma-item__hora">R$ 70</span>
+              <span class="cronograma-item__descricao">Individual — 2 categorias (categoria + absoluto)</span>
+              <span class="cronograma-item__local">2 rankings</span>
+            </div>
+            <div class="cronograma-item">
+              <span class="cronograma-item__hora">R$ 90</span>
+              <span class="cronograma-item__descricao">Individual — 3 categorias (2 categorias + absoluto)</span>
+              <span class="cronograma-item__local">3 rankings</span>
+            </div>
+          </div>
+
+          <h2>Programação</h2>
+          <div class="cronograma-lista">
+            <div class="cronograma-item">
+              <span class="cronograma-item__hora">08:00</span>
+              <span class="cronograma-item__descricao">Competição (até 20h, previsão)</span>
+              <span class="cronograma-item__local">Sáb 27</span>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="evento-acoes-painel">
+            <h3>Circular</h3>
+            <a href="assets/docs/circulares/circular-liga-mt-2026-2a-etapa.pdf" class="arquivo-card" target="_blank" rel="noopener">
+              <span class="arquivo-card__icone" aria-hidden="true">PDF</span>
+              <span class="arquivo-card__corpo">
+                <span class="arquivo-card__titulo">Circular do evento</span>
+                <span class="arquivo-card__meta">Abrir PDF</span>
+              </span>
+              <span class="arquivo-card__seta" aria-hidden="true">↗</span>
+            </a>
+            <div class="evento-acoes-painel__sep"></div>
+            <h3 id="resultados">Resultados</h3>
+            <a href="assets/docs/resultados/liga-mt-2026-2a-etapa-primavera-do-leste.pdf" class="arquivo-card" target="_blank" rel="noopener">
+              <span class="arquivo-card__icone" aria-hidden="true">PDF</span>
+              <span class="arquivo-card__corpo">
+                <span class="arquivo-card__titulo">Primavera do Leste</span>
+                <span class="arquivo-card__meta">Abrir PDF</span>
+              </span>
+              <span class="arquivo-card__seta" aria-hidden="true">↗</span>
+            </a>
+            <a href="assets/docs/resultados/liga-mt-2026-2a-etapa-sorriso.pdf" class="arquivo-card" target="_blank" rel="noopener">
+              <span class="arquivo-card__icone" aria-hidden="true">PDF</span>
+              <span class="arquivo-card__corpo">
+                <span class="arquivo-card__titulo">Sorriso</span>
+                <span class="arquivo-card__meta">Abrir PDF</span>
+              </span>
+              <span class="arquivo-card__seta" aria-hidden="true">↗</span>
+            </a>
+            <a href="assets/docs/resultados/liga-mt-2026-2a-etapa-confresa.pdf" class="arquivo-card" target="_blank" rel="noopener">
+              <span class="arquivo-card__icone" aria-hidden="true">PDF</span>
+              <span class="arquivo-card__corpo">
+                <span class="arquivo-card__titulo">Confresa</span>
+                <span class="arquivo-card__meta">Abrir PDF</span>
+              </span>
+              <span class="arquivo-card__seta" aria-hidden="true">↗</span>
+            </a>
+            <div class="evento-acoes-painel__sep"></div>
+            <h3>Prazos</h3>
+            <div class="cronograma-lista">
+              <div class="cronograma-item"><span class="cronograma-item__hora">10/06</span><span class="cronograma-item__descricao">Início das inscrições</span></div>
+              <div class="cronograma-item"><span class="cronograma-item__hora">19/06</span><span class="cronograma-item__descricao">Término das inscrições</span></div>
+              <div class="cronograma-item"><span class="cronograma-item__hora">20/06</span><span class="cronograma-item__descricao">Reclamações sobre inscrições (até 10h)</span></div>
+              <div class="cronograma-item"><span class="cronograma-item__hora">22/06</span><span class="cronograma-item__descricao">Publicação dos grupos</span></div>
+              <div class="cronograma-item"><span class="cronograma-item__hora">23/06</span><span class="cronograma-item__descricao">Reclamações sobre grupos (até 10h)</span></div>
+              <div class="cronograma-item"><span class="cronograma-item__hora">24/06</span><span class="cronograma-item__descricao">Programação prévia</span></div>
+              <div class="cronograma-item"><span class="cronograma-item__hora">25/06</span><span class="cronograma-item__descricao">Programação final</span></div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__marca">
+          <img src="assets/img/logo-symbol.svg" alt="" class="site-footer__marca-logo" width="44" height="44">
+          <div class="site-footer__nome">Federação Matogrossense<br>de Tênis de Mesa</div>
+          <div class="site-footer__meta">
+            <span class="mono">CNPJ 07.898.945/0001-11</span>
+            <span>Cuiabá — Mato Grosso</span>
+            <a href="mailto:fedmt@cbtm.org.br">fedmt@cbtm.org.br</a>
+            <a href="https://wa.me/5565999139914">(65) 99913-9914</a>
+            <a href="https://linktr.ee/fedmttm" target="_blank" rel="noopener">linktr.ee/fedmttm</a>
+          </div>
+        </div>
+        <div class="site-footer__bloco">
+          <h3>Institucional</h3>
+          <ul class="site-footer__lista">
+            <li><a href="governanca.html">Governança</a></li>
+            <li><a href="transparencia.html">Transparência</a></li>
+            <li><a href="notas.html">Notas Oficiais</a></li>
+            <li><a href="clubes.html">Clubes filiados</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__bloco">
+          <h3>Parceiros</h3>
+          <div class="site-footer__parceiros">
+            <div class="site-footer__parceiro-caixa">Governo de Mato Grosso</div>
+            <div class="site-footer__parceiro-caixa">SECEL-MT</div>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__base">
+        <span>© 2026 FMTTM · Todos os direitos reservados</span>
+        <span>Última atualização · 22 OUT 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/animacoes.js" defer></script>
+</body>
+</html>

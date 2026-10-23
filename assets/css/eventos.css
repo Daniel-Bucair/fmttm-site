@@ -354,3 +354,129 @@
   color: var(--texto-fraco);
   line-height: 1.5;
 }
+
+/* -------- Categorias resumidas (página do evento) --------- */
+
+.categorias-blocos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-3);
+}
+.categoria-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  padding: var(--s-4) var(--s-5);
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-left: 3px solid var(--cor-azul);
+  border-radius: var(--raio-md);
+}
+.categoria-bloco__nome {
+  font-size: var(--ts-lg);
+  font-weight: var(--peso-semi);
+  color: var(--texto-forte);
+  line-height: 1.2;
+}
+.categoria-bloco__detalhe {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+.evento-detalhe__nota {
+  margin-top: var(--s-4);
+  margin-bottom: var(--s-10);
+  color: var(--texto-fraco);
+  font-size: var(--ts-sm);
+}
+.evento-detalhe__bloco { margin-bottom: var(--s-10); }
+
+/* -------- Circular e resultados (painel lateral) --------- */
+
+.arquivo-card {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: var(--s-3);
+  align-items: center;
+  padding: var(--s-4);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  background: var(--bg-pagina, transparent);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--anim-rapida), background var(--anim-rapida);
+}
+a.arquivo-card:hover { border-color: var(--cor-azul); background: var(--neutro-100); color: inherit; }
+.arquivo-card__icone {
+  width: 40px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: var(--cor-azul);
+  color: var(--texto-no-escuro);
+  border-radius: var(--raio-sm);
+  font-family: var(--fonte-mono);
+  font-size: 0.625rem;
+  font-weight: var(--peso-semi);
+  letter-spacing: 0.05em;
+}
+.arquivo-card__corpo { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.arquivo-card__titulo { font-size: var(--ts-sm); font-weight: var(--peso-semi); color: var(--texto-forte); }
+.arquivo-card__meta {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+.arquivo-card__seta { color: var(--texto-fraco); font-family: var(--fonte-mono); }
+a.arquivo-card:hover .arquivo-card__seta { color: var(--cor-azul); }
+
+/* Botão secundário sobre o hero azul */
+.btn--contorno-escuro {
+  background: transparent;
+  color: var(--texto-no-escuro);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.btn--contorno-escuro:hover { border-color: var(--texto-no-escuro); color: var(--texto-no-escuro); background: rgba(255, 255, 255, 0.08); }
+
+.cronograma-lista--sedes .cronograma-item { grid-template-columns: 160px 1fr; }
+@media (max-width: 480px) {
+  .cronograma-lista--sedes .cronograma-item { grid-template-columns: 1fr; gap: var(--s-1); }
+}
+@media (max-width: 359px) {
+  .categorias-blocos { grid-template-columns: 1fr; }
+}
+
+.categorias-grupo {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  font-weight: var(--peso-medio);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  margin: var(--s-5) 0 var(--s-2);
+}
+.categorias-grupo:first-of-type { margin-top: 0; }
+.evento-acoes-painel .arquivo-card + .arquivo-card { margin-top: calc(var(--s-2) * -1); }
+
+/* -------- Celular ----------------------------------------- */
+
+@media (max-width: 520px) {
+  .evento-hero__titulo { font-size: 2rem; margin-bottom: var(--s-4); }
+  .evento-hero__meta { grid-template-columns: 1fr 1fr; gap: var(--s-4) var(--s-3); }
+  .evento-hero__meta-val { font-size: var(--ts-sm); }
+  .evento-hero__acoes { margin-top: var(--s-6); gap: var(--s-2); }
+  .evento-hero__acoes .btn { flex: 1 1 auto; justify-content: center; text-align: center; }
+
+  .categoria-bloco { padding: var(--s-3) var(--s-4); }
+  .categoria-bloco__nome { font-size: var(--ts-md); }
+
+  .cronograma-item { grid-template-columns: 64px 1fr auto; gap: var(--s-3); padding: var(--s-3) 0; }
+  .evento-acoes-painel { padding: var(--s-5); }
+}
+@media (max-width: 520px) {
+  .categoria-bloco--largo { grid-column: 1 / -1; }
+}
