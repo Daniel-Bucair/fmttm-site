@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notas Oficiais · Federação de Tênis de Mesa de Mato Grosso</title>
-  <meta name="description" content="Comunicados oficiais da Federação de Tênis de Mesa de Mato Grosso. Notas por categoria e ano.">
+  <title>Notas Oficiais · Federação Matogrossense de Tênis de Mesa</title>
+  <meta name="description" content="Comunicados oficiais da Federação Matogrossense de Tênis de Mesa. Notas por categoria e ano.">
   <link rel="icon" type="image/svg+xml" href="assets/img/logo-symbol.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/layout.css?v=5">
   <link rel="stylesheet" href="assets/css/notas.css">
   <link rel="stylesheet" href="assets/css/animacoes.css">
 </head>
@@ -23,11 +23,11 @@
   <header class="site-header">
     <span class="faixa-marca faixa-marca--fina" aria-hidden="true"></span>
     <div class="container site-header__barra">
-      <a href="index.html" class="site-header__marca" aria-label="Página inicial — Federação de Tênis de Mesa de Mato Grosso">
+      <a href="index.html" class="site-header__marca" aria-label="Página inicial — Federação Matogrossense de Tênis de Mesa">
         <img src="assets/img/logo-symbol.svg" alt="" class="site-header__logo" width="36" height="36">
         <span class="site-header__titulo">
-          <span class="site-header__titulo-forte">FTMMT</span>
-          <span class="site-header__titulo-apoio">Federação Mato-Grossense</span>
+          <span class="site-header__titulo-forte">FMTTM</span>
+          <span class="site-header__titulo-apoio">Federação Matogrossense</span>
         </span>
       </a>
       <nav class="site-nav" aria-label="Principal">
@@ -73,30 +73,85 @@
           <select id="filtro-ano" class="busca-barra__select" aria-label="Filtrar por ano">
             <option value="todos">Todos os anos</option>
             <option value="2026">2026</option>
-            <option value="2025">2025</option>
           </select>
         </div>
 
-        <!-- NOTA DESTACADA (quando #id ativo) -->
+        <!-- NOTA DESTACADA: mostra a do #hash ou, sem hash, a mais recente -->
         <div id="detalhe-ancora">
+
+          <article class="nota-detalhe" id="004-2026">
+            <div class="nota-detalhe__cabecalho">
+              <span class="nota-detalhe__num">CIRCULAR Nº 004/2026</span>
+              <h2 class="nota-detalhe__titulo">Convocação de arbitragem — Copa Brasil Ouro Cuiabá</h2>
+              <div class="nota-detalhe__meta">
+                <span>29 MAI 2026</span>
+                <span>Categoria · Arbitragem</span>
+              </div>
+            </div>
+            <div class="nota-detalhe__corpo">
+              <p>Os árbitros certificados abaixo estão convocados pela Federação Matogrossense de Tênis de Mesa para atuar, em período integral, na TMB Copa Brasil Ouro — Cuiabá/MT, de 04 a 07 de junho de 2026.</p>
+              <p>Alícia Almeida de Souza Ruviéri (Cuiabá), Caique Alves Rocha Dutra (Aripuanã), Carlos Alberto Francisco da Costa (Várzea Grande), Daniel de Oliveira Júnior (Cuiabá), Edson Pereira de Matos Filho (Cuiabá), Gabriel Marques Carvalho (Cuiabá), Guilherme Nunes da Silva (Cuiabá), Maria Luiza Cruz Araujo (Cuiabá), Mario Sergio Ribeiro Malheiros (Sorriso), Renata Cristina Lino Valencio Scheifer (Cuiabá), Sérgio Fernando Scheifer (Cuiabá) e Washington Souza Nery (Cuiabá).</p>
+            </div>
+            <div class="nota-detalhe__assinatura">
+              <strong>Washington Souza Nery</strong>, Coordenador de Arbitragem · <strong>André Valente do Couto</strong>, Presidente FMTTM
+            </div>
+          </article>
 
           <article class="nota-detalhe" id="003-2026">
             <div class="nota-detalhe__cabecalho">
-              <span class="nota-detalhe__num">NOTA OFICIAL Nº 003/2026</span>
-              <h2 class="nota-detalhe__titulo">Convocação de atletas para o Campeonato Brasileiro Interclubes 2026</h2>
+              <span class="nota-detalhe__num">CIRCULAR Nº 003/2026</span>
+              <h2 class="nota-detalhe__titulo">Brasileirão de Inverno — custos de deslocamento, hospedagem e inscrições</h2>
               <div class="nota-detalhe__meta">
-                <span>14 OUT 2026</span>
+                <span>27 ABR 2026</span>
                 <span>Categoria · Competição</span>
               </div>
             </div>
             <div class="nota-detalhe__corpo">
-              <p>A Federação de Tênis de Mesa de Mato Grosso convoca os atletas abaixo relacionados para integrar a seleção estadual que representará Mato Grosso no Campeonato Brasileiro Interclubes 2026.</p>
-              <p>Os atletas deverão apresentar-se ao local da competição com antecedência mínima de 2 (duas) horas em relação ao início de sua primeira partida, portando documento oficial com foto, uniforme oficial do clube filiado e material esportivo em condições regulamentares.</p>
-              <p>A lista completa de convocados, as datas, o cronograma de deslocamento e as orientações logísticas estão detalhados no PDF em anexo.</p>
-              <a href="#" class="nota-detalhe__anexo">↓ Baixar PDF assinado (240 KB)</a>
+              <p>Em São Paulo, o deslocamento entre hotel e Centro Paralímpico Brasileiro deve ser previsto em R$ 330,00 por atleta para os 11 dias do evento, considerando Uber compartilhado.</p>
+              <p>A hospedagem de 11 dias será dividida entre Federação (70%) e atletas (30%), cabendo a cada atleta repassar R$ 480,00 à Federação.</p>
+              <p>As inscrições nas categorias em que o atleta representa Mato Grosso são feitas pela Federação junto à CBTM, sem custo ao atleta. As inscrições pelo clube são de responsabilidade do clube; deve ser repassado à Federação o valor de R$ 430,00 referente a duas inscrições no individual.</p>
+              <p>A alimentação é por conta dos atletas; a sugestão é reservar R$ 850,00 para todo o período, a ser repassado à Federação.</p>
             </div>
             <div class="nota-detalhe__assinatura">
-              <strong>Presidência</strong> · Federação de Tênis de Mesa de Mato Grosso
+              <strong>André Valente do Couto</strong> · Presidente FMTTM
+            </div>
+          </article>
+
+          <article class="nota-detalhe" id="002-2026">
+            <div class="nota-detalhe__cabecalho">
+              <span class="nota-detalhe__num">CIRCULAR Nº 002/2026</span>
+              <h2 class="nota-detalhe__titulo">Chamamento para o Brasileirão de Inverno Interclubes Olímpico e Paralímpico</h2>
+              <div class="nota-detalhe__meta">
+                <span>27 ABR 2026</span>
+                <span>Categoria · Competição</span>
+              </div>
+            </div>
+            <div class="nota-detalhe__corpo">
+              <p>A Federação realiza o chamamento dos atletas mato-grossenses para o Brasileirão de Inverno Interclubes Olímpico e Paralímpico, em São Paulo.</p>
+              <p>O transporte interestadual não terá custo para os atletas: a Secretaria de Estado de Cultura, Esporte e Lazer (SECEL-MT) cedeu à Federação um ônibus leito de 44 lugares. Saída de Cuiabá em 12 de maio, com chegada a São Paulo no dia 13 à noite. Retorno em 23 de maio, com chegada a Cuiabá no dia 24 à noite.</p>
+              <p>Atletas do interior devem se programar para o deslocamento até Cuiabá a tempo do embarque em 12 de maio. Custos de hospedagem, deslocamento local e inscrições estão detalhados na Circular nº 003/2026.</p>
+            </div>
+            <div class="nota-detalhe__assinatura">
+              <strong>André Valente do Couto</strong> · Presidente FMTTM
+            </div>
+          </article>
+
+          <article class="nota-detalhe" id="001-2026">
+            <div class="nota-detalhe__cabecalho">
+              <span class="nota-detalhe__num">CIRCULAR Nº 001/2026</span>
+              <h2 class="nota-detalhe__titulo">Calendário oficial de competições 2026, TRA e valores de inscrição</h2>
+              <div class="nota-detalhe__meta">
+                <span>08 FEV 2026</span>
+                <span>Categoria · Administrativo</span>
+              </div>
+            </div>
+            <div class="nota-detalhe__corpo">
+              <p>Publica o calendário oficial 2026 da TMB Estadual (Copa Mato Grosso), da Copa Brasil Ouro Cuiabá e da TMB Regional (Liga Mato Grosso). As datas foram ajustadas ao longo do ano; o calendário atualizado está na página <a href="calendario.html">Calendário</a>.</p>
+              <p>TRA Ouro é necessária para todos os eventos oficiais, inclusive a Copa do Brasil. TRA Prata permite jogar Copa Mato Grosso e Liga Mato Grosso. TRA Bronze vale apenas para a Liga Mato Grosso. Valores com vencimento em 31/03/2026: Ouro R$ 290,00, Prata R$ 260,00 e Bronze R$ 85,00.</p>
+              <p>Inscrições — Liga Mato Grosso: R$ 40 (1 categoria), R$ 60 (2), R$ 70 (3) e R$ 20 (duplas). Copa Mato Grosso: R$ 100 (1 categoria), R$ 180 (2), R$ 220 (3) e R$ 60 (duplas). Copa Brasil Ouro Cuiabá: R$ 210 (1 categoria), R$ 280 (2), R$ 350 (3) e R$ 180 (duplas).</p>
+            </div>
+            <div class="nota-detalhe__assinatura">
+              <strong>André Valente do Couto</strong> · Presidente FMTTM
             </div>
           </article>
 
@@ -105,53 +160,32 @@
         <!-- LISTA COMPLETA -->
         <div class="notas-lista-full" id="lista">
 
-          <a href="#003-2026" class="nota-linha" data-cat="competicao" data-ano="2026" data-txt="convocacao atletas brasileiro interclubes">
-            <span class="nota-linha__num">NO 003/2026</span>
-            <span class="nota-linha__assunto">Convocação de atletas para o Campeonato Brasileiro Interclubes 2026</span>
-            <span class="nota-linha__categoria">Competição</span>
-            <span class="nota-linha__data">14 OUT 2026</span>
-          </a>
-
-          <a href="#002-2026" class="nota-linha" data-cat="competicao" data-ano="2026" data-txt="alteracao regulamento copa mato grosso 3 etapa">
-            <span class="nota-linha__num">NO 002/2026</span>
-            <span class="nota-linha__assunto">Alteração no regulamento da Copa Mato Grosso — 3ª Etapa</span>
-            <span class="nota-linha__categoria">Competição</span>
-            <span class="nota-linha__data">02 OUT 2026</span>
-          </a>
-
-          <a href="#001-2026" class="nota-linha" data-cat="administrativo" data-ano="2026" data-txt="calendario oficial temporada 2026 tabela de taxas">
-            <span class="nota-linha__num">NO 001/2026</span>
-            <span class="nota-linha__assunto">Calendário oficial da temporada 2026 e tabela de taxas</span>
-            <span class="nota-linha__categoria">Administrativo</span>
-            <span class="nota-linha__data">11 SET 2026</span>
-          </a>
-
-          <a href="#004-2025" class="nota-linha" data-cat="arbitragem" data-ano="2025" data-txt="credenciamento arbitros temporada">
-            <span class="nota-linha__num">NO 004/2025</span>
-            <span class="nota-linha__assunto">Credenciamento de árbitros para a temporada estadual</span>
+          <a href="#004-2026" class="nota-linha" data-cat="arbitragem" data-ano="2026" data-txt="convocacao arbitragem arbitros copa brasil ouro cuiaba">
+            <span class="nota-linha__num">CIRC 004/2026</span>
+            <span class="nota-linha__assunto">Convocação de arbitragem — Copa Brasil Ouro Cuiabá</span>
             <span class="nota-linha__categoria">Arbitragem</span>
-            <span class="nota-linha__data">10 DEZ 2025</span>
+            <span class="nota-linha__data">29 MAI 2026</span>
           </a>
 
-          <a href="#003-2025" class="nota-linha" data-cat="institucional" data-ano="2025" data-txt="assembleia geral ordinaria eleicao gestao 2025 2028">
-            <span class="nota-linha__num">NO 003/2025</span>
-            <span class="nota-linha__assunto">Convocação para Assembleia Geral Ordinária — eleição da gestão 2025/2028</span>
-            <span class="nota-linha__categoria">Institucional</span>
-            <span class="nota-linha__data">20 NOV 2025</span>
+          <a href="#003-2026" class="nota-linha" data-cat="competicao" data-ano="2026" data-txt="brasileirao inverno hospedagem deslocamento inscricoes alimentacao sao paulo">
+            <span class="nota-linha__num">CIRC 003/2026</span>
+            <span class="nota-linha__assunto">Brasileirão de Inverno — custos de deslocamento, hospedagem e inscrições</span>
+            <span class="nota-linha__categoria">Competição</span>
+            <span class="nota-linha__data">27 ABR 2026</span>
           </a>
 
-          <a href="#002-2025" class="nota-linha" data-cat="administrativo" data-ano="2025" data-txt="pagamento anuidade clubes filiados">
-            <span class="nota-linha__num">NO 002/2025</span>
-            <span class="nota-linha__assunto">Prazos de pagamento de anuidade dos clubes filiados</span>
+          <a href="#002-2026" class="nota-linha" data-cat="competicao" data-ano="2026" data-txt="chamamento brasileirao inverno interclubes onibus secel">
+            <span class="nota-linha__num">CIRC 002/2026</span>
+            <span class="nota-linha__assunto">Chamamento para o Brasileirão de Inverno Interclubes Olímpico e Paralímpico</span>
+            <span class="nota-linha__categoria">Competição</span>
+            <span class="nota-linha__data">27 ABR 2026</span>
+          </a>
+
+          <a href="#001-2026" class="nota-linha" data-cat="administrativo" data-ano="2026" data-txt="calendario oficial 2026 tra inscricoes taxas">
+            <span class="nota-linha__num">CIRC 001/2026</span>
+            <span class="nota-linha__assunto">Calendário oficial de competições 2026, TRA e valores de inscrição</span>
             <span class="nota-linha__categoria">Administrativo</span>
-            <span class="nota-linha__data">05 OUT 2025</span>
-          </a>
-
-          <a href="#001-2025" class="nota-linha" data-cat="institucional" data-ano="2025" data-txt="posicionamento transparencia convenios">
-            <span class="nota-linha__num">NO 001/2025</span>
-            <span class="nota-linha__assunto">Posicionamento sobre transparência e prestação de contas de convênios</span>
-            <span class="nota-linha__categoria">Institucional</span>
-            <span class="nota-linha__data">22 AGO 2025</span>
+            <span class="nota-linha__data">08 FEV 2026</span>
           </a>
 
         </div>
@@ -165,8 +199,8 @@
 
     <section class="container" style="padding-bottom: var(--s-16);">
       <div class="aviso" role="status">
-        <span class="aviso__rotulo">Amostra</span>
-        <span>Conteúdos das notas são fictícios e servem apenas para prévia visual. Serão substituídos pelos textos oficiais e PDFs assinados pela presidência.</span>
+        <span class="aviso__rotulo">Fonte</span>
+        <span>Circulares oficiais da FMTTM. Os PDFs assinados serão anexados a cada circular.</span>
       </div>
     </section>
 
@@ -177,13 +211,13 @@
       <div class="site-footer__grid">
         <div class="site-footer__marca">
           <img src="assets/img/logo-symbol.svg" alt="" class="site-footer__marca-logo" width="44" height="44">
-          <div class="site-footer__nome">Federação de Tênis de Mesa<br>de Mato Grosso</div>
+          <div class="site-footer__nome">Federação Matogrossense<br>de Tênis de Mesa</div>
           <div class="site-footer__meta">
-            <span class="mono">CNPJ 00.000.000/0001-00</span>
+            <span class="mono">CNPJ 07.898.945/0001-11</span>
             <span>Cuiabá — Mato Grosso</span>
-            <span>contato@ftmmt.org.br</span>
-            <span>Instagram · @ftmmt_oficial</span>
-            <span>YouTube · /@ftmmt</span>
+            <a href="mailto:fedmt@cbtm.org.br">fedmt@cbtm.org.br</a>
+            <a href="https://wa.me/5565999139914">(65) 99913-9914</a>
+            <a href="https://linktr.ee/fedmttm" target="_blank" rel="noopener">linktr.ee/fedmttm</a>
           </div>
         </div>
         <div class="site-footer__bloco">
@@ -199,12 +233,12 @@
           <h3>Parceiros</h3>
           <div class="site-footer__parceiros">
             <div class="site-footer__parceiro-caixa">Governo de Mato Grosso</div>
-            <div class="site-footer__parceiro-caixa">Secretaria de Estado</div>
+            <div class="site-footer__parceiro-caixa">SECEL-MT</div>
           </div>
         </div>
       </div>
       <div class="site-footer__base">
-        <span>© 2026 FTMMT · Todos os direitos reservados</span>
+        <span>© 2026 FMTTM · Todos os direitos reservados</span>
         <span>Última atualização · 22 OUT 2026</span>
       </div>
     </div>
@@ -237,6 +271,15 @@
     busca.addEventListener('input', filtrar);
     fCat.addEventListener('change', filtrar);
     fAno.addEventListener('change', filtrar);
+
+    // Mostra só a circular do #hash; sem hash, a mais recente (primeira).
+    function mostrarDetalhe() {
+      const notas = document.querySelectorAll('.nota-detalhe');
+      const alvo = document.getElementById(decodeURIComponent(location.hash.slice(1))) || notas[0];
+      notas.forEach(n => { n.hidden = n !== alvo; });
+    }
+    window.addEventListener('hashchange', mostrarDetalhe);
+    mostrarDetalhe();
   </script>
   <script src="assets/js/animacoes.js" defer></script>
 

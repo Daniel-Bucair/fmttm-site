@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendário · Federação de Tênis de Mesa de Mato Grosso</title>
+  <title>Calendário · Federação Matogrossense de Tênis de Mesa</title>
   <meta name="description" content="Calendário completo da temporada 2026 e 2027 do tênis de mesa em Mato Grosso.">
   <link rel="icon" type="image/svg+xml" href="assets/img/logo-symbol.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/layout.css?v=5">
   <link rel="stylesheet" href="assets/css/calendario.css">
   <link rel="stylesheet" href="assets/css/animacoes.css">
 </head>
@@ -23,11 +23,11 @@
   <header class="site-header">
     <span class="faixa-marca faixa-marca--fina" aria-hidden="true"></span>
     <div class="container site-header__barra">
-      <a href="index.html" class="site-header__marca" aria-label="Página inicial — Federação de Tênis de Mesa de Mato Grosso">
+      <a href="index.html" class="site-header__marca" aria-label="Página inicial — Federação Matogrossense de Tênis de Mesa">
         <img src="assets/img/logo-symbol.svg" alt="" class="site-header__logo" width="36" height="36">
         <span class="site-header__titulo">
-          <span class="site-header__titulo-forte">FTMMT</span>
-          <span class="site-header__titulo-apoio">Federação Mato-Grossense</span>
+          <span class="site-header__titulo-forte">FMTTM</span>
+          <span class="site-header__titulo-apoio">Federação Matogrossense</span>
         </span>
       </a>
       <nav class="site-nav" aria-label="Principal">
@@ -52,7 +52,7 @@
 
     <section class="pagina-cabecalho">
       <div class="container">
-        <span class="pagina-cabecalho__rotulo">Temporada 2026 / 2027</span>
+        <span class="pagina-cabecalho__rotulo">Temporada 2026</span>
         <h1 class="pagina-cabecalho__titulo">Calendário oficial.</h1>
         <p class="pagina-cabecalho__frase">Toda a temporada em uma linha do tempo mês a mês. Filtre por abrangência ou por status para encontrar o que você procura.</p>
       </div>
@@ -78,29 +78,28 @@
           <div class="filtros__grupo">
             <span class="filtros__rotulo">Status</span>
             <button class="filtros__btn ativo" data-filtro="status" data-valor="todos">Todos</button>
-            <button class="filtros__btn" data-filtro="status" data-valor="confirmado">Confirmados</button>
-            <button class="filtros__btn" data-filtro="status" data-valor="pendente">A confirmar</button>
             <button class="filtros__btn" data-filtro="status" data-valor="aberto">Inscrições abertas</button>
+            <button class="filtros__btn" data-filtro="status" data-valor="encerrado">Encerrados</button>
           </div>
         </div>
 
         <div id="timeline">
 
-          <!-- OUTUBRO 2026 (passado) -->
+          <!-- FEVEREIRO 2026 -->
           <section class="timeline-mes">
             <div class="timeline-mes__cabecalho">
-              <span class="timeline-mes__nome">Outubro</span>
+              <span class="timeline-mes__nome">Fevereiro</span>
               <span class="timeline-mes__ano">2026</span>
             </div>
             <div class="timeline-mes__eventos">
-              <a href="evento.html" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="encerrado">
+              <a href="https://www.cbtm.org.br/evento/detalhe/63213" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="encerrado" target="_blank" rel="noopener">
                 <div class="timeline-evento__data">
-                  <span class="timeline-evento__data-dia">02</span>
-                  <span class="timeline-evento__data-sub">Sex</span>
+                  <span class="timeline-evento__data-dia">21</span>
+                  <span class="timeline-evento__data-sub">Sáb · 2 dias</span>
                 </div>
                 <div class="timeline-evento__corpo">
-                  <span class="timeline-evento__nome">Copa Mato Grosso — 2ª Etapa</span>
-                  <span class="timeline-evento__local">Ginásio Aecim Tocantins · Cuiabá/MT</span>
+                  <span class="timeline-evento__nome">Copa Mato Grosso — 1ª Etapa</span>
+                  <span class="timeline-evento__local">Ginásio Coberto da UFMT · Cuiabá/MT</span>
                 </div>
                 <div class="timeline-evento__status">
                   <span class="badge badge--encerrado">ENCERRADO</span>
@@ -109,140 +108,188 @@
             </div>
           </section>
 
-          <!-- NOVEMBRO 2026 (atual) -->
-          <section class="timeline-mes timeline-mes--atual">
+          <!-- MARÇO 2026 -->
+          <section class="timeline-mes">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Março</span>
+              <span class="timeline-mes__ano">2026</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <div class="timeline-evento timeline-evento--regional" data-abrangencia="regional" data-status="encerrado">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">28</span>
+                  <span class="timeline-evento__data-sub">Sáb</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Liga Mato Grosso — 1ª Etapa</span>
+                  <span class="timeline-evento__local">Cuiabá, Sinop e Confresa/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--encerrado">ENCERRADO</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ABRIL 2026 -->
+          <section class="timeline-mes">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Abril</span>
+              <span class="timeline-mes__ano">2026</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <a href="https://www.cbtm.org.br/evento/detalhe/63216" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="encerrado" target="_blank" rel="noopener">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">25</span>
+                  <span class="timeline-evento__data-sub">Sáb · 2 dias</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Copa Mato Grosso — 2ª Etapa</span>
+                  <span class="timeline-evento__local">Ginásio E. M. Cora Coralina · Lucas do Rio Verde/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--encerrado">ENCERRADO</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- JUNHO 2026 -->
+          <section class="timeline-mes">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Junho</span>
+              <span class="timeline-mes__ano">2026</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <div class="timeline-evento timeline-evento--nacional" data-abrangencia="nacional" data-status="encerrado">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">04</span>
+                  <span class="timeline-evento__data-sub">Qui · 4 dias</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Copa Brasil Ouro — Cuiabá</span>
+                  <span class="timeline-evento__local">Ginásio Poliesportivo da UFMT · Cuiabá/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--encerrado">ENCERRADO</span>
+                </div>
+              </div>
+              <div class="timeline-evento timeline-evento--regional" data-abrangencia="regional" data-status="encerrado">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">27</span>
+                  <span class="timeline-evento__data-sub">Sáb</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Liga Mato Grosso — 2ª Etapa</span>
+                  <span class="timeline-evento__local">Primavera do Leste, Sorriso e Confresa/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--encerrado">ENCERRADO</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- JULHO 2026 -->
+          <section class="timeline-mes">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Julho</span>
+              <span class="timeline-mes__ano">2026</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <a href="https://www.cbtm.org.br/evento/detalhe/63222" class="timeline-evento timeline-evento--regional" data-abrangencia="regional" data-status="encerrado" target="_blank" rel="noopener">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">25</span>
+                  <span class="timeline-evento__data-sub">Sáb</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Liga Mato Grosso — 3ª Etapa</span>
+                  <span class="timeline-evento__local">Lucas do Rio Verde e Rondonópolis/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--encerrado">ENCERRADO</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- AGOSTO 2026 -->
+          <section class="timeline-mes">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Agosto</span>
+              <span class="timeline-mes__ano">2026</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <a href="https://www.cbtm.org.br/evento/detalhe/63260" class="timeline-evento timeline-evento--regional" data-abrangencia="regional" data-status="encerrado" target="_blank" rel="noopener">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">01</span>
+                  <span class="timeline-evento__data-sub">Sáb</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Liga Mato Grosso — 3ª Etapa</span>
+                  <span class="timeline-evento__local">Ginásio Wagner Santana Guimarães · Porto Alegre do Norte/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--encerrado">ENCERRADO</span>
+                </div>
+              </a>
+              <a href="https://www.cbtm.org.br/evento/detalhe/63223" class="timeline-evento timeline-evento--regional" data-abrangencia="regional" data-status="encerrado" target="_blank" rel="noopener">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">15</span>
+                  <span class="timeline-evento__data-sub">Sáb</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Liga Mato Grosso — 4ª Etapa</span>
+                  <span class="timeline-evento__local">Confresa, Cuiabá e Sinop/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--encerrado">ENCERRADO</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- SETEMBRO 2026 -->
+          <section class="timeline-mes">
+            <div class="timeline-mes__cabecalho">
+              <span class="timeline-mes__nome">Setembro</span>
+              <span class="timeline-mes__ano">2026</span>
+            </div>
+            <div class="timeline-mes__eventos">
+              <a href="https://app.cbtm.org.br/IUI/App/Evento?tab=0&amp;EVE_Evento_ID=6059" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="encerrado" target="_blank" rel="noopener">
+                <div class="timeline-evento__data">
+                  <span class="timeline-evento__data-dia">04</span>
+                  <span class="timeline-evento__data-sub">Sex · 3 dias</span>
+                </div>
+                <div class="timeline-evento__corpo">
+                  <span class="timeline-evento__nome">Copa Mato Grosso — 3ª Etapa</span>
+                  <span class="timeline-evento__local">Ginásio Didé Martins · Lucas do Rio Verde/MT</span>
+                </div>
+                <div class="timeline-evento__status">
+                  <span class="badge badge--encerrado">ENCERRADO</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          <!-- NOVEMBRO 2026 -->
+          <section class="timeline-mes">
             <div class="timeline-mes__cabecalho">
               <span class="timeline-mes__nome">Novembro</span>
               <span class="timeline-mes__ano">2026</span>
-              <span class="timeline-mes__marca-atual">Mês atual</span>
             </div>
             <div class="timeline-mes__eventos">
               <a href="evento.html" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="aberto">
                 <div class="timeline-evento__data">
-                  <span class="timeline-evento__data-dia">15</span>
-                  <span class="timeline-evento__data-sub">Dom · 2 dias</span>
+                  <span class="timeline-evento__data-dia">27</span>
+                  <span class="timeline-evento__data-sub">Sex · 3 dias</span>
                 </div>
                 <div class="timeline-evento__corpo">
-                  <span class="timeline-evento__nome">Copa Mato Grosso — 3ª Etapa</span>
+                  <span class="timeline-evento__nome">Copa Mato Grosso — 4ª Etapa</span>
                   <span class="timeline-evento__local">Ginásio Aecim Tocantins · Cuiabá/MT</span>
                 </div>
                 <div class="timeline-evento__status">
                   <span class="badge badge--aberto">INSCRIÇÕES ABERTAS</span>
-                </div>
-              </a>
-            </div>
-          </section>
-
-          <!-- DEZEMBRO 2026 -->
-          <section class="timeline-mes">
-            <div class="timeline-mes__cabecalho">
-              <span class="timeline-mes__nome">Dezembro</span>
-              <span class="timeline-mes__ano">2026</span>
-            </div>
-            <div class="timeline-mes__eventos">
-              <a href="evento.html" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="confirmado">
-                <div class="timeline-evento__data">
-                  <span class="timeline-evento__data-dia">06</span>
-                  <span class="timeline-evento__data-sub">Dom</span>
-                </div>
-                <div class="timeline-evento__corpo">
-                  <span class="timeline-evento__nome">Torneio Fim de Ano FTMMT</span>
-                  <span class="timeline-evento__local">Clube XV · Várzea Grande/MT</span>
-                </div>
-                <div class="timeline-evento__status">
-                  <span class="badge badge--confirmado">CONFIRMADO</span>
-                </div>
-              </a>
-            </div>
-          </section>
-
-          <!-- JANEIRO 2027 -->
-          <section class="timeline-mes">
-            <div class="timeline-mes__cabecalho">
-              <span class="timeline-mes__nome">Janeiro</span>
-              <span class="timeline-mes__ano">2027</span>
-            </div>
-            <div class="timeline-mes__eventos">
-              <a href="evento.html" class="timeline-evento timeline-evento--regional" data-abrangencia="regional" data-status="pendente">
-                <div class="timeline-evento__data">
-                  <span class="timeline-evento__data-dia">24</span>
-                  <span class="timeline-evento__data-sub">Dom</span>
-                </div>
-                <div class="timeline-evento__corpo">
-                  <span class="timeline-evento__nome">Torneio de Abertura — Interior</span>
-                  <span class="timeline-evento__local">A definir · Rondonópolis/MT</span>
-                </div>
-                <div class="timeline-evento__status">
-                  <span class="badge badge--pendente">A CONFIRMAR</span>
-                </div>
-              </a>
-            </div>
-          </section>
-
-          <!-- FEVEREIRO 2027 -->
-          <section class="timeline-mes">
-            <div class="timeline-mes__cabecalho">
-              <span class="timeline-mes__nome">Fevereiro</span>
-              <span class="timeline-mes__ano">2027</span>
-            </div>
-            <div class="timeline-mes__eventos">
-              <a href="evento.html" class="timeline-evento timeline-evento--regional" data-abrangencia="regional" data-status="pendente">
-                <div class="timeline-evento__data">
-                  <span class="timeline-evento__data-dia">21</span>
-                  <span class="timeline-evento__data-sub">Dom</span>
-                </div>
-                <div class="timeline-evento__corpo">
-                  <span class="timeline-evento__nome">Torneio Regional Oeste</span>
-                  <span class="timeline-evento__local">A definir · Cáceres/MT</span>
-                </div>
-                <div class="timeline-evento__status">
-                  <span class="badge badge--pendente">A CONFIRMAR</span>
-                </div>
-              </a>
-            </div>
-          </section>
-
-          <!-- MARÇO 2027 -->
-          <section class="timeline-mes">
-            <div class="timeline-mes__cabecalho">
-              <span class="timeline-mes__nome">Março</span>
-              <span class="timeline-mes__ano">2027</span>
-            </div>
-            <div class="timeline-mes__eventos">
-              <a href="evento.html" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="confirmado">
-                <div class="timeline-evento__data">
-                  <span class="timeline-evento__data-dia">14</span>
-                  <span class="timeline-evento__data-sub">Dom · 2 dias</span>
-                </div>
-                <div class="timeline-evento__corpo">
-                  <span class="timeline-evento__nome">Copa Mato Grosso — 1ª Etapa 2027</span>
-                  <span class="timeline-evento__local">Ginásio Fiotão · Cuiabá/MT</span>
-                </div>
-                <div class="timeline-evento__status">
-                  <span class="badge badge--confirmado">CONFIRMADO</span>
-                </div>
-              </a>
-            </div>
-          </section>
-
-          <!-- ABRIL 2027 -->
-          <section class="timeline-mes">
-            <div class="timeline-mes__cabecalho">
-              <span class="timeline-mes__nome">Abril</span>
-              <span class="timeline-mes__ano">2027</span>
-            </div>
-            <div class="timeline-mes__eventos">
-              <a href="evento.html" class="timeline-evento timeline-evento--nacional" data-abrangencia="nacional" data-status="pendente">
-                <div class="timeline-evento__data">
-                  <span class="timeline-evento__data-dia">18</span>
-                  <span class="timeline-evento__data-sub">Dom</span>
-                </div>
-                <div class="timeline-evento__corpo">
-                  <span class="timeline-evento__nome">Seletiva Brasileiro Interclubes</span>
-                  <span class="timeline-evento__local">A definir · Cuiabá/MT</span>
-                </div>
-                <div class="timeline-evento__status">
-                  <span class="badge badge--pendente">A CONFIRMAR</span>
                 </div>
               </a>
             </div>
@@ -255,8 +302,8 @@
 
     <section class="container" style="padding-bottom: var(--s-16);">
       <div class="aviso" role="status">
-        <span class="aviso__rotulo">Amostra</span>
-        <span>Datas e locais são fictícios. Serão substituídos pelo calendário oficial da temporada.</span>
+        <span class="aviso__rotulo">Fonte</span>
+        <span>Circulares oficiais da FMTTM, temporada 2026. Datas e locais podem ser retificados por nota oficial.</span>
       </div>
     </section>
 
@@ -267,13 +314,13 @@
       <div class="site-footer__grid">
         <div class="site-footer__marca">
           <img src="assets/img/logo-symbol.svg" alt="" class="site-footer__marca-logo" width="44" height="44">
-          <div class="site-footer__nome">Federação de Tênis de Mesa<br>de Mato Grosso</div>
+          <div class="site-footer__nome">Federação Matogrossense<br>de Tênis de Mesa</div>
           <div class="site-footer__meta">
-            <span class="mono">CNPJ 00.000.000/0001-00</span>
+            <span class="mono">CNPJ 07.898.945/0001-11</span>
             <span>Cuiabá — Mato Grosso</span>
-            <span>contato@ftmmt.org.br</span>
-            <span>Instagram · @ftmmt_oficial</span>
-            <span>YouTube · /@ftmmt</span>
+            <a href="mailto:fedmt@cbtm.org.br">fedmt@cbtm.org.br</a>
+            <a href="https://wa.me/5565999139914">(65) 99913-9914</a>
+            <a href="https://linktr.ee/fedmttm" target="_blank" rel="noopener">linktr.ee/fedmttm</a>
           </div>
         </div>
         <div class="site-footer__bloco">
@@ -289,12 +336,12 @@
           <h3>Parceiros</h3>
           <div class="site-footer__parceiros">
             <div class="site-footer__parceiro-caixa">Governo de Mato Grosso</div>
-            <div class="site-footer__parceiro-caixa">Secretaria de Estado</div>
+            <div class="site-footer__parceiro-caixa">SECEL-MT</div>
           </div>
         </div>
       </div>
       <div class="site-footer__base">
-        <span>© 2026 FTMMT · Todos os direitos reservados</span>
+        <span>© 2026 FMTTM · Todos os direitos reservados</span>
         <span>Última atualização · 22 OUT 2026</span>
       </div>
     </div>
