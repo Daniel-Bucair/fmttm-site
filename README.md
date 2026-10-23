@@ -19,15 +19,18 @@ Site estático em HTML/CSS/JS puros da Federação de Tênis de Mesa de Mato Gro
 │   ├── css/                Um CSS por responsabilidade (tokens, base, componentes, layout, página)
 │   ├── js/                 (reservada para scripts futuros)
 │   └── img/
-│       └── logo-symbol.svg Recriação provisória do símbolo (trocar pelo oficial)
+│       ├── logo-simbolo.svg           Símbolo oficial redesenhado em vetor (fundo claro)
+│       ├── logo-simbolo-negativo.svg  Símbolo com check branco (fundo azul)
+│       ├── favicon.svg                Ícone da aba do navegador
+│       └── logo-federacao-original.png Logo oficial recebido (PNG 174×165, referência)
 ```
 
 ## O que ainda falta você me mandar
 
 ### Marca
-- [ ] Logo oficial em vetor (SVG) ou PNG em alta resolução
-- [ ] Versão branca do logo (para fundo azul)
-- [ ] Favicon dedicado (se diferente do símbolo)
+- [x] Logo oficial (recebido em PNG e redesenhado em SVG)
+- [x] Versão branca do logo (gerada a partir do oficial)
+- [x] Favicon (símbolo oficial)
 - [ ] Manual da marca ou valores oficiais de cor (os atuais foram estimados pelo JPEG do logo)
 
 ### Dados institucionais

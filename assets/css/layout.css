@@ -30,27 +30,33 @@
 }
 .site-header__marca:hover { color: var(--texto-forte); }
 .site-header__logo {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 33px;
   flex-shrink: 0;
 }
+/* Logotipo: mesmas cores e fonte do logo oficial da federação */
 .site-header__titulo {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  line-height: 1.1;
+  align-items: stretch;
+  line-height: 1.05;
+  font-family: 'Montserrat', var(--fonte-sans);
 }
 .site-header__titulo-forte {
-  font-weight: var(--peso-forte);
-  font-size: var(--ts-base);
-  color: var(--texto-forte);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  color: #4D4D4D;
 }
 .site-header__titulo-apoio {
-  font-family: var(--fonte-mono);
-  font-size: 0.6875rem;
-  letter-spacing: var(--tracking-mono);
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.21em;
   text-transform: uppercase;
-  color: var(--texto-fraco);
+  color: #7A7A7A;
+  margin-top: 2px;
 }
+.marca-de { font-weight: 300; color: #8C8C8C; }
 
 /* -------- Navegação -------------------------------------- */
 
@@ -206,7 +212,32 @@
   flex-direction: column;
   gap: var(--s-3);
 }
-.site-footer__marca-logo { width: 44px; height: 44px; }
+.logo-empilhado {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+  font-family: 'Montserrat', var(--fonte-sans);
+  color: var(--texto-no-escuro);
+  line-height: 1.05;
+  text-align: center;
+}
+.logo-empilhado__simbolo { width: 124px; height: 85px; margin-bottom: var(--s-3); }
+.logo-empilhado__nome { font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; }
+.logo-empilhado__nome .marca-de { color: rgba(255, 255, 255, 0.7); }
+.logo-empilhado__estado {
+  font-weight: 300;
+  font-size: 1.0625rem;
+  letter-spacing: 0.21em;
+  margin-top: 3px;
+  margin-right: -0.21em;
+  color: rgba(255, 255, 255, 0.85);
+}
+.site-footer__entidade {
+  margin-top: var(--s-3);
+  font-weight: var(--peso-semi);
+  color: var(--texto-no-escuro);
+}
 .site-footer__nome {
   font-weight: var(--peso-forte);
   font-size: var(--ts-md);

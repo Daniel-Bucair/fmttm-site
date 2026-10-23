@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Símbolo FTMMT">
-  <rect width="64" height="64" rx="4" fill="#262D6A"/>
-  <path d="M12 14 L32 46 L52 14" stroke="#F6DD0B" stroke-width="5" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
-  <rect x="0" y="52" width="64" height="6" fill="#089448"/>
-  <rect x="0" y="58" width="64" height="6" fill="#F6DD0B"/>
-</svg>
