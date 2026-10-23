@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/layout.css?v=5">
-  <link rel="stylesheet" href="assets/css/clubes.css">
+  <link rel="stylesheet" href="assets/css/clubes.css?v=2">
   <link rel="stylesheet" href="assets/css/animacoes.css">
 </head>
 <body>
@@ -52,7 +52,7 @@
 
     <section class="pagina-cabecalho">
       <div class="container">
-        <span class="pagina-cabecalho__rotulo">18 clubes filiados</span>
+        <span class="pagina-cabecalho__rotulo">11 clubes filiados</span>
         <h1 class="pagina-cabecalho__titulo">Clubes filiados em todo o estado.</h1>
         <p class="pagina-cabecalho__frase">Todos os clubes com registro ativo junto à federação. A ordem é alfabética e cada clube é apresentado da mesma forma, sem distinção de porte ou localização.</p>
       </div>
@@ -65,142 +65,181 @@
           <input type="search" id="busca" class="busca-barra__campo" placeholder="Buscar por nome do clube…" aria-label="Buscar clube por nome">
           <select id="filtro-cidade" class="busca-barra__select" aria-label="Filtrar por cidade">
             <option value="todas">Todas as cidades</option>
+            <option value="confresa">Confresa</option>
             <option value="cuiaba">Cuiabá</option>
-            <option value="varzea grande">Várzea Grande</option>
+            <option value="lucas do rio verde">Lucas do Rio Verde</option>
+            <option value="porto alegre do norte">Porto Alegre do Norte</option>
+            <option value="primavera do leste">Primavera do Leste</option>
             <option value="rondonopolis">Rondonópolis</option>
             <option value="sinop">Sinop</option>
-            <option value="caceres">Cáceres</option>
+            <option value="sorriso">Sorriso</option>
           </select>
-          <span class="busca-barra__contador" id="contador">8 clubes</span>
+          <span class="busca-barra__contador" id="contador">11 clubes</span>
         </div>
 
         <div class="clubes-grid" id="grid">
 
-          <article class="clube-card" data-nome="Associação Cuiabana de Tênis de Mesa" data-cidade="cuiaba">
+          <article class="clube-card" data-nome="ADEMS" data-cidade="sorriso">
             <div class="clube-card__cabecalho">
-              <div class="clube-card__sigla">ACT</div>
+              <div class="clube-card__sigla">ADEMS</div>
               <div class="clube-card__titulo">
-                <span class="clube-card__nome">Associação Cuiabana de Tênis de Mesa</span>
-                <span class="clube-card__cidade">Cuiabá / MT</span>
+                <span class="clube-card__nome">ADEMS</span>
+                <span class="clube-card__cidade">Sorriso / MT</span>
               </div>
             </div>
             <dl class="clube-card__meta">
-              <dt>Responsável</dt> <dd>João da Silva Exemplo</dd>
-              <dt>Treinos</dt>     <dd>Ginásio Aecim Tocantins — ter, qui, sáb</dd>
-              <dt>Contato</dt>     <dd>(65) 90000-0000</dd>
-              <dt>Instagram</dt>   <dd><a href="#">@act_oficial</a></dd>
+              <dt>Responsável</dt> <dd>Jacione Cunha</dd>
+              <dt>Contato</dt>     <dd><a href="https://wa.me/556699850228" target="_blank" rel="noopener">(66) 9985-0228</a></dd>
+              <dt>Instagram</dt>   <dd><a href="https://www.instagram.com/tmademssorriso/" target="_blank" rel="noopener">@tmademssorriso</a></dd>
             </dl>
           </article>
 
-          <article class="clube-card" data-nome="Clube Atlético de Rondonópolis" data-cidade="rondonopolis">
+          <article class="clube-card" data-nome="AEPA" data-cidade="porto alegre do norte">
             <div class="clube-card__cabecalho">
-              <div class="clube-card__sigla">CAR</div>
+              <div class="clube-card__sigla">AEPA</div>
               <div class="clube-card__titulo">
-                <span class="clube-card__nome">Clube Atlético de Rondonópolis</span>
-                <span class="clube-card__cidade">Rondonópolis / MT</span>
+                <span class="clube-card__nome">AEPA</span>
+                <span class="clube-card__cidade">Porto Alegre do Norte / MT</span>
               </div>
             </div>
             <dl class="clube-card__meta">
-              <dt>Responsável</dt> <dd>Maria Oliveira Exemplo</dd>
-              <dt>Treinos</dt>     <dd>Ginásio Municipal — seg, qua, sex</dd>
-              <dt>Contato</dt>     <dd>(66) 90000-0000</dd>
-              <dt>Instagram</dt>   <dd><a href="#">@car_tm</a></dd>
+              <dt>Responsável</dt> <dd>Vilson Magalhães</dd>
+              <dt>Contato</dt>     <dd><a href="https://wa.me/556684595254" target="_blank" rel="noopener">(66) 8459-5254</a></dd>
+              <dt>Instagram</dt>   <dd><a href="https://www.instagram.com/clube_aepa_oficial/" target="_blank" rel="noopener">@clube_aepa_oficial</a></dd>
             </dl>
           </article>
 
-          <article class="clube-card" data-nome="Clube Esportivo Várzea Grande" data-cidade="varzea grande">
+          <article class="clube-card" data-nome="AER" data-cidade="primavera do leste">
             <div class="clube-card__cabecalho">
-              <div class="clube-card__sigla">CEV</div>
+              <div class="clube-card__sigla">AER</div>
               <div class="clube-card__titulo">
-                <span class="clube-card__nome">Clube Esportivo Várzea Grande</span>
-                <span class="clube-card__cidade">Várzea Grande / MT</span>
+                <span class="clube-card__nome">AER</span>
+                <span class="clube-card__cidade">Primavera do Leste / MT</span>
               </div>
             </div>
             <dl class="clube-card__meta">
-              <dt>Responsável</dt> <dd>Carlos Mendes Exemplo</dd>
-              <dt>Treinos</dt>     <dd>Clube XV — ter, qui</dd>
-              <dt>Contato</dt>     <dd>(65) 90000-0000</dd>
-              <dt>Instagram</dt>   <dd><a href="#">@cev_vg</a></dd>
+              <dt>Responsável</dt> <dd>Ricardo Müller</dd>
+              <dt>Contato</dt>     <dd><a href="https://wa.me/556699045758" target="_blank" rel="noopener">(66) 9904-5758</a></dd>
+              <dt>Instagram</dt>   <dd><a href="https://www.instagram.com/aer_primavera/" target="_blank" rel="noopener">@aer_primavera</a></dd>
             </dl>
           </article>
 
-          <article class="clube-card" data-nome="Clube Pantanal Tênis de Mesa" data-cidade="cuiaba">
+          <article class="clube-card" data-nome="Ágape" data-cidade="sinop">
             <div class="clube-card__cabecalho">
-              <div class="clube-card__sigla">CPT</div>
+              <div class="clube-card__sigla">ÁGAPE</div>
               <div class="clube-card__titulo">
-                <span class="clube-card__nome">Clube Pantanal Tênis de Mesa</span>
-                <span class="clube-card__cidade">Cuiabá / MT</span>
-              </div>
-            </div>
-            <dl class="clube-card__meta">
-              <dt>Responsável</dt> <dd>Ana Paula Exemplo</dd>
-              <dt>Treinos</dt>     <dd>Centro de Treinamento Pantanal — seg a sex</dd>
-              <dt>Contato</dt>     <dd>(65) 90000-0000</dd>
-              <dt>Instagram</dt>   <dd><a href="#">@cpt_oficial</a></dd>
-            </dl>
-          </article>
-
-          <article class="clube-card" data-nome="Instituto de Tênis de Mesa Sinop" data-cidade="sinop">
-            <div class="clube-card__cabecalho">
-              <div class="clube-card__sigla">ITS</div>
-              <div class="clube-card__titulo">
-                <span class="clube-card__nome">Instituto de Tênis de Mesa Sinop</span>
+                <span class="clube-card__nome">Ágape</span>
                 <span class="clube-card__cidade">Sinop / MT</span>
               </div>
             </div>
             <dl class="clube-card__meta">
-              <dt>Responsável</dt> <dd>Rafael Souza Exemplo</dd>
-              <dt>Treinos</dt>     <dd>Ginásio Universitário — qua, sex, sáb</dd>
-              <dt>Contato</dt>     <dd>(66) 90000-0000</dd>
-              <dt>Instagram</dt>   <dd><a href="#">@its_sinop</a></dd>
+              <dt>Responsável</dt> <dd>André Kopper</dd>
+              <dt>Contato</dt>     <dd><a href="https://wa.me/556699853727" target="_blank" rel="noopener">(66) 9985-3727</a></dd>
+              <dt>Instagram</dt>   <dd><a href="https://www.instagram.com/arenakopper/" target="_blank" rel="noopener">@arenakopper</a></dd>
             </dl>
           </article>
 
-          <article class="clube-card" data-nome="Mato Grosso Tênis Clube" data-cidade="cuiaba">
+          <article class="clube-card" data-nome="ALEL" data-cidade="lucas do rio verde">
             <div class="clube-card__cabecalho">
-              <div class="clube-card__sigla">MTC</div>
+              <div class="clube-card__sigla">ALEL</div>
               <div class="clube-card__titulo">
-                <span class="clube-card__nome">Mato Grosso Tênis Clube</span>
+                <span class="clube-card__nome">ALEL</span>
+                <span class="clube-card__cidade">Lucas do Rio Verde / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>Robson Garcia</dd>
+              <dt>Contato</dt>     <dd><a href="https://wa.me/556599230767" target="_blank" rel="noopener">(65) 9923-0767</a></dd>
+            </dl>
+          </article>
+
+          <article class="clube-card" data-nome="ASTM" data-cidade="sinop">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">ASTM</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">ASTM</span>
+                <span class="clube-card__cidade">Sinop / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>Christiano Almeida</dd>
+              <dt>Contato</dt>     <dd><a href="https://wa.me/556696320807" target="_blank" rel="noopener">(66) 9632-0807</a></dd>
+              <dt>Instagram</dt>   <dd><a href="https://www.instagram.com/astm_sinoptenisdemesa/" target="_blank" rel="noopener">@astm_sinoptenisdemesa</a></dd>
+            </dl>
+          </article>
+
+          <article class="clube-card" data-nome="ATMR" data-cidade="rondonopolis">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">ATMR</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">ATMR</span>
+                <span class="clube-card__cidade">Rondonópolis / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>Marcos Gomes</dd>
+              <dt>Contato</dt>     <dd><a href="https://wa.me/5566996651381" target="_blank" rel="noopener">(66) 99665-1381</a></dd>
+              <dt>Instagram</dt>   <dd><a href="https://www.instagram.com/tenisdemesaroo/" target="_blank" rel="noopener">@tenisdemesaroo</a></dd>
+            </dl>
+          </article>
+
+          <article class="clube-card" data-nome="CT Morimoto" data-cidade="cuiaba">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">CTM</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">CT Morimoto</span>
                 <span class="clube-card__cidade">Cuiabá / MT</span>
               </div>
             </div>
             <dl class="clube-card__meta">
-              <dt>Responsável</dt> <dd>Patrícia Nunes Exemplo</dd>
-              <dt>Treinos</dt>     <dd>Sede do clube — ter, qui, sáb</dd>
-              <dt>Contato</dt>     <dd>(65) 90000-0000</dd>
-              <dt>Instagram</dt>   <dd><a href="#">@mtc_oficial</a></dd>
+              <dt>Responsável</dt> <dd>Luciana Morimoto</dd>
+              <dt>Contato</dt>     <dd><a href="https://wa.me/556593534179" target="_blank" rel="noopener">(65) 9353-4179</a></dd>
+              <dt>Instagram</dt>   <dd><a href="https://www.instagram.com/ct_morimoto/" target="_blank" rel="noopener">@ct_morimoto</a></dd>
             </dl>
           </article>
 
-          <article class="clube-card" data-nome="Sociedade Esportiva Cáceres" data-cidade="caceres">
+          <article class="clube-card" data-nome="Dom Bosco" data-cidade="cuiaba">
             <div class="clube-card__cabecalho">
-              <div class="clube-card__sigla">SEC</div>
+              <div class="clube-card__sigla">DB</div>
               <div class="clube-card__titulo">
-                <span class="clube-card__nome">Sociedade Esportiva Cáceres</span>
-                <span class="clube-card__cidade">Cáceres / MT</span>
-              </div>
-            </div>
-            <dl class="clube-card__meta">
-              <dt>Responsável</dt> <dd>Felipe Araújo Exemplo</dd>
-              <dt>Treinos</dt>     <dd>Ginásio Paroquial — seg, qua</dd>
-              <dt>Contato</dt>     <dd>(65) 90000-0000</dd>
-              <dt>Instagram</dt>   <dd><a href="#">@sec_caceres</a></dd>
-            </dl>
-          </article>
-
-          <article class="clube-card" data-nome="Tênis de Mesa Universitário UFMT" data-cidade="cuiaba">
-            <div class="clube-card__cabecalho">
-              <div class="clube-card__sigla">TMU</div>
-              <div class="clube-card__titulo">
-                <span class="clube-card__nome">Tênis de Mesa Universitário UFMT</span>
+                <span class="clube-card__nome">Dom Bosco</span>
                 <span class="clube-card__cidade">Cuiabá / MT</span>
               </div>
             </div>
             <dl class="clube-card__meta">
-              <dt>Responsável</dt> <dd>Beatriz Lima Exemplo</dd>
-              <dt>Treinos</dt>     <dd>Ginásio da UFMT — qua, sex</dd>
-              <dt>Contato</dt>     <dd>(65) 90000-0000</dd>
-              <dt>Instagram</dt>   <dd><a href="#">@tmu_ufmt</a></dd>
+              <dt>Responsável</dt> <dd>Daniel Couto</dd>
+              <dt>Contato</dt>     <dd><a href="https://wa.me/5565999909014" target="_blank" rel="noopener">(65) 99990-9014</a></dd>
+              <dt>Instagram</dt>   <dd><a href="https://www.instagram.com/dombosco.tm/" target="_blank" rel="noopener">@dombosco.tm</a></dd>
+            </dl>
+          </article>
+
+          <article class="clube-card" data-nome="Norte Araguaia" data-cidade="confresa">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">NA</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">Norte Araguaia</span>
+                <span class="clube-card__cidade">Confresa / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>João Moreira</dd>
+              <dt>Contato</dt>     <dd><a href="https://wa.me/556696057117" target="_blank" rel="noopener">(66) 9605-7117</a></dd>
+              <dt>Instagram</dt>   <dd><a href="https://www.instagram.com/clube_nortearaguaia/" target="_blank" rel="noopener">@clube_nortearaguaia</a></dd>
+            </dl>
+          </article>
+
+          <article class="clube-card" data-nome="Sorriso Hornets" data-cidade="sorriso">
+            <div class="clube-card__cabecalho">
+              <div class="clube-card__sigla">SH</div>
+              <div class="clube-card__titulo">
+                <span class="clube-card__nome">Sorriso Hornets</span>
+                <span class="clube-card__cidade">Sorriso / MT</span>
+              </div>
+            </div>
+            <dl class="clube-card__meta">
+              <dt>Responsável</dt> <dd>Mario Malheiros</dd>
+              <dt>Contato</dt>     <dd><a href="https://wa.me/556699189884" target="_blank" rel="noopener">(66) 9918-9884</a></dd>
+              <dt>Instagram</dt>   <dd><a href="https://www.instagram.com/hornetstabletennis/" target="_blank" rel="noopener">@hornetstabletennis</a></dd>
             </dl>
           </article>
 
@@ -210,13 +249,6 @@
           Nenhum clube encontrado com os filtros atuais.
         </div>
 
-      </div>
-    </section>
-
-    <section class="container" style="padding-bottom: var(--s-16);">
-      <div class="aviso" role="status">
-        <span class="aviso__rotulo">Amostra</span>
-        <span>Nomes de clubes, responsáveis e contatos são fictícios. Serão substituídos pelos dados oficiais dos clubes filiados.</span>
       </div>
     </section>
 
