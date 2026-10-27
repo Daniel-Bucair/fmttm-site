@@ -169,6 +169,8 @@
   transition: border-color var(--anim-rapida);
 }
 .demonstrativo-card:hover { border-color: var(--cor-azul); color: inherit; }
+.demonstrativo-card--pendente { opacity: 0.6; cursor: default; }
+.demonstrativo-card--pendente:hover { border-color: var(--borda); }
 .demonstrativo-card__ano {
   font-family: var(--fonte-mono);
   font-size: 1.5rem;
