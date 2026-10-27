@@ -1,5 +1,5 @@
 /* ============================================================
-   TRANSPARÊNCIA — painel, tabela de convênios, demonstrativos.
+   TRANSPARÊNCIA — painel, convênios por órgão, declaração, documentos e diretoria.
    ============================================================ */
 
 .pagina-cabecalho { background: var(--cor-azul); color: var(--texto-no-escuro); padding-block: var(--s-10) var(--s-12); position: relative; overflow: hidden; isolation: isolate; }
@@ -172,6 +172,7 @@
 .demonstrativo-card--pendente { opacity: 0.6; cursor: default; }
 .demonstrativo-card--pendente:hover { border-color: var(--borda); }
 .demonstrativo-card__ano {
+  display: block;
   font-family: var(--fonte-mono);
   font-size: 1.5rem;
   color: var(--cor-azul);
@@ -179,6 +180,7 @@
   line-height: 1;
 }
 .demonstrativo-card__titulo {
+  display: block;
   font-size: var(--ts-sm);
   color: var(--texto-forte);
   font-weight: var(--peso-semi);
@@ -218,3 +220,191 @@
   border-radius: 50%;
   background: var(--cor-verde);
 }
+
+/* -------- Abas (atalhos fixos para as seções) ------------ */
+
+.transp-abas {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg-superficie);
+  border-bottom: 1px solid var(--borda);
+}
+.transp-abas__lista {
+  display: flex;
+  gap: var(--s-2);
+  overflow-x: auto;
+  padding-block: var(--s-3);
+  scrollbar-width: none;
+}
+.transp-abas__lista::-webkit-scrollbar { display: none; }
+.transp-abas__link {
+  flex: none;
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--texto-fraco);
+  padding: var(--s-2) var(--s-4);
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  transition: background var(--anim-rapida), color var(--anim-rapida), border-color var(--anim-rapida);
+}
+.transp-abas__link:hover { background: var(--cor-azul); color: var(--texto-no-escuro); border-color: var(--cor-azul); }
+
+.secao[id] { scroll-margin-top: 72px; }
+.secao--alt { background: var(--bg-superficie); border-block: 1px solid var(--borda); }
+
+/* -------- Indicadores de seção --------------------------- */
+
+.recursos-indicadores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-3);
+  margin-bottom: var(--s-6);
+}
+@media (max-width: 640px) { .recursos-indicadores { grid-template-columns: 1fr; } }
+.recursos-indicadores__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: var(--s-5);
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+}
+.secao--alt .recursos-indicadores__item { background: var(--neutro-50); }
+.recursos-indicadores__num {
+  font-family: var(--fonte-mono);
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.625rem);
+  color: var(--cor-azul);
+  font-weight: var(--peso-semi);
+  font-variant-numeric: tabular-nums;
+}
+
+/* -------- Filtro por ano --------------------------------- */
+
+.filtro-ano { display: flex; align-items: center; gap: var(--s-3); flex-wrap: wrap; margin-bottom: var(--s-5); }
+.filtro-ano__rot { font-size: var(--ts-sm); color: var(--texto-fraco); }
+.filtro-ano__botoes { display: flex; gap: var(--s-2); }
+.filtro-ano__btn {
+  font-family: var(--fonte-mono);
+  font-size: var(--ts-sm);
+  padding: var(--s-2) var(--s-4);
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio-sm);
+  background: var(--bg-superficie);
+  color: var(--cor-azul);
+  cursor: pointer;
+}
+.filtro-ano__btn[aria-pressed="true"] { background: var(--cor-azul); color: var(--texto-no-escuro); border-color: var(--cor-azul); }
+
+/* -------- Blocos por órgão ------------------------------- */
+
+.orgaos-lista { display: grid; gap: var(--s-4); }
+.orgao-bloco {
+  background: var(--bg-superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  overflow: hidden;
+}
+.orgao-bloco__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--s-5);
+  flex-wrap: wrap;
+  padding: var(--s-5);
+  border-bottom: 1px solid var(--borda);
+  background: var(--neutro-50);
+}
+.orgao-bloco__sigla { display: block; font-family: var(--fonte-mono); font-size: 1.25rem; font-weight: var(--peso-semi); color: var(--cor-azul); }
+.orgao-bloco__nome { display: block; font-size: var(--ts-sm); color: var(--texto-forte); margin-top: var(--s-1); }
+.orgao-bloco__qtd { display: block; font-size: var(--ts-xs); color: var(--texto-fraco); margin-top: var(--s-1); }
+.orgao-bloco__totais { display: flex; gap: var(--s-6); flex-wrap: wrap; margin: 0; }
+.orgao-bloco__totais dt {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+.orgao-bloco__totais dd { margin: 0; font-family: var(--fonte-mono); font-size: var(--ts-md); color: var(--texto-forte); font-weight: var(--peso-semi); font-variant-numeric: tabular-nums; }
+.orgao-bloco__lista { list-style: none; margin: 0; padding: 0; }
+
+.convenio-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--s-5);
+  border-bottom: 1px solid var(--borda);
+}
+.convenio-item:last-child { border-bottom: none; }
+.convenio-item__nome { display: block; font-family: var(--fonte-mono); color: var(--cor-azul); font-weight: var(--peso-semi); }
+.convenio-item__meta { display: block; font-size: var(--ts-xs); color: var(--texto-fraco); margin-top: var(--s-1); }
+.convenio-item__valor { font-family: var(--fonte-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.convenio-item--vazio { display: block; color: var(--texto-fraco); font-size: var(--ts-sm); }
+@media (max-width: 560px) {
+  .convenio-item { grid-template-columns: 1fr auto; }
+  .convenio-item__valor { grid-column: 1 / -1; }
+}
+
+.recursos-nota { font-size: var(--ts-xs); color: var(--texto-fraco); margin-top: var(--s-4); max-width: 70ch; }
+
+/* -------- Declaração de transparência ativa -------------- */
+
+.declaracao {
+  max-width: 860px;
+  background: var(--neutro-50);
+  border: 1px solid var(--borda);
+  border-top: 4px solid var(--cor-azul);
+  border-radius: var(--raio-md);
+  padding: clamp(var(--s-5), 4vw, var(--s-10));
+}
+.declaracao__titulo {
+  font-family: var(--fonte-mono);
+  font-size: var(--ts-md);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--cor-azul);
+  margin-bottom: var(--s-6);
+}
+.declaracao__campos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-3);
+  margin: 0 0 var(--s-6);
+}
+@media (max-width: 640px) { .declaracao__campos { grid-template-columns: 1fr; } }
+.declaracao__campos > div { padding: var(--s-4); background: var(--bg-superficie); border: 1px solid var(--borda); border-radius: var(--raio-sm); }
+.declaracao__campos dt, .declaracao__base-rot {
+  font-family: var(--fonte-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  margin-bottom: var(--s-2);
+  display: block;
+}
+.declaracao__campos dd { margin: 0; font-size: var(--ts-sm); color: var(--texto-forte); font-weight: var(--peso-semi); }
+.declaracao__corpo p { margin-bottom: var(--s-4); line-height: 1.7; }
+.declaracao__base { padding: var(--s-4) var(--s-5); border-left: 3px solid var(--cor-verde); background: var(--bg-superficie); margin-block: var(--s-6); }
+.declaracao__base ul { margin: 0; padding-left: var(--s-5); font-size: var(--ts-sm); }
+.declaracao__base li { margin-bottom: var(--s-1); }
+.declaracao__assinatura { text-align: center; padding-top: var(--s-5); border-top: 1px solid var(--borda-forte); max-width: 320px; margin: var(--s-8) auto 0; }
+.declaracao__nome { display: block; font-weight: var(--peso-semi); color: var(--texto-forte); }
+.declaracao__cargo { display: block; font-family: var(--fonte-mono); font-size: 0.6875rem; letter-spacing: var(--tracking-mono); text-transform: uppercase; color: var(--texto-fraco); margin-top: var(--s-1); }
+
+/* -------- Ficha cadastral -------------------------------- */
+
+.ficha { margin-top: var(--s-6); background: var(--bg-superficie); border: 1px solid var(--borda); border-radius: var(--raio-md); padding: var(--s-5); }
+.ficha__titulo { font-size: var(--ts-md); color: var(--cor-azul); margin-bottom: var(--s-4); }
+.ficha__lista { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 var(--s-6); margin: 0; }
+@media (max-width: 640px) { .ficha__lista { grid-template-columns: 1fr; } }
+.ficha__lista > div { display: grid; grid-template-columns: 150px 1fr; gap: var(--s-3); padding-block: var(--s-3); border-bottom: 1px dashed var(--borda); }
+@media (max-width: 400px) { .ficha__lista > div { grid-template-columns: 1fr; gap: var(--s-1); } }
+.ficha__lista dt { font-family: var(--fonte-mono); font-size: 0.6875rem; letter-spacing: var(--tracking-mono); text-transform: uppercase; color: var(--texto-fraco); padding-top: 2px; }
+.ficha__lista dd { font-size: var(--ts-sm); color: var(--texto-forte); margin: 0; }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Transparência · Federação Matogrossense de Tênis de Mesa</title>
-  <meta name="description" content="Convênios, parcerias e demonstrativos financeiros da Federação Matogrossense de Tênis de Mesa.">
+  <meta name="description" content="Portal de transparência ativa da Federação Matogrossense de Tênis de Mesa: convênios, declaração, documentos institucionais e diretoria.">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/layout.css?v=6">
-  <link rel="stylesheet" href="assets/css/transparencia.css?v=2">
+  <link rel="stylesheet" href="assets/css/transparencia.css?v=3">
   <link rel="stylesheet" href="assets/css/animacoes.css">
 </head>
 <body>
@@ -52,110 +52,246 @@
 
     <section class="pagina-cabecalho">
       <div class="container">
-        <span class="pagina-cabecalho__rotulo">Convênios · Parcerias · Balanços</span>
-        <h1 class="pagina-cabecalho__titulo">Transparência pública.</h1>
-        <p class="pagina-cabecalho__frase">A FMTTM publica integralmente os recursos recebidos, suas aplicações e os documentos de prestação de contas junto aos órgãos parceiros.</p>
+        <span class="pagina-cabecalho__rotulo">Portal de Transparência Ativa</span>
+        <h1 class="pagina-cabecalho__titulo">Transparência pública e prestação de contas.</h1>
+        <p class="pagina-cabecalho__frase">A FMTTM publica os recursos públicos recebidos, seus documentos institucionais e a composição da sua gestão, em atenção à IN Conjunta SEPLAN/SEFAZ/CGE nº 001/2016 e à Lei nº 13.019/2014.</p>
       </div>
     </section>
 
     <!-- PAINEL -->
-    <section class="painel-resumo" aria-label="Resumo de convênios">
+    <section class="painel-resumo" aria-label="Resumo">
       <div class="container painel-resumo__grid">
         <div class="painel-resumo__item">
-          <span class="painel-resumo__rot">Convênios firmados</span>
-          <span class="painel-resumo__num">1</span>
-          <span class="painel-resumo__sub">Nenhum vigente no momento</span>
+          <span class="painel-resumo__rot">Recursos geridos</span>
+          <span class="painel-resumo__num">R$ 368 mil</span>
+          <span class="painel-resumo__sub">Recursos públicos de Mato Grosso</span>
         </div>
         <div class="painel-resumo__item">
-          <span class="painel-resumo__rot">Valor total conveniado</span>
-          <span class="painel-resumo__num">R$ 368.279,97</span>
-          <span class="painel-resumo__sub">Repasse do concedente</span>
+          <span class="painel-resumo__rot">Convênios oficiais</span>
+          <span class="painel-resumo__num">01</span>
+          <span class="painel-resumo__sub">0 vigentes · 1 encerrado</span>
         </div>
         <div class="painel-resumo__item">
-          <span class="painel-resumo__rot">Concedente</span>
-          <span class="painel-resumo__num">FUNDED-MT</span>
-          <span class="painel-resumo__sub">Fundo de Desenvolvimento Desportivo</span>
+          <span class="painel-resumo__rot">Órgãos parceiros</span>
+          <span class="painel-resumo__num">01</span>
+          <span class="painel-resumo__sub">FUNDED-MT</span>
         </div>
         <div class="painel-resumo__item">
-          <span class="painel-resumo__rot">Situação</span>
-          <span class="painel-resumo__num">Encerrado</span>
-          <span class="painel-resumo__sub">Convênio nº 1841-2025</span>
+          <span class="painel-resumo__rot">Situação cadastral</span>
+          <span class="painel-resumo__num">Ativa</span>
+          <span class="painel-resumo__sub">CNPJ 07.898.945/0001-11</span>
         </div>
       </div>
     </section>
 
-    <!-- CONVÊNIOS -->
-    <section class="secao">
+    <!-- ABAS (atalhos para as seções) -->
+    <nav class="transp-abas" aria-label="Seções da transparência">
+      <div class="container transp-abas__lista">
+        <a href="#conteudo" class="transp-abas__link">Tudo na página</a>
+        <a href="#recursos" class="transp-abas__link">Convênios &amp; Art. 23</a>
+        <a href="#declaracao" class="transp-abas__link">Declaração ativa</a>
+        <a href="#documentos" class="transp-abas__link">Documentos</a>
+        <a href="#gestao" class="transp-abas__link">Diretoria e gestão</a>
+      </div>
+    </nav>
+
+    <!-- 1. RECURSOS PÚBLICOS -->
+    <section class="secao" id="recursos">
       <div class="container">
         <div class="secao__cabecalho">
           <div>
-            <span class="secao__rotulo">Instrumentos firmados</span>
-            <h2 class="secao__titulo">Convênios e parcerias</h2>
+            <span class="secao__rotulo">Recursos públicos</span>
+            <h2 class="secao__titulo">Captação de recursos por órgão (Art. 23)</h2>
           </div>
           <span class="atualizacao-faixa">Atualizado em <strong>&nbsp;27 OUT 2026</strong></span>
         </div>
 
-        <div class="convenios-wrap">
-          <table class="convenios-tabela" aria-describedby="descricao-convenios">
-            <caption id="descricao-convenios" class="sr-only">Relação de convênios firmados pela FMTTM, com número do convênio, concedente, ação, valor e situação.</caption>
-            <thead>
-              <tr>
-                <th scope="col">Nº do convênio</th>
-                <th scope="col">Concedente</th>
-                <th scope="col">Ação</th>
-                <th scope="col">Valor concedente</th>
-                <th scope="col">Situação</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="convenios-tabela__termo" data-rot="Nº do convênio">1841-2025</td>
-                <td data-rot="Concedente"><span>Fundo de Desenvolvimento Desportivo (FUNDED-MT)<br><span class="mono" style="font-size:0.6875rem;">CNPJ 01.755.662/0001-34</span></span></td>
-                <td data-rot="Ação">2882</td>
-                <td class="convenios-tabela__valor" data-rot="Valor concedente">R$ 368.279,97</td>
-                <td data-rot="Situação"><span class="badge badge--encerrado">ENCERRADO</span></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="recursos-indicadores">
+          <div class="recursos-indicadores__item">
+            <span class="painel-resumo__rot">Total geral publicado</span>
+            <span class="recursos-indicadores__num" id="rec-total-geral">R$ 0,00</span>
+          </div>
+          <div class="recursos-indicadores__item">
+            <span class="painel-resumo__rot">Captação em <span class="rec-ano-rot">—</span></span>
+            <span class="recursos-indicadores__num" id="rec-total-ano">R$ 0,00</span>
+          </div>
+          <div class="recursos-indicadores__item">
+            <span class="painel-resumo__rot">Órgãos parceiros</span>
+            <span class="recursos-indicadores__num" id="rec-orgaos">0</span>
+          </div>
         </div>
+
+        <div class="filtro-ano" role="group" aria-label="Selecione o ano">
+          <span class="filtro-ano__rot">Selecione o ano:</span>
+          <div class="filtro-ano__botoes" id="filtro-ano"></div>
+        </div>
+
+        <div class="orgaos-lista" id="orgaos-lista"></div>
+
+        <p class="recursos-nota">Dados conforme o Relatório Geral de Convênios do Estado de Mato Grosso. Constam apenas convênios publicados (vigentes e encerrados).</p>
       </div>
     </section>
 
-    <!-- DEMONSTRATIVOS -->
-    <section class="secao" style="padding-top: 0; padding-bottom: var(--s-16);">
+    <!-- 2. DECLARAÇÃO DE TRANSPARÊNCIA ATIVA -->
+    <section class="secao secao--alt" id="declaracao">
       <div class="container">
         <div class="secao__cabecalho">
           <div>
-            <span class="secao__rotulo">Balanços e relatórios</span>
-            <h2 class="secao__titulo">Demonstrativos financeiros</h2>
+            <span class="secao__rotulo">Documento oficial</span>
+            <h2 class="secao__titulo">Declaração de Transparência Ativa</h2>
+          </div>
+        </div>
+
+        <article class="declaracao">
+          <h3 class="declaracao__titulo">Declaração de Transparência Ativa</h3>
+
+          <dl class="declaracao__campos">
+            <div>
+              <dt>Prazo de divulgação</dt>
+              <dd>Até 10 dias após a publicação do extrato no DOE</dd>
+            </div>
+            <div>
+              <dt>Permanência mínima</dt>
+              <dd>180 dias após a entrega da prestação de contas final</dd>
+            </div>
+            <div>
+              <dt>Remunerações de equipe</dt>
+              <dd>Discriminação detalhada conforme o Art. 23</dd>
+            </div>
+          </dl>
+
+          <div class="declaracao__corpo">
+            <p>A <strong>Federação Matogrossense de Tênis de Mesa (FMTTM)</strong>, associação privada sem fins lucrativos inscrita no CNPJ sob o nº 07.898.945/0001-11, por meio de seu Presidente, declara ter ciência e dar integral cumprimento às obrigações relativas à transparência ativa.</p>
+            <p>A FMTTM divulga, em seu sítio eletrônico oficial e em seu perfil no Instagram (<a href="https://www.instagram.com/tenisdemesamt/" target="_blank" rel="noopener">@tenisdemesamt</a>), as informações de todos os convênios e parcerias celebrados com o Estado de Mato Grosso: número do instrumento, órgão concedente, objeto, valor, situação e prestação de contas.</p>
+          </div>
+
+          <div class="declaracao__base">
+            <span class="declaracao__base-rot">Fundamentação legal</span>
+            <ul>
+              <li>Arts. 22 e 23 da IN Conjunta SEPLAN/SEFAZ/CGE nº 001/2016, alterada pela IN Conjunta nº 002/2026/SEFAZ/CGE</li>
+              <li>Lei Federal nº 13.019/2014 (Marco Regulatório das Organizações da Sociedade Civil)</li>
+              <li>Lei Complementar nº 101/2000 (Lei de Responsabilidade Fiscal)</li>
+              <li>Constituição Federal, art. 37</li>
+            </ul>
+          </div>
+
+          <div class="declaracao__assinatura">
+            <span class="declaracao__nome">André Valente do Couto</span>
+            <span class="declaracao__cargo">Presidente · FMTTM</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. DOCUMENTOS INSTITUCIONAIS -->
+    <section class="secao" id="documentos">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <div>
+            <span class="secao__rotulo">Habilitação jurídica</span>
+            <h2 class="secao__titulo">Documentos institucionais e dados cadastrais</h2>
           </div>
         </div>
 
         <div class="demonstrativos-grid">
+          <a href="assets/docs/institucional/estatuto-fmttm.pdf" class="demonstrativo-card" target="_blank" rel="noopener">
+            <span class="demonstrativo-card__ano">Estatuto</span>
+            <span class="demonstrativo-card__titulo">Estatuto Social da FMTTM</span>
+            <span class="demonstrativo-card__meta"><span>PDF · 2 MB</span><span>Baixar PDF ↓</span></span>
+          </a>
+          <div class="demonstrativo-card">
+            <span class="demonstrativo-card__ano">Ata AGO</span>
+            <span class="demonstrativo-card__titulo">Ata da Assembleia Geral Ordinária de 10/01/2025 (eleição da diretoria)</span>
+            <span class="demonstrativo-card__meta"><span>Registrada em cartório</span><span><span class="badge badge--vigente">Registrada</span></span></span>
+          </div>
+          <div class="demonstrativo-card">
+            <span class="demonstrativo-card__ano">CNPJ</span>
+            <span class="demonstrativo-card__titulo">CNPJ e regularidade cadastral</span>
+            <span class="demonstrativo-card__meta"><span>Receita Federal</span><span><span class="badge badge--vigente">Ativa</span></span></span>
+          </div>
+          <a href="assets/docs/institucional/balancete-2024.pdf" class="demonstrativo-card" target="_blank" rel="noopener">
+            <span class="demonstrativo-card__ano">2024</span>
+            <span class="demonstrativo-card__titulo">Balancete do exercício 2024</span>
+            <span class="demonstrativo-card__meta"><span>PDF · assinado</span><span>Baixar PDF ↓</span></span>
+          </a>
           <div class="demonstrativo-card demonstrativo-card--pendente">
             <span class="demonstrativo-card__ano">2025</span>
             <span class="demonstrativo-card__titulo">Balanço Patrimonial e DRE</span>
             <span class="demonstrativo-card__meta"><span>PDF</span><span>Em breve</span></span>
           </div>
           <div class="demonstrativo-card demonstrativo-card--pendente">
-            <span class="demonstrativo-card__ano">2024</span>
-            <span class="demonstrativo-card__titulo">Balanço Patrimonial e DRE</span>
+            <span class="demonstrativo-card__ano">Alvará</span>
+            <span class="demonstrativo-card__titulo">Alvará de Localização e Funcionamento</span>
             <span class="demonstrativo-card__meta"><span>PDF</span><span>Em breve</span></span>
           </div>
-          <div class="demonstrativo-card demonstrativo-card--pendente">
-            <span class="demonstrativo-card__ano">2023</span>
-            <span class="demonstrativo-card__titulo">Balanço Patrimonial e DRE</span>
-            <span class="demonstrativo-card__meta"><span>PDF</span><span>Em breve</span></span>
-          </div>
-          <div class="demonstrativo-card demonstrativo-card--pendente">
-            <span class="demonstrativo-card__ano">2026</span>
-            <span class="demonstrativo-card__titulo">Prestação de contas parcial</span>
-            <span class="demonstrativo-card__meta"><span>PDF</span><span>Em breve</span></span>
-          </div>
+        </div>
+
+        <div class="ficha">
+          <h3 class="ficha__titulo">Ficha cadastral oficial da OSC</h3>
+          <dl class="ficha__lista">
+            <div><dt>Razão social</dt><dd>Federação Matogrossense de Tênis de Mesa</dd></div>
+            <div><dt>Nome fantasia</dt><dd>FMTTM · Tênis de Mesa Mato Grosso</dd></div>
+            <div><dt>CNPJ</dt><dd class="mono">07.898.945/0001-11</dd></div>
+            <div><dt>Natureza jurídica</dt><dd>Associação privada</dd></div>
+            <div><dt>Início das atividades</dt><dd>22/03/2006</dd></div>
+            <div><dt>Atividade principal</dt><dd>CNAE 94.30-8-00 · Associações de defesa de direitos sociais</dd></div>
+            <div><dt>Endereço da sede</dt><dd>Av. da FEB, 2222 · Ponte Nova · Várzea Grande/MT</dd></div>
+            <div><dt>CEP</dt><dd class="mono">78115-865</dd></div>
+            <div><dt>Filiação</dt><dd>Confederação Brasileira de Tênis de Mesa (CBTM)</dd></div>
+            <div><dt>Contato</dt><dd><a href="mailto:fedmt@cbtm.org.br">fedmt@cbtm.org.br</a> · <a href="https://wa.me/5565999139914">(65) 99913-9914</a></dd></div>
+          </dl>
         </div>
       </div>
     </section>
 
+    <!-- 4. GOVERNANÇA -->
+    <section class="secao secao--alt" id="gestao" style="padding-bottom: var(--s-16);">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <div>
+            <span class="secao__rotulo">Governança institucional</span>
+            <h2 class="secao__titulo">Diretoria executiva e conselho fiscal</h2>
+          </div>
+        </div>
+
+        <div class="recursos-indicadores">
+          <div class="recursos-indicadores__item">
+            <span class="painel-resumo__rot">Diretoria executiva</span>
+            <span class="recursos-indicadores__num">03</span>
+          </div>
+          <div class="recursos-indicadores__item">
+            <span class="painel-resumo__rot">Conselho fiscal</span>
+            <span class="recursos-indicadores__num">03</span>
+          </div>
+          <div class="recursos-indicadores__item">
+            <span class="painel-resumo__rot">Mandato vigente</span>
+            <span class="recursos-indicadores__num">2025–2028</span>
+            <span class="painel-resumo__sub">Ata registrada em cartório</span>
+          </div>
+        </div>
+
+        <div class="convenios-wrap">
+          <table class="convenios-tabela">
+            <caption class="sr-only">Membros da diretoria executiva e do conselho fiscal da FMTTM.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nome completo</th>
+                <th scope="col">Cargo institucional</th>
+                <th scope="col">Mandato</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-rot="Nome">André Valente do Couto</td><td data-rot="Cargo">Presidente</td><td class="convenios-tabela__valor" data-rot="Mandato">2025–2028</td></tr>
+              <tr><td data-rot="Nome">Ronan Custódio Pereira</td><td data-rot="Cargo">Vice-Presidente</td><td class="convenios-tabela__valor" data-rot="Mandato">2025–2028</td></tr>
+              <tr><td data-rot="Nome">Luciana Midori Sasai Morimoto</td><td data-rot="Cargo">Diretora Financeira</td><td class="convenios-tabela__valor" data-rot="Mandato">2025–2028</td></tr>
+              <tr><td data-rot="Nome">Marcelo Hilário Figueira Garcia</td><td data-rot="Cargo">Conselheiro Fiscal</td><td class="convenios-tabela__valor" data-rot="Mandato">2025–2028</td></tr>
+              <tr><td data-rot="Nome">Marcus Rogério Hatakeyama</td><td data-rot="Cargo">Conselheiro Fiscal</td><td class="convenios-tabela__valor" data-rot="Mandato">2025–2028</td></tr>
+              <tr><td data-rot="Nome">Nelson Yukio Matsubara</td><td data-rot="Cargo">Conselheiro Fiscal</td><td class="convenios-tabela__valor" data-rot="Mandato">2025–2028</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
   </main>
 
@@ -201,6 +337,76 @@
     </div>
   </footer>
 
+  <script>
+    // Convênios publicados (Relatório Geral de Convênios do Estado de MT).
+    // Para incluir um novo: acrescente um objeto aqui; ano = ano do número do convênio.
+    const CONVENIOS = [
+      { orgao: 'FUNDED', orgaoNome: 'Fundo de Desenvolvimento Desportivo', numero: '1841-2025', acao: '2882', ano: 2025, situacao: 'Encerrado', valor: 368279.97 }
+    ];
+    const ORGAOS = [
+      { sigla: 'FUNDED', nome: 'Fundo de Desenvolvimento Desportivo · FUNDED-MT' }
+    ];
+
+    (function () {
+      const brl = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      const anos = [...new Set(CONVENIOS.map(c => c.ano))].sort();
+      const botoes = document.getElementById('filtro-ano');
+      const lista = document.getElementById('orgaos-lista');
+      let anoAtual = anos[anos.length - 1];
+
+      document.getElementById('rec-total-geral').textContent = brl(CONVENIOS.reduce((s, c) => s + c.valor, 0));
+      document.getElementById('rec-orgaos').textContent = ORGAOS.length;
+
+      anos.forEach(ano => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'filtro-ano__btn';
+        b.textContent = ano;
+        b.addEventListener('click', () => { anoAtual = ano; render(); });
+        botoes.appendChild(b);
+      });
+
+      function render() {
+        botoes.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.textContent === anoAtual)));
+        document.querySelectorAll('.rec-ano-rot').forEach(e => e.textContent = anoAtual);
+        const doAno = CONVENIOS.filter(c => c.ano === anoAtual);
+        document.getElementById('rec-total-ano').textContent = brl(doAno.reduce((s, c) => s + c.valor, 0));
+
+        lista.innerHTML = ORGAOS.map(o => {
+          const doOrgao = doAno.filter(c => c.orgao === o.sigla);
+          const totalAno = doOrgao.reduce((s, c) => s + c.valor, 0);
+          const acumulado = CONVENIOS.filter(c => c.orgao === o.sigla).reduce((s, c) => s + c.valor, 0);
+          const itens = doOrgao.length
+            ? doOrgao.map(c => `
+              <li class="convenio-item">
+                <div class="convenio-item__info">
+                  <span class="convenio-item__nome">Convênio nº ${c.numero}</span>
+                  <span class="convenio-item__meta">Ação ${c.acao} · Art. 23 · Publicado</span>
+                </div>
+                <span class="badge ${c.situacao === 'Encerrado' ? 'badge--encerrado' : 'badge--vigente'}">${c.situacao === 'Encerrado' ? 'Encerrado' : 'Em execução'}</span>
+                <span class="convenio-item__valor">${brl(c.valor)}</span>
+              </li>`).join('')
+            : '<li class="convenio-item convenio-item--vazio">Nenhum convênio formalizado neste ano com este órgão.</li>';
+          return `
+            <article class="orgao-bloco">
+              <header class="orgao-bloco__topo">
+                <div>
+                  <span class="orgao-bloco__sigla">${o.sigla}</span>
+                  <span class="orgao-bloco__nome">${o.nome}</span>
+                  <span class="orgao-bloco__qtd">${doOrgao.length} convênio${doOrgao.length === 1 ? '' : 's'} publicado${doOrgao.length === 1 ? '' : 's'} em ${anoAtual}</span>
+                </div>
+                <dl class="orgao-bloco__totais">
+                  <div><dt>Total ${anoAtual}</dt><dd>${brl(totalAno)}</dd></div>
+                  <div><dt>Acumulado (todos os anos)</dt><dd>${brl(acumulado)}</dd></div>
+                </dl>
+              </header>
+              <ul class="orgao-bloco__lista">${itens}</ul>
+            </article>`;
+        }).join('');
+      }
+      render();
+    })();
+  </script>
   <script src="assets/js/animacoes.js" defer></script>
 </body>
 </html>
