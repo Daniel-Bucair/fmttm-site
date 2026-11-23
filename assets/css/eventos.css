@@ -21,6 +21,14 @@
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse at center, #000 55%, transparent 95%);
 }
+
+/* Foto de fundo com vinheta escura por cima p/ manter o título legível (mesma de Clubes) */
+.pagina-cabecalho__foto { position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
+.pagina-cabecalho--foto::after { content: ''; position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(15, 18, 34, 0.72) 0%, rgba(15, 18, 34, 0.5) 50%, rgba(15, 18, 34, 0.25) 100%); }
+/* Sombra leve no texto: a vinheta mais clara deixa a foto aparecer sem perder a leitura */
+.pagina-cabecalho--foto { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
+.evento-hero--foto::after { content: ''; position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(15, 18, 34, 0.72) 0%, rgba(15, 18, 34, 0.5) 50%, rgba(15, 18, 34, 0.25) 100%); }
+.evento-hero--foto { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
 .pagina-cabecalho__rotulo {
   font-family: var(--fonte-mono);
   font-size: var(--ts-sm);
@@ -253,6 +261,11 @@
 }
 .evento-hero__meta-val.mono { font-family: var(--fonte-mono); font-weight: var(--peso-medio); }
 
+/* Cabeçalho compacto (página da Copa MT 4ª etapa): menos altura, título menor. */
+.evento-hero--compacto { padding-block: var(--s-6) var(--s-8); }
+.evento-hero--compacto .evento-hero__status { margin-bottom: var(--s-3); }
+.evento-hero--compacto .evento-hero__titulo { font-size: var(--ts-2xl); max-width: 32ch; margin-bottom: var(--s-4); }
+.evento-hero--compacto .evento-hero__meta { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); padding-top: var(--s-4); margin-top: var(--s-4); }
 .evento-hero__acoes {
   display: flex;
   gap: var(--s-3);
@@ -434,6 +447,43 @@ a.arquivo-card:hover { border-color: var(--cor-azul); background: var(--neutro-1
 .arquivo-card__seta { color: var(--texto-fraco); font-family: var(--fonte-mono); }
 a.arquivo-card:hover .arquivo-card__seta { color: var(--cor-azul); }
 
+/* Agenda dos jogos (página do evento): cards de arquivo em grade. */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--s-3);
+  margin-bottom: var(--s-10);
+}
+.arquivo-card:has(> .arquivo-card__icone--agenda) { grid-template-columns: 48px 1fr auto; }
+.btn__icone { flex: none; }
+/* Botões de resultado (Individual/Duplas): caixa alta e um pouco maiores, para destaque. */
+.btn--resultado {
+  text-transform: uppercase;
+  font-size: var(--ts-md);
+  letter-spacing: 0.04em;
+}
+/* Ícone das agendas: bloco azul em degradê, traço branco e detalhes nas cores da marca. */
+.arquivo-card__icone--agenda {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--raio-lg);
+  background: linear-gradient(145deg, var(--cor-azul-claro) 0%, var(--cor-azul) 55%, var(--cor-azul-escuro) 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 2px 6px rgba(38, 45, 106, 0.25);
+  transition: transform var(--anim-rapida), box-shadow var(--anim-rapida);
+}
+a.arquivo-card:hover .arquivo-card__icone--agenda {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18), 0 4px 10px rgba(38, 45, 106, 0.35);
+}
+.btn__icone .ic-am, .arquivo-card__icone--agenda .ic-am   { fill: var(--cor-amarelo); }
+.btn__icone .ic-am-s, .arquivo-card__icone--agenda .ic-am-s { stroke: var(--cor-amarelo); }
+.btn__icone .ic-vd, .arquivo-card__icone--agenda .ic-vd   { fill: #34C46E; }
+.btn__icone .ic-vd-s, .arquivo-card__icone--agenda .ic-vd-s { stroke: #34C46E; }
+.btn__icone .ic-az, .arquivo-card__icone--agenda .ic-az   { fill: var(--cor-azul); }
+.btn__icone .ic-az-s, .arquivo-card__icone--agenda .ic-az-s { stroke: var(--cor-azul); }
+.evento-detalhe__nota--antes { margin-top: 0; margin-bottom: var(--s-4); }
+#agenda { scroll-margin-top: var(--s-20); }
+
 /* Botão secundário sobre o hero azul */
 .btn--contorno-escuro {
   background: transparent;
@@ -466,6 +516,7 @@ a.arquivo-card:hover .arquivo-card__seta { color: var(--cor-azul); }
 
 @media (max-width: 520px) {
   .evento-hero__titulo { font-size: 2rem; margin-bottom: var(--s-4); }
+  .evento-hero--compacto .evento-hero__titulo { font-size: 1.6rem; }
   .evento-hero__meta { grid-template-columns: 1fr 1fr; gap: var(--s-4) var(--s-3); }
   .evento-hero__meta-val { font-size: var(--ts-sm); }
   .evento-hero__acoes { margin-top: var(--s-6); gap: var(--s-2); }

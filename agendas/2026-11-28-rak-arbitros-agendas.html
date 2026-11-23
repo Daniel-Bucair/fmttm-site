@@ -1,0 +1,908 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TMB ESTADUAL 2026 - IV COPA MATO GROSSO - CUIABÁ/MT</title><style>
+:root{--bg:#f6f7f9;--card:#fff;--tx:#1d2330;--sub:#5d6677;--linha:#e3e6eb;--real:#0b5cad;--suave:#eef3fa}
+@media (prefers-color-scheme: dark){:root{--bg:#14171c;--card:#1d2128;--tx:#e9ecf1;--sub:#a3abb8;--linha:#323844;--real:#6fb1ff;--suave:#22303f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:#0b4f96;color:#fff;display:flex;align-items:center;gap:16px;padding:0 16px 0 0}
+header .logo{align-self:stretch;flex:none;display:flex;align-items:center;background:#fff;padding:8px 12px}
+header .logo img{display:block;height:96px;width:auto}
+header .titulo{min-width:0;padding:16px 0 14px}
+@media (max-width:560px){header{gap:12px}header .logo{padding:6px 8px}header .logo img{height:64px}}
+header h1{margin:0;font-size:1.45rem}
+header p{margin:4px 0 0;opacity:.9}
+.barra{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 16px;border-bottom:1px solid var(--linha)}
+.barra input{width:100%;padding:11px 12px;font-size:1rem;border:1px solid var(--linha);border-radius:10px;background:var(--card);color:var(--tx)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.chips a{font-size:.85rem;padding:4px 10px;border-radius:999px;background:var(--card);border:1px solid var(--linha);color:var(--tx);text-decoration:none;white-space:nowrap}
+main{max-width:980px;margin:0 auto;padding:8px 16px 40px}
+h2{margin:26px 0 8px;font-size:1.25rem}
+.dia{margin-top:28px;padding:8px 12px;border-radius:10px;background:var(--suave);font-size:1.1rem}
+.slot{background:var(--card);border:1px solid var(--linha);border-radius:12px;margin:12px 0;overflow:hidden;break-inside:avoid}
+.slot>h3{margin:0;padding:8px 12px;font-size:1.15rem;border-bottom:1px solid var(--linha);display:flex;gap:10px;align-items:baseline}
+.slot>h3 small{color:var(--sub);font-weight:400;font-size:.85rem}
+.jogo{display:grid;grid-template-columns:64px 1fr;gap:2px 10px;padding:8px 12px;border-top:1px solid var(--linha)}
+.jogo:first-of-type{border-top:0}
+.mesa{grid-row:span 2;font-weight:700;text-align:center;align-self:center;font-size:.85rem;color:var(--sub)}
+.mesa b{display:block;font-size:1.35rem;color:var(--tx)}
+.cat{font-size:.82rem;color:var(--sub)}
+.tag{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:1px solid rgba(0,0,0,.15)}
+.par{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:baseline}
+.par small{color:var(--sub)}
+.x{color:var(--sub)}
+.def{color:var(--sub);font-style:italic}
+.final{background:linear-gradient(90deg,rgba(255,196,0,.18),transparent)}
+.meu b{color:var(--real)}
+.atleta{background:var(--card);border:1px solid var(--linha);border-radius:12px;margin:10px 0;padding:10px 12px;break-inside:avoid}
+.atleta h4{margin:0 0 4px;font-size:1rem}
+.atleta h4 small{color:var(--sub);font-weight:400}
+.atleta ul{margin:4px 0 0;padding-left:18px}
+.atleta li{margin:2px 0}
+.mm{font-size:.85rem;color:var(--sub);margin-top:4px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--linha);border-radius:12px;overflow:hidden;margin:8px 0 14px}
+th,td{padding:7px 8px;border-top:1px solid var(--linha);text-align:left;vertical-align:top;font-size:.9rem}
+th{background:var(--suave);font-size:.8rem;color:var(--sub);border-top:0}
+td.res{white-space:nowrap;color:var(--sub)}
+.clube{background:var(--card);border:1px solid var(--linha);border-radius:14px;padding:4px 14px 10px;margin:22px 0;break-before:page}
+.clube:first-of-type{break-before:auto}
+.resumo{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px}
+.resumo span{background:var(--suave);border-radius:8px;padding:4px 10px;font-size:.88rem}
+.feito td{opacity:.45}
+.nota{color:var(--sub);font-size:.85rem}
+.oculto{display:none!important}
+@media (max-width:640px){th.opc,td.opc{display:none}}
+@media (min-width:700px){.jogo{grid-template-columns:62px minmax(190px,32%) 1fr;align-items:center;gap:0 12px}
+.mesa{grid-row:auto}.mesa b{display:inline;font-size:1.15rem;margin-left:4px}}
+@page{size:A4;margin:11mm}
+@media print{.barra,.chips,.no-print{display:none!important}body{background:#fff;color:#000;font-size:11px}
+header{background:#fff;color:#000;padding:0 0 6px;border-bottom:2px solid #000}
+header .logo{padding:0 8px 0 0}header .logo img{height:52px}header .titulo{padding:0}
+.slot,.atleta,table,.clube{border-color:#bbb}main{max-width:none;padding:0}
+th.opc,td.opc{display:table-cell!important}
+.jogo{grid-template-columns:52px 34% 1fr;align-items:center;gap:0 8px;padding:3px 8px;break-inside:avoid}
+.mesa{grid-row:auto;font-size:9px}.mesa b{display:inline;font-size:12px;margin-left:3px}
+.slot{break-inside:auto;margin:8px 0}.slot>h3{break-after:avoid;padding:4px 8px;font-size:13px}
+.dia{break-after:avoid;margin-top:10px}.atleta{padding:6px 8px;margin:6px 0}
+th,td{padding:4px 6px;font-size:10px}.clube{padding:0;border:0}}
+
+table.slot-t{margin:12px 0}
+table.slot-t tr.hora th{background:#0b4f96;color:#fff;font-size:1.05rem;padding:6px 10px}
+table.slot-t tr.hora th small{color:#dbe6f4;font-weight:400;font-size:.82rem;margin-left:6px}
+table.slot-t td.m{font-weight:700;text-align:center;width:46px;font-size:1.05rem}
+table.slot-t td.cat{width:30%}
+table.slot-t td.arb{width:21%;color:var(--sub)}
+table.slot-t tr.final td{background:rgba(255,196,0,.18)}
+@media print{table.slot-t{margin:6px 0}table.slot-t tr.hora th{background:#dfe8f5;color:#000;font-size:12px;padding:3px 6px}
+table.slot-t tr.hora th small{color:#333}table.slot-t td.m{font-size:12px;width:30px}
+table.slot-t td,table.slot-t th{padding:2px 5px;font-size:9.5px}table.slot-t td.cat{width:25%}table.slot-t td.arb{width:17%}}
+
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.org{margin:0 0 2px;font-weight:700;letter-spacing:.04em;font-size:.82rem;opacity:.95}
+.quebra{break-before:page}
+main h2,main h3{break-after:avoid}
+code{font-size:.85em;background:var(--suave);padding:0 3px;border-radius:4px}
+main ul{margin:4px 0 8px;padding-left:20px}
+table thead{display:table-header-group}
+tr{break-inside:avoid}
+main h2{margin-top:6px}main td,main th{font-size:.82rem}@media print{main td,main th{font-size:9.5px;padding:3px 5px}}</style></head><body><header><div class="logo"><img src="data:image/png;base64,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" alt="Federação Mato-Grossense de Tênis de Mesa"></div><div class="titulo"><p class="org">FEDERAÇÃO MATO-GROSSENSE DE TÊNIS DE MESA</p><h1>TMB ESTADUAL 2026 - IV COPA MATO GROSSO - CUIABÁ/MT</h1><p>Agenda individual dos árbitros (21)</p></div></header><main><h2>CAIO BATISTA BASTOS (árbitro fixo)</h2>
+<p><b>37 jogos</b> (12h20) · 28/11 08:40–19:00; 29/11 07:40–11:00 · permanência 14h20 · ocupação 86% · seq. máx. 9 · 6 blocos · mesa principal 5 · decisivos 3</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>3</td><td>S17M-G-1-002</td><td>Sub-17 Masculino · Grupo 2 · 1ª rodada</td><td>GUSTAVO LOPES CAMPOS (ATMR) × FELIPE CONCATTO SCHARFF (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>2</td><td>S17M-G-2-013</td><td>Sub-17 Masculino · Grupo 4 · 2ª rodada</td><td>JUAN DA SILVA ALLEDI (ALEL) × YUDI ALVARES FELIX (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>1</td><td>S17M-G-3-019</td><td>Sub-17 Masculino · Grupo 1 · 3ª rodada</td><td>PAULO IRAM ALVES NETO (DOM BOSCO) × RAFAEL FREITAS MATOS DE SOUZA (DOM BOSCO)</td><td>mesa principal</td></tr>
+<tr><td>10:00</td><td>apita</td><td>11</td><td>S13F-G-3-009</td><td>Sub-13 Feminino · Grupo 3 · 3ª rodada</td><td>LORENA GAMA NUNES (ATMR) × GIOVANA BUCAIR COUTO (DOM BOSCO)</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>11</td><td>S15M-G-1-005</td><td>Sub-15 Masculino · Grupo 5 · 1ª rodada</td><td>FELIPE CORDEIRO JULIANI BECCARDI (ADEMS) × MIKAEL SILVA DE ARAÚJO (DOM BOSCO)</td><td></td></tr>
+<tr><td>10:40</td><td>apita</td><td>2</td><td>S11F-G-1-002</td><td>Sub-11 Feminino · Grupo 2 · 1ª rodada</td><td>GIOVANA BUCAIR COUTO (DOM BOSCO) × LAURA  QUEREN DE SOUZA JALES (ALEL)</td><td></td></tr>
+<tr><td>11:00</td><td>apita</td><td>14</td><td>M40M-G-2-006</td><td>Master 40 Masculino · Grupo 3 · 2ª rodada</td><td>ILSON ONUKI (DOM BOSCO) × HELDER AUGUSTO POMPEU DE BARROS DALTRO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>11:20</td><td>apita</td><td>3</td><td>S11F-G-2-006</td><td>Sub-11 Feminino · Grupo 2 · 2ª rodada</td><td>LAVYNIA DAUZACKER RYBA (ALEL) × LAURA  QUEREN DE SOUZA JALES (ALEL)</td><td></td></tr>
+<tr><td>11:40</td><td>apita</td><td>1</td><td>S11F-G-3-007</td><td>Sub-11 Feminino · Grupo 1 · 3ª rodada</td><td>ALICE CAVAZZINI (SORRISO HORNETS) × CLARA GIRALDELLI DERZE (DOM BOSCO)</td><td>mesa principal</td></tr>
+<tr><td>13:00</td><td>apita</td><td>7</td><td>S17M-4F-1-039</td><td>Sub-17 Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>13:20</td><td>apita</td><td>7</td><td>S13M-8F-1-030</td><td>Sub-13 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>13:40</td><td>apita</td><td>10</td><td>ADTF-U-1-002</td><td>Adulto Feminino · Todos contra todos · 1ª rodada</td><td>REBECCA KAROLINA CASTRO FIGUEIREDO (DOM BOSCO) × MILENA SUEMY SASAI MORIMOTO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>14:00</td><td>apita</td><td>14</td><td>S15M-G-2-016</td><td>Sub-15 Masculino · Grupo 8 · 2ª rodada</td><td>KAIO BIASI PENALVA VERDOLIN (ATMR) × YURI CIBULSKIS REIS (DOM BOSCO)</td><td></td></tr>
+<tr><td>14:20</td><td>apita</td><td>7</td><td>S19M-G-2-012</td><td>Sub-19 Masculino · Grupo 5 · 2ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × MARCOS VITÓRIO AUED DA CONCEIÇÃO (ATMR)</td><td></td></tr>
+<tr><td>14:40</td><td>apita</td><td>9</td><td>S15M-G-3-021</td><td>Sub-15 Masculino · Grupo 5 · 3ª rodada</td><td>FELIPE CORDEIRO JULIANI BECCARDI (ADEMS) × MAIKEL MANOEL APPELT DE OLIVEIRA (ADEMS)</td><td></td></tr>
+<tr><td>15:00</td><td>apita</td><td>5</td><td>S19M-G-3-016</td><td>Sub-19 Masculino · Grupo 4 · 3ª rodada</td><td>LUCAS HIDEO ONUKI (DOM BOSCO) × MARTHIM ALFREDO ZIMPEL DE SOUZA (ASTM SINOP)</td><td></td></tr>
+<tr><td>15:20</td><td>apita</td><td>3</td><td>M30M-S-1-013</td><td>Master 30 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>15:40</td><td>apita</td><td>4</td><td>S19M-8F-1-019</td><td>Sub-19 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>16:20</td><td>apita</td><td>10</td><td>ADTF-U-5-010</td><td>Adulto Feminino · Todos contra todos · 5ª rodada</td><td>MAISA DIELY BRITO BARCELO (ATMR) × ANA CLARA MORENO RODRIGUES (CT MORIMOTO)</td><td></td></tr>
+<tr><td>16:40</td><td>apita</td><td>5</td><td>S15M-4F-1-033</td><td>Sub-15 Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>17:00</td><td>apita</td><td>11</td><td>ADTM-U-3-005</td><td>Adulto Masculino · Todos contra todos · 3ª rodada</td><td>JEAN CAON GARCIA (ALEL) × IAN CONRADO BORGES TIZZO (DOM BOSCO)</td><td></td></tr>
+<tr><td>17:20</td><td>apita</td><td>6</td><td>AGM-G-1-010</td><td>Absoluto G Masculino · Grupo 10 · 1ª rodada</td><td>LUIZ HENRIQUE CAMARGO MORAES (ADEMS) × MARCOS VITÓRIO AUED DA CONCEIÇÃO (ATMR)</td><td></td></tr>
+<tr><td>17:40</td><td>apita</td><td>4</td><td>AGM-G-1-006</td><td>Absoluto G Masculino · Grupo 6 · 1ª rodada</td><td>RAFAEL FREITAS MATOS DE SOUZA (DOM BOSCO) × IAN CONRADO BORGES TIZZO (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:00</td><td>apita</td><td>4</td><td>AGM-G-2-015</td><td>Absoluto G Masculino · Grupo 3 · 2ª rodada</td><td>EMANUEL CARDOSO DA SILVA MENDES (ATMR) × DAVI MATHEUS VIEIRA (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:20</td><td>apita</td><td>3</td><td>AGM-G-3-027</td><td>Absoluto G Masculino · Grupo 3 · 3ª rodada</td><td>ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO) × EMANUEL CARDOSO DA SILVA MENDES (ATMR)</td><td></td></tr>
+<tr><td>18:40</td><td>apita</td><td>8</td><td>AGM-16F-1-040</td><td>Absoluto G Masculino · 16 avos de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>19:00</td><td>apita</td><td>5</td><td>AGM-8F-1-045</td><td>Absoluto G Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:40</td><td>apita</td><td>1</td><td>D11-F-1-004</td><td>Duplas Sub 7-11 · Final</td><td>Vencedor D11-S-1-002 × Vencedor D11-S-1-003</td><td>mesa principal; FINAL</td></tr>
+<tr><td>08:00</td><td>apita</td><td>5</td><td>ADM-G-1-005</td><td>Absoluto D Masculino · Grupo 5 · 1ª rodada</td><td>SHUWAISER  ARIYOSHI (CT MORIMOTO) × LUIS ROBERTO HIDEAKI KOHATSU FUJIKI (CT MORIMOTO)</td><td></td></tr>
+<tr><td>08:20</td><td>apita</td><td>12</td><td>AEM-G-2-012</td><td>Absoluto E Masculino · Grupo 6 · 2ª rodada</td><td>MARCOS CÉSAR GOMES (ATMR) × MAIKEL MANOEL APPELT DE OLIVEIRA (ADEMS)</td><td></td></tr>
+<tr><td>08:40</td><td>apita</td><td>1</td><td>ADM-G-2-006</td><td>Absoluto D Masculino · Grupo 1 · 2ª rodada</td><td>JACIONE ANTÔNIO PIRES DA CUNHA (ADEMS) × VINÍCIUS FERREIRA GRIGGI (DOM BOSCO)</td><td>mesa principal</td></tr>
+<tr><td>09:00</td><td>apita</td><td>1</td><td>AGM-F-1-059</td><td>Absoluto G Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>09:20</td><td>apita</td><td>7</td><td>ABM-G-3-006</td><td>Absoluto B Masculino · Grupo 2 · 3ª rodada</td><td>GABRIEL OTACIO PEREIRA PARDIN (ATMR) × ALEXANDRE KEIJI MARIAMA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>10</td><td>AEF-U-1-002</td><td>Absoluto E Feminino · Todos contra todos · 1ª rodada</td><td>SOFIA BRAUN REISDERFER (ALEL) × MARIA VITORIA ASCKAR RABANEDA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>10:00</td><td>apita</td><td>5</td><td>AEM-4F-1-024</td><td>Absoluto E Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>3</td><td>ADM-4F-1-019</td><td>Absoluto D Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>11:00</td><td>apita</td><td>10</td><td>AEF-U-3-006</td><td>Absoluto E Feminino · Todos contra todos · 3ª rodada</td><td>ELINE BEATRIZ DE OLIVEIRA SPECHT (ALEL) × SOFIA BRAUN REISDERFER (ALEL)</td><td></td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>CARLOS ALBERTO FRANCISCO DA COSTA (árbitro fixo)</h2>
+<p><b>37 jogos</b> (12h20) · 28/11 08:40–19:00; 29/11 07:00–11:00 · permanência 15h00 · ocupação 82% · seq. máx. 8 · 8 blocos · mesa principal 5 · decisivos 5</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>11</td><td>S13F-G-1-001</td><td>Sub-13 Feminino · Grupo 1 · 1ª rodada</td><td>MAÍSA CAON GARCIA (ALEL) × GIOVANNA PALOPOLI RIBEIRO (ATMR)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>1</td><td>S17M-G-2-011</td><td>Sub-17 Masculino · Grupo 2 · 2ª rodada</td><td>ENZO CAPELETTO DAS NEVES (DOM BOSCO) × FELIPE CONCATTO SCHARFF (DOM BOSCO)</td><td>mesa principal</td></tr>
+<tr><td>09:20</td><td>apita</td><td>5</td><td>S17M-G-2-012</td><td>Sub-17 Masculino · Grupo 3 · 2ª rodada</td><td>DAVI KOPPER (ÁGAPE SINOP) × LUIZ GUSTAVO DOS SANTOS (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>7</td><td>S17M-G-3-025</td><td>Sub-17 Masculino · Grupo 7 · 3ª rodada</td><td>LUIS ROBERTO HIDEAKI KOHATSU FUJIKI (CT MORIMOTO) × KAIO BIASI PENALVA VERDOLIN (ATMR)</td><td></td></tr>
+<tr><td>10:00</td><td>apita</td><td>12</td><td>M40M-G-1-001</td><td>Master 40 Masculino · Grupo 1 · 1ª rodada</td><td>JACIONE ANTÔNIO PIRES DA CUNHA (ADEMS) × JORGE MAIKEL DE OLIVEIRA (ADEMS)</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>1</td><td>S19M-G-1-001</td><td>Sub-19 Masculino · Grupo 1 · 1ª rodada</td><td>DANIEL BUCAIR COUTO (DOM BOSCO) × ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO)</td><td>mesa principal</td></tr>
+<tr><td>10:40</td><td>apita</td><td>5</td><td>S17M-16F-1-029</td><td>Sub-17 Masculino · 16 avos de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>11:00</td><td>apita</td><td>3</td><td>S13M-G-3-021</td><td>Sub-13 Masculino · Grupo 3 · 3ª rodada</td><td>LUCAS ALVES BELO (ATMR) × EMANUEL CARDOSO DA SILVA MENDES (ATMR)</td><td></td></tr>
+<tr><td>11:40</td><td>apita</td><td>11</td><td>S11M-G-3-012</td><td>Sub-11 Masculino · Grupo 2 · 3ª rodada</td><td>ARTHUR JARDIM MENEZES FERREIRA (ALEL) × RAFAEL BIASI PENALVA VERDOLIN (ATMR)</td><td></td></tr>
+<tr><td>13:00</td><td>apita</td><td>13</td><td>M40M-G-3-008</td><td>Master 40 Masculino · Grupo 2 · 3ª rodada</td><td>DAMIÃO ORLANDO DE OLIVEIRA LOTT (DOM BOSCO) × DEOCLECIANO NUNES SILVA (ATMR)</td><td></td></tr>
+<tr><td>13:20</td><td>apita</td><td>3</td><td>M30M-G-1-003</td><td>Master 30 Masculino · Grupo 2 · 1ª rodada</td><td>FERNANDO BONGIOLO (ADEMS) × WALTER NOBORU KAWAHARA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>13:40</td><td>apita</td><td>14</td><td>M40M-4F-4-011</td><td>Master 40 Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>14:00</td><td>apita</td><td>9</td><td>S15M-G-2-011</td><td>Sub-15 Masculino · Grupo 3 · 2ª rodada</td><td>HENRIQUE CORDEIRO JULIANI BECCARDI (ADEMS) × ANTHONY OTACÍLIO JACOB BARTH (ALEL)</td><td></td></tr>
+<tr><td>14:40</td><td>apita</td><td>4</td><td>M30M-G-3-012</td><td>Master 30 Masculino · Grupo 2 · 3ª rodada</td><td>FERNANDO BONGIOLO (ADEMS) × HERICK ASSUNÇÃO DO NASCIMENTO (DOM BOSCO)</td><td></td></tr>
+<tr><td>15:00</td><td>apita</td><td>1</td><td>M40M-F-6-014</td><td>Master 40 Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>15:20</td><td>apita</td><td>10</td><td>M50M-G-1-002</td><td>Master 50 Masculino · Grupo 2 · 1ª rodada</td><td>GIULIANO CURVO MUNIZ (ASTM SINOP) × HUMBERTO DE CARVALHO MARCILIO (DOM BOSCO)</td><td></td></tr>
+<tr><td>15:40</td><td>apita</td><td>1</td><td>S13M-S-1-040</td><td>Sub-13 Masculino · Semifinal</td><td>A definir × A definir</td><td>mesa principal; semifinal</td></tr>
+<tr><td>16:00</td><td>apita</td><td>14</td><td>M55M-U-3-006</td><td>Master 55 Masculino · Todos contra todos · 3ª rodada</td><td>MARIO MASSATOSHI MORIMOTO (CT MORIMOTO) × NELSON YUKIO MATSUBARA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>16:20</td><td>apita</td><td>3</td><td>S19M-4F-1-021</td><td>Sub-19 Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>16:40</td><td>apita</td><td>6</td><td>S15M-4F-1-034</td><td>Sub-15 Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>17:20</td><td>apita</td><td>12</td><td>S15M-S-1-038</td><td>Sub-15 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>17:40</td><td>apita</td><td>3</td><td>AGM-G-1-005</td><td>Absoluto G Masculino · Grupo 5 · 1ª rodada</td><td>ENZO CAPELETTO DAS NEVES (DOM BOSCO) × LUIZ GUSTAVO DOS SANTOS (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>18:00</td><td>apita</td><td>5</td><td>AGM-G-2-016</td><td>Absoluto G Masculino · Grupo 4 · 2ª rodada</td><td>MIGUEL FITIPALDI (CT MORIMOTO) × OTAVIO AUGUSTO POMPEU DE BARROS DALTRO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>18:20</td><td>apita</td><td>14</td><td>S19F-U-1-002</td><td>Sub-19 Feminino · Todos contra todos · 1ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP)</td><td></td></tr>
+<tr><td>18:40</td><td>apita</td><td>14</td><td>S19F-U-2-004</td><td>Sub-19 Feminino · Todos contra todos · 2ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × ANA BEATRIZ PEREIRA ANTENOR DE MORAES (DOM BOSCO)</td><td></td></tr>
+<tr><td>19:00</td><td>apita</td><td>11</td><td>AGM-8F-1-051</td><td>Absoluto G Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>apita</td><td>5</td><td>DAD-4F-1-001</td><td>Duplas Sub 17-Adulto · Quartas de final</td><td>LUIS ROBERTO HIDEAKI KOHATSU FUJIKI / JOÃO GABRIEL VIEIRA JESUS (CT MORIMOTO) × JEAN CAON GARCIA / JOÃO FELIPE ZANON MULLER (ALEL / PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>07:20</td><td>apita</td><td>8</td><td>DMA-S-1-004</td><td>Duplas Master · Semifinal</td><td>ANDRÉ VALENTE DO COUTO / HERICK ASSUNÇÃO DO NASCIMENTO (DOM BOSCO) × Vencedor DMA-4F-1-002</td><td>semifinal</td></tr>
+<tr><td>08:00</td><td>apita</td><td>1</td><td>ADM-G-1-001</td><td>Absoluto D Masculino · Grupo 1 · 1ª rodada</td><td>JOÃO GABRIEL VIEIRA JESUS (CT MORIMOTO) × VINÍCIUS FERREIRA GRIGGI (DOM BOSCO)</td><td>mesa principal</td></tr>
+<tr><td>08:20</td><td>apita</td><td>10</td><td>AEM-G-2-010</td><td>Absoluto E Masculino · Grupo 4 · 2ª rodada</td><td>DAVID YASSUSHI YONEKUBO (DOM BOSCO) × KAIO BIASI PENALVA VERDOLIN (ATMR)</td><td></td></tr>
+<tr><td>08:40</td><td>apita</td><td>7</td><td>ABM-G-2-004</td><td>Absoluto B Masculino · Grupo 2 · 2ª rodada</td><td>ALEXANDRE KEIJI MARIAMA (CT MORIMOTO) × LUCAS HIDEO ONUKI (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>6</td><td>AEM-G-3-015</td><td>Absoluto E Masculino · Grupo 3 · 3ª rodada</td><td>PEDRO HENRIQUE SALES MOCELIN (ÁGAPE SINOP) × LUCAS VASCONCELOS ARRAES (CT MORIMOTO)</td><td></td></tr>
+<tr><td>09:20</td><td>apita</td><td>10</td><td>AEM-8F-1-019</td><td>Absoluto E Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>6</td><td>ABM-S-1-008</td><td>Absoluto B Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>10:00</td><td>apita</td><td>6</td><td>AEM-4F-1-025</td><td>Absoluto E Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>10</td><td>AEF-U-2-004</td><td>Absoluto E Feminino · Todos contra todos · 2ª rodada</td><td>SOFIA BRAUN REISDERFER (ALEL) × LAURA  QUEREN DE SOUZA JALES (ALEL)</td><td></td></tr>
+<tr><td>11:00</td><td>apita</td><td>8</td><td>AAF-U-3-006</td><td>Absoluto A Feminino · Todos contra todos · 3ª rodada</td><td>LUCIANA MIDORI SASAI MORIMOTO (CT MORIMOTO) × REBECCA KAROLINA CASTRO FIGUEIREDO (DOM BOSCO)</td><td></td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>DANIEL DE OLIVEIRA JÚNIOR (árbitro fixo)</h2>
+<p><b>37 jogos</b> (12h20) · 28/11 08:40–19:00; 29/11 07:00–11:00 · permanência 15h00 · ocupação 82% · seq. máx. 8 · 8 blocos · mesa principal 6 · decisivos 9</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>1</td><td>S9M-U-1-001</td><td>Sub-9 Masculino · Todos contra todos · 1ª rodada</td><td>RAFAEL BIASI PENALVA VERDOLIN (ATMR) × THEODORO LINHARES MARTINS (CT MORIMOTO)</td><td>mesa principal</td></tr>
+<tr><td>09:00</td><td>apita</td><td>9</td><td>S13M-G-1-003</td><td>Sub-13 Masculino · Grupo 3 · 1ª rodada</td><td>LUCAS ALVES BELO (ATMR) × MATHEUS DIAS RIBEIRO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>09:20</td><td>apita</td><td>1</td><td>S9M-U-2-002</td><td>Sub-9 Masculino · Todos contra todos · 2ª rodada</td><td>MIGUEL LOTT (DOM BOSCO) × THEODORO LINHARES MARTINS (CT MORIMOTO)</td><td>mesa principal</td></tr>
+<tr><td>09:40</td><td>apita</td><td>9</td><td>S17M-G-3-027</td><td>Sub-17 Masculino · Grupo 9 · 3ª rodada</td><td>LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO)</td><td></td></tr>
+<tr><td>10:00</td><td>apita</td><td>13</td><td>M40M-G-1-002</td><td>Master 40 Masculino · Grupo 2 · 1ª rodada</td><td>DAMIÃO ORLANDO DE OLIVEIRA LOTT (DOM BOSCO) × MARCELO GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>9</td><td>S15M-G-1-003</td><td>Sub-15 Masculino · Grupo 3 · 1ª rodada</td><td>VINÍCIUS FERREIRA GRIGGI (DOM BOSCO) × ANTHONY OTACÍLIO JACOB BARTH (ALEL)</td><td></td></tr>
+<tr><td>10:40</td><td>apita</td><td>7</td><td>S15F-G-1-002</td><td>Sub-15 Feminino · Grupo 1 · 1ª rodada</td><td>ANA CLARA KAPFENBERGER DE ALVES (ATMR) × MAYANNA ANDRADE DA SILVA (ALEL)</td><td></td></tr>
+<tr><td>11:00</td><td>apita</td><td>10</td><td>S13F-4F-4-010</td><td>Sub-13 Feminino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>11:40</td><td>apita</td><td>4</td><td>S21M-U-1-001</td><td>Sub-21 Masculino · Todos contra todos · 1ª rodada</td><td>DANIEL BUCAIR COUTO (DOM BOSCO) × IAN CONRADO BORGES TIZZO (DOM BOSCO)</td><td></td></tr>
+<tr><td>13:00</td><td>apita</td><td>12</td><td>M40M-G-3-007</td><td>Master 40 Masculino · Grupo 1 · 3ª rodada</td><td>JACIONE ANTÔNIO PIRES DA CUNHA (ADEMS) × FABRÍCIO SPECHT (ALEL)</td><td></td></tr>
+<tr><td>13:20</td><td>apita</td><td>10</td><td>S13M-8F-1-033</td><td>Sub-13 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>13:40</td><td>apita</td><td>8</td><td>S11M-S-1-019</td><td>Sub-11 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>14:00</td><td>apita</td><td>13</td><td>S15M-G-2-015</td><td>Sub-15 Masculino · Grupo 7 · 2ª rodada</td><td>LUCAS VASCONCELOS ARRAES (CT MORIMOTO) × SAMUEL FERREIRA MAGALHÃES (AEPA)</td><td></td></tr>
+<tr><td>14:20</td><td>apita</td><td>4</td><td>S19M-G-2-009</td><td>Sub-19 Masculino · Grupo 3 · 2ª rodada</td><td>LUIS ROBERTO HIDEAKI KOHATSU FUJIKI (CT MORIMOTO) × YUDI ALVARES FELIX (DOM BOSCO)</td><td></td></tr>
+<tr><td>14:40</td><td>apita</td><td>1</td><td>M30M-G-3-009</td><td>Master 30 Masculino · Grupo 1 · 3ª rodada</td><td>ESTÊVÃO PAIVA FONSECA (CT MORIMOTO) × ALISON LUIS MARTINS (DOM BOSCO)</td><td>mesa principal</td></tr>
+<tr><td>15:20</td><td>apita</td><td>1</td><td>S17M-F-1-044</td><td>Sub-17 Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>15:40</td><td>apita</td><td>2</td><td>S13M-S-1-041</td><td>Sub-13 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>16:00</td><td>apita</td><td>7</td><td>S15M-8F-1-031</td><td>Sub-15 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>16:20</td><td>apita</td><td>12</td><td>ADTM-U-2-004</td><td>Adulto Masculino · Todos contra todos · 2ª rodada</td><td>LUCA KUMAHARA (CT MORIMOTO) × IAN CONRADO BORGES TIZZO (DOM BOSCO)</td><td></td></tr>
+<tr><td>16:40</td><td>apita</td><td>11</td><td>S17F-S-1-007</td><td>Sub-17 Feminino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>17:00</td><td>apita</td><td>4</td><td>S19M-S-1-026</td><td>Sub-19 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>17:20</td><td>apita</td><td>11</td><td>S15M-S-1-037</td><td>Sub-15 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>18:00</td><td>apita</td><td>10</td><td>AGM-G-2-021</td><td>Absoluto G Masculino · Grupo 9 · 2ª rodada</td><td>ALISON LUIS MARTINS (DOM BOSCO) × MIKAEL SILVA DE ARAÚJO (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:20</td><td>apita</td><td>7</td><td>AGM-G-3-031</td><td>Absoluto G Masculino · Grupo 7 · 3ª rodada</td><td>ARTHUR JARDIM MENEZES FERREIRA (ALEL) × FELIPE CONCATTO SCHARFF (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:40</td><td>apita</td><td>10</td><td>AGM-16F-1-042</td><td>Absoluto G Masculino · 16 avos de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>19:00</td><td>apita</td><td>8</td><td>AGM-8F-1-048</td><td>Absoluto G Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>apita</td><td>2</td><td>D15-4F-1-001</td><td>Duplas Sub 13-15 · Quartas de final</td><td>MAÍSA CAON GARCIA / HELLYSA CABRAL PEREIRA DA SILVA (ALEL) × MARIA VITORIA ASCKAR RABANEDA / ANGELINA KASSANDRA ALVES SOLSOL (CT MORIMOTO)</td><td></td></tr>
+<tr><td>07:20</td><td>apita</td><td>1</td><td>D11-S-1-002</td><td>Duplas Sub 7-11 · Semifinal</td><td>GIOVANA BUCAIR COUTO / CLARA GIRALDELLI DERZE (DOM BOSCO) × Vencedor D11-4F-1-001</td><td>mesa principal; semifinal</td></tr>
+<tr><td>08:00</td><td>apita</td><td>9</td><td>AGM-4F-1-054</td><td>Absoluto G Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>08:20</td><td>apita</td><td>8</td><td>AEM-G-2-008</td><td>Absoluto E Masculino · Grupo 2 · 2ª rodada</td><td>ISRAEL ASSER EUGÊNIO (DOM BOSCO) × ENRICO CATALDO REZENDE (DOM BOSCO)</td><td></td></tr>
+<tr><td>08:40</td><td>apita</td><td>11</td><td>ADF-G-2-004</td><td>Absoluto D Feminino · Grupo 1 · 2ª rodada</td><td>ANA BEATRIZ PEREIRA ANTENOR DE MORAES (DOM BOSCO) × GIOVANNA PALOPOLI RIBEIRO (ATMR)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>4</td><td>AEM-G-3-013</td><td>Absoluto E Masculino · Grupo 1 · 3ª rodada</td><td>ANDRÉ VALENTE DO COUTO (DOM BOSCO) × FELIPE CORDEIRO JULIANI BECCARDI (ADEMS)</td><td></td></tr>
+<tr><td>09:20</td><td>apita</td><td>6</td><td>ABM-G-3-005</td><td>Absoluto B Masculino · Grupo 1 · 3ª rodada</td><td>PAULO IRAM ALVES NETO (DOM BOSCO) × DANIEL BUCAIR COUTO (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>9</td><td>AEF-U-1-001</td><td>Absoluto E Feminino · Todos contra todos · 1ª rodada</td><td>ELINE BEATRIZ DE OLIVEIRA SPECHT (ALEL) × LAURA  QUEREN DE SOUZA JALES (ALEL)</td><td></td></tr>
+<tr><td>10:00</td><td>apita</td><td>4</td><td>AEM-4F-1-023</td><td>Absoluto E Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>11</td><td>AEM-S-1-027</td><td>Absoluto E Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>11:00</td><td>apita</td><td>1</td><td>AEM-F-1-029</td><td>Absoluto E Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>VITO GABRIEL JUREWISK (árbitro fixo)</h2>
+<p><b>37 jogos</b> (12h20) · 28/11 08:40–19:00; 29/11 07:00–10:40 · permanência 14h40 · ocupação 84% · seq. máx. 9 · 7 blocos · mesa principal 6 · decisivos 7</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>10</td><td>S17M-G-1-009</td><td>Sub-17 Masculino · Grupo 9 · 1ª rodada</td><td>LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × MARCOS VITÓRIO AUED DA CONCEIÇÃO (ATMR)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>5</td><td>S17M-G-2-016</td><td>Sub-17 Masculino · Grupo 7 · 2ª rodada</td><td>KAIO BIASI PENALVA VERDOLIN (ATMR) × MIKAEL SILVA DE ARAÚJO (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:20</td><td>apita</td><td>8</td><td>S11M-G-1-002</td><td>Sub-11 Masculino · Grupo 2 · 1ª rodada</td><td>ARTHUR JARDIM MENEZES FERREIRA (ALEL) × FREDERICO LIRA MOCHEUTI (ALEL)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>12</td><td>S13M-G-2-016</td><td>Sub-13 Masculino · Grupo 7 · 2ª rodada</td><td>HENRIQUE CORDEIRO JULIANI BECCARDI (ADEMS) × YURI CIBULSKIS REIS (DOM BOSCO)</td><td></td></tr>
+<tr><td>10:00</td><td>apita</td><td>1</td><td>S9M-U-3-003</td><td>Sub-9 Masculino · Todos contra todos · 3ª rodada</td><td>RAFAEL BIASI PENALVA VERDOLIN (ATMR) × MIGUEL LOTT (DOM BOSCO)</td><td>mesa principal</td></tr>
+<tr><td>10:20</td><td>apita</td><td>4</td><td>S19M-G-1-004</td><td>Sub-19 Masculino · Grupo 4 · 1ª rodada</td><td>LUCAS HIDEO ONUKI (DOM BOSCO) × FELIPE CONCATTO SCHARFF (DOM BOSCO)</td><td></td></tr>
+<tr><td>10:40</td><td>apita</td><td>11</td><td>S11M-G-2-007</td><td>Sub-11 Masculino · Grupo 2 · 2ª rodada</td><td>ARTHUR JARDIM MENEZES FERREIRA (ALEL) × DAVI MATHEUS VIEIRA (DOM BOSCO)</td><td></td></tr>
+<tr><td>11:00</td><td>apita</td><td>6</td><td>S13M-G-3-024</td><td>Sub-13 Masculino · Grupo 6 · 3ª rodada</td><td>ENRICO CATALDO REZENDE (DOM BOSCO) × ARTHUR JARDIM MENEZES FERREIRA (ALEL)</td><td></td></tr>
+<tr><td>11:40</td><td>apita</td><td>3</td><td>S11F-G-3-009</td><td>Sub-11 Feminino · Grupo 2 · 3ª rodada</td><td>GIOVANA BUCAIR COUTO (DOM BOSCO) × LAVYNIA DAUZACKER RYBA (ALEL)</td><td></td></tr>
+<tr><td>13:00</td><td>apita</td><td>14</td><td>M40M-G-3-009</td><td>Master 40 Masculino · Grupo 3 · 3ª rodada</td><td>RICARDO MOACIR MULLER (PRIMAVERA ATLETICO CLUBE) × ILSON ONUKI (DOM BOSCO)</td><td></td></tr>
+<tr><td>13:20</td><td>apita</td><td>8</td><td>S13M-8F-1-031</td><td>Sub-13 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>13:40</td><td>apita</td><td>3</td><td>S17M-S-1-043</td><td>Sub-17 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>14:00</td><td>apita</td><td>1</td><td>S13F-F-6-014</td><td>Sub-13 Feminino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>14:20</td><td>apita</td><td>12</td><td>S17F-G-2-004</td><td>Sub-17 Feminino · Grupo 2 · 2ª rodada</td><td>ANA CLARA KAPFENBERGER DE ALVES (ATMR) × ANGELINA KASSANDRA ALVES SOLSOL (CT MORIMOTO)</td><td></td></tr>
+<tr><td>15:00</td><td>apita</td><td>6</td><td>S19M-G-3-017</td><td>Sub-19 Masculino · Grupo 5 · 3ª rodada</td><td>GUSTAVO LOPES CAMPOS (ATMR) × JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>15:20</td><td>apita</td><td>4</td><td>M30M-S-1-014</td><td>Master 30 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>15:40</td><td>apita</td><td>5</td><td>S19M-8F-1-020</td><td>Sub-19 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>16:00</td><td>apita</td><td>6</td><td>S15M-8F-1-030</td><td>Sub-15 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>16:20</td><td>apita</td><td>5</td><td>S19M-4F-1-023</td><td>Sub-19 Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>16:40</td><td>apita</td><td>9</td><td>M50M-G-3-005</td><td>Master 50 Masculino · Grupo 1 · 3ª rodada</td><td>ANDRÉ VALENTE DO COUTO (DOM BOSCO) × ADRIANO HENRIQUE DOS SANTOS SANCHES (CT MORIMOTO)</td><td></td></tr>
+<tr><td>17:20</td><td>apita</td><td>7</td><td>AGM-G-1-011</td><td>Absoluto G Masculino · Grupo 11 · 1ª rodada</td><td>ESTÊVÃO PAIVA FONSECA (CT MORIMOTO) × FREDERICO LIRA MOCHEUTI (ALEL)</td><td></td></tr>
+<tr><td>17:40</td><td>apita</td><td>5</td><td>AGM-G-1-007</td><td>Absoluto G Masculino · Grupo 7 · 1ª rodada</td><td>ARTHUR JARDIM MENEZES FERREIRA (ALEL) × WIDNEY RICARDO CASTELHANO FILHO (ATMR)</td><td></td></tr>
+<tr><td>18:00</td><td>apita</td><td>2</td><td>AGM-G-2-013</td><td>Absoluto G Masculino · Grupo 1 · 2ª rodada</td><td>MARCELO GRUBERT (PRIMAVERA ATLETICO CLUBE) × YURI CIBULSKIS REIS (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:20</td><td>apita</td><td>1</td><td>AGM-G-3-025</td><td>Absoluto G Masculino · Grupo 1 · 3ª rodada</td><td>LUIZ FELIPE OMENA DOS SANTOS (DOM BOSCO) × MARCELO GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td>mesa principal</td></tr>
+<tr><td>18:40</td><td>apita</td><td>1</td><td>S15M-F-1-039</td><td>Sub-15 Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>19:00</td><td>apita</td><td>10</td><td>AGM-8F-1-050</td><td>Absoluto G Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>apita</td><td>1</td><td>D11-4F-1-001</td><td>Duplas Sub 7-11 · Quartas de final</td><td>EMANUEL CARDOSO DA SILVA MENDES / LORENA GAMA NUNES (ATMR) × SOFIA BRAUN REISDERFER / LAURA QUEREN DE SOUZA JALES (ALEL)</td><td>mesa principal</td></tr>
+<tr><td>07:20</td><td>apita</td><td>6</td><td>DAD-S-1-004</td><td>Duplas Sub 17-Adulto · Semifinal</td><td>LUCAS HIDEO ONUKI / GABRIEL OTACIO PEREIRA PARDIN (DOM BOSCO / ATMR) × Vencedor DAD-4F-1-002</td><td>semifinal</td></tr>
+<tr><td>08:00</td><td>apita</td><td>11</td><td>AGM-4F-1-056</td><td>Absoluto G Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>08:20</td><td>apita</td><td>9</td><td>AEM-G-2-009</td><td>Absoluto E Masculino · Grupo 3 · 2ª rodada</td><td>LUCAS VASCONCELOS ARRAES (CT MORIMOTO) × FERNANDO BONGIOLO (ADEMS)</td><td></td></tr>
+<tr><td>08:40</td><td>apita</td><td>4</td><td>ADM-G-2-009</td><td>Absoluto D Masculino · Grupo 4 · 2ª rodada</td><td>DAMIÃO ORLANDO DE OLIVEIRA LOTT (DOM BOSCO) × BENJAMIM FERREIRA PRESTES (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>7</td><td>AEM-G-3-016</td><td>Absoluto E Masculino · Grupo 4 · 3ª rodada</td><td>CHRISTIANO PERAZOLO DE ALMEIDA (ASTM SINOP) × DAVID YASSUSHI YONEKUBO (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:20</td><td>apita</td><td>5</td><td>ADM-G-3-015</td><td>Absoluto D Masculino · Grupo 5 · 3ª rodada</td><td>SHUWAISER  ARIYOSHI (CT MORIMOTO) × LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>7</td><td>AAF-U-1-001</td><td>Absoluto A Feminino · Todos contra todos · 1ª rodada</td><td>LUCIANA MIDORI SASAI MORIMOTO (CT MORIMOTO) × MAISA DIELY BRITO BARCELO (ATMR)</td><td></td></tr>
+<tr><td>10:00</td><td>apita</td><td>1</td><td>AFM-F-6-014</td><td>Absoluto F Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>10:20</td><td>apita</td><td>2</td><td>ADM-4F-1-018</td><td>Absoluto D Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>10:40</td><td>apita</td><td>3</td><td>ADM-S-1-022</td><td>Absoluto D Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>JUAN ALLEDI (árbitro fixo, também joga)</h2>
+<p>Também joga como <b>JUAN DA SILVA ALLEDI</b> (4 jogos).</p>
+<p><b>33 jogos</b> (11h00) · 28/11 10:00–18:00; 29/11 07:00–11:00 · permanência 12h40 · ocupação 87% · seq. máx. 9 · 5 blocos · mesa principal 6 · decisivos 8 · antes de jogar 0 · possíveis choques 12 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>09:00</td><td>🏓 <b>joga</b></td><td>2</td><td>S17M-G-2-013</td><td>Sub-17 Masculino · Grupo 4 · 2ª rodada</td><td>JUAN DA SILVA ALLEDI (ALEL) × YUDI ALVARES FELIX (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:40</td><td>🏓 <b>joga</b></td><td>4</td><td>S17M-G-3-022</td><td>Sub-17 Masculino · Grupo 4 · 3ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × JUAN DA SILVA ALLEDI (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:00</td><td>apita</td><td>3</td><td>S13M-G-2-011</td><td>Sub-13 Masculino · Grupo 2 · 2ª rodada</td><td>BENÍCIO FERREIRA DA COSTA BASSO (CT MORIMOTO) × MATEUS QUEMUEL GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>3</td><td>S19M-G-1-003</td><td>Sub-19 Masculino · Grupo 3 · 1ª rodada</td><td>PAULO IRAM ALVES NETO (DOM BOSCO) × YUDI ALVARES FELIX (DOM BOSCO)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>10:40</td><td>apita</td><td>9</td><td>S15F-G-1-004</td><td>Sub-15 Feminino · Grupo 2 · 1ª rodada</td><td>GABRIELI PIVETTA KOZAK (ADEMS) × GIOVANNA PALOPOLI RIBEIRO (ATMR)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: MIGUEL DOS SANTOS (alternativa: MARCELO GRUBERT) — atenção: joga no horário seguinte</td></tr>
+<tr><td>11:00</td><td>apita</td><td>1</td><td>S13M-G-3-019</td><td>Sub-13 Masculino · Grupo 1 · 3ª rodada</td><td>BENJAMIM FERREIRA PRESTES (DOM BOSCO) × MIGUEL DOS SANTOS (PRIMAVERA ATLETICO CLUBE)</td><td>mesa principal; possível choque: mata-mata S17M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>11:20</td><td>apita</td><td>1</td><td>S11F-G-2-004</td><td>Sub-11 Feminino · Grupo 1 · 2ª rodada</td><td>CLARA GIRALDELLI DERZE (DOM BOSCO) × LORENA GAMA NUNES (ATMR)</td><td>mesa principal; possível choque: mata-mata S17M; substituto se ele se classificar: CARLOS ALBERTO FRANCISCO DA COSTA (alternativa: DANIEL DE OLIVEIRA JÚNIOR) — atenção: passaria de 9 jogos seguidos</td></tr>
+<tr><td>11:40</td><td>apita</td><td>13</td><td>S11M-G-3-014</td><td>Sub-11 Masculino · Grupo 3 · 3ª rodada</td><td>BENÍCIO FERREIRA DA COSTA BASSO (CT MORIMOTO) × MATEUS QUEMUEL GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>13:00</td><td>apita</td><td>10</td><td>S11M-4F-1-016</td><td>Sub-11 Masculino · Quartas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: MIGUEL DOS SANTOS (alternativa: VITOR SANTOS) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>13:20</td><td>apita</td><td>1</td><td>M30M-G-1-001</td><td>Master 30 Masculino · Grupo 1 · 1ª rodada</td><td>ISRAEL ASSER EUGÊNIO (DOM BOSCO) × ALISON LUIS MARTINS (DOM BOSCO)</td><td>mesa principal; possível choque: mata-mata S17M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>13:40</td><td>apita</td><td>12</td><td>S17F-G-1-002</td><td>Sub-17 Feminino · Grupo 2 · 1ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × ANGELINA KASSANDRA ALVES SOLSOL (CT MORIMOTO)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: VINICIUS FERREIRA GRIGGI (alternativa: ANDRÉ KENJI) — atenção: só se ele não estiver no mata-mata de S17M</td></tr>
+<tr><td>14:00</td><td>apita</td><td>7</td><td>S15M-G-2-009</td><td>Sub-15 Masculino · Grupo 1 · 2ª rodada</td><td>RAFAEL FREITAS MATOS DE SOUZA (DOM BOSCO) × MARCOS CABRAL DA SILVA PAULINO (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>14:20</td><td>apita</td><td>10</td><td>ADTF-U-2-004</td><td>Adulto Feminino · Todos contra todos · 2ª rodada</td><td>REBECCA KAROLINA CASTRO FIGUEIREDO (DOM BOSCO) × MAISA DIELY BRITO BARCELO (ATMR)</td><td></td></tr>
+<tr><td>14:40</td><td>apita</td><td>3</td><td>M30M-G-3-011</td><td>Master 30 Masculino · Grupo 2 · 3ª rodada</td><td>FERNANDO KENJI SASAKI (CT MORIMOTO) × WALTER NOBORU KAWAHARA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>15:00</td><td>apita</td><td>4</td><td>S19M-G-3-015</td><td>Sub-19 Masculino · Grupo 3 · 3ª rodada</td><td>PAULO IRAM ALVES NETO (DOM BOSCO) × LUIS ROBERTO HIDEAKI KOHATSU FUJIKI (CT MORIMOTO)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>15:40</td><td>apita</td><td>10</td><td>ADTF-U-4-008</td><td>Adulto Feminino · Todos contra todos · 4ª rodada</td><td>MILENA SUEMY SASAI MORIMOTO (CT MORIMOTO) × ANA CLARA MORENO RODRIGUES (CT MORIMOTO)</td><td></td></tr>
+<tr><td>16:00</td><td>apita</td><td>1</td><td>S15M-8F-1-025</td><td>Sub-15 Masculino · Oitavas de final</td><td>A definir × A definir</td><td>mesa principal</td></tr>
+<tr><td>16:20</td><td>apita</td><td>8</td><td>S15F-S-1-014</td><td>Sub-15 Feminino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>16:40</td><td>apita</td><td>14</td><td>M55M-U-4-008</td><td>Master 55 Masculino · Todos contra todos · 4ª rodada</td><td>NELSON YUKIO MATSUBARA (CT MORIMOTO) × MARCOS CÉSAR GOMES (ATMR)</td><td></td></tr>
+<tr><td>17:00</td><td>apita</td><td>3</td><td>S19M-S-1-025</td><td>Sub-19 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>17:20</td><td>apita</td><td>10</td><td>M50M-S-1-008</td><td>Master 50 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>17:40</td><td>apita</td><td>10</td><td>AEM-G-1-004</td><td>Absoluto E Masculino · Grupo 4 · 1ª rodada</td><td>CHRISTIANO PERAZOLO DE ALMEIDA (ASTM SINOP) × KAIO BIASI PENALVA VERDOLIN (ATMR)</td><td></td></tr>
+<tr><td>18:00</td><td>apita</td><td>8</td><td>AGM-G-2-019</td><td>Absoluto G Masculino · Grupo 7 · 2ª rodada</td><td>FELIPE CONCATTO SCHARFF (DOM BOSCO) × WIDNEY RICARDO CASTELHANO FILHO (ATMR)</td><td></td></tr>
+<tr><td>18:40</td><td>🏓 <b>joga</b></td><td>2</td><td>AFM-G-1-001</td><td>Absoluto F Masculino · Grupo 1 · 1ª rodada</td><td>DAVI KOPPER (ÁGAPE SINOP) × JUAN DA SILVA ALLEDI (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>19:00</td><td>🏓 <b>joga</b></td><td>2</td><td>AFM-G-2-004</td><td>Absoluto F Masculino · Grupo 1 · 2ª rodada</td><td>FABRÍCIO SPECHT (ALEL) × JUAN DA SILVA ALLEDI (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>apita</td><td>6</td><td>DAD-4F-1-002</td><td>Duplas Sub 17-Adulto · Quartas de final</td><td>BENJAMIM FERREIRA PRESTES / PAULO IRAM ALVES NETO (DOM BOSCO) × LUIZ HENRIQUE CAMARGO MORAES / HENRIQUE CORDEIRO JULIANI BECCARDI (ADEMS)</td><td></td></tr>
+<tr><td>07:20</td><td>apita</td><td>5</td><td>DAD-S-1-003</td><td>Duplas Sub 17-Adulto · Semifinal</td><td>DANIEL BUCAIR COUTO / REBECCA KAROLINA CASTRO FIGUEIREDO (DOM BOSCO) × Vencedor DAD-4F-1-001</td><td>semifinal</td></tr>
+<tr><td>07:40</td><td>apita</td><td>3</td><td>DAD-F-1-005</td><td>Duplas Sub 17-Adulto · Final</td><td>Vencedor DAD-S-1-003 × Vencedor DAD-S-1-004</td><td>FINAL</td></tr>
+<tr><td>08:00</td><td>apita</td><td>3</td><td>ADM-G-1-003</td><td>Absoluto D Masculino · Grupo 3 · 1ª rodada</td><td>MARTHIM ALFREDO ZIMPEL DE SOUZA (ASTM SINOP) × PIETRO TEIXEIRA BERGAMASCHI (CT MORIMOTO)</td><td></td></tr>
+<tr><td>08:20</td><td>apita</td><td>5</td><td>AGM-S-1-057</td><td>Absoluto G Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>08:40</td><td>apita</td><td>3</td><td>ADM-G-2-008</td><td>Absoluto D Masculino · Grupo 3 · 2ª rodada</td><td>GIULIANO CURVO MUNIZ (ASTM SINOP) × PIETRO TEIXEIRA BERGAMASCHI (CT MORIMOTO)</td><td>possível choque: mata-mata AFM; substituto se ele se classificar: MIGUEL DOS SANTOS (alternativa: VITOR SANTOS) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>09:00</td><td>apita</td><td>10</td><td>ADF-G-3-007</td><td>Absoluto D Feminino · Grupo 1 · 3ª rodada</td><td>GIOVANA BUCAIR COUTO (DOM BOSCO) × ANA BEATRIZ PEREIRA ANTENOR DE MORAES (DOM BOSCO)</td><td>possível choque: mata-mata AFM; substituto se ele se classificar: VITOR SANTOS (alternativa: MARCELO GRUBERT) — atenção: só se ele não estiver no mata-mata de AFM</td></tr>
+<tr><td>09:20</td><td>apita</td><td>4</td><td>ADM-G-3-014</td><td>Absoluto D Masculino · Grupo 4 · 3ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × DAMIÃO ORLANDO DE OLIVEIRA LOTT (DOM BOSCO)</td><td>possível choque: mata-mata AFM; substituto se ele se classificar: SARAH BARBI (alternativa: VITOR SANTOS) — atenção: joga no horário seguinte</td></tr>
+<tr><td>09:40</td><td>apita</td><td>12</td><td>ADF-4F-4-011</td><td>Absoluto D Feminino · Quartas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata AFM; substituto se ele se classificar: VITOR SANTOS (alternativa: BENJAMIM FERREIRA PRESTES) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>10:20</td><td>apita</td><td>1</td><td>ABM-F-1-009</td><td>Absoluto B Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>10:40</td><td>apita</td><td>1</td><td>ADF-F-6-014</td><td>Absoluto D Feminino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>11:00</td><td>apita</td><td>14</td><td>ACF-U-5-010</td><td>Absoluto C Feminino · Todos contra todos · 5ª rodada</td><td>GABRIELI PIVETTA KOZAK (ADEMS) × ANA CLARA KAPFENBERGER DE ALVES (ATMR)</td><td></td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>RICARDO MOACIR MULLER (árbitro fixo, também joga)</h2>
+<p>Também joga como <b>RICARDO MOACIR MULLER</b> (5 jogos).</p>
+<p><b>33 jogos</b> (11h00) · 28/11 08:40–19:00; 29/11 07:20–11:20 · permanência 15h00 · ocupação 73% · seq. máx. 9 · 7 blocos · mesa principal 5 · decisivos 8 · antes de jogar 0 · possíveis choques 13 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>2</td><td>S17M-G-1-001</td><td>Sub-17 Masculino · Grupo 1 · 1ª rodada</td><td>PAULO IRAM ALVES NETO (DOM BOSCO) × LUIZ HENRIQUE CAMARGO MORAES (ADEMS)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>7</td><td>S13M-G-1-001</td><td>Sub-13 Masculino · Grupo 1 · 1ª rodada</td><td>BENJAMIM FERREIRA PRESTES (DOM BOSCO) × JÓSE GABRIEL SOUZA GENELHU (ALEL)</td><td></td></tr>
+<tr><td>09:20</td><td>apita</td><td>9</td><td>S11M-G-1-003</td><td>Sub-11 Masculino · Grupo 2 · 1ª rodada</td><td>RAFAEL BIASI PENALVA VERDOLIN (ATMR) × DAVI MATHEUS VIEIRA (DOM BOSCO)</td><td></td></tr>
+<tr><td>10:00</td><td>🏓 <b>joga</b></td><td>14</td><td>M40M-G-1-003</td><td>Master 40 Masculino · Grupo 3 · 1ª rodada</td><td>RICARDO MOACIR MULLER (PRIMAVERA ATLETICO CLUBE) × HELDER AUGUSTO POMPEU DE BARROS DALTRO (CT MORIMOTO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:20</td><td>apita</td><td>2</td><td>S19M-G-1-002</td><td>Sub-19 Masculino · Grupo 2 · 1ª rodada</td><td>GABRIEL OTACIO PEREIRA PARDIN (ATMR) × LUIZ HENRIQUE CAMARGO MORAES (ADEMS)</td><td></td></tr>
+<tr><td>10:40</td><td>apita</td><td>8</td><td>S15F-G-1-003</td><td>Sub-15 Feminino · Grupo 2 · 1ª rodada</td><td>HELLYSA CABRAL PEREIRA DA SILVA (ALEL) × ANGELINA KASSANDRA ALVES SOLSOL (CT MORIMOTO)</td><td></td></tr>
+<tr><td>11:00</td><td>apita</td><td>5</td><td>S13M-G-3-023</td><td>Sub-13 Masculino · Grupo 5 · 3ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × OTAVIO AUGUSTO POMPEU DE BARROS DALTRO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>11:20</td><td>apita</td><td>5</td><td>S17M-8F-1-031</td><td>Sub-17 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>11:40</td><td>apita</td><td>10</td><td>S11M-G-3-011</td><td>Sub-11 Masculino · Grupo 1 · 3ª rodada</td><td>ENRICO CATALDO REZENDE (DOM BOSCO) × EMANUEL CARDOSO DA SILVA MENDES (ATMR)</td><td></td></tr>
+<tr><td>13:00</td><td>🏓 <b>joga</b></td><td>14</td><td>M40M-G-3-009</td><td>Master 40 Masculino · Grupo 3 · 3ª rodada</td><td>RICARDO MOACIR MULLER (PRIMAVERA ATLETICO CLUBE) × ILSON ONUKI (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>13:20</td><td>apita</td><td>4</td><td>M30M-G-1-004</td><td>Master 30 Masculino · Grupo 2 · 1ª rodada</td><td>HERICK ASSUNÇÃO DO NASCIMENTO (DOM BOSCO) × FERNANDO KENJI SASAKI (CT MORIMOTO)</td><td>possível choque: mata-mata M40M; substituto se ele se classificar: SARAH BARBI (alternativa: MARCELO GRUBERT) — atenção: joga no horário seguinte</td></tr>
+<tr><td>13:40</td><td>apita</td><td>2</td><td>S17M-S-1-042</td><td>Sub-17 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal; possível choque: mata-mata M40M; substituto se ele se classificar: MARCOS CABRAL (alternativa: VITOR SANTOS) — atenção: joga no horário seguinte</td></tr>
+<tr><td>14:00</td><td>apita</td><td>11</td><td>S15M-G-2-013</td><td>Sub-15 Masculino · Grupo 5 · 2ª rodada</td><td>MAIKEL MANOEL APPELT DE OLIVEIRA (ADEMS) × MIKAEL SILVA DE ARAÚJO (DOM BOSCO)</td><td>possível choque: mata-mata M40M; substituto se ele se classificar: JOÃO FELIPE MULLER (alternativa: MARTHIM ALFREDO ZIMPEL DE SOUZA) — atenção: joga no horário seguinte</td></tr>
+<tr><td>14:20</td><td>apita</td><td>11</td><td>S17F-G-2-003</td><td>Sub-17 Feminino · Grupo 1 · 2ª rodada</td><td>HELLYSA CABRAL PEREIRA DA SILVA (ALEL) × MAYANNA ANDRADE DA SILVA (ALEL)</td><td>possível choque: mata-mata M40M; substituto se ele se classificar: CARLOS ALBERTO FRANCISCO DA COSTA — atenção: passaria de 9 jogos seguidos</td></tr>
+<tr><td>14:40</td><td>apita</td><td>10</td><td>S15M-G-3-022</td><td>Sub-15 Masculino · Grupo 6 · 3ª rodada</td><td>LUCAS ALVES BELO (ATMR) × VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR)</td><td>possível choque: mata-mata M40M; substituto se ele se classificar: MIGUEL DOS SANTOS (alternativa: MARCELO GRUBERT) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>15:00</td><td>apita</td><td>11</td><td>S13M-4F-1-036</td><td>Sub-13 Masculino · Quartas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata M40M; substituto se ele se classificar: DANIEL DE OLIVEIRA JÚNIOR — atenção: passaria de 9 jogos seguidos</td></tr>
+<tr><td>15:20</td><td>apita</td><td>6</td><td>S15F-G-3-010</td><td>Sub-15 Feminino · Grupo 1 · 3ª rodada</td><td>MAÍSA CAON GARCIA (ALEL) × ANA CLARA KAPFENBERGER DE ALVES (ATMR)</td><td></td></tr>
+<tr><td>15:40</td><td>apita</td><td>8</td><td>M70M-U-3-003</td><td>Master 70 Masculino · Todos contra todos · 3ª rodada</td><td>SHUWAISER  ARIYOSHI (CT MORIMOTO) × DAVID YASSUSHI YONEKUBO (DOM BOSCO)</td><td></td></tr>
+<tr><td>16:00</td><td>apita</td><td>5</td><td>S15M-8F-1-029</td><td>Sub-15 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>16:40</td><td>apita</td><td>1</td><td>M30M-F-1-015</td><td>Master 30 Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>17:00</td><td>apita</td><td>12</td><td>ADTM-U-3-006</td><td>Adulto Masculino · Todos contra todos · 3ª rodada</td><td>JOÃO GABRIEL VIEIRA JESUS (CT MORIMOTO) × LUCA KUMAHARA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>17:20</td><td>apita</td><td>3</td><td>AGM-G-1-003</td><td>Absoluto G Masculino · Grupo 3 · 1ª rodada</td><td>ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO) × DAVI MATHEUS VIEIRA (DOM BOSCO)</td><td></td></tr>
+<tr><td>17:40</td><td>apita</td><td>1</td><td>S19M-F-1-027</td><td>Sub-19 Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>18:00</td><td>apita</td><td>1</td><td>M50M-F-1-009</td><td>Master 50 Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>18:20</td><td>apita</td><td>5</td><td>AGM-G-3-029</td><td>Absoluto G Masculino · Grupo 5 · 3ª rodada</td><td>ENZO CAPELETTO DAS NEVES (DOM BOSCO) × JOÃO VITHOR DE SOUZA ROSA (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:40</td><td>apita</td><td>13</td><td>S19F-U-2-003</td><td>Sub-19 Feminino · Todos contra todos · 2ª rodada</td><td>JÚLIA CÁSSIA EVANGELISTA DE OLIVEIRA (DOM BOSCO) × SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP)</td><td></td></tr>
+<tr><td>19:00</td><td>apita</td><td>7</td><td>AGM-8F-1-047</td><td>Absoluto G Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>🏓 <b>joga</b></td><td>8</td><td>DMA-4F-1-002</td><td>Duplas Master · Quartas de final</td><td>RICARDO MOACIR MULLER / DEOCLECIANO NUNES SILVA (PRIMAVERA ATLETICO CLUBE / ATMR) × DIMAS MICHIURA / FERNANDO KENJI SASAKI (CT MORIMOTO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>07:20</td><td>apita</td><td>2</td><td>D11-S-1-003</td><td>Duplas Sub 7-11 · Semifinal</td><td>ENRICO CATALDO REZENDE / DAVI MATHEUS VIEIRA (DOM BOSCO) × ARTHUR JARDIM MENEZES FERREIRA / LAVYNIA DAUZACKER RYBA (ALEL)</td><td>semifinal; possível choque: mata-mata DMA; substituto se ele se classificar: MARCOS CABRAL (alternativa: MIGUEL DOS SANTOS)</td></tr>
+<tr><td>07:40</td><td>apita</td><td>2</td><td>D15-F-1-006</td><td>Duplas Sub 13-15 · Final</td><td>Vencedor D15-S-1-004 × Vencedor D15-S-1-005</td><td>FINAL; possível choque: mata-mata DMA; substituto se ele se classificar: MIGUEL DOS SANTOS (alternativa: SABRINA LETÍCIA ALMEIDA)</td></tr>
+<tr><td>08:20</td><td>🏓 <b>joga</b></td><td>11</td><td>AEM-G-2-011</td><td>Absoluto E Masculino · Grupo 5 · 2ª rodada</td><td>RICARDO MOACIR MULLER (PRIMAVERA ATLETICO CLUBE) × DAVI FERREIRA MAGALHÃES (AEPA)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:00</td><td>🏓 <b>joga</b></td><td>8</td><td>AEM-G-3-017</td><td>Absoluto E Masculino · Grupo 5 · 3ª rodada</td><td>GUILHERME RODRIGO BRITO LIMA CIVIDINI (ÁGAPE SINOP) × RICARDO MOACIR MULLER (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:20</td><td>apita</td><td>1</td><td>ADM-G-3-011</td><td>Absoluto D Masculino · Grupo 1 · 3ª rodada</td><td>JOÃO GABRIEL VIEIRA JESUS (CT MORIMOTO) × JACIONE ANTÔNIO PIRES DA CUNHA (ADEMS)</td><td>mesa principal; possível choque: mata-mata AEM; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>09:40</td><td>apita</td><td>14</td><td>ACF-U-3-006</td><td>Absoluto C Feminino · Todos contra todos · 3ª rodada</td><td>GABRIELI PIVETTA KOZAK (ADEMS) × MAÍSA CAON GARCIA (ALEL)</td><td>possível choque: mata-mata AEM; substituto se ele se classificar: BENJAMIM FERREIRA PRESTES (alternativa: LUCAS BELLO) — atenção: só se ele não estiver no mata-mata de ADM</td></tr>
+<tr><td>10:00</td><td>apita</td><td>12</td><td>ADF-S-5-012</td><td>Absoluto D Feminino · Semifinal</td><td>A definir × A definir</td><td>semifinal; possível choque: mata-mata AEM; substituto se ele se classificar: MARCOS CABRAL (alternativa: LUIZ HENRIQUE)</td></tr>
+<tr><td>10:20</td><td>apita</td><td>4</td><td>ADM-4F-1-020</td><td>Absoluto D Masculino · Quartas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata AEM; substituto se ele se classificar: SARAH BARBI</td></tr>
+<tr><td>11:00</td><td>apita</td><td>7</td><td>AAF-U-3-005</td><td>Absoluto A Feminino · Todos contra todos · 3ª rodada</td><td>JÚLIA CÁSSIA EVANGELISTA DE OLIVEIRA (DOM BOSCO) × MAISA DIELY BRITO BARCELO (ATMR)</td><td>possível choque: mata-mata AEM; substituto se ele se classificar: MARCOS CABRAL (alternativa: MIGUEL DOS SANTOS)</td></tr>
+<tr><td>11:20</td><td>apita</td><td>1</td><td>ADM-F-1-024</td><td>Absoluto D Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>WASHINGTON NERY (árbitro fixo, também joga)</h2>
+<p>Também joga como <b>WASHINGTON SOUZA NERY</b> (4 jogos).</p>
+<p><b>33 jogos</b> (11h00) · 28/11 08:40–18:20; 29/11 07:00–11:00 · permanência 14h20 · ocupação 77% · seq. máx. 9 · 6 blocos · mesa principal 6 · decisivos 10 · antes de jogar 1 · possíveis choques 7 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>4</td><td>S17M-G-1-003</td><td>Sub-17 Masculino · Grupo 3 · 1ª rodada</td><td>JOÃO PAULO LOPES PERILLO (ATMR) × LUIZ GUSTAVO DOS SANTOS (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>11</td><td>S13M-G-1-005</td><td>Sub-13 Masculino · Grupo 5 · 1ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × ENZO GABRIEL KEHL (ALEL)</td><td></td></tr>
+<tr><td>09:20</td><td>apita</td><td>6</td><td>S17M-G-2-017</td><td>Sub-17 Masculino · Grupo 8 · 2ª rodada</td><td>PEDRO HENRIQUE SALES MOCELIN (ÁGAPE SINOP) × DAVI FERREIRA MAGALHÃES (AEPA)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>8</td><td>S17M-G-3-026</td><td>Sub-17 Masculino · Grupo 8 · 3ª rodada</td><td>PIETRO TEIXEIRA BERGAMASCHI (CT MORIMOTO) × PEDRO HENRIQUE SALES MOCELIN (ÁGAPE SINOP)</td><td></td></tr>
+<tr><td>10:00</td><td>apita</td><td>4</td><td>S13M-G-2-014</td><td>Sub-13 Masculino · Grupo 5 · 2ª rodada</td><td>OTAVIO AUGUSTO POMPEU DE BARROS DALTRO (CT MORIMOTO) × ENZO GABRIEL KEHL (ALEL)</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>12</td><td>S15M-G-1-006</td><td>Sub-15 Masculino · Grupo 6 · 1ª rodada</td><td>LUCAS ALVES BELO (ATMR) × DAVI FERREIRA MAGALHÃES (AEPA)</td><td></td></tr>
+<tr><td>10:40</td><td>apita</td><td>1</td><td>S11F-G-1-001</td><td>Sub-11 Feminino · Grupo 1 · 1ª rodada</td><td>ALICE CAVAZZINI (SORRISO HORNETS) × LORENA GAMA NUNES (ATMR)</td><td>mesa principal</td></tr>
+<tr><td>11:00</td><td>apita</td><td>2</td><td>S13M-G-3-020</td><td>Sub-13 Masculino · Grupo 2 · 3ª rodada</td><td>FELIPE CORDEIRO JULIANI BECCARDI (ADEMS) × BENÍCIO FERREIRA DA COSTA BASSO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>11:20</td><td>apita</td><td>6</td><td>S17M-8F-1-032</td><td>Sub-17 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>13:00</td><td>apita</td><td>11</td><td>S11M-4F-1-017</td><td>Sub-11 Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>13:20</td><td>apita</td><td>13</td><td>S13F-S-5-012</td><td>Sub-13 Feminino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>13:40</td><td>apita</td><td>1</td><td>S11F-F-1-012</td><td>Sub-11 Feminino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>14:00</td><td>apita</td><td>12</td><td>S15M-G-2-014</td><td>Sub-15 Masculino · Grupo 6 · 2ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × DAVI FERREIRA MAGALHÃES (AEPA)</td><td></td></tr>
+<tr><td>14:20</td><td>apita</td><td>1</td><td>S11M-F-1-020</td><td>Sub-11 Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>14:40</td><td>apita</td><td>14</td><td>M55M-U-1-002</td><td>Master 55 Masculino · Todos contra todos · 1ª rodada</td><td>MARCUS ROGERIO HATAKEYAMA (CT MORIMOTO) × NELSON YUKIO MATSUBARA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>15:20</td><td>🏓 <b>joga</b></td><td>9</td><td>M50M-G-1-001</td><td>Master 50 Masculino · Grupo 1 · 1ª rodada</td><td>ANDRÉ VALENTE DO COUTO (DOM BOSCO) × WASHINGTON SOUZA NERY (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>16:00</td><td>🏓 <b>joga</b></td><td>9</td><td>M50M-G-2-003</td><td>Master 50 Masculino · Grupo 1 · 2ª rodada</td><td>ADRIANO HENRIQUE DOS SANTOS SANCHES (CT MORIMOTO) × WASHINGTON SOUZA NERY (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>16:20</td><td>apita</td><td>1</td><td>S13M-F-1-042</td><td>Sub-13 Masculino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL</td></tr>
+<tr><td>16:40</td><td>apita</td><td>8</td><td>S15M-4F-1-036</td><td>Sub-15 Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>17:00</td><td>apita</td><td>1</td><td>S15F-F-1-015</td><td>Sub-15 Feminino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL; possível choque: mata-mata M50M; substituto se ele se classificar: CARLOS ALBERTO FRANCISCO DA COSTA (alternativa: VITO GABRIEL JUREWISK) — atenção: passaria de 9 jogos seguidos</td></tr>
+<tr><td>17:20</td><td>apita</td><td>1</td><td>S17F-F-1-009</td><td>Sub-17 Feminino · Final</td><td>A definir × A definir</td><td>mesa principal; FINAL; possível choque: mata-mata M50M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>17:40</td><td>apita</td><td>11</td><td>AEM-G-1-005</td><td>Absoluto E Masculino · Grupo 5 · 1ª rodada</td><td>GUILHERME RODRIGO BRITO LIMA CIVIDINI (ÁGAPE SINOP) × DAVI FERREIRA MAGALHÃES (AEPA)</td><td>possível choque: mata-mata M50M; substituto se ele se classificar: MIGUEL DOS SANTOS (alternativa: MARCOS CABRAL)</td></tr>
+<tr><td>18:20</td><td>apita</td><td>12</td><td>AGM-G-3-036</td><td>Absoluto G Masculino · Grupo 12 · 3ª rodada</td><td>JÓSE GABRIEL SOUZA GENELHU (ALEL) × FERNANDO KENJI SASAKI (CT MORIMOTO)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>18:40</td><td>🏓 <b>joga</b></td><td>3</td><td>AFM-G-1-002</td><td>Absoluto F Masculino · Grupo 2 · 1ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × WASHINGTON SOUZA NERY (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>19:00</td><td>🏓 <b>joga</b></td><td>3</td><td>AFM-G-2-005</td><td>Absoluto F Masculino · Grupo 2 · 2ª rodada</td><td>MIGUEL DOS SANTOS (PRIMAVERA ATLETICO CLUBE) × WASHINGTON SOUZA NERY (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>apita</td><td>8</td><td>DMA-4F-1-002</td><td>Duplas Master · Quartas de final</td><td>RICARDO MOACIR MULLER / DEOCLECIANO NUNES SILVA (PRIMAVERA ATLETICO CLUBE / ATMR) × DIMAS MICHIURA / FERNANDO KENJI SASAKI (CT MORIMOTO)</td><td></td></tr>
+<tr><td>07:20</td><td>apita</td><td>4</td><td>D15-S-1-005</td><td>Duplas Sub 13-15 · Semifinal</td><td>Vencedor D15-4F-1-002 × Vencedor D15-4F-1-003</td><td>semifinal</td></tr>
+<tr><td>07:40</td><td>apita</td><td>4</td><td>DMA-F-1-005</td><td>Duplas Master · Final</td><td>Vencedor DMA-S-1-003 × Vencedor DMA-S-1-004</td><td>FINAL</td></tr>
+<tr><td>08:00</td><td>apita</td><td>13</td><td>ADF-G-1-002</td><td>Absoluto D Feminino · Grupo 2 · 1ª rodada</td><td>HELLYSA CABRAL PEREIRA DA SILVA (ALEL) × ANGELINA KASSANDRA ALVES SOLSOL (CT MORIMOTO)</td><td></td></tr>
+<tr><td>08:20</td><td>apita</td><td>11</td><td>AEM-G-2-011</td><td>Absoluto E Masculino · Grupo 5 · 2ª rodada</td><td>RICARDO MOACIR MULLER (PRIMAVERA ATLETICO CLUBE) × DAVI FERREIRA MAGALHÃES (AEPA)</td><td></td></tr>
+<tr><td>08:40</td><td>apita</td><td>2</td><td>ADM-G-2-007</td><td>Absoluto D Masculino · Grupo 2 · 2ª rodada</td><td>LUCAS FIGUEREDO TARTARI (CT MORIMOTO) × LUCAS ALVES BELO (ATMR)</td><td>possível choque: mata-mata AFM; substituto se ele se classificar: MARCOS CABRAL (alternativa: MIGUEL DOS SANTOS) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>09:00</td><td>apita</td><td>11</td><td>ADF-G-3-008</td><td>Absoluto D Feminino · Grupo 2 · 3ª rodada</td><td>HELLYSA CABRAL PEREIRA DA SILVA (ALEL) × LORENA GAMA NUNES (ATMR)</td><td>possível choque: mata-mata AFM; substituto se ele se classificar: MARCELO GRUBERT — atenção: só se ele não estiver no mata-mata de AGM</td></tr>
+<tr><td>09:20</td><td>apita</td><td>13</td><td>AEM-8F-1-022</td><td>Absoluto E Masculino · Oitavas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata AFM; substituto se ele se classificar: LUCAS BELLO (alternativa: VINICIUS FERREIRA GRIGGI) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>09:40</td><td>apita</td><td>5</td><td>ABM-S-1-007</td><td>Absoluto B Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal; possível choque: mata-mata AFM; substituto se ele se classificar: MIGUEL DOS SANTOS (alternativa: VITOR SANTOS) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>10:20</td><td>apita</td><td>13</td><td>ACF-U-4-007</td><td>Absoluto C Feminino · Todos contra todos · 4ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × GABRIELI PIVETTA KOZAK (ADEMS)</td><td></td></tr>
+<tr><td>10:40</td><td>apita</td><td>4</td><td>ADM-S-1-023</td><td>Absoluto D Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>11:00</td><td>apita</td><td>9</td><td>AEF-U-3-005</td><td>Absoluto E Feminino · Todos contra todos · 3ª rodada</td><td>MARIA VITORIA ASCKAR RABANEDA (CT MORIMOTO) × LAURA  QUEREN DE SOUZA JALES (ALEL)</td><td></td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>LEVY GRUBERT (árbitro atleta, Sub-17+)</h2>
+<p>Também joga como <b>LEVY EMMANUEL GRUBERT</b> (6 jogos).</p>
+<p><b>19 jogos</b> (6h20) · 28/11 09:00–19:00; 29/11 07:00–09:00 · permanência 12h40 · ocupação 50% · seq. máx. 4 · 11 blocos · mesa principal 0 · decisivos 0 · antes de jogar 3 · possíveis choques 7 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>🏓 <b>joga</b></td><td>10</td><td>S17M-G-1-009</td><td>Sub-17 Masculino · Grupo 9 · 1ª rodada</td><td>LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × MARCOS VITÓRIO AUED DA CONCEIÇÃO (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:00</td><td>apita</td><td>12</td><td>S13M-G-1-007</td><td>Sub-13 Masculino · Grupo 7 · 1ª rodada</td><td>VICTOR SAMUEL SOUZA LIMA (ALEL) × YURI CIBULSKIS REIS (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:40</td><td>🏓 <b>joga</b></td><td>9</td><td>S17M-G-3-027</td><td>Sub-17 Masculino · Grupo 9 · 3ª rodada</td><td>LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:00</td><td>apita</td><td>5</td><td>S13M-G-2-015</td><td>Sub-13 Masculino · Grupo 6 · 2ª rodada</td><td>ARTHUR JARDIM MENEZES FERREIRA (ALEL) × DAVI MATHEUS VIEIRA (DOM BOSCO)</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>8</td><td>S15M-G-1-002</td><td>Sub-15 Masculino · Grupo 2 · 1ª rodada</td><td>PIETRO TEIXEIRA BERGAMASCHI (CT MORIMOTO) × LUIZ FELIPE OMENA DOS SANTOS (DOM BOSCO)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>10:40</td><td>apita</td><td>3</td><td>S11F-G-1-003</td><td>Sub-11 Feminino · Grupo 2 · 1ª rodada</td><td>LAVYNIA DAUZACKER RYBA (ALEL) × SOFIA BRAUN REISDERFER (ALEL)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: BENJAMIM FERREIRA PRESTES (alternativa: MIGUEL DOS SANTOS) — atenção: joga no horário seguinte</td></tr>
+<tr><td>11:00</td><td>apita</td><td>9</td><td>S13M-G-3-027</td><td>Sub-13 Masculino · Grupo 8 · 3ª rodada</td><td>JEISON DANIEL MOYA LYON (ALEL) × SAMUEL FERREIRA MAGALHÃES (AEPA)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: LUIZ HENRIQUE — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>11:40</td><td>apita</td><td>2</td><td>S11F-G-3-008</td><td>Sub-11 Feminino · Grupo 2 · 3ª rodada</td><td>SOFIA BRAUN REISDERFER (ALEL) × LAURA  QUEREN DE SOUZA JALES (ALEL)</td><td></td></tr>
+<tr><td>13:20</td><td>apita</td><td>2</td><td>M30M-G-1-002</td><td>Master 30 Masculino · Grupo 1 · 1ª rodada</td><td>DIMAS MICHIURA (CT MORIMOTO) × ESTÊVÃO PAIVA FONSECA (CT MORIMOTO)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: SABRINA LETÍCIA ALMEIDA (alternativa: SARAH BARBI) — atenção: joga no horário seguinte</td></tr>
+<tr><td>13:40</td><td>apita</td><td>13</td><td>M40M-4F-4-010</td><td>Master 40 Masculino · Quartas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: ANDRÉ KENJI (alternativa: LUIZ HENRIQUE) — atenção: só se ele não estiver no mata-mata de S17M</td></tr>
+<tr><td>14:20</td><td>🏓 <b>joga</b></td><td>3</td><td>S19M-G-2-008</td><td>Sub-19 Masculino · Grupo 2 · 2ª rodada</td><td>LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × LUIZ HENRIQUE CAMARGO MORAES (ADEMS)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>14:40</td><td>apita</td><td>11</td><td>S15M-G-3-023</td><td>Sub-15 Masculino · Grupo 7 · 3ª rodada</td><td>PEDRO HENRIQUE SALES MOCELIN (ÁGAPE SINOP) × LUCAS VASCONCELOS ARRAES (CT MORIMOTO)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>15:00</td><td>🏓 <b>joga</b></td><td>3</td><td>S19M-G-3-014</td><td>Sub-19 Masculino · Grupo 2 · 3ª rodada</td><td>GABRIEL OTACIO PEREIRA PARDIN (ATMR) × LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>16:00</td><td>apita</td><td>2</td><td>S15M-8F-1-026</td><td>Sub-15 Masculino · Oitavas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S19M; substituto se ele se classificar: CAIO BATISTA BASTOS — atenção: passaria de 9 jogos seguidos</td></tr>
+<tr><td>17:20</td><td>apita</td><td>5</td><td>AGM-G-1-008</td><td>Absoluto G Masculino · Grupo 8 · 1ª rodada</td><td>DIMAS MICHIURA (CT MORIMOTO) × HELDER AUGUSTO POMPEU DE BARROS DALTRO (CT MORIMOTO)</td><td>possível choque: mata-mata S19M; substituto se ele se classificar: VITOR SANTOS (alternativa: SARAH BARBI) — atenção: só se ele não estiver no mata-mata de S15M</td></tr>
+<tr><td>18:00</td><td>apita</td><td>7</td><td>AGM-G-2-018</td><td>Absoluto G Masculino · Grupo 6 · 2ª rodada</td><td>JORGE MAIKEL DE OLIVEIRA (ADEMS) × IAN CONRADO BORGES TIZZO (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:20</td><td>apita</td><td>9</td><td>AGM-G-3-033</td><td>Absoluto G Masculino · Grupo 9 · 3ª rodada</td><td>WALTER BECK (ALEL) × ALISON LUIS MARTINS (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:40</td><td>apita</td><td>3</td><td>AFM-G-1-002</td><td>Absoluto F Masculino · Grupo 2 · 1ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × WASHINGTON SOUZA NERY (DOM BOSCO)</td><td></td></tr>
+<tr><td>19:00</td><td>apita</td><td>12</td><td>AGM-8F-1-052</td><td>Absoluto G Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>apita</td><td>4</td><td>D15-4F-1-003</td><td>Duplas Sub 13-15 · Quartas de final</td><td>MAIKEL MANOEL APPELT DE OLIVEIRA / FELIPE CORDEIRO JULIANI BECCARDI (ADEMS) × VICTOR SAMUEL SOUZA LIMA / RAYAN DAUZACKER RYBA (ALEL)</td><td></td></tr>
+<tr><td>08:00</td><td>apita</td><td>10</td><td>AGM-4F-1-055</td><td>Absoluto G Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>08:20</td><td>apita</td><td>7</td><td>AEM-G-2-007</td><td>Absoluto E Masculino · Grupo 1 · 2ª rodada</td><td>FELIPE CORDEIRO JULIANI BECCARDI (ADEMS) × HERICK ASSUNÇÃO DO NASCIMENTO (DOM BOSCO)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>08:40</td><td>🏓 <b>joga</b></td><td>5</td><td>ADM-G-2-010</td><td>Absoluto D Masculino · Grupo 5 · 2ª rodada</td><td>LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × LUIS ROBERTO HIDEAKI KOHATSU FUJIKI (CT MORIMOTO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:00</td><td>apita</td><td>2</td><td>AFM-4F-4-010</td><td>Absoluto F Masculino · Quartas de final</td><td>A definir × A definir</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>09:20</td><td>🏓 <b>joga</b></td><td>5</td><td>ADM-G-3-015</td><td>Absoluto D Masculino · Grupo 5 · 3ª rodada</td><td>SHUWAISER  ARIYOSHI (CT MORIMOTO) × LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>MARCELO GRUBERT (árbitro atleta, Sub-17+)</h2>
+<p>Também joga como <b>MARCELO GRUBERT</b> (4 jogos).</p>
+<p><b>19 jogos</b> (6h20) · 28/11 08:40–17:20; 29/11 08:00–10:20 · permanência 11h40 · ocupação 54% · seq. máx. 6 · 10 blocos · mesa principal 0 · decisivos 2 · antes de jogar 0 · possíveis choques 3 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>14</td><td>S13M-G-1-006</td><td>Sub-13 Masculino · Grupo 6 · 1ª rodada</td><td>ENRICO CATALDO REZENDE (DOM BOSCO) × DAVI MATHEUS VIEIRA (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>14</td><td>S13M-G-1-009</td><td>Sub-13 Masculino · Grupo 8 · 1ª rodada</td><td>MIGUEL FITIPALDI (CT MORIMOTO) × JEISON DANIEL MOYA LYON (ALEL)</td><td></td></tr>
+<tr><td>09:20</td><td>apita</td><td>10</td><td>S11M-G-1-004</td><td>Sub-11 Masculino · Grupo 3 · 1ª rodada</td><td>BENÍCIO FERREIRA DA COSTA BASSO (CT MORIMOTO) × CAIO VINICIO FIGUEIRA DE AQUINO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>10:00</td><td>🏓 <b>joga</b></td><td>13</td><td>M40M-G-1-002</td><td>Master 40 Masculino · Grupo 2 · 1ª rodada</td><td>DAMIÃO ORLANDO DE OLIVEIRA LOTT (DOM BOSCO) × MARCELO GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:20</td><td>apita</td><td>5</td><td>S19M-G-1-005</td><td>Sub-19 Masculino · Grupo 5 · 1ª rodada</td><td>GUSTAVO LOPES CAMPOS (ATMR) × MARCOS VITÓRIO AUED DA CONCEIÇÃO (ATMR)</td><td></td></tr>
+<tr><td>11:00</td><td>🏓 <b>joga</b></td><td>13</td><td>M40M-G-2-005</td><td>Master 40 Masculino · Grupo 2 · 2ª rodada</td><td>DEOCLECIANO NUNES SILVA (ATMR) × MARCELO GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>11:20</td><td>apita</td><td>10</td><td>S17M-8F-1-036</td><td>Sub-17 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>11:40</td><td>apita</td><td>12</td><td>S11M-G-3-013</td><td>Sub-11 Masculino · Grupo 2 · 3ª rodada</td><td>DAVI MATHEUS VIEIRA (DOM BOSCO) × FREDERICO LIRA MOCHEUTI (ALEL)</td><td></td></tr>
+<tr><td>13:00</td><td>apita</td><td>5</td><td>S21M-U-2-004</td><td>Sub-21 Masculino · Todos contra todos · 2ª rodada</td><td>LUCAS HIDEO ONUKI (DOM BOSCO) × IAN CONRADO BORGES TIZZO (DOM BOSCO)</td><td></td></tr>
+<tr><td>14:20</td><td>apita</td><td>6</td><td>S19M-G-2-011</td><td>Sub-19 Masculino · Grupo 5 · 2ª rodada</td><td>GUSTAVO LOPES CAMPOS (ATMR) × JOÃO VITHOR DE SOUZA ROSA (DOM BOSCO)</td><td>possível choque: mata-mata M40M; substituto se ele se classificar: LUCAS BELLO (alternativa: CARLOS ALBERTO FRANCISCO DA COSTA) — atenção: joga no horário seguinte; mesmo clube de um atleta do jogo</td></tr>
+<tr><td>15:00</td><td>apita</td><td>13</td><td>S13M-4F-1-038</td><td>Sub-13 Masculino · Quartas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata M40M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>15:20</td><td>apita</td><td>13</td><td>M55M-U-2-003</td><td>Master 55 Masculino · Todos contra todos · 2ª rodada</td><td>AMÉRICO TOSHIHARU MARIAMA (CT MORIMOTO) × NELSON YUKIO MATSUBARA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>15:40</td><td>apita</td><td>12</td><td>ADTM-U-1-002</td><td>Adulto Masculino · Todos contra todos · 1ª rodada</td><td>LUCA KUMAHARA (CT MORIMOTO) × JEAN CAON GARCIA (ALEL)</td><td></td></tr>
+<tr><td>16:00</td><td>apita</td><td>10</td><td>M50M-G-2-004</td><td>Master 50 Masculino · Grupo 2 · 2ª rodada</td><td>CHRISTIANO PERAZOLO DE ALMEIDA (ASTM SINOP) × HUMBERTO DE CARVALHO MARCILIO (DOM BOSCO)</td><td></td></tr>
+<tr><td>16:20</td><td>apita</td><td>9</td><td>ADTF-U-5-009</td><td>Adulto Feminino · Todos contra todos · 5ª rodada</td><td>LUCIANA MIDORI SASAI MORIMOTO (CT MORIMOTO) × REBECCA KAROLINA CASTRO FIGUEIREDO (DOM BOSCO)</td><td></td></tr>
+<tr><td>16:40</td><td>apita</td><td>12</td><td>S17F-S-1-008</td><td>Sub-17 Feminino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>17:20</td><td>apita</td><td>13</td><td>M55M-U-5-009</td><td>Master 55 Masculino · Todos contra todos · 5ª rodada</td><td>AMÉRICO TOSHIHARU MARIAMA (CT MORIMOTO) × MARCUS ROGERIO HATAKEYAMA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>18:00</td><td>🏓 <b>joga</b></td><td>2</td><td>AGM-G-2-013</td><td>Absoluto G Masculino · Grupo 1 · 2ª rodada</td><td>MARCELO GRUBERT (PRIMAVERA ATLETICO CLUBE) × YURI CIBULSKIS REIS (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>18:20</td><td>🏓 <b>joga</b></td><td>1</td><td>AGM-G-3-025</td><td>Absoluto G Masculino · Grupo 1 · 3ª rodada</td><td>LUIZ FELIPE OMENA DOS SANTOS (DOM BOSCO) × MARCELO GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:00</td><td>apita</td><td>14</td><td>ADF-G-1-003</td><td>Absoluto D Feminino · Grupo 3 · 1ª rodada</td><td>MAYANNA ANDRADE DA SILVA (ALEL) × LAVYNIA DAUZACKER RYBA (ALEL)</td><td>possível choque: mata-mata AGM; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>09:20</td><td>apita</td><td>9</td><td>AFM-S-5-013</td><td>Absoluto F Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>09:40</td><td>apita</td><td>11</td><td>ADF-4F-4-010</td><td>Absoluto D Feminino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>14</td><td>ACF-U-4-008</td><td>Absoluto C Feminino · Todos contra todos · 4ª rodada</td><td>MAÍSA CAON GARCIA (ALEL) × ANA CLARA KAPFENBERGER DE ALVES (ATMR)</td><td></td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>ANDRÉ KENJI (árbitro atleta, Sub-17+)</h2>
+<p>Também joga como <b>ANDRÉ KENJI SUGUISHIMA SOARES</b> (6 jogos).</p>
+<p><b>18 jogos</b> (6h00) · 28/11 11:40–18:40; 29/11 07:00–11:00 · permanência 11h40 · ocupação 51% · seq. máx. 5 · 9 blocos · mesa principal 0 · decisivos 2 · antes de jogar 0 · possíveis choques 9 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>09:00</td><td>🏓 <b>joga</b></td><td>6</td><td>S17M-G-2-018</td><td>Sub-17 Masculino · Grupo 9 · 2ª rodada</td><td>ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO) × MARCOS VITÓRIO AUED DA CONCEIÇÃO (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:40</td><td>🏓 <b>joga</b></td><td>9</td><td>S17M-G-3-027</td><td>Sub-17 Masculino · Grupo 9 · 3ª rodada</td><td>LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:20</td><td>🏓 <b>joga</b></td><td>1</td><td>S19M-G-1-001</td><td>Sub-19 Masculino · Grupo 1 · 1ª rodada</td><td>DANIEL BUCAIR COUTO (DOM BOSCO) × ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>11:40</td><td>apita</td><td>7</td><td>S15F-G-2-006</td><td>Sub-15 Feminino · Grupo 1 · 2ª rodada</td><td>ANA CLARA KAPFENBERGER DE ALVES (ATMR) × MARIA VITORIA ASCKAR RABANEDA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>13:20</td><td>apita</td><td>11</td><td>S13M-8F-1-034</td><td>Sub-13 Masculino · Oitavas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>14:20</td><td>🏓 <b>joga</b></td><td>2</td><td>S19M-G-2-007</td><td>Sub-19 Masculino · Grupo 1 · 2ª rodada</td><td>LUCAS FIGUEREDO TARTARI (CT MORIMOTO) × ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>14:40</td><td>apita</td><td>13</td><td>M55M-U-1-001</td><td>Master 55 Masculino · Todos contra todos · 1ª rodada</td><td>AMÉRICO TOSHIHARU MARIAMA (CT MORIMOTO) × MARCOS CÉSAR GOMES (ATMR)</td><td></td></tr>
+<tr><td>15:00</td><td>apita</td><td>10</td><td>ADTF-U-3-006</td><td>Adulto Feminino · Todos contra todos · 3ª rodada</td><td>MAISA DIELY BRITO BARCELO (ATMR) × MILENA SUEMY SASAI MORIMOTO (CT MORIMOTO)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>15:20</td><td>apita</td><td>14</td><td>M55M-U-2-004</td><td>Master 55 Masculino · Todos contra todos · 2ª rodada</td><td>MARCUS ROGERIO HATAKEYAMA (CT MORIMOTO) × MARIO MASSATOSHI MORIMOTO (CT MORIMOTO)</td><td>possível choque: mata-mata S17M/S19M; substituto se ele se classificar: BENJAMIM FERREIRA PRESTES (alternativa: MIGUEL DOS SANTOS) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>16:00</td><td>apita</td><td>4</td><td>S15M-8F-1-028</td><td>Sub-15 Masculino · Oitavas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S19M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>16:20</td><td>apita</td><td>7</td><td>S15F-S-1-013</td><td>Sub-15 Feminino · Semifinal</td><td>A definir × A definir</td><td>semifinal; possível choque: mata-mata S19M; substituto se ele se classificar: SABRINA LETÍCIA ALMEIDA (alternativa: SARAH BARBI) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>17:20</td><td>🏓 <b>joga</b></td><td>3</td><td>AGM-G-1-003</td><td>Absoluto G Masculino · Grupo 3 · 1ª rodada</td><td>ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO) × DAVI MATHEUS VIEIRA (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>18:20</td><td>🏓 <b>joga</b></td><td>3</td><td>AGM-G-3-027</td><td>Absoluto G Masculino · Grupo 3 · 3ª rodada</td><td>ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO) × EMANUEL CARDOSO DA SILVA MENDES (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>18:40</td><td>apita</td><td>2</td><td>AFM-G-1-001</td><td>Absoluto F Masculino · Grupo 1 · 1ª rodada</td><td>DAVI KOPPER (ÁGAPE SINOP) × JUAN DA SILVA ALLEDI (ALEL)</td><td>possível choque: mata-mata AGM; substituto se ele se classificar: MARCOS CABRAL (alternativa: MARCELO GRUBERT) — atenção: só se ele não estiver no mata-mata de AGM/S15M</td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>apita</td><td>7</td><td>DMA-4F-1-001</td><td>Duplas Master · Quartas de final</td><td>FABRÍCIO SPECHT / JACIONE ANTÔNIO PIRES DA CUNHA (ALEL / ADEMS) × HELDER AUGUSTO POMPEU DE BARROS DALTRO / WALTER NOBORU KAWAHARA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>07:20</td><td>apita</td><td>7</td><td>DMA-S-1-003</td><td>Duplas Master · Semifinal</td><td>ADRIANO HENRIQUE DOS SANTOS SANCHES / SHUWAISER ARIYOSHI (CT MORIMOTO) × Vencedor DMA-4F-1-001</td><td>semifinal</td></tr>
+<tr><td>08:00</td><td>apita</td><td>2</td><td>ADM-G-1-002</td><td>Absoluto D Masculino · Grupo 2 · 1ª rodada</td><td>JOÃO PAULO LOPES PERILLO (ATMR) × LUCAS ALVES BELO (ATMR)</td><td>possível choque: mata-mata AGM; substituto se ele se classificar: RICARDO MOACIR MULLER (alternativa: MARCOS CABRAL) — atenção: joga no horário seguinte</td></tr>
+<tr><td>08:20</td><td>apita</td><td>3</td><td>AFM-G-3-008</td><td>Absoluto F Masculino · Grupo 2 · 3ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × MIGUEL DOS SANTOS (PRIMAVERA ATLETICO CLUBE)</td><td>possível choque: mata-mata AGM; substituto se ele se classificar: LUIZ HENRIQUE (alternativa: MARCOS CABRAL) — atenção: só se ele não estiver no mata-mata de AGM</td></tr>
+<tr><td>09:00</td><td>apita</td><td>3</td><td>AFM-4F-4-011</td><td>Absoluto F Masculino · Quartas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata AGM; substituto se ele se classificar: MARTHIM ALFREDO ZIMPEL DE SOUZA (alternativa: MARCELO GRUBERT) — atenção: joga no horário seguinte</td></tr>
+<tr><td>09:20</td><td>apita</td><td>11</td><td>AEM-8F-1-020</td><td>Absoluto E Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>13</td><td>ACF-U-3-005</td><td>Absoluto C Feminino · Todos contra todos · 3ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × ANA CLARA KAPFENBERGER DE ALVES (ATMR)</td><td></td></tr>
+<tr><td>10:00</td><td>apita</td><td>7</td><td>AEM-4F-1-026</td><td>Absoluto E Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>9</td><td>AEF-U-2-003</td><td>Absoluto E Feminino · Todos contra todos · 2ª rodada</td><td>ELINE BEATRIZ DE OLIVEIRA SPECHT (ALEL) × MARIA VITORIA ASCKAR RABANEDA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>11:00</td><td>apita</td><td>13</td><td>ACF-U-5-009</td><td>Absoluto C Feminino · Todos contra todos · 5ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × SARAH BARBI DE ALMEIDA (ASTM SINOP)</td><td></td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>JOÃO FELIPE MULLER (árbitro atleta, Sub-17+)</h2>
+<p>Também joga como <b>JOÃO FELIPE ZANON MULLER</b> (8 jogos).</p>
+<p><b>18 jogos</b> (6h00) · 28/11 09:00–19:00; 29/11 08:20–09:00 · permanência 11h20 · ocupação 53% · seq. máx. 4 · 10 blocos · mesa principal 0 · decisivos 1 · antes de jogar 2 · possíveis choques 8 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>🏓 <b>joga</b></td><td>5</td><td>S17M-G-1-004</td><td>Sub-17 Masculino · Grupo 4 · 1ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × YUDI ALVARES FELIX (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:00</td><td>apita</td><td>10</td><td>S13M-G-1-004</td><td>Sub-13 Masculino · Grupo 4 · 1ª rodada</td><td>GUILHERME RODRIGO BRITO LIMA CIVIDINI (ÁGAPE SINOP) × HENDRICK JESÚS MONTILVA TINEO (ALEL)</td><td></td></tr>
+<tr><td>09:40</td><td>🏓 <b>joga</b></td><td>4</td><td>S17M-G-3-022</td><td>Sub-17 Masculino · Grupo 4 · 3ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × JUAN DA SILVA ALLEDI (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:20</td><td>🏓 <b>joga</b></td><td>6</td><td>S19M-G-1-006</td><td>Sub-19 Masculino · Grupo 5 · 1ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × JOÃO VITHOR DE SOUZA ROSA (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>11:00</td><td>apita</td><td>11</td><td>S13F-4F-4-011</td><td>Sub-13 Feminino · Quartas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>11:40</td><td>apita</td><td>14</td><td>S11M-G-3-015</td><td>Sub-11 Masculino · Grupo 3 · 3ª rodada</td><td>LEVI DO AMARAL PAULISTA (ATMR) × CAIO VINICIO FIGUEIRA DE AQUINO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>13:20</td><td>apita</td><td>12</td><td>S13M-8F-1-035</td><td>Sub-13 Masculino · Oitavas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>13:40</td><td>apita</td><td>9</td><td>ADTF-U-1-001</td><td>Adulto Feminino · Todos contra todos · 1ª rodada</td><td>LUCIANA MIDORI SASAI MORIMOTO (CT MORIMOTO) × ANA CLARA MORENO RODRIGUES (CT MORIMOTO)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: VITOR SANTOS (alternativa: VINICIUS FERREIRA GRIGGI) — atenção: joga no horário seguinte</td></tr>
+<tr><td>14:20</td><td>🏓 <b>joga</b></td><td>7</td><td>S19M-G-2-012</td><td>Sub-19 Masculino · Grupo 5 · 2ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × MARCOS VITÓRIO AUED DA CONCEIÇÃO (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>14:40</td><td>apita</td><td>7</td><td>S15M-G-3-019</td><td>Sub-15 Masculino · Grupo 3 · 3ª rodada</td><td>VINÍCIUS FERREIRA GRIGGI (DOM BOSCO) × HENRIQUE CORDEIRO JULIANI BECCARDI (ADEMS)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>15:00</td><td>🏓 <b>joga</b></td><td>6</td><td>S19M-G-3-017</td><td>Sub-19 Masculino · Grupo 5 · 3ª rodada</td><td>GUSTAVO LOPES CAMPOS (ATMR) × JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>15:20</td><td>apita</td><td>9</td><td>M50M-G-1-001</td><td>Master 50 Masculino · Grupo 1 · 1ª rodada</td><td>ANDRÉ VALENTE DO COUTO (DOM BOSCO) × WASHINGTON SOUZA NERY (DOM BOSCO)</td><td>possível choque: mata-mata S17M/S19M; substituto se ele se classificar: LUCAS BELLO (alternativa: MIGUEL DOS SANTOS) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>15:40</td><td>apita</td><td>9</td><td>ADTF-U-4-007</td><td>Adulto Feminino · Todos contra todos · 4ª rodada</td><td>LUCIANA MIDORI SASAI MORIMOTO (CT MORIMOTO) × MAISA DIELY BRITO BARCELO (ATMR)</td><td>possível choque: mata-mata S19M; substituto se ele se classificar: MARCOS CABRAL (alternativa: VINICIUS FERREIRA GRIGGI) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>16:00</td><td>apita</td><td>13</td><td>M55M-U-3-005</td><td>Master 55 Masculino · Todos contra todos · 3ª rodada</td><td>MARCUS ROGERIO HATAKEYAMA (CT MORIMOTO) × MARCOS CÉSAR GOMES (ATMR)</td><td>possível choque: mata-mata S19M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>16:40</td><td>apita</td><td>13</td><td>M55M-U-4-007</td><td>Master 55 Masculino · Todos contra todos · 4ª rodada</td><td>AMÉRICO TOSHIHARU MARIAMA (CT MORIMOTO) × MARIO MASSATOSHI MORIMOTO (CT MORIMOTO)</td><td>possível choque: mata-mata S19M; substituto se ele se classificar: MARTHIM ALFREDO ZIMPEL DE SOUZA (alternativa: LEVY GRUBERT) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>17:20</td><td>apita</td><td>14</td><td>M55M-U-5-010</td><td>Master 55 Masculino · Todos contra todos · 5ª rodada</td><td>MARIO MASSATOSHI MORIMOTO (CT MORIMOTO) × MARCOS CÉSAR GOMES (ATMR)</td><td>possível choque: mata-mata S19M; substituto se ele se classificar: SARAH BARBI — atenção: só se ele não estiver no mata-mata de S17F</td></tr>
+<tr><td>18:00</td><td>apita</td><td>13</td><td>AGM-G-2-024</td><td>Absoluto G Masculino · Grupo 12 · 2ª rodada</td><td>FERNANDO KENJI SASAKI (CT MORIMOTO) × LEVI DO AMARAL PAULISTA (ATMR)</td><td></td></tr>
+<tr><td>18:20</td><td>apita</td><td>11</td><td>AGM-G-3-035</td><td>Absoluto G Masculino · Grupo 11 · 3ª rodada</td><td>ESTÊVÃO PAIVA FONSECA (CT MORIMOTO) × YUDI ALVARES FELIX (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:40</td><td>apita</td><td>11</td><td>AGM-16F-1-043</td><td>Absoluto G Masculino · 16 avos de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>19:00</td><td>apita</td><td>14</td><td>S19F-U-3-006</td><td>Sub-19 Feminino · Todos contra todos · 3ª rodada</td><td>JÚLIA CÁSSIA EVANGELISTA DE OLIVEIRA (DOM BOSCO) × SARAH BARBI DE ALMEIDA (ASTM SINOP)</td><td></td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>🏓 <b>joga</b></td><td>5</td><td>DAD-4F-1-001</td><td>Duplas Sub 17-Adulto · Quartas de final</td><td>LUIS ROBERTO HIDEAKI KOHATSU FUJIKI / JOÃO GABRIEL VIEIRA JESUS (CT MORIMOTO) × JEAN CAON GARCIA / JOÃO FELIPE ZANON MULLER (ALEL / PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>08:00</td><td>🏓 <b>joga</b></td><td>4</td><td>ADM-G-1-004</td><td>Absoluto D Masculino · Grupo 4 · 1ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × BENJAMIM FERREIRA PRESTES (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>08:20</td><td>apita</td><td>6</td><td>AGM-S-1-058</td><td>Absoluto G Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>08:40</td><td>apita</td><td>12</td><td>ADF-G-2-005</td><td>Absoluto D Feminino · Grupo 2 · 2ª rodada</td><td>LORENA GAMA NUNES (ATMR) × ANGELINA KASSANDRA ALVES SOLSOL (CT MORIMOTO)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>13</td><td>ACF-U-2-003</td><td>Absoluto C Feminino · Todos contra todos · 2ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × MAÍSA CAON GARCIA (ALEL)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>09:20</td><td>🏓 <b>joga</b></td><td>4</td><td>ADM-G-3-014</td><td>Absoluto D Masculino · Grupo 4 · 3ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × DAMIÃO ORLANDO DE OLIVEIRA LOTT (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>LUIZ HENRIQUE (árbitro atleta, Sub-17+)</h2>
+<p>Também joga como <b>LUIZ HENRIQUE CAMARGO MORAES</b> (7 jogos).</p>
+<p><b>18 jogos</b> (6h00) · 28/11 09:40–19:00; 29/11 08:00–10:20 · permanência 12h20 · ocupação 49% · seq. máx. 4 · 10 blocos · mesa principal 0 · decisivos 0 · antes de jogar 0 · possíveis choques 12 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>🏓 <b>joga</b></td><td>2</td><td>S17M-G-1-001</td><td>Sub-17 Masculino · Grupo 1 · 1ª rodada</td><td>PAULO IRAM ALVES NETO (DOM BOSCO) × LUIZ HENRIQUE CAMARGO MORAES (ADEMS)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:20</td><td>🏓 <b>joga</b></td><td>4</td><td>S17M-G-2-010</td><td>Sub-17 Masculino · Grupo 1 · 2ª rodada</td><td>RAFAEL FREITAS MATOS DE SOUZA (DOM BOSCO) × LUIZ HENRIQUE CAMARGO MORAES (ADEMS)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:40</td><td>apita</td><td>11</td><td>S13M-G-2-013</td><td>Sub-13 Masculino · Grupo 4 · 2ª rodada</td><td>CAUÊ HENRIQUE DOS SANTOS VARGAS (ALEL) × HENDRICK JESÚS MONTILVA TINEO (ALEL)</td><td></td></tr>
+<tr><td>10:20</td><td>🏓 <b>joga</b></td><td>2</td><td>S19M-G-1-002</td><td>Sub-19 Masculino · Grupo 2 · 1ª rodada</td><td>GABRIEL OTACIO PEREIRA PARDIN (ATMR) × LUIZ HENRIQUE CAMARGO MORAES (ADEMS)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:40</td><td>apita</td><td>10</td><td>S11M-G-2-006</td><td>Sub-11 Masculino · Grupo 1 · 2ª rodada</td><td>EMANUEL CARDOSO DA SILVA MENDES (ATMR) × OTAVIO AUGUSTO POMPEU DE BARROS DALTRO (CT MORIMOTO)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: MARCELO GRUBERT (alternativa: VITOR SANTOS) — atenção: joga no horário seguinte</td></tr>
+<tr><td>11:40</td><td>apita</td><td>6</td><td>S15F-G-2-005</td><td>Sub-15 Feminino · Grupo 1 · 2ª rodada</td><td>MAÍSA CAON GARCIA (ALEL) × MAYANNA ANDRADE DA SILVA (ALEL)</td><td></td></tr>
+<tr><td>13:00</td><td>apita</td><td>4</td><td>S21M-U-2-003</td><td>Sub-21 Masculino · Todos contra todos · 2ª rodada</td><td>DANIEL BUCAIR COUTO (DOM BOSCO) × JEAN CAON GARCIA (ALEL)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: LUCAS BELLO (alternativa: MIGUEL DOS SANTOS) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>13:20</td><td>apita</td><td>5</td><td>S13M-8F-1-028</td><td>Sub-13 Masculino · Oitavas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: MARCELO GRUBERT — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>14:20</td><td>🏓 <b>joga</b></td><td>3</td><td>S19M-G-2-008</td><td>Sub-19 Masculino · Grupo 2 · 2ª rodada</td><td>LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × LUIZ HENRIQUE CAMARGO MORAES (ADEMS)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>14:40</td><td>apita</td><td>6</td><td>S15M-G-3-018</td><td>Sub-15 Masculino · Grupo 2 · 3ª rodada</td><td>PIETRO TEIXEIRA BERGAMASCHI (CT MORIMOTO) × ENZO CAPELETTO DAS NEVES (DOM BOSCO)</td><td></td></tr>
+<tr><td>15:00</td><td>apita</td><td>12</td><td>S13M-4F-1-037</td><td>Sub-13 Masculino · Quartas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>16:00</td><td>apita</td><td>8</td><td>S15M-8F-1-032</td><td>Sub-15 Masculino · Oitavas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S19M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>16:20</td><td>apita</td><td>11</td><td>ADTM-U-2-003</td><td>Adulto Masculino · Todos contra todos · 2ª rodada</td><td>JOÃO GABRIEL VIEIRA JESUS (CT MORIMOTO) × JEAN CAON GARCIA (ALEL)</td><td>possível choque: mata-mata S19M; substituto se ele se classificar: SARAH BARBI (alternativa: BENJAMIM FERREIRA PRESTES) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>16:40</td><td>apita</td><td>7</td><td>S15M-4F-1-035</td><td>Sub-15 Masculino · Quartas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S19M; substituto se ele se classificar: ANDRÉ KENJI (alternativa: MARTHIM ALFREDO ZIMPEL DE SOUZA) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>17:20</td><td>🏓 <b>joga</b></td><td>6</td><td>AGM-G-1-010</td><td>Absoluto G Masculino · Grupo 10 · 1ª rodada</td><td>LUIZ HENRIQUE CAMARGO MORAES (ADEMS) × MARCOS VITÓRIO AUED DA CONCEIÇÃO (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>18:20</td><td>🏓 <b>joga</b></td><td>10</td><td>AGM-G-3-034</td><td>Absoluto G Masculino · Grupo 10 · 3ª rodada</td><td>LUIZ HENRIQUE CAMARGO MORAES (ADEMS) × HENRIQUE CORDEIRO JULIANI BECCARDI (ADEMS)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>18:40</td><td>apita</td><td>4</td><td>AFM-G-1-003</td><td>Absoluto F Masculino · Grupo 3 · 1ª rodada</td><td>HUMBERTO DE CARVALHO MARCILIO (DOM BOSCO) × SAMUEL FERREIRA MAGALHÃES (AEPA)</td><td>possível choque: mata-mata AGM; substituto se ele se classificar: MARCELO GRUBERT — atenção: só se ele não estiver no mata-mata de AGM</td></tr>
+<tr><td>19:00</td><td>apita</td><td>4</td><td>AFM-G-2-006</td><td>Absoluto F Masculino · Grupo 3 · 2ª rodada</td><td>WALTER NOBORU KAWAHARA (CT MORIMOTO) × SAMUEL FERREIRA MAGALHÃES (AEPA)</td><td>possível choque: mata-mata AGM; substituto se ele se classificar: MARCOS CABRAL (alternativa: ANDRÉ KENJI) — atenção: só se ele não estiver no mata-mata de AGM</td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>🏓 <b>joga</b></td><td>6</td><td>DAD-4F-1-002</td><td>Duplas Sub 17-Adulto · Quartas de final</td><td>BENJAMIM FERREIRA PRESTES / PAULO IRAM ALVES NETO (DOM BOSCO) × LUIZ HENRIQUE CAMARGO MORAES / HENRIQUE CORDEIRO JULIANI BECCARDI (ADEMS)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>08:00</td><td>apita</td><td>12</td><td>ADF-G-1-001</td><td>Absoluto D Feminino · Grupo 1 · 1ª rodada</td><td>GIOVANA BUCAIR COUTO (DOM BOSCO) × GIOVANNA PALOPOLI RIBEIRO (ATMR)</td><td>possível choque: mata-mata AGM; substituto se ele se classificar: MARCOS CABRAL — atenção: só se ele não estiver no mata-mata de AGM</td></tr>
+<tr><td>08:40</td><td>apita</td><td>6</td><td>ABM-G-2-003</td><td>Absoluto B Masculino · Grupo 1 · 2ª rodada</td><td>DANIEL BUCAIR COUTO (DOM BOSCO) × GUSTAVO LOPES CAMPOS (ATMR)</td><td>possível choque: mata-mata AGM; substituto se ele se classificar: SABRINA LETÍCIA ALMEIDA (alternativa: MARCELO GRUBERT) — atenção: joga no horário seguinte</td></tr>
+<tr><td>09:00</td><td>apita</td><td>5</td><td>AEM-G-3-014</td><td>Absoluto E Masculino · Grupo 2 · 3ª rodada</td><td>JEAN CAON GARCIA (ALEL) × ISRAEL ASSER EUGÊNIO (DOM BOSCO)</td><td>possível choque: mata-mata AGM; substituto se ele se classificar: MIGUEL DOS SANTOS (alternativa: VITOR SANTOS) — atenção: só se ele não estiver no mata-mata de AFM</td></tr>
+<tr><td>09:20</td><td>apita</td><td>3</td><td>ADM-G-3-013</td><td>Absoluto D Masculino · Grupo 3 · 3ª rodada</td><td>MARTHIM ALFREDO ZIMPEL DE SOUZA (ASTM SINOP) × GIULIANO CURVO MUNIZ (ASTM SINOP)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>3</td><td>ADM-8F-1-016</td><td>Absoluto D Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>5</td><td>ADM-4F-1-021</td><td>Absoluto D Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>MARTHIM ALFREDO ZIMPEL DE SOUZA (árbitro atleta, Sub-17+)</h2>
+<p>Também joga como <b>MARTHIM ALFREDO ZIMPEL DE SOUZA</b> (4 jogos).</p>
+<p><b>18 jogos</b> (6h00) · 28/11 08:40–19:00; 29/11 07:20–08:40 · permanência 12h20 · ocupação 49% · seq. máx. 6 · 7 blocos · mesa principal 0 · decisivos 2 · antes de jogar 1 · possíveis choques 0 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>5</td><td>S17M-G-1-004</td><td>Sub-17 Masculino · Grupo 4 · 1ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × YUDI ALVARES FELIX (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:20</td><td>apita</td><td>14</td><td>S13F-G-2-006</td><td>Sub-13 Feminino · Grupo 3 · 2ª rodada</td><td>GIOVANA BUCAIR COUTO (DOM BOSCO) × MARIA VITORIA ASCKAR RABANEDA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>13</td><td>S13M-G-2-017</td><td>Sub-13 Masculino · Grupo 8 · 2ª rodada</td><td>RAYAN DAUZACKER RYBA (ALEL) × JEISON DANIEL MOYA LYON (ALEL)</td><td></td></tr>
+<tr><td>10:00</td><td>apita</td><td>2</td><td>S13M-G-2-010</td><td>Sub-13 Masculino · Grupo 1 · 2ª rodada</td><td>MIGUEL DOS SANTOS (PRIMAVERA ATLETICO CLUBE) × JÓSE GABRIEL SOUZA GENELHU (ALEL)</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>7</td><td>S15M-G-1-001</td><td>Sub-15 Masculino · Grupo 1 · 1ª rodada</td><td>JOÃO PAULO LOPES PERILLO (ATMR) × MARCOS CABRAL DA SILVA PAULINO (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>10:40</td><td>apita</td><td>12</td><td>S11M-G-2-008</td><td>Sub-11 Masculino · Grupo 2 · 2ª rodada</td><td>RAFAEL BIASI PENALVA VERDOLIN (ATMR) × FREDERICO LIRA MOCHEUTI (ALEL)</td><td></td></tr>
+<tr><td>11:00</td><td>apita</td><td>8</td><td>S13M-G-3-026</td><td>Sub-13 Masculino · Grupo 8 · 3ª rodada</td><td>RAYAN DAUZACKER RYBA (ALEL) × MIGUEL FITIPALDI (CT MORIMOTO)</td><td></td></tr>
+<tr><td>13:00</td><td>apita</td><td>6</td><td>S17M-4F-1-038</td><td>Sub-17 Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>13:20</td><td>apita</td><td>14</td><td>S13F-S-5-013</td><td>Sub-13 Feminino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>13:40</td><td>apita</td><td>4</td><td>S21M-U-3-005</td><td>Sub-21 Masculino · Todos contra todos · 3ª rodada</td><td>JEAN CAON GARCIA (ALEL) × IAN CONRADO BORGES TIZZO (DOM BOSCO)</td><td></td></tr>
+<tr><td>14:20</td><td>🏓 <b>joga</b></td><td>5</td><td>S19M-G-2-010</td><td>Sub-19 Masculino · Grupo 4 · 2ª rodada</td><td>MARTHIM ALFREDO ZIMPEL DE SOUZA (ASTM SINOP) × FELIPE CONCATTO SCHARFF (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>14:40</td><td>apita</td><td>8</td><td>S15M-G-3-020</td><td>Sub-15 Masculino · Grupo 4 · 3ª rodada</td><td>BENJAMIM FERREIRA PRESTES (DOM BOSCO) × DAVI KOPPER (ÁGAPE SINOP)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>15:00</td><td>🏓 <b>joga</b></td><td>5</td><td>S19M-G-3-016</td><td>Sub-19 Masculino · Grupo 4 · 3ª rodada</td><td>LUCAS HIDEO ONUKI (DOM BOSCO) × MARTHIM ALFREDO ZIMPEL DE SOUZA (ASTM SINOP)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>18:00</td><td>apita</td><td>11</td><td>AGM-G-2-022</td><td>Absoluto G Masculino · Grupo 10 · 2ª rodada</td><td>HENRIQUE CORDEIRO JULIANI BECCARDI (ADEMS) × MARCOS VITÓRIO AUED DA CONCEIÇÃO (ATMR)</td><td></td></tr>
+<tr><td>18:20</td><td>apita</td><td>13</td><td>S19F-U-1-001</td><td>Sub-19 Feminino · Todos contra todos · 1ª rodada</td><td>JÚLIA CÁSSIA EVANGELISTA DE OLIVEIRA (DOM BOSCO) × ANA BEATRIZ PEREIRA ANTENOR DE MORAES (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:40</td><td>apita</td><td>12</td><td>AGM-16F-1-044</td><td>Absoluto G Masculino · 16 avos de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>19:00</td><td>apita</td><td>3</td><td>AFM-G-2-005</td><td>Absoluto F Masculino · Grupo 2 · 2ª rodada</td><td>MIGUEL DOS SANTOS (PRIMAVERA ATLETICO CLUBE) × WASHINGTON SOUZA NERY (DOM BOSCO)</td><td></td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:20</td><td>apita</td><td>3</td><td>D15-S-1-004</td><td>Duplas Sub 13-15 · Semifinal</td><td>VINÍCIUS FERREIRA GRIGGI / GUILHERME RODRIGO BRITO LIMA CIVIDINI (DOM BOSCO / ÁGAPE SINOP) × Vencedor D15-4F-1-001</td><td>semifinal</td></tr>
+<tr><td>08:00</td><td>🏓 <b>joga</b></td><td>3</td><td>ADM-G-1-003</td><td>Absoluto D Masculino · Grupo 3 · 1ª rodada</td><td>MARTHIM ALFREDO ZIMPEL DE SOUZA (ASTM SINOP) × PIETRO TEIXEIRA BERGAMASCHI (CT MORIMOTO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>08:20</td><td>apita</td><td>4</td><td>AFM-G-3-009</td><td>Absoluto F Masculino · Grupo 3 · 3ª rodada</td><td>HUMBERTO DE CARVALHO MARCILIO (DOM BOSCO) × WALTER NOBORU KAWAHARA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>08:40</td><td>apita</td><td>13</td><td>ADF-G-2-006</td><td>Absoluto D Feminino · Grupo 3 · 2ª rodada</td><td>CLARA GIRALDELLI DERZE (DOM BOSCO) × LAVYNIA DAUZACKER RYBA (ALEL)</td><td></td></tr>
+<tr><td>09:20</td><td>🏓 <b>joga</b></td><td>3</td><td>ADM-G-3-013</td><td>Absoluto D Masculino · Grupo 3 · 3ª rodada</td><td>MARTHIM ALFREDO ZIMPEL DE SOUZA (ASTM SINOP) × GIULIANO CURVO MUNIZ (ASTM SINOP)</td><td>jogo do próprio árbitro</td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>SABRINA LETÍCIA ALMEIDA (árbitro atleta, Sub-17+)</h2>
+<p>Também joga como <b>SABRINA LETÍCIA DA SILVA ALMEIDA</b> (9 jogos).</p>
+<p><b>18 jogos</b> (6h00) · 28/11 08:40–17:40; 29/11 08:00–09:40 · permanência 11h20 · ocupação 53% · seq. máx. 6 · 7 blocos · mesa principal 0 · decisivos 2 · antes de jogar 1 · possíveis choques 0 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>9</td><td>S17M-G-1-008</td><td>Sub-17 Masculino · Grupo 8 · 1ª rodada</td><td>PIETRO TEIXEIRA BERGAMASCHI (CT MORIMOTO) × DAVI FERREIRA MAGALHÃES (AEPA)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>3</td><td>S17M-G-2-014</td><td>Sub-17 Masculino · Grupo 5 · 2ª rodada</td><td>LUCAS VASCONCELOS ARRAES (CT MORIMOTO) × JOÃO VITHOR DE SOUZA ROSA (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>10</td><td>S13M-G-2-012</td><td>Sub-13 Masculino · Grupo 3 · 2ª rodada</td><td>EMANUEL CARDOSO DA SILVA MENDES (ATMR) × MATHEUS DIAS RIBEIRO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>10:00</td><td>apita</td><td>10</td><td>S13F-G-3-008</td><td>Sub-13 Feminino · Grupo 2 · 3ª rodada</td><td>LAVYNIA DAUZACKER RYBA (ALEL) × ALICE CAVAZZINI (SORRISO HORNETS)</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>14</td><td>S15M-G-1-008</td><td>Sub-15 Masculino · Grupo 8 · 1ª rodada</td><td>GUILHERME RODRIGO BRITO LIMA CIVIDINI (ÁGAPE SINOP) × YURI CIBULSKIS REIS (DOM BOSCO)</td><td></td></tr>
+<tr><td>10:40</td><td>apita</td><td>14</td><td>S11M-G-2-010</td><td>Sub-11 Masculino · Grupo 3 · 2ª rodada</td><td>MATEUS QUEMUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × CAIO VINICIO FIGUEIRA DE AQUINO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>11:00</td><td>apita</td><td>12</td><td>M40M-G-2-004</td><td>Master 40 Masculino · Grupo 1 · 2ª rodada</td><td>FABRÍCIO SPECHT (ALEL) × JORGE MAIKEL DE OLIVEIRA (ADEMS)</td><td></td></tr>
+<tr><td>11:20</td><td>apita</td><td>4</td><td>S17M-8F-1-030</td><td>Sub-17 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>13:00</td><td>apita</td><td>9</td><td>S17M-4F-1-041</td><td>Sub-17 Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>13:40</td><td>🏓 <b>joga</b></td><td>11</td><td>S17F-G-1-001</td><td>Sub-17 Feminino · Grupo 1 · 1ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × MAYANNA ANDRADE DA SILVA (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>14:00</td><td>apita</td><td>10</td><td>S15M-G-2-012</td><td>Sub-15 Masculino · Grupo 4 · 2ª rodada</td><td>DAVI KOPPER (ÁGAPE SINOP) × WIDNEY RICARDO CASTELHANO FILHO (ATMR)</td><td></td></tr>
+<tr><td>14:20</td><td>apita</td><td>13</td><td>M40M-S-5-012</td><td>Master 40 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>14:40</td><td>apita</td><td>12</td><td>S15M-G-3-024</td><td>Sub-15 Masculino · Grupo 8 · 3ª rodada</td><td>GUILHERME RODRIGO BRITO LIMA CIVIDINI (ÁGAPE SINOP) × KAIO BIASI PENALVA VERDOLIN (ATMR)</td><td></td></tr>
+<tr><td>15:00</td><td>apita</td><td>7</td><td>S19M-G-3-018</td><td>Sub-19 Masculino · Grupo 5 · 3ª rodada</td><td>JOÃO VITHOR DE SOUZA ROSA (DOM BOSCO) × MARCOS VITÓRIO AUED DA CONCEIÇÃO (ATMR)</td><td></td></tr>
+<tr><td>15:20</td><td>apita</td><td>7</td><td>S15F-G-3-011</td><td>Sub-15 Feminino · Grupo 2 · 3ª rodada</td><td>GIOVANNA PALOPOLI RIBEIRO (ATMR) × ANGELINA KASSANDRA ALVES SOLSOL (CT MORIMOTO)</td><td></td></tr>
+<tr><td>16:00</td><td>🏓 <b>joga</b></td><td>11</td><td>S17F-G-3-005</td><td>Sub-17 Feminino · Grupo 1 · 3ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × HELLYSA CABRAL PEREIRA DA SILVA (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>17:40</td><td>apita</td><td>8</td><td>AEM-G-1-002</td><td>Absoluto E Masculino · Grupo 2 · 1ª rodada</td><td>JEAN CAON GARCIA (ALEL) × ENRICO CATALDO REZENDE (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:20</td><td>🏓 <b>joga</b></td><td>14</td><td>S19F-U-1-002</td><td>Sub-19 Feminino · Todos contra todos · 1ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>18:40</td><td>🏓 <b>joga</b></td><td>13</td><td>S19F-U-2-003</td><td>Sub-19 Feminino · Todos contra todos · 2ª rodada</td><td>JÚLIA CÁSSIA EVANGELISTA DE OLIVEIRA (DOM BOSCO) × SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>19:00</td><td>🏓 <b>joga</b></td><td>13</td><td>S19F-U-3-005</td><td>Sub-19 Feminino · Todos contra todos · 3ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × ANA BEATRIZ PEREIRA ANTENOR DE MORAES (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:00</td><td>apita</td><td>6</td><td>ABM-G-1-001</td><td>Absoluto B Masculino · Grupo 1 · 1ª rodada</td><td>PAULO IRAM ALVES NETO (DOM BOSCO) × GUSTAVO LOPES CAMPOS (ATMR)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>08:20</td><td>🏓 <b>joga</b></td><td>13</td><td>ACF-U-1-001</td><td>Absoluto C Feminino · Todos contra todos · 1ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × ANA CLARA KAPFENBERGER DE ALVES (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:00</td><td>🏓 <b>joga</b></td><td>13</td><td>ACF-U-2-003</td><td>Absoluto C Feminino · Todos contra todos · 2ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × MAÍSA CAON GARCIA (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:20</td><td>apita</td><td>8</td><td>AFM-S-5-012</td><td>Absoluto F Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>09:40</td><td>apita</td><td>4</td><td>ADM-8F-1-017</td><td>Absoluto D Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>10:20</td><td>🏓 <b>joga</b></td><td>13</td><td>ACF-U-4-007</td><td>Absoluto C Feminino · Todos contra todos · 4ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × GABRIELI PIVETTA KOZAK (ADEMS)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>11:00</td><td>🏓 <b>joga</b></td><td>13</td><td>ACF-U-5-009</td><td>Absoluto C Feminino · Todos contra todos · 5ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × SARAH BARBI DE ALMEIDA (ASTM SINOP)</td><td>jogo do próprio árbitro</td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>SARAH BARBI (árbitro atleta, Sub-17+)</h2>
+<p>Também joga como <b>SARAH BARBI DE ALMEIDA</b> (9 jogos).</p>
+<p><b>18 jogos</b> (6h00) · 28/11 08:40–17:40; 29/11 08:00–10:00 · permanência 11h40 · ocupação 51% · seq. máx. 6 · 8 blocos · mesa principal 0 · decisivos 1 · antes de jogar 2 · possíveis choques 0 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>6</td><td>S17M-G-1-005</td><td>Sub-17 Masculino · Grupo 5 · 1ª rodada</td><td>LUCAS FIGUEREDO TARTARI (CT MORIMOTO) × JOÃO VITHOR DE SOUZA ROSA (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>13</td><td>S13M-G-1-008</td><td>Sub-13 Masculino · Grupo 8 · 1ª rodada</td><td>RAYAN DAUZACKER RYBA (ALEL) × SAMUEL FERREIRA MAGALHÃES (AEPA)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>2</td><td>S17M-G-3-020</td><td>Sub-17 Masculino · Grupo 2 · 3ª rodada</td><td>GUSTAVO LOPES CAMPOS (ATMR) × ENZO CAPELETTO DAS NEVES (DOM BOSCO)</td><td></td></tr>
+<tr><td>10:00</td><td>apita</td><td>9</td><td>S13F-G-3-007</td><td>Sub-13 Feminino · Grupo 1 · 3ª rodada</td><td>MAÍSA CAON GARCIA (ALEL) × ELINE BEATRIZ DE OLIVEIRA SPECHT (ALEL)</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>13</td><td>S15M-G-1-007</td><td>Sub-15 Masculino · Grupo 7 · 1ª rodada</td><td>PEDRO HENRIQUE SALES MOCELIN (ÁGAPE SINOP) × SAMUEL FERREIRA MAGALHÃES (AEPA)</td><td></td></tr>
+<tr><td>10:40</td><td>apita</td><td>13</td><td>S11M-G-2-009</td><td>Sub-11 Masculino · Grupo 3 · 2ª rodada</td><td>BENÍCIO FERREIRA DA COSTA BASSO (CT MORIMOTO) × LEVI DO AMARAL PAULISTA (ATMR)</td><td></td></tr>
+<tr><td>11:00</td><td>apita</td><td>13</td><td>M40M-G-2-005</td><td>Master 40 Masculino · Grupo 2 · 2ª rodada</td><td>DEOCLECIANO NUNES SILVA (ATMR) × MARCELO GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>11:20</td><td>apita</td><td>2</td><td>S11F-G-2-005</td><td>Sub-11 Feminino · Grupo 2 · 2ª rodada</td><td>GIOVANA BUCAIR COUTO (DOM BOSCO) × SOFIA BRAUN REISDERFER (ALEL)</td><td></td></tr>
+<tr><td>13:00</td><td>apita</td><td>8</td><td>S17M-4F-1-040</td><td>Sub-17 Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>13:40</td><td>🏓 <b>joga</b></td><td>12</td><td>S17F-G-1-002</td><td>Sub-17 Feminino · Grupo 2 · 1ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × ANGELINA KASSANDRA ALVES SOLSOL (CT MORIMOTO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>14:00</td><td>apita</td><td>8</td><td>S15M-G-2-010</td><td>Sub-15 Masculino · Grupo 2 · 2ª rodada</td><td>ENZO CAPELETTO DAS NEVES (DOM BOSCO) × LUIZ FELIPE OMENA DOS SANTOS (DOM BOSCO)</td><td></td></tr>
+<tr><td>14:20</td><td>apita</td><td>3</td><td>S19M-G-2-008</td><td>Sub-19 Masculino · Grupo 2 · 2ª rodada</td><td>LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × LUIZ HENRIQUE CAMARGO MORAES (ADEMS)</td><td></td></tr>
+<tr><td>14:40</td><td>apita</td><td>5</td><td>S15M-G-3-017</td><td>Sub-15 Masculino · Grupo 1 · 3ª rodada</td><td>JOÃO PAULO LOPES PERILLO (ATMR) × RAFAEL FREITAS MATOS DE SOUZA (DOM BOSCO)</td><td></td></tr>
+<tr><td>15:00</td><td>apita</td><td>14</td><td>S13M-4F-1-039</td><td>Sub-13 Masculino · Quartas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>15:20</td><td>apita</td><td>5</td><td>S15F-G-3-009</td><td>Sub-15 Feminino · Grupo 1 · 3ª rodada</td><td>MAYANNA ANDRADE DA SILVA (ALEL) × MARIA VITORIA ASCKAR RABANEDA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>16:00</td><td>🏓 <b>joga</b></td><td>12</td><td>S17F-G-3-006</td><td>Sub-17 Feminino · Grupo 2 · 3ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × ANA CLARA KAPFENBERGER DE ALVES (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>17:40</td><td>apita</td><td>7</td><td>AEM-G-1-001</td><td>Absoluto E Masculino · Grupo 1 · 1ª rodada</td><td>ANDRÉ VALENTE DO COUTO (DOM BOSCO) × HERICK ASSUNÇÃO DO NASCIMENTO (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:20</td><td>🏓 <b>joga</b></td><td>14</td><td>S19F-U-1-002</td><td>Sub-19 Feminino · Todos contra todos · 1ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>18:40</td><td>🏓 <b>joga</b></td><td>14</td><td>S19F-U-2-004</td><td>Sub-19 Feminino · Todos contra todos · 2ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × ANA BEATRIZ PEREIRA ANTENOR DE MORAES (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>19:00</td><td>🏓 <b>joga</b></td><td>14</td><td>S19F-U-3-006</td><td>Sub-19 Feminino · Todos contra todos · 3ª rodada</td><td>JÚLIA CÁSSIA EVANGELISTA DE OLIVEIRA (DOM BOSCO) × SARAH BARBI DE ALMEIDA (ASTM SINOP)</td><td>jogo do próprio árbitro</td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:00</td><td>apita</td><td>4</td><td>ADM-G-1-004</td><td>Absoluto D Masculino · Grupo 4 · 1ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × BENJAMIM FERREIRA PRESTES (DOM BOSCO)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>08:20</td><td>🏓 <b>joga</b></td><td>14</td><td>ACF-U-1-002</td><td>Absoluto C Feminino · Todos contra todos · 1ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × MAÍSA CAON GARCIA (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>08:40</td><td>apita</td><td>5</td><td>ADM-G-2-010</td><td>Absoluto D Masculino · Grupo 5 · 2ª rodada</td><td>LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × LUIS ROBERTO HIDEAKI KOHATSU FUJIKI (CT MORIMOTO)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>09:00</td><td>🏓 <b>joga</b></td><td>14</td><td>ACF-U-2-004</td><td>Absoluto C Feminino · Todos contra todos · 2ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × GABRIELI PIVETTA KOZAK (ADEMS)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:40</td><td>🏓 <b>joga</b></td><td>13</td><td>ACF-U-3-005</td><td>Absoluto C Feminino · Todos contra todos · 3ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × ANA CLARA KAPFENBERGER DE ALVES (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:00</td><td>apita</td><td>13</td><td>ADF-S-5-013</td><td>Absoluto D Feminino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>11:00</td><td>🏓 <b>joga</b></td><td>13</td><td>ACF-U-5-009</td><td>Absoluto C Feminino · Todos contra todos · 5ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × SARAH BARBI DE ALMEIDA (ASTM SINOP)</td><td>jogo do próprio árbitro</td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>BENJAMIM FERREIRA PRESTES (árbitro atleta, até Sub-15)</h2>
+<p>Também joga como <b>BENJAMIM FERREIRA PRESTES</b> (7 jogos).</p>
+<p><b>17 jogos</b> (5h40) · 28/11 09:20–19:00; 29/11 08:20–09:20 · permanência 11h20 · ocupação 50% · seq. máx. 6 · 7 blocos · mesa principal 0 · decisivos 2 · antes de jogar 2 · possíveis choques 5 · mesmo clube 1</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>09:00</td><td>🏓 <b>joga</b></td><td>7</td><td>S13M-G-1-001</td><td>Sub-13 Masculino · Grupo 1 · 1ª rodada</td><td>BENJAMIM FERREIRA PRESTES (DOM BOSCO) × JÓSE GABRIEL SOUZA GENELHU (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:20</td><td>apita</td><td>11</td><td>S11M-G-1-005</td><td>Sub-11 Masculino · Grupo 3 · 1ª rodada</td><td>MATEUS QUEMUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × LEVI DO AMARAL PAULISTA (ATMR)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>3</td><td>S17M-G-3-021</td><td>Sub-17 Masculino · Grupo 3 · 3ª rodada</td><td>JOÃO PAULO LOPES PERILLO (ATMR) × DAVI KOPPER (ÁGAPE SINOP)</td><td></td></tr>
+<tr><td>10:20</td><td>🏓 <b>joga</b></td><td>10</td><td>S15M-G-1-004</td><td>Sub-15 Masculino · Grupo 4 · 1ª rodada</td><td>BENJAMIM FERREIRA PRESTES (DOM BOSCO) × WIDNEY RICARDO CASTELHANO FILHO (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>11:00</td><td>🏓 <b>joga</b></td><td>1</td><td>S13M-G-3-019</td><td>Sub-13 Masculino · Grupo 1 · 3ª rodada</td><td>BENJAMIM FERREIRA PRESTES (DOM BOSCO) × MIGUEL DOS SANTOS (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>11:20</td><td>apita</td><td>8</td><td>S17M-8F-1-034</td><td>Sub-17 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>11:40</td><td>apita</td><td>9</td><td>S15F-G-2-008</td><td>Sub-15 Feminino · Grupo 2 · 2ª rodada</td><td>GABRIELI PIVETTA KOZAK (ADEMS) × ANGELINA KASSANDRA ALVES SOLSOL (CT MORIMOTO)</td><td></td></tr>
+<tr><td>13:00</td><td>apita</td><td>2</td><td>S11F-S-1-010</td><td>Sub-11 Feminino · Semifinal</td><td>A definir × A definir</td><td>semifinal; possível choque: mata-mata S13M; substituto se ele se classificar: VITOR SANTOS (alternativa: VINICIUS FERREIRA GRIGGI) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>13:40</td><td>apita</td><td>7</td><td>S11M-S-1-018</td><td>Sub-11 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>14:00</td><td>apita</td><td>3</td><td>M30M-G-2-006</td><td>Master 30 Masculino · Grupo 1 · 2ª rodada</td><td>DIMAS MICHIURA (CT MORIMOTO) × ALISON LUIS MARTINS (DOM BOSCO)</td><td>atleta do mesmo clube (DOM BOSCO - MT)</td></tr>
+<tr><td>14:20</td><td>apita</td><td>9</td><td>ADTF-U-2-003</td><td>Adulto Feminino · Todos contra todos · 2ª rodada</td><td>LUCIANA MIDORI SASAI MORIMOTO (CT MORIMOTO) × MILENA SUEMY SASAI MORIMOTO (CT MORIMOTO)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>14:40</td><td>🏓 <b>joga</b></td><td>8</td><td>S15M-G-3-020</td><td>Sub-15 Masculino · Grupo 4 · 3ª rodada</td><td>BENJAMIM FERREIRA PRESTES (DOM BOSCO) × DAVI KOPPER (ÁGAPE SINOP)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>17:20</td><td>apita</td><td>8</td><td>AGM-G-1-012</td><td>Absoluto G Masculino · Grupo 12 · 1ª rodada</td><td>JÓSE GABRIEL SOUZA GENELHU (ALEL) × LEVI DO AMARAL PAULISTA (ATMR)</td><td>possível choque: mata-mata S15M; substituto se ele se classificar: SABRINA LETÍCIA ALMEIDA (alternativa: SARAH BARBI) — atenção: só se ele não estiver no mata-mata de S17F</td></tr>
+<tr><td>17:40</td><td>apita</td><td>12</td><td>AEM-G-1-006</td><td>Absoluto E Masculino · Grupo 6 · 1ª rodada</td><td>DEOCLECIANO NUNES SILVA (ATMR) × MAIKEL MANOEL APPELT DE OLIVEIRA (ADEMS)</td><td></td></tr>
+<tr><td>18:00</td><td>apita</td><td>3</td><td>AGM-G-2-014</td><td>Absoluto G Masculino · Grupo 2 · 2ª rodada</td><td>MARCOS CABRAL DA SILVA PAULINO (PRIMAVERA ATLETICO CLUBE) × MATHEUS DIAS RIBEIRO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>18:20</td><td>apita</td><td>4</td><td>AGM-G-3-028</td><td>Absoluto G Masculino · Grupo 4 · 3ª rodada</td><td>VICTOR SAMUEL SOUZA LIMA (ALEL) × MIGUEL FITIPALDI (CT MORIMOTO)</td><td>possível choque: mata-mata S15M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>18:40</td><td>apita</td><td>6</td><td>AGM-16F-1-038</td><td>Absoluto G Masculino · 16 avos de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S15M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>19:00</td><td>apita</td><td>6</td><td>AGM-8F-1-046</td><td>Absoluto G Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>🏓 <b>joga</b></td><td>6</td><td>DAD-4F-1-002</td><td>Duplas Sub 17-Adulto · Quartas de final</td><td>BENJAMIM FERREIRA PRESTES / PAULO IRAM ALVES NETO (DOM BOSCO) × LUIZ HENRIQUE CAMARGO MORAES / HENRIQUE CORDEIRO JULIANI BECCARDI (ADEMS)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>08:00</td><td>🏓 <b>joga</b></td><td>4</td><td>ADM-G-1-004</td><td>Absoluto D Masculino · Grupo 4 · 1ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × BENJAMIM FERREIRA PRESTES (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>08:20</td><td>apita</td><td>2</td><td>AFM-G-3-007</td><td>Absoluto F Masculino · Grupo 1 · 3ª rodada</td><td>DAVI KOPPER (ÁGAPE SINOP) × FABRÍCIO SPECHT (ALEL)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>08:40</td><td>🏓 <b>joga</b></td><td>4</td><td>ADM-G-2-009</td><td>Absoluto D Masculino · Grupo 4 · 2ª rodada</td><td>DAMIÃO ORLANDO DE OLIVEIRA LOTT (DOM BOSCO) × BENJAMIM FERREIRA PRESTES (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:00</td><td>apita</td><td>14</td><td>ACF-U-2-004</td><td>Absoluto C Feminino · Todos contra todos · 2ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × GABRIELI PIVETTA KOZAK (ADEMS)</td><td></td></tr>
+<tr><td>09:20</td><td>apita</td><td>12</td><td>AEM-8F-1-021</td><td>Absoluto E Masculino · Oitavas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata ADM; substituto se ele se classificar: VINICIUS FERREIRA GRIGGI (alternativa: MIGUEL DOS SANTOS) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>LUCAS BELLO (árbitro atleta, até Sub-15)</h2>
+<p>Também joga como <b>LUCAS ALVES BELO</b> (7 jogos).</p>
+<p><b>17 jogos</b> (5h40) · 28/11 08:40–19:00; 29/11 08:20–09:00 · permanência 11h40 · ocupação 49% · seq. máx. 6 · 10 blocos · mesa principal 0 · decisivos 0 · antes de jogar 3 · possíveis choques 5 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>8</td><td>S17M-G-1-007</td><td>Sub-17 Masculino · Grupo 7 · 1ª rodada</td><td>LUIS ROBERTO HIDEAKI KOHATSU FUJIKI (CT MORIMOTO) × MIKAEL SILVA DE ARAÚJO (DOM BOSCO)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>09:00</td><td>🏓 <b>joga</b></td><td>9</td><td>S13M-G-1-003</td><td>Sub-13 Masculino · Grupo 3 · 1ª rodada</td><td>LUCAS ALVES BELO (ATMR) × MATHEUS DIAS RIBEIRO (CT MORIMOTO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:20</td><td>apita</td><td>7</td><td>S11M-G-1-001</td><td>Sub-11 Masculino · Grupo 1 · 1ª rodada</td><td>ENRICO CATALDO REZENDE (DOM BOSCO) × OTAVIO AUGUSTO POMPEU DE BARROS DALTRO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>4</td><td>S17M-G-3-022</td><td>Sub-17 Masculino · Grupo 4 · 3ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × JUAN DA SILVA ALLEDI (ALEL)</td><td></td></tr>
+<tr><td>10:20</td><td>🏓 <b>joga</b></td><td>12</td><td>S15M-G-1-006</td><td>Sub-15 Masculino · Grupo 6 · 1ª rodada</td><td>LUCAS ALVES BELO (ATMR) × DAVI FERREIRA MAGALHÃES (AEPA)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:40</td><td>apita</td><td>4</td><td>S17M-16F-1-028</td><td>Sub-17 Masculino · 16 avos de final</td><td>A definir × A definir</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>11:00</td><td>🏓 <b>joga</b></td><td>3</td><td>S13M-G-3-021</td><td>Sub-13 Masculino · Grupo 3 · 3ª rodada</td><td>LUCAS ALVES BELO (ATMR) × EMANUEL CARDOSO DA SILVA MENDES (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>11:20</td><td>apita</td><td>9</td><td>S17M-8F-1-035</td><td>Sub-17 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>13:40</td><td>apita</td><td>11</td><td>S17F-G-1-001</td><td>Sub-17 Feminino · Grupo 1 · 1ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × MAYANNA ANDRADE DA SILVA (ALEL)</td><td></td></tr>
+<tr><td>14:00</td><td>apita</td><td>5</td><td>M30M-G-2-008</td><td>Master 30 Masculino · Grupo 2 · 2ª rodada</td><td>HERICK ASSUNÇÃO DO NASCIMENTO (DOM BOSCO) × WALTER NOBORU KAWAHARA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>14:40</td><td>🏓 <b>joga</b></td><td>10</td><td>S15M-G-3-022</td><td>Sub-15 Masculino · Grupo 6 · 3ª rodada</td><td>LUCAS ALVES BELO (ATMR) × VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>15:00</td><td>apita</td><td>9</td><td>ADTF-U-3-005</td><td>Adulto Feminino · Todos contra todos · 3ª rodada</td><td>REBECCA KAROLINA CASTRO FIGUEIREDO (DOM BOSCO) × ANA CLARA MORENO RODRIGUES (CT MORIMOTO)</td><td>possível choque: mata-mata S13M; substituto se ele se classificar: MIGUEL DOS SANTOS (alternativa: BENJAMIM FERREIRA PRESTES) — atenção: só se ele não estiver no mata-mata de S13M</td></tr>
+<tr><td>15:40</td><td>apita</td><td>11</td><td>ADTM-U-1-001</td><td>Adulto Masculino · Todos contra todos · 1ª rodada</td><td>JOÃO GABRIEL VIEIRA JESUS (CT MORIMOTO) × IAN CONRADO BORGES TIZZO (DOM BOSCO)</td><td>possível choque: mata-mata S13M/S15M; substituto se ele se classificar: SABRINA LETÍCIA ALMEIDA (alternativa: SARAH BARBI) — atenção: joga no horário seguinte</td></tr>
+<tr><td>17:20</td><td>apita</td><td>4</td><td>AGM-G-1-004</td><td>Absoluto G Masculino · Grupo 4 · 1ª rodada</td><td>VICTOR SAMUEL SOUZA LIMA (ALEL) × OTAVIO AUGUSTO POMPEU DE BARROS DALTRO (CT MORIMOTO)</td><td>possível choque: mata-mata S15M; substituto se ele se classificar: MARTHIM ALFREDO ZIMPEL DE SOUZA (alternativa: VITOR SANTOS) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>17:40</td><td>apita</td><td>2</td><td>AGM-G-1-001</td><td>Absoluto G Masculino · Grupo 1 · 1ª rodada</td><td>LUIZ FELIPE OMENA DOS SANTOS (DOM BOSCO) × YURI CIBULSKIS REIS (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:00</td><td>apita</td><td>12</td><td>AGM-G-2-023</td><td>Absoluto G Masculino · Grupo 11 · 2ª rodada</td><td>YUDI ALVARES FELIX (DOM BOSCO) × FREDERICO LIRA MOCHEUTI (ALEL)</td><td></td></tr>
+<tr><td>18:20</td><td>apita</td><td>10</td><td>AGM-G-3-034</td><td>Absoluto G Masculino · Grupo 10 · 3ª rodada</td><td>LUIZ HENRIQUE CAMARGO MORAES (ADEMS) × HENRIQUE CORDEIRO JULIANI BECCARDI (ADEMS)</td><td>possível choque: mata-mata S15M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>18:40</td><td>apita</td><td>5</td><td>AGM-16F-1-037</td><td>Absoluto G Masculino · 16 avos de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S15M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>19:00</td><td>apita</td><td>13</td><td>S19F-U-3-005</td><td>Sub-19 Feminino · Todos contra todos · 3ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × ANA BEATRIZ PEREIRA ANTENOR DE MORAES (DOM BOSCO)</td><td></td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>🏓 <b>joga</b></td><td>3</td><td>D15-4F-1-002</td><td>Duplas Sub 13-15 · Quartas de final</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS / LUCAS ALVES BELO (ATMR) × ANTHONY OTACÍLIO JACOB BARTH / ENZO GABRIEL KEHL (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>08:00</td><td>🏓 <b>joga</b></td><td>2</td><td>ADM-G-1-002</td><td>Absoluto D Masculino · Grupo 2 · 1ª rodada</td><td>JOÃO PAULO LOPES PERILLO (ATMR) × LUCAS ALVES BELO (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>08:20</td><td>apita</td><td>14</td><td>ACF-U-1-002</td><td>Absoluto C Feminino · Todos contra todos · 1ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × MAÍSA CAON GARCIA (ALEL)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>08:40</td><td>🏓 <b>joga</b></td><td>2</td><td>ADM-G-2-007</td><td>Absoluto D Masculino · Grupo 2 · 2ª rodada</td><td>LUCAS FIGUEREDO TARTARI (CT MORIMOTO) × LUCAS ALVES BELO (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:00</td><td>apita</td><td>8</td><td>AEM-G-3-017</td><td>Absoluto E Masculino · Grupo 5 · 3ª rodada</td><td>GUILHERME RODRIGO BRITO LIMA CIVIDINI (ÁGAPE SINOP) × RICARDO MOACIR MULLER (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>MARCOS CABRAL (árbitro atleta, até Sub-15)</h2>
+<p>Também joga como <b>MARCOS CABRAL DA SILVA PAULINO</b> (4 jogos).</p>
+<p><b>17 jogos</b> (5h40) · 28/11 08:40–16:00; 29/11 09:00–10:20 · permanência 9h20 · ocupação 61% · seq. máx. 4 · 7 blocos · mesa principal 0 · decisivos 1 · antes de jogar 0 · possíveis choques 2 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>13</td><td>S13F-G-1-003</td><td>Sub-13 Feminino · Grupo 3 · 1ª rodada</td><td>LORENA GAMA NUNES (ATMR) × MARIA VITORIA ASCKAR RABANEDA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>6</td><td>S17M-G-2-018</td><td>Sub-17 Masculino · Grupo 9 · 2ª rodada</td><td>ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO) × MARCOS VITÓRIO AUED DA CONCEIÇÃO (ATMR)</td><td></td></tr>
+<tr><td>09:20</td><td>apita</td><td>12</td><td>S13F-G-2-004</td><td>Sub-13 Feminino · Grupo 1 · 2ª rodada</td><td>ELINE BEATRIZ DE OLIVEIRA SPECHT (ALEL) × GIOVANNA PALOPOLI RIBEIRO (ATMR)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>14</td><td>S13M-G-2-018</td><td>Sub-13 Masculino · Grupo 8 · 2ª rodada</td><td>MIGUEL FITIPALDI (CT MORIMOTO) × SAMUEL FERREIRA MAGALHÃES (AEPA)</td><td></td></tr>
+<tr><td>10:20</td><td>🏓 <b>joga</b></td><td>7</td><td>S15M-G-1-001</td><td>Sub-15 Masculino · Grupo 1 · 1ª rodada</td><td>JOÃO PAULO LOPES PERILLO (ATMR) × MARCOS CABRAL DA SILVA PAULINO (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:40</td><td>apita</td><td>6</td><td>S15F-G-1-001</td><td>Sub-15 Feminino · Grupo 1 · 1ª rodada</td><td>MAÍSA CAON GARCIA (ALEL) × MARIA VITORIA ASCKAR RABANEDA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>11:00</td><td>apita</td><td>7</td><td>S13M-G-3-025</td><td>Sub-13 Masculino · Grupo 7 · 3ª rodada</td><td>VICTOR SAMUEL SOUZA LIMA (ALEL) × HENRIQUE CORDEIRO JULIANI BECCARDI (ADEMS)</td><td></td></tr>
+<tr><td>13:00</td><td>apita</td><td>3</td><td>S11F-S-1-011</td><td>Sub-11 Feminino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>13:20</td><td>apita</td><td>6</td><td>S13M-8F-1-029</td><td>Sub-13 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>14:00</td><td>🏓 <b>joga</b></td><td>7</td><td>S15M-G-2-009</td><td>Sub-15 Masculino · Grupo 1 · 2ª rodada</td><td>RAFAEL FREITAS MATOS DE SOUZA (DOM BOSCO) × MARCOS CABRAL DA SILVA PAULINO (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>14:20</td><td>apita</td><td>2</td><td>S19M-G-2-007</td><td>Sub-19 Masculino · Grupo 1 · 2ª rodada</td><td>LUCAS FIGUEREDO TARTARI (CT MORIMOTO) × ANDRÉ KENJI SUGUISHIMA SOARES (DOM BOSCO)</td><td></td></tr>
+<tr><td>14:40</td><td>apita</td><td>2</td><td>M30M-G-3-010</td><td>Master 30 Masculino · Grupo 1 · 3ª rodada</td><td>ISRAEL ASSER EUGÊNIO (DOM BOSCO) × DIMAS MICHIURA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>15:00</td><td>apita</td><td>8</td><td>M70M-U-2-002</td><td>Master 70 Masculino · Todos contra todos · 2ª rodada</td><td>DAVID YASSUSHI YONEKUBO (DOM BOSCO) × WALTER BECK (ALEL)</td><td></td></tr>
+<tr><td>15:20</td><td>apita</td><td>8</td><td>S15F-G-3-012</td><td>Sub-15 Feminino · Grupo 2 · 3ª rodada</td><td>HELLYSA CABRAL PEREIRA DA SILVA (ALEL) × GABRIELI PIVETTA KOZAK (ADEMS)</td><td></td></tr>
+<tr><td>16:00</td><td>apita</td><td>12</td><td>S17F-G-3-006</td><td>Sub-17 Feminino · Grupo 2 · 3ª rodada</td><td>SARAH BARBI DE ALMEIDA (ASTM SINOP) × ANA CLARA KAPFENBERGER DE ALVES (ATMR)</td><td>possível choque: mata-mata S15M; substituto se ele se classificar: LUCAS BELLO (alternativa: CAIO BATISTA BASTOS) — atenção: só se ele não estiver no mata-mata de S15M; mesmo clube de um atleta do jogo</td></tr>
+<tr><td>18:00</td><td>🏓 <b>joga</b></td><td>3</td><td>AGM-G-2-014</td><td>Absoluto G Masculino · Grupo 2 · 2ª rodada</td><td>MARCOS CABRAL DA SILVA PAULINO (PRIMAVERA ATLETICO CLUBE) × MATHEUS DIAS RIBEIRO (CT MORIMOTO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>18:20</td><td>🏓 <b>joga</b></td><td>2</td><td>AGM-G-3-026</td><td>Absoluto G Masculino · Grupo 2 · 3ª rodada</td><td>RAYAN DAUZACKER RYBA (ALEL) × MARCOS CABRAL DA SILVA PAULINO (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>09:00</td><td>apita</td><td>12</td><td>ADF-G-3-009</td><td>Absoluto D Feminino · Grupo 3 · 3ª rodada</td><td>MAYANNA ANDRADE DA SILVA (ALEL) × CLARA GIRALDELLI DERZE (DOM BOSCO)</td><td>possível choque: mata-mata AGM; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>09:20</td><td>apita</td><td>2</td><td>ADM-G-3-012</td><td>Absoluto D Masculino · Grupo 2 · 3ª rodada</td><td>JOÃO PAULO LOPES PERILLO (ATMR) × LUCAS FIGUEREDO TARTARI (CT MORIMOTO)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>8</td><td>AAF-U-1-002</td><td>Absoluto A Feminino · Todos contra todos · 1ª rodada</td><td>REBECCA KAROLINA CASTRO FIGUEIREDO (DOM BOSCO) × JÚLIA CÁSSIA EVANGELISTA DE OLIVEIRA (DOM BOSCO)</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>8</td><td>AAF-U-2-004</td><td>Absoluto A Feminino · Todos contra todos · 2ª rodada</td><td>REBECCA KAROLINA CASTRO FIGUEIREDO (DOM BOSCO) × MAISA DIELY BRITO BARCELO (ATMR)</td><td></td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>MIGUEL DOS SANTOS (árbitro atleta, até Sub-15)</h2>
+<p>Também joga como <b>MIGUEL DOS SANTOS</b> (4 jogos).</p>
+<p><b>17 jogos</b> (5h40) · 28/11 08:40–18:40; 29/11 07:00–10:20 · permanência 14h00 · ocupação 40% · seq. máx. 4 · 11 blocos · mesa principal 0 · decisivos 1 · antes de jogar 3 · possíveis choques 1 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>7</td><td>S17M-G-1-006</td><td>Sub-17 Masculino · Grupo 6 · 1ª rodada</td><td>VINÍCIUS FERREIRA GRIGGI (DOM BOSCO) × LUIZ FELIPE OMENA DOS SANTOS (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:00</td><td>apita</td><td>4</td><td>S17M-G-2-015</td><td>Sub-17 Masculino · Grupo 6 · 2ª rodada</td><td>MAIKEL MANOEL APPELT DE OLIVEIRA (ADEMS) × LUIZ FELIPE OMENA DOS SANTOS (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:20</td><td>apita</td><td>4</td><td>S17M-G-2-010</td><td>Sub-17 Masculino · Grupo 1 · 2ª rodada</td><td>RAFAEL FREITAS MATOS DE SOUZA (DOM BOSCO) × LUIZ HENRIQUE CAMARGO MORAES (ADEMS)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>5</td><td>S17M-G-3-023</td><td>Sub-17 Masculino · Grupo 5 · 3ª rodada</td><td>LUCAS FIGUEREDO TARTARI (CT MORIMOTO) × LUCAS VASCONCELOS ARRAES (CT MORIMOTO)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>10:00</td><td>🏓 <b>joga</b></td><td>2</td><td>S13M-G-2-010</td><td>Sub-13 Masculino · Grupo 1 · 2ª rodada</td><td>MIGUEL DOS SANTOS (PRIMAVERA ATLETICO CLUBE) × JÓSE GABRIEL SOUZA GENELHU (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:20</td><td>apita</td><td>10</td><td>S15M-G-1-004</td><td>Sub-15 Masculino · Grupo 4 · 1ª rodada</td><td>BENJAMIM FERREIRA PRESTES (DOM BOSCO) × WIDNEY RICARDO CASTELHANO FILHO (ATMR)</td><td></td></tr>
+<tr><td>11:00</td><td>🏓 <b>joga</b></td><td>1</td><td>S13M-G-3-019</td><td>Sub-13 Masculino · Grupo 1 · 3ª rodada</td><td>BENJAMIM FERREIRA PRESTES (DOM BOSCO) × MIGUEL DOS SANTOS (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>11:20</td><td>apita</td><td>11</td><td>S17M-8F-1-037</td><td>Sub-17 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>13:40</td><td>apita</td><td>5</td><td>S21M-U-3-006</td><td>Sub-21 Masculino · Todos contra todos · 3ª rodada</td><td>DANIEL BUCAIR COUTO (DOM BOSCO) × LUCAS HIDEO ONUKI (DOM BOSCO)</td><td></td></tr>
+<tr><td>14:00</td><td>apita</td><td>2</td><td>M30M-G-2-005</td><td>Master 30 Masculino · Grupo 1 · 2ª rodada</td><td>ISRAEL ASSER EUGÊNIO (DOM BOSCO) × ESTÊVÃO PAIVA FONSECA (CT MORIMOTO)</td><td></td></tr>
+<tr><td>14:20</td><td>apita</td><td>14</td><td>M40M-S-5-013</td><td>Master 40 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+<tr><td>16:00</td><td>apita</td><td>3</td><td>S15M-8F-1-027</td><td>Sub-15 Masculino · Oitavas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S13M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>16:40</td><td>apita</td><td>10</td><td>M50M-G-3-006</td><td>Master 50 Masculino · Grupo 2 · 3ª rodada</td><td>GIULIANO CURVO MUNIZ (ASTM SINOP) × CHRISTIANO PERAZOLO DE ALMEIDA (ASTM SINOP)</td><td></td></tr>
+<tr><td>17:20</td><td>apita</td><td>2</td><td>AGM-G-1-002</td><td>Absoluto G Masculino · Grupo 2 · 1ª rodada</td><td>RAYAN DAUZACKER RYBA (ALEL) × MATHEUS DIAS RIBEIRO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>18:20</td><td>apita</td><td>6</td><td>AGM-G-3-030</td><td>Absoluto G Masculino · Grupo 6 · 3ª rodada</td><td>RAFAEL FREITAS MATOS DE SOUZA (DOM BOSCO) × JORGE MAIKEL DE OLIVEIRA (ADEMS)</td><td></td></tr>
+<tr><td>18:40</td><td>apita</td><td>9</td><td>AGM-16F-1-041</td><td>Absoluto G Masculino · 16 avos de final</td><td>A definir × A definir</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>19:00</td><td>🏓 <b>joga</b></td><td>3</td><td>AFM-G-2-005</td><td>Absoluto F Masculino · Grupo 2 · 2ª rodada</td><td>MIGUEL DOS SANTOS (PRIMAVERA ATLETICO CLUBE) × WASHINGTON SOUZA NERY (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>apita</td><td>3</td><td>D15-4F-1-002</td><td>Duplas Sub 13-15 · Quartas de final</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS / LUCAS ALVES BELO (ATMR) × ANTHONY OTACÍLIO JACOB BARTH / ENZO GABRIEL KEHL (ALEL)</td><td></td></tr>
+<tr><td>08:00</td><td>apita</td><td>7</td><td>ABM-G-1-002</td><td>Absoluto B Masculino · Grupo 2 · 1ª rodada</td><td>GABRIEL OTACIO PEREIRA PARDIN (ATMR) × LUCAS HIDEO ONUKI (DOM BOSCO)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>08:20</td><td>🏓 <b>joga</b></td><td>3</td><td>AFM-G-3-008</td><td>Absoluto F Masculino · Grupo 2 · 3ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × MIGUEL DOS SANTOS (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:20</td><td>apita</td><td>7</td><td>AAF-U-2-003</td><td>Absoluto A Feminino · Todos contra todos · 2ª rodada</td><td>LUCIANA MIDORI SASAI MORIMOTO (CT MORIMOTO) × JÚLIA CÁSSIA EVANGELISTA DE OLIVEIRA (DOM BOSCO)</td><td></td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>VINICIUS FERREIRA GRIGGI (árbitro atleta, até Sub-15)</h2>
+<p>Também joga como <b>VINÍCIUS FERREIRA GRIGGI</b> (7 jogos).</p>
+<p><b>17 jogos</b> (5h40) · 28/11 09:00–19:00; 29/11 08:20–09:00 · permanência 11h20 · ocupação 50% · seq. máx. 6 · 10 blocos · mesa principal 0 · decisivos 1 · antes de jogar 2 · possíveis choques 8 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>🏓 <b>joga</b></td><td>7</td><td>S17M-G-1-006</td><td>Sub-17 Masculino · Grupo 6 · 1ª rodada</td><td>VINÍCIUS FERREIRA GRIGGI (DOM BOSCO) × LUIZ FELIPE OMENA DOS SANTOS (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:00</td><td>apita</td><td>8</td><td>S13M-G-1-002</td><td>Sub-13 Masculino · Grupo 2 · 1ª rodada</td><td>FELIPE CORDEIRO JULIANI BECCARDI (ADEMS) × MATEUS QUEMUEL GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>09:40</td><td>🏓 <b>joga</b></td><td>6</td><td>S17M-G-3-024</td><td>Sub-17 Masculino · Grupo 6 · 3ª rodada</td><td>VINÍCIUS FERREIRA GRIGGI (DOM BOSCO) × MAIKEL MANOEL APPELT DE OLIVEIRA (ADEMS)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:20</td><td>🏓 <b>joga</b></td><td>9</td><td>S15M-G-1-003</td><td>Sub-15 Masculino · Grupo 3 · 1ª rodada</td><td>VINÍCIUS FERREIRA GRIGGI (DOM BOSCO) × ANTHONY OTACÍLIO JACOB BARTH (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>11:00</td><td>apita</td><td>4</td><td>S13M-G-3-022</td><td>Sub-13 Masculino · Grupo 4 · 3ª rodada</td><td>GUILHERME RODRIGO BRITO LIMA CIVIDINI (ÁGAPE SINOP) × CAUÊ HENRIQUE DOS SANTOS VARGAS (ALEL)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: ANDRÉ KENJI (alternativa: LUIZ HENRIQUE) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>11:40</td><td>apita</td><td>8</td><td>S15F-G-2-007</td><td>Sub-15 Feminino · Grupo 2 · 2ª rodada</td><td>HELLYSA CABRAL PEREIRA DA SILVA (ALEL) × GIOVANNA PALOPOLI RIBEIRO (ATMR)</td><td></td></tr>
+<tr><td>13:20</td><td>apita</td><td>9</td><td>S13M-8F-1-032</td><td>Sub-13 Masculino · Oitavas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>14:00</td><td>apita</td><td>4</td><td>M30M-G-2-007</td><td>Master 30 Masculino · Grupo 2 · 2ª rodada</td><td>FERNANDO BONGIOLO (ADEMS) × FERNANDO KENJI SASAKI (CT MORIMOTO)</td><td></td></tr>
+<tr><td>14:20</td><td>apita</td><td>8</td><td>M70M-U-1-001</td><td>Master 70 Masculino · Todos contra todos · 1ª rodada</td><td>SHUWAISER  ARIYOSHI (CT MORIMOTO) × WALTER BECK (ALEL)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>14:40</td><td>🏓 <b>joga</b></td><td>7</td><td>S15M-G-3-019</td><td>Sub-15 Masculino · Grupo 3 · 3ª rodada</td><td>VINÍCIUS FERREIRA GRIGGI (DOM BOSCO) × HENRIQUE CORDEIRO JULIANI BECCARDI (ADEMS)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>15:00</td><td>apita</td><td>3</td><td>S19M-G-3-014</td><td>Sub-19 Masculino · Grupo 2 · 3ª rodada</td><td>GABRIEL OTACIO PEREIRA PARDIN (ATMR) × LEVY EMMANUEL GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td>possível choque: mata-mata S17M; substituto se ele se classificar: BENJAMIM FERREIRA PRESTES — atenção: só se ele não estiver no mata-mata de S13M</td></tr>
+<tr><td>16:00</td><td>apita</td><td>11</td><td>S17F-G-3-005</td><td>Sub-17 Feminino · Grupo 1 · 3ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × HELLYSA CABRAL PEREIRA DA SILVA (ALEL)</td><td>possível choque: mata-mata S15M; substituto se ele se classificar: BENJAMIM FERREIRA PRESTES (alternativa: LUCAS BELLO) — atenção: só se ele não estiver no mata-mata de S15M</td></tr>
+<tr><td>16:20</td><td>apita</td><td>4</td><td>S19M-4F-1-022</td><td>Sub-19 Masculino · Quartas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S15M; substituto se ele se classificar: BENJAMIM FERREIRA PRESTES (alternativa: LUCAS BELLO) — atenção: só se ele não estiver no mata-mata de S13M</td></tr>
+<tr><td>17:20</td><td>apita</td><td>9</td><td>M50M-S-1-007</td><td>Master 50 Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal; possível choque: mata-mata S15M; substituto se ele se classificar: MARCOS CABRAL (alternativa: VITOR SANTOS) — atenção: só se ele não estiver no mata-mata de S15M</td></tr>
+<tr><td>17:40</td><td>apita</td><td>9</td><td>AEM-G-1-003</td><td>Absoluto E Masculino · Grupo 3 · 1ª rodada</td><td>PEDRO HENRIQUE SALES MOCELIN (ÁGAPE SINOP) × FERNANDO BONGIOLO (ADEMS)</td><td></td></tr>
+<tr><td>18:00</td><td>apita</td><td>9</td><td>AGM-G-2-020</td><td>Absoluto G Masculino · Grupo 8 · 2ª rodada</td><td>MATEUS QUEMUEL GRUBERT (PRIMAVERA ATLETICO CLUBE) × HELDER AUGUSTO POMPEU DE BARROS DALTRO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>18:20</td><td>apita</td><td>8</td><td>AGM-G-3-032</td><td>Absoluto G Masculino · Grupo 8 · 3ª rodada</td><td>DIMAS MICHIURA (CT MORIMOTO) × MATEUS QUEMUEL GRUBERT (PRIMAVERA ATLETICO CLUBE)</td><td>possível choque: mata-mata S15M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>18:40</td><td>apita</td><td>7</td><td>AGM-16F-1-039</td><td>Absoluto G Masculino · 16 avos de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S15M; substituto se ele se classificar: sem árbitro livre no horário: remanejar no dia (ex.: atrasar este jogo)</td></tr>
+<tr><td>19:00</td><td>apita</td><td>2</td><td>AFM-G-2-004</td><td>Absoluto F Masculino · Grupo 1 · 2ª rodada</td><td>FABRÍCIO SPECHT (ALEL) × JUAN DA SILVA ALLEDI (ALEL)</td><td></td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:20</td><td>🏓 <b>joga</b></td><td>3</td><td>D15-S-1-004</td><td>Duplas Sub 13-15 · Semifinal</td><td>VINÍCIUS FERREIRA GRIGGI / GUILHERME RODRIGO BRITO LIMA CIVIDINI (DOM BOSCO / ÁGAPE SINOP) × Vencedor D15-4F-1-001</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>08:00</td><td>🏓 <b>joga</b></td><td>1</td><td>ADM-G-1-001</td><td>Absoluto D Masculino · Grupo 1 · 1ª rodada</td><td>JOÃO GABRIEL VIEIRA JESUS (CT MORIMOTO) × VINÍCIUS FERREIRA GRIGGI (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>08:20</td><td>apita</td><td>13</td><td>ACF-U-1-001</td><td>Absoluto C Feminino · Todos contra todos · 1ª rodada</td><td>SABRINA LETÍCIA DA SILVA ALMEIDA (ASTM SINOP) × ANA CLARA KAPFENBERGER DE ALVES (ATMR)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>08:40</td><td>🏓 <b>joga</b></td><td>1</td><td>ADM-G-2-006</td><td>Absoluto D Masculino · Grupo 1 · 2ª rodada</td><td>JACIONE ANTÔNIO PIRES DA CUNHA (ADEMS) × VINÍCIUS FERREIRA GRIGGI (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:00</td><td>apita</td><td>9</td><td>AEM-G-3-018</td><td>Absoluto E Masculino · Grupo 6 · 3ª rodada</td><td>DEOCLECIANO NUNES SILVA (ATMR) × MARCOS CÉSAR GOMES (ATMR)</td><td></td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p>
+<div class="quebra"></div>
+<h2>VITOR SANTOS (árbitro atleta, até Sub-15)</h2>
+<p>Também joga como <b>VITOR CÉSAR WIECZOREK DOS SANTOS</b> (7 jogos).</p>
+<p><b>17 jogos</b> (5h40) · 28/11 08:40–19:00; 29/11 08:00–10:20 · permanência 13h20 · ocupação 42% · seq. máx. 4 · 10 blocos · mesa principal 0 · decisivos 1 · antes de jogar 4 · possíveis choques 4 · mesmo clube 0</p>
+<p><b>Sábado 28/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>08:40</td><td>apita</td><td>12</td><td>S13F-G-1-002</td><td>Sub-13 Feminino · Grupo 2 · 1ª rodada</td><td>LAVYNIA DAUZACKER RYBA (ALEL) × CLARA GIRALDELLI DERZE (DOM BOSCO)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>09:00</td><td>🏓 <b>joga</b></td><td>11</td><td>S13M-G-1-005</td><td>Sub-13 Masculino · Grupo 5 · 1ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × ENZO GABRIEL KEHL (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>09:20</td><td>apita</td><td>13</td><td>S13F-G-2-005</td><td>Sub-13 Feminino · Grupo 2 · 2ª rodada</td><td>ALICE CAVAZZINI (SORRISO HORNETS) × CLARA GIRALDELLI DERZE (DOM BOSCO)</td><td></td></tr>
+<tr><td>09:40</td><td>apita</td><td>6</td><td>S17M-G-3-024</td><td>Sub-17 Masculino · Grupo 6 · 3ª rodada</td><td>VINÍCIUS FERREIRA GRIGGI (DOM BOSCO) × MAIKEL MANOEL APPELT DE OLIVEIRA (ADEMS)</td><td></td></tr>
+<tr><td>10:00</td><td>apita</td><td>14</td><td>M40M-G-1-003</td><td>Master 40 Masculino · Grupo 3 · 1ª rodada</td><td>RICARDO MOACIR MULLER (PRIMAVERA ATLETICO CLUBE) × HELDER AUGUSTO POMPEU DE BARROS DALTRO (CT MORIMOTO)</td><td></td></tr>
+<tr><td>10:20</td><td>apita</td><td>6</td><td>S19M-G-1-006</td><td>Sub-19 Masculino · Grupo 5 · 1ª rodada</td><td>JOÃO FELIPE ZANON MULLER (PRIMAVERA ATLETICO CLUBE) × JOÃO VITHOR DE SOUZA ROSA (DOM BOSCO)</td><td></td></tr>
+<tr><td>11:00</td><td>🏓 <b>joga</b></td><td>5</td><td>S13M-G-3-023</td><td>Sub-13 Masculino · Grupo 5 · 3ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × OTAVIO AUGUSTO POMPEU DE BARROS DALTRO (CT MORIMOTO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>11:20</td><td>apita</td><td>7</td><td>S17M-8F-1-033</td><td>Sub-17 Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+<tr><td>11:40</td><td>apita</td><td>5</td><td>S21M-U-1-002</td><td>Sub-21 Masculino · Todos contra todos · 1ª rodada</td><td>LUCAS HIDEO ONUKI (DOM BOSCO) × JEAN CAON GARCIA (ALEL)</td><td></td></tr>
+<tr><td>14:00</td><td>🏓 <b>joga</b></td><td>12</td><td>S15M-G-2-014</td><td>Sub-15 Masculino · Grupo 6 · 2ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × DAVI FERREIRA MAGALHÃES (AEPA)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>14:20</td><td>apita</td><td>5</td><td>S19M-G-2-010</td><td>Sub-19 Masculino · Grupo 4 · 2ª rodada</td><td>MARTHIM ALFREDO ZIMPEL DE SOUZA (ASTM SINOP) × FELIPE CONCATTO SCHARFF (DOM BOSCO)</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>14:40</td><td>🏓 <b>joga</b></td><td>10</td><td>S15M-G-3-022</td><td>Sub-15 Masculino · Grupo 6 · 3ª rodada</td><td>LUCAS ALVES BELO (ATMR) × VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>15:00</td><td>apita</td><td>2</td><td>S19M-G-3-013</td><td>Sub-19 Masculino · Grupo 1 · 3ª rodada</td><td>DANIEL BUCAIR COUTO (DOM BOSCO) × LUCAS FIGUEREDO TARTARI (CT MORIMOTO)</td><td>possível choque: mata-mata S13M; substituto se ele se classificar: WASHINGTON NERY (alternativa: MIGUEL DOS SANTOS) — atenção: joga no horário seguinte; mesmo clube de um atleta do jogo</td></tr>
+<tr><td>16:00</td><td>apita</td><td>9</td><td>M50M-G-2-003</td><td>Master 50 Masculino · Grupo 1 · 2ª rodada</td><td>ADRIANO HENRIQUE DOS SANTOS SANCHES (CT MORIMOTO) × WASHINGTON SOUZA NERY (DOM BOSCO)</td><td>possível choque: mata-mata S13M/S15M; substituto se ele se classificar: MARTHIM ALFREDO ZIMPEL DE SOUZA (alternativa: LUCAS BELLO) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>16:20</td><td>apita</td><td>6</td><td>S19M-4F-1-024</td><td>Sub-19 Masculino · Quartas de final</td><td>A definir × A definir</td><td>possível choque: mata-mata S13M/S15M; substituto se ele se classificar: MARCOS CABRAL (alternativa: SABRINA LETÍCIA ALMEIDA) — atenção: pode ter mata-mata no horário seguinte</td></tr>
+<tr><td>17:40</td><td>apita</td><td>6</td><td>AGM-G-1-009</td><td>Absoluto G Masculino · Grupo 9 · 1ª rodada</td><td>WALTER BECK (ALEL) × MIKAEL SILVA DE ARAÚJO (DOM BOSCO)</td><td></td></tr>
+<tr><td>18:00</td><td>apita</td><td>6</td><td>AGM-G-2-017</td><td>Absoluto G Masculino · Grupo 5 · 2ª rodada</td><td>JOÃO VITHOR DE SOUZA ROSA (DOM BOSCO) × LUIZ GUSTAVO DOS SANTOS (PRIMAVERA ATLETICO CLUBE)</td><td></td></tr>
+<tr><td>18:20</td><td>apita</td><td>2</td><td>AGM-G-3-026</td><td>Absoluto G Masculino · Grupo 2 · 3ª rodada</td><td>RAYAN DAUZACKER RYBA (ALEL) × MARCOS CABRAL DA SILVA PAULINO (PRIMAVERA ATLETICO CLUBE)</td><td>logo antes de um jogo seu; possível choque: mata-mata S15M; substituto se ele se classificar: JUAN ALLEDI — atenção: joga no horário seguinte; mesmo clube de um atleta do jogo</td></tr>
+<tr><td>18:40</td><td>🏓 <b>joga</b></td><td>3</td><td>AFM-G-1-002</td><td>Absoluto F Masculino · Grupo 2 · 1ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × WASHINGTON SOUZA NERY (DOM BOSCO)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>19:00</td><td>apita</td><td>9</td><td>AGM-8F-1-049</td><td>Absoluto G Masculino · Oitavas de final</td><td>A definir × A definir</td><td></td></tr>
+</tbody></table>
+<p><b>Domingo 29/11/2026</b></p>
+<table><thead><tr><th>Hora</th><th></th><th>Mesa</th><th>Jogo</th><th>Categoria · fase</th><th>Atletas</th><th>Observação</th></tr></thead><tbody>
+<tr><td>07:00</td><td>🏓 <b>joga</b></td><td>3</td><td>D15-4F-1-002</td><td>Duplas Sub 13-15 · Quartas de final</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS / LUCAS ALVES BELO (ATMR) × ANTHONY OTACÍLIO JACOB BARTH / ENZO GABRIEL KEHL (ALEL)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>08:00</td><td>apita</td><td>8</td><td>AGM-4F-1-053</td><td>Absoluto G Masculino · Quartas de final</td><td>A definir × A definir</td><td>logo antes de um jogo seu</td></tr>
+<tr><td>08:20</td><td>🏓 <b>joga</b></td><td>3</td><td>AFM-G-3-008</td><td>Absoluto F Masculino · Grupo 2 · 3ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × MIGUEL DOS SANTOS (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
+<tr><td>10:20</td><td>apita</td><td>12</td><td>AEM-S-1-028</td><td>Absoluto E Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
+</tbody></table>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p></main></body></html>

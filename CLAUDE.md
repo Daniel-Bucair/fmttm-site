@@ -18,6 +18,7 @@ O que falta fazer está em @PENDENCIAS.md. Ao concluir um item, tire-o de lá no
 - **Fotos.** Converter para `.webp`, horizontais, com `alt` descritivo. Evitar artes com texto e fotos com marca-d'água de fotógrafo.
 - **Eventos.** Cada evento tem página própria (`evento-copa-mt-3.html`, `evento-liga-mt-4.html`...). O `evento.html` genérico hoje é a Copa MT 4ª etapa. Um evento aparece em quatro lugares, que precisam mudar juntos: `index.html` (faixa do topo e flyers), `eventos.html`, `calendario.html` e a página do evento.
 - **Circulares e resultados** ficam em `assets/docs/circulares/` e `assets/docs/resultados/`, com nome no padrão dos que já estão lá.
+- **Agendas de jogos** (grade, programação, premiação etc.) ficam em `agendas/`, fora de `/assets/` de propósito: assim o Vercel não guarda o arquivo por 1 ano e a versão corrigida aparece na hora. São geradas no projeto `agendajogos-tm` (pasta `agendamentos/`); ao atualizar, basta copiar por cima com o mesmo nome. Exceção: na agenda das duplas, retire as seções "Inscrições ajustadas" e "Verificação", que são de uso interno.
 - **Convênios** da Transparência ficam no array `CONVENIOS`, no script do fim de `transparencia.html`.
 
 ## Dados pessoais

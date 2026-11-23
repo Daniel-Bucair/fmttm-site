@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/layout.css?v=6">
-  <link rel="stylesheet" href="assets/css/eventos.css?v=2">
+  <link rel="stylesheet" href="assets/css/layout.css?v=7">
+  <link rel="stylesheet" href="assets/css/eventos.css?v=9">
   <link rel="stylesheet" href="assets/css/animacoes.css">
 </head>
 <body>
@@ -50,14 +50,15 @@
 
   <main id="conteudo">
 
-    <section class="evento-hero">
+    <section class="evento-hero evento-hero--compacto evento-hero--foto">
+      <img class="pagina-cabecalho__foto" src="assets/img/cabecalho-clubes.webp" alt="">
       <div class="container">
         <a href="eventos.html" class="evento-hero__voltar">← Voltar para eventos</a>
         <div class="evento-hero__status">
-          <span class="badge badge--aberto">INSCRIÇÕES ABERTAS</span>
+          <span class="badge badge--confirmado">INSCRIÇÕES ENCERRADAS</span>
           <span class="badge">ESTADUAL · 4ª ETAPA</span>
         </div>
-        <h1 class="evento-hero__titulo">TMB Estadual 2026 — Copa Mato Grosso, 4ª Etapa</h1>
+        <h1 class="evento-hero__titulo">TMB Estadual 2026 — IV Copa Mato Grosso</h1>
 
         <div class="evento-hero__meta">
           <div class="evento-hero__meta-item">
@@ -78,10 +79,6 @@
           </div>
         </div>
 
-        <div class="evento-hero__acoes">
-          <a href="https://app.cbtm.org.br" target="_blank" rel="noopener" class="btn btn--sobre-escuro">Inscrever-se (CBTM Web)</a>
-          <a href="assets/docs/circulares/circular-copa-mt-2026-4a-etapa.pdf" target="_blank" rel="noopener" class="btn btn--contorno-escuro">Ver circular</a>
-        </div>
       </div>
     </section>
 
@@ -89,6 +86,59 @@
       <div class="container evento-detalhe">
 
         <div>
+          <h2 id="agenda">Agenda dos jogos</h2>
+          <p class="evento-detalhe__nota evento-detalhe__nota--antes">Jogos de sábado (28/11) e domingo (29/11). Cada agenda abre em uma nova aba.</p>
+          <div class="agenda-grid">
+            <a href="agendas/2026-11-28-rak-grid.html" class="arquivo-card" target="_blank" rel="noopener">
+              <span class="arquivo-card__icone arquivo-card__icone--agenda" aria-hidden="true"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect class="ic-am" x="12" y="12.7" width="8" height="6.6" stroke="none"/><rect x="4" y="6" width="24" height="20" rx="2.5"/><path d="M12 6v20M20 6v20M4 12.7h24M4 19.3h24"/></svg></span>
+              <span class="arquivo-card__corpo">
+                <span class="arquivo-card__titulo">Grade de jogos por mesa</span>
+                <span class="arquivo-card__meta">Horário × mesa, sábado e domingo</span>
+              </span>
+              <span class="arquivo-card__seta" aria-hidden="true">↗</span>
+            </a>
+            <a href="agendas/2026-11-28-rak-programacao.html" class="arquivo-card" target="_blank" rel="noopener">
+              <span class="arquivo-card__icone arquivo-card__icone--agenda" aria-hidden="true"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="7" width="20" height="19" rx="2.5"/><path d="M9.5 4.5v4M19.5 4.5v4M4.5 12.5h20M9 16.5h8M9 20.5h5"/><circle class="ic-am" cx="23" cy="23" r="6" stroke="none"/><path class="ic-az-s" d="M23 20v3.2l2 1.4" stroke-width="1.9"/></svg></span>
+              <span class="arquivo-card__corpo">
+                <span class="arquivo-card__titulo">Programação dos jogos</span>
+                <span class="arquivo-card__meta">Todos os jogos, com busca por atleta</span>
+              </span>
+              <span class="arquivo-card__seta" aria-hidden="true">↗</span>
+            </a>
+            <a href="agendas/2026-11-28-rak-premiacao.html" class="arquivo-card" target="_blank" rel="noopener">
+              <span class="arquivo-card__icone arquivo-card__icone--agenda" aria-hidden="true"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.5h12v6.5a6 6 0 0 1-12 0z"/><path d="M10 8H7.2a3 3 0 0 0 3.3 5.2M22 8h2.8a3 3 0 0 1-3.3 5.2M16 18v4M12 22h8l1 4H11z"/><polygon class="ic-am" stroke="none" points="16,7.6 16.8,9.6 18.9,9.7 17.3,11.1 17.8,13.2 16,12.1 14.2,13.2 14.7,11.1 13.1,9.7 15.2,9.6"/></svg></span>
+              <span class="arquivo-card__corpo">
+                <span class="arquivo-card__titulo">Agenda de premiação</span>
+                <span class="arquivo-card__meta">Horário do pódio de cada categoria</span>
+              </span>
+              <span class="arquivo-card__seta" aria-hidden="true">↗</span>
+            </a>
+            <a href="agendas/2026-11-28-rak-duplas.html" class="arquivo-card" target="_blank" rel="noopener">
+              <span class="arquivo-card__icone arquivo-card__icone--agenda" aria-hidden="true"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle class="ic-am-s" cx="21" cy="9.5" r="4.2"/><path class="ic-am-s" d="M17.6 18.3a6.4 6.4 0 0 1 2.6-.6h1.6a6.4 6.4 0 0 1 6.4 6.4v1.4"/><circle cx="11.5" cy="11.5" r="4.6"/><path d="M3.5 27.5v-1a6.8 6.8 0 0 1 6.8-6.8h2.4a6.8 6.8 0 0 1 6.8 6.8v1"/></svg></span>
+              <span class="arquivo-card__corpo">
+                <span class="arquivo-card__titulo">Agenda das duplas</span>
+                <span class="arquivo-card__meta">Chaves e horários das duplas</span>
+              </span>
+              <span class="arquivo-card__seta" aria-hidden="true">↗</span>
+            </a>
+            <a href="agendas/2026-11-28-rak-clubes.html" class="arquivo-card" target="_blank" rel="noopener">
+              <span class="arquivo-card__icone arquivo-card__icone--agenda" aria-hidden="true"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l10 3.5V15c0 6-4.4 10.6-10 13-5.6-2.4-10-7-10-13V7.5z"/><path class="ic-am-s" d="M11 14.8l3.8 3.6 6.7-7" stroke-width="2.4"/><path class="ic-vd-s" d="M10.5 22h11" stroke-width="2.2"/></svg></span>
+              <span class="arquivo-card__corpo">
+                <span class="arquivo-card__titulo">Agenda por clube</span>
+                <span class="arquivo-card__meta">Jogos dos atletas de cada clube</span>
+              </span>
+              <span class="arquivo-card__seta" aria-hidden="true">↗</span>
+            </a>
+            <a href="agendas/2026-11-28-rak-arbitros-agendas.html" class="arquivo-card" target="_blank" rel="noopener">
+              <span class="arquivo-card__icone arquivo-card__icone--agenda" aria-hidden="true"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 12h13a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-6"/><circle class="ic-az" cx="13" cy="19" r="7"/><circle class="ic-am" cx="13" cy="19" r="2.6" stroke="none"/><path class="ic-vd-s" d="M6.4 16.6C3.6 13 4.4 8.2 8.2 5.8"/><path class="ic-am-s" d="M18.8 7.2l.4-3M22.6 8.4l1.6-2.6M25.8 10.2l2.6-1.4"/></svg></span>
+              <span class="arquivo-card__corpo">
+                <span class="arquivo-card__titulo">Agenda dos árbitros</span>
+                <span class="arquivo-card__meta">Escala de cada árbitro</span>
+              </span>
+              <span class="arquivo-card__seta" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
           <h2>Categorias</h2>
           <div class="categorias-blocos">
             <div class="categoria-bloco">
@@ -172,14 +222,18 @@
         <aside>
           <div class="evento-acoes-painel">
             <h3>Circular</h3>
-            <a href="assets/docs/circulares/circular-copa-mt-2026-4a-etapa.pdf" class="arquivo-card" target="_blank" rel="noopener">
-              <span class="arquivo-card__icone" aria-hidden="true">PDF</span>
+            <a href="assets/docs/circulares/circular-copa-mt-2026-4a-etapa.pdf?v=2" class="arquivo-card" target="_blank" rel="noopener">
+              <span class="arquivo-card__icone arquivo-card__icone--agenda" aria-hidden="true"><svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h10l6 6v17a1.5 1.5 0 0 1-1.5 1.5H9A1.5 1.5 0 0 1 7.5 27V5.5A1.5 1.5 0 0 1 9 4z"/><path d="M19 4v6h6M11.5 14.5h9M11.5 18.5h5.5"/><circle class="ic-am" cx="21.5" cy="23.5" r="5" stroke="none"/><path class="ic-az-s" d="M19.3 23.6l1.5 1.5 3-3.2" stroke-width="1.9"/></svg></span>
               <span class="arquivo-card__corpo">
                 <span class="arquivo-card__titulo">Circular do evento</span>
                 <span class="arquivo-card__meta">Abrir PDF</span>
               </span>
               <span class="arquivo-card__seta" aria-hidden="true">↗</span>
             </a>
+            <div class="evento-acoes-painel__sep"></div>
+            <h3>Resultados</h3>
+            <a href="https://live.cbtm.org.br/eventos/evento-6195/inscritos" target="_blank" rel="noopener" class="btn btn--primario btn--resultado"><svg class="btn__icone" viewBox="0 0 32 32" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="10.5" r="5"/><path d="M6.5 27v-1.2a7.3 7.3 0 0 1 7.3-7.3h4.4a7.3 7.3 0 0 1 7.3 7.3V27"/></svg>Individual</a>
+            <a href="agendas/2026-11-28-rak-duplas.html" target="_blank" rel="noopener" class="btn btn--primario btn--resultado"><svg class="btn__icone" viewBox="0 0 32 32" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle class="ic-am-s" cx="21" cy="9.5" r="4.2"/><path class="ic-am-s" d="M17.6 18.3a6.4 6.4 0 0 1 2.6-.6h1.6a6.4 6.4 0 0 1 6.4 6.4v1.4"/><circle cx="11.5" cy="11.5" r="4.6"/><path d="M3.5 27.5v-1a6.8 6.8 0 0 1 6.8-6.8h2.4a6.8 6.8 0 0 1 6.8 6.8v1"/></svg>Duplas</a>
             <div class="evento-acoes-painel__sep"></div>
             <h3>Prazos</h3>
             <div class="cronograma-lista">
@@ -193,9 +247,8 @@
             </div>
             <div class="evento-acoes-painel__sep"></div>
             <h3>Participar</h3>
-            <a href="https://app.cbtm.org.br" target="_blank" rel="noopener" class="btn btn--primario">Inscrição pelo clube (CBTM Web)</a>
             <a href="transmissoes.html" class="btn btn--linha">Transmissões</a>
-            <p class="evento-acoes-painel__nota">Inscrições feitas pelos clubes ou associações filiadas. A TRA 2026 deve estar paga até 3 dias antes do fim das inscrições. Equipamentos: 16 mesas Joola e bolas Tibhar 3 estrelas.</p>
+            <p class="evento-acoes-painel__nota">Inscrições encerradas em 15/11. Equipamentos: 16 mesas Joola e bolas Tibhar 3 estrelas.</p>
           </div>
         </aside>
 
@@ -234,8 +287,12 @@
         <div class="site-footer__bloco">
           <h3>Parceiros</h3>
           <div class="site-footer__parceiros">
-            <div class="site-footer__parceiro-caixa">Governo de Mato Grosso</div>
-            <div class="site-footer__parceiro-caixa">SECEL-MT</div>
+            <div class="site-footer__parceiro-caixa site-footer__parceiro-caixa--logo">
+              <img src="assets/img/logo-secel.webp" alt="SECEL — Secretaria de Estado de Cultura, Esporte e Lazer · Governo de Mato Grosso" width="716" height="206" loading="lazy">
+            </div>
+            <div class="site-footer__parceiro-caixa site-footer__parceiro-caixa--logo">
+              <img src="assets/img/logo-olimpus.webp" alt="Projeto Olimpus MT — Bolsa Atleta" width="590" height="171" loading="lazy">
+            </div>
           </div>
         </div>
       </div>

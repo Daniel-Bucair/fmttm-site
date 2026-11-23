@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/layout.css?v=6">
-  <link rel="stylesheet" href="assets/css/calendario.css?v=2">
+  <link rel="stylesheet" href="assets/css/layout.css?v=7">
+  <link rel="stylesheet" href="assets/css/calendario.css?v=4">
   <link rel="stylesheet" href="assets/css/animacoes.css">
 </head>
 <body>
@@ -50,7 +50,8 @@
 
   <main id="conteudo">
 
-    <section class="pagina-cabecalho">
+    <section class="pagina-cabecalho pagina-cabecalho--foto">
+      <img class="pagina-cabecalho__foto" src="assets/img/cabecalho-clubes.webp" alt="">
       <div class="container">
         <span class="pagina-cabecalho__rotulo">Temporada 2026</span>
         <h1 class="pagina-cabecalho__titulo">Calendário oficial.</h1>
@@ -78,7 +79,7 @@
           <div class="filtros__grupo">
             <span class="filtros__rotulo">Status</span>
             <button class="filtros__btn ativo" data-filtro="status" data-valor="todos">Todos</button>
-            <button class="filtros__btn" data-filtro="status" data-valor="aberto">Inscrições abertas</button>
+            <button class="filtros__btn" data-filtro="status" data-valor="proximo">Próximos</button>
             <button class="filtros__btn" data-filtro="status" data-valor="encerrado">Encerrados</button>
           </div>
         </div>
@@ -279,7 +280,7 @@
               <span class="timeline-mes__ano">2026</span>
             </div>
             <div class="timeline-mes__eventos">
-              <a href="evento.html" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="aberto">
+              <a href="evento.html" class="timeline-evento timeline-evento--estadual" data-abrangencia="estadual" data-status="proximo">
                 <div class="timeline-evento__data">
                   <span class="timeline-evento__data-dia">27</span>
                   <span class="timeline-evento__data-sub">Sex · 3 dias</span>
@@ -289,7 +290,7 @@
                   <span class="timeline-evento__local">Ginásio Aecim Tocantins · Cuiabá/MT</span>
                 </div>
                 <div class="timeline-evento__status">
-                  <span class="badge badge--aberto">INSCRIÇÕES ABERTAS</span>
+                  <span class="badge badge--confirmado">INSCRIÇÕES ENCERRADAS</span>
                 </div>
               </a>
             </div>
@@ -339,8 +340,12 @@
         <div class="site-footer__bloco">
           <h3>Parceiros</h3>
           <div class="site-footer__parceiros">
-            <div class="site-footer__parceiro-caixa">Governo de Mato Grosso</div>
-            <div class="site-footer__parceiro-caixa">SECEL-MT</div>
+            <div class="site-footer__parceiro-caixa site-footer__parceiro-caixa--logo">
+              <img src="assets/img/logo-secel.webp" alt="SECEL — Secretaria de Estado de Cultura, Esporte e Lazer · Governo de Mato Grosso" width="716" height="206" loading="lazy">
+            </div>
+            <div class="site-footer__parceiro-caixa site-footer__parceiro-caixa--logo">
+              <img src="assets/img/logo-olimpus.webp" alt="Projeto Olimpus MT — Bolsa Atleta" width="590" height="171" loading="lazy">
+            </div>
           </div>
         </div>
       </div>

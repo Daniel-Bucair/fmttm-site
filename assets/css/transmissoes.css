@@ -21,6 +21,12 @@
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse at center, #000 55%, transparent 95%);
 }
+
+/* Foto de fundo com vinheta escura por cima p/ manter o título legível (mesma de Clubes) */
+.pagina-cabecalho__foto { position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
+.pagina-cabecalho--foto::after { content: ''; position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(15, 18, 34, 0.72) 0%, rgba(15, 18, 34, 0.5) 50%, rgba(15, 18, 34, 0.25) 100%); }
+/* Sombra leve no texto: a vinheta mais clara deixa a foto aparecer sem perder a leitura */
+.pagina-cabecalho--foto { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
 .pagina-cabecalho__topo {
   display: flex;
   justify-content: space-between;

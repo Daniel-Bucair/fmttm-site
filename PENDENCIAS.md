@@ -2,26 +2,23 @@
 
 Situação em 23/11/2026. Ordenado pelo que vence primeiro.
 
-## 1. Copa MT 4ª etapa (27 a 29/11, Cuiabá): urgente
+## 1. Copa MT 4ª etapa (27 a 29/11, Cuiabá)
 
-O prazo de inscrição que o próprio site informa é 15/11, mas o evento ainda aparece como "Inscrições abertas".
+Inscrições encerradas em 15/11; data e local confirmados; circular oficial publicada.
 
-- [ ] Confirmar se as inscrições encerraram e se data e local (Ginásio Poliesportivo Aecim Tocantins) continuam valendo.
-- [ ] Trocar o selo "INSCRIÇÕES ABERTAS" e o botão "Inscreva-se" em `index.html` (faixa do topo e primeiro flyer), `eventos.html` e `evento.html`.
-- [ ] Trocar a circular pela versão oficial em PDF: `assets/docs/circulares/circular-copa-mt-2026-4a-etapa.pdf` (a atual foi convertida de um .docx). Lembrar do `?v=` nos links.
 - [ ] Opcional: flyer do evento na home (há um comentário em `index.html` marcando o lugar).
 
 Depois do dia 29:
 
-- [ ] Marcar como encerrado na home, em Eventos e no Calendário.
+- [ ] Marcar como encerrado na home, em Eventos, no Calendário (`data-status="encerrado"`) e na página do evento.
 - [ ] Publicar os resultados em `assets/docs/resultados/`.
 - [ ] Dar página própria ao evento (`evento-copa-mt-4.html`, copiando o `evento.html`) e atualizar os links que apontam para `evento.html`.
 
 ## 2. Fotos
 
-Só a home (topo), o cabeçalho de Clubes e um slide do Destaques têm foto real.
+A home (topo), os cabeçalhos das páginas internas (todos com a foto de Clubes) e um slide do Destaques têm foto real.
 
-- [ ] Foto de fundo no cabeçalho azul de 7 páginas: Eventos, página de evento, Calendário, Transmissões, Governança, Transparência e Notas. Uma foto fixa por página.
+- [ ] Opcional: foto própria no cabeçalho de cada página. Hoje Eventos, as páginas de evento, Calendário, Transmissões, Governança, Transparência e Notas usam a mesma foto de Clubes (`cabecalho-clubes.webp`); para trocar, basta mudar o `src` da `<img class="pagina-cabecalho__foto">` da página.
 - [ ] Destaques da home (`index.html`), 4 slides ainda sem foto:
   - Slide 1: Copa Brasil Ouro em Cuiabá (4 a 7 de junho, ginásio da UFMT)
   - Slide 2: Liga Mato Grosso no interior

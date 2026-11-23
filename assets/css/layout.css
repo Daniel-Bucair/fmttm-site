@@ -278,6 +278,19 @@
   place-items: center;
 }
 
+/* Rodapé: logos dos parceiros (SECEL/Governo de MT e Projeto Olimpus MT) em caixa branca. */
+.site-footer__parceiro-caixa--logo {
+  background: #fff;
+  border: 0;
+  padding: var(--s-3) var(--s-4);
+}
+.site-footer__parceiro-caixa--logo img {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+}
+
 .site-footer__base {
   margin-top: var(--s-10);
   padding-top: var(--s-5);

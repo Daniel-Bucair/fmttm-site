@@ -1,0 +1,173 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TMB ESTADUAL 2026 - IV COPA MATO GROSSO - CUIABÁ/MT</title><style>
+:root{--bg:#f6f7f9;--card:#fff;--tx:#1d2330;--sub:#5d6677;--linha:#e3e6eb;--real:#0b5cad;--suave:#eef3fa}
+@media (prefers-color-scheme: dark){:root{--bg:#14171c;--card:#1d2128;--tx:#e9ecf1;--sub:#a3abb8;--linha:#323844;--real:#6fb1ff;--suave:#22303f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:#0b4f96;color:#fff;display:flex;align-items:center;gap:16px;padding:0 16px 0 0}
+header .logo{align-self:stretch;flex:none;display:flex;align-items:center;background:#fff;padding:8px 12px}
+header .logo img{display:block;height:96px;width:auto}
+header .titulo{min-width:0;padding:16px 0 14px}
+@media (max-width:560px){header{gap:12px}header .logo{padding:6px 8px}header .logo img{height:64px}}
+header h1{margin:0;font-size:1.45rem}
+header p{margin:4px 0 0;opacity:.9}
+.barra{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 16px;border-bottom:1px solid var(--linha)}
+.barra input{width:100%;padding:11px 12px;font-size:1rem;border:1px solid var(--linha);border-radius:10px;background:var(--card);color:var(--tx)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.chips a{font-size:.85rem;padding:4px 10px;border-radius:999px;background:var(--card);border:1px solid var(--linha);color:var(--tx);text-decoration:none;white-space:nowrap}
+main{max-width:980px;margin:0 auto;padding:8px 16px 40px}
+h2{margin:26px 0 8px;font-size:1.25rem}
+.dia{margin-top:28px;padding:8px 12px;border-radius:10px;background:var(--suave);font-size:1.1rem}
+.slot{background:var(--card);border:1px solid var(--linha);border-radius:12px;margin:12px 0;overflow:hidden;break-inside:avoid}
+.slot>h3{margin:0;padding:8px 12px;font-size:1.15rem;border-bottom:1px solid var(--linha);display:flex;gap:10px;align-items:baseline}
+.slot>h3 small{color:var(--sub);font-weight:400;font-size:.85rem}
+.jogo{display:grid;grid-template-columns:64px 1fr;gap:2px 10px;padding:8px 12px;border-top:1px solid var(--linha)}
+.jogo:first-of-type{border-top:0}
+.mesa{grid-row:span 2;font-weight:700;text-align:center;align-self:center;font-size:.85rem;color:var(--sub)}
+.mesa b{display:block;font-size:1.35rem;color:var(--tx)}
+.cat{font-size:.82rem;color:var(--sub)}
+.tag{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:1px solid rgba(0,0,0,.15)}
+.par{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:baseline}
+.par small{color:var(--sub)}
+.x{color:var(--sub)}
+.def{color:var(--sub);font-style:italic}
+.final{background:linear-gradient(90deg,rgba(255,196,0,.18),transparent)}
+.meu b{color:var(--real)}
+.atleta{background:var(--card);border:1px solid var(--linha);border-radius:12px;margin:10px 0;padding:10px 12px;break-inside:avoid}
+.atleta h4{margin:0 0 4px;font-size:1rem}
+.atleta h4 small{color:var(--sub);font-weight:400}
+.atleta ul{margin:4px 0 0;padding-left:18px}
+.atleta li{margin:2px 0}
+.mm{font-size:.85rem;color:var(--sub);margin-top:4px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--linha);border-radius:12px;overflow:hidden;margin:8px 0 14px}
+th,td{padding:7px 8px;border-top:1px solid var(--linha);text-align:left;vertical-align:top;font-size:.9rem}
+th{background:var(--suave);font-size:.8rem;color:var(--sub);border-top:0}
+td.res{white-space:nowrap;color:var(--sub)}
+.clube{background:var(--card);border:1px solid var(--linha);border-radius:14px;padding:4px 14px 10px;margin:22px 0;break-before:page}
+.clube:first-of-type{break-before:auto}
+.resumo{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px}
+.resumo span{background:var(--suave);border-radius:8px;padding:4px 10px;font-size:.88rem}
+.feito td{opacity:.45}
+.nota{color:var(--sub);font-size:.85rem}
+.oculto{display:none!important}
+@media (max-width:640px){th.opc,td.opc{display:none}}
+@media (min-width:700px){.jogo{grid-template-columns:62px minmax(190px,32%) 1fr;align-items:center;gap:0 12px}
+.mesa{grid-row:auto}.mesa b{display:inline;font-size:1.15rem;margin-left:4px}}
+@page{size:A4;margin:11mm}
+@media print{.barra,.chips,.no-print{display:none!important}body{background:#fff;color:#000;font-size:11px}
+header{background:#fff;color:#000;padding:0 0 6px;border-bottom:2px solid #000}
+header .logo{padding:0 8px 0 0}header .logo img{height:52px}header .titulo{padding:0}
+.slot,.atleta,table,.clube{border-color:#bbb}main{max-width:none;padding:0}
+th.opc,td.opc{display:table-cell!important}
+.jogo{grid-template-columns:52px 34% 1fr;align-items:center;gap:0 8px;padding:3px 8px;break-inside:avoid}
+.mesa{grid-row:auto;font-size:9px}.mesa b{display:inline;font-size:12px;margin-left:3px}
+.slot{break-inside:auto;margin:8px 0}.slot>h3{break-after:avoid;padding:4px 8px;font-size:13px}
+.dia{break-after:avoid;margin-top:10px}.atleta{padding:6px 8px;margin:6px 0}
+th,td{padding:4px 6px;font-size:10px}.clube{padding:0;border:0}}
+
+table.slot-t{margin:12px 0}
+table.slot-t tr.hora th{background:#0b4f96;color:#fff;font-size:1.05rem;padding:6px 10px}
+table.slot-t tr.hora th small{color:#dbe6f4;font-weight:400;font-size:.82rem;margin-left:6px}
+table.slot-t td.m{font-weight:700;text-align:center;width:46px;font-size:1.05rem}
+table.slot-t td.cat{width:30%}
+table.slot-t td.arb{width:21%;color:var(--sub)}
+table.slot-t tr.final td{background:rgba(255,196,0,.18)}
+@media print{table.slot-t{margin:6px 0}table.slot-t tr.hora th{background:#dfe8f5;color:#000;font-size:12px;padding:3px 6px}
+table.slot-t tr.hora th small{color:#333}table.slot-t td.m{font-size:12px;width:30px}
+table.slot-t td,table.slot-t th{padding:2px 5px;font-size:9.5px}table.slot-t td.cat{width:25%}table.slot-t td.arb{width:17%}}
+
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.org{margin:0 0 2px;font-weight:700;letter-spacing:.04em;font-size:.82rem;opacity:.95}
+.quebra{break-before:page}
+main h2,main h3{break-after:avoid}
+code{font-size:.85em;background:var(--suave);padding:0 3px;border-radius:4px}
+main ul{margin:4px 0 8px;padding-left:20px}
+table thead{display:table-header-group}
+tr{break-inside:avoid}
+</style></head><body><header><div class="logo"><img src="data:image/png;base64,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" alt="Federação Mato-Grossense de Tênis de Mesa"></div><div class="titulo"><p class="org">FEDERAÇÃO MATO-GROSSENSE DE TÊNIS DE MESA</p><h1>TMB ESTADUAL 2026 - IV COPA MATO GROSSO - CUIABÁ/MT</h1><p>Agenda das duplas</p></div></header><main><p>Torneio de duplas (só ranking), separado do individual: 24 duplas, 20 jogos, domingo 29/11 das 07:00 às 07:40 (slots de 20 min), 14 mesas. Eliminatória simples; cabeças de chave pela média do rating (Pontos RAT) dos dois atletas.</p>
+<h2>Grade (horário × mesa)</h2>
+<table><thead><tr><th>Hora</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th></tr></thead><tbody>
+<tr><td>07:00</td><td>D11-4F-1-001</td><td>D15-4F-1-001</td><td>D15-4F-1-002</td><td>D15-4F-1-003</td><td>DAD-4F-1-001</td><td>DAD-4F-1-002</td><td>DMA-4F-1-001</td><td>DMA-4F-1-002</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>07:20</td><td>D11-S-1-002</td><td>D11-S-1-003</td><td>D15-S-1-004</td><td>D15-S-1-005</td><td>DAD-S-1-003</td><td>DAD-S-1-004</td><td>DMA-S-1-003</td><td>DMA-S-1-004</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>07:40</td><td>D11-F-1-004</td><td>D15-F-1-006</td><td>DAD-F-1-005</td><td>DMA-F-1-005</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<h2>DUPLAS SUB 7-11</h2>
+<table><thead><tr><th>Cabeça</th><th>Dupla</th><th>Clube(s)</th><th>Média</th></tr></thead><tbody>
+<tr><td>1</td><td>GIOVANA BUCAIR COUTO / CLARA GIRALDELLI DERZE</td><td>DOM BOSCO - MT</td><td>480,5</td></tr>
+<tr><td>2</td><td>ENRICO CATALDO REZENDE / DAVI MATHEUS VIEIRA</td><td>DOM BOSCO - MT</td><td>446,0</td></tr>
+<tr><td>3</td><td>ARTHUR JARDIM MENEZES FERREIRA / LAVYNIA DAUZACKER RYBA</td><td>ALEL - MT</td><td>388,0</td></tr>
+<tr><td>4</td><td>EMANUEL CARDOSO DA SILVA MENDES / LORENA GAMA NUNES</td><td>ATMR - MT</td><td>313,0</td></tr>
+<tr><td>5</td><td>SOFIA BRAUN REISDERFER / LAURA QUEREN DE SOUZA JALES</td><td>ALEL - MT</td><td>110,0</td></tr>
+</tbody></table>
+<table><thead><tr><th>Hora</th><th>Mesa</th><th>Jogo</th><th>Fase</th><th>Dupla A</th><th>Dupla B</th><th>Árbitro</th></tr></thead><tbody>
+<tr><td>07:00</td><td>1</td><td>D11-4F-1-001</td><td>Quartas de final</td><td>EMANUEL CARDOSO DA SILVA MENDES / LORENA GAMA NUNES (ATMR - MT)</td><td>SOFIA BRAUN REISDERFER / LAURA QUEREN DE SOUZA JALES (ALEL - MT)</td><td>VITO GABRIEL JUREWISK</td></tr>
+<tr><td>07:20</td><td>1</td><td>D11-S-1-002</td><td>Semifinal</td><td>GIOVANA BUCAIR COUTO / CLARA GIRALDELLI DERZE (DOM BOSCO - MT)</td><td>Vencedor D11-4F-1-001</td><td>DANIEL DE OLIVEIRA JÚNIOR</td></tr>
+<tr><td>07:20</td><td>2</td><td>D11-S-1-003</td><td>Semifinal</td><td>ENRICO CATALDO REZENDE / DAVI MATHEUS VIEIRA (DOM BOSCO - MT)</td><td>ARTHUR JARDIM MENEZES FERREIRA / LAVYNIA DAUZACKER RYBA (ALEL - MT)</td><td>RICARDO MOACIR MULLER (substituto: MARCOS CABRAL (alternativa: MIGUEL DOS SANTOS))</td></tr>
+<tr><td>07:40</td><td>1</td><td>D11-F-1-004</td><td>Final</td><td>Vencedor D11-S-1-002</td><td>Vencedor D11-S-1-003</td><td>CAIO BATISTA BASTOS</td></tr>
+</tbody></table>
+<h2>DUPLAS SUB 13-15</h2>
+<table><thead><tr><th>Cabeça</th><th>Dupla</th><th>Clube(s)</th><th>Média</th></tr></thead><tbody>
+<tr><td>1</td><td>VINÍCIUS FERREIRA GRIGGI / GUILHERME RODRIGO BRITO LIMA CIVIDINI</td><td>DOM BOSCO - MT / ÁGAPE SINOP - MT</td><td>854,5</td></tr>
+<tr><td>2</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS / LUCAS ALVES BELO</td><td>ATMR - MT</td><td>703,5</td></tr>
+<tr><td>3</td><td>MAIKEL MANOEL APPELT DE OLIVEIRA / FELIPE CORDEIRO JULIANI BECCARDI</td><td>ADEMS - MT</td><td>655,0</td></tr>
+<tr><td>4</td><td>MAÍSA CAON GARCIA / HELLYSA CABRAL PEREIRA DA SILVA</td><td>ALEL - MT</td><td>591,5</td></tr>
+<tr><td>5</td><td>MARIA VITORIA ASCKAR RABANEDA / ANGELINA KASSANDRA ALVES SOLSOL</td><td>CT MORIMOTO - MT</td><td>359,5</td></tr>
+<tr><td>6</td><td>VICTOR SAMUEL SOUZA LIMA / RAYAN DAUZACKER RYBA</td><td>ALEL - MT</td><td>301,5</td></tr>
+<tr><td>7</td><td>ANTHONY OTACÍLIO JACOB BARTH / ENZO GABRIEL KEHL</td><td>ALEL - MT</td><td>202,0</td></tr>
+</tbody></table>
+<table><thead><tr><th>Hora</th><th>Mesa</th><th>Jogo</th><th>Fase</th><th>Dupla A</th><th>Dupla B</th><th>Árbitro</th></tr></thead><tbody>
+<tr><td>07:00</td><td>2</td><td>D15-4F-1-001</td><td>Quartas de final</td><td>MAÍSA CAON GARCIA / HELLYSA CABRAL PEREIRA DA SILVA (ALEL - MT)</td><td>MARIA VITORIA ASCKAR RABANEDA / ANGELINA KASSANDRA ALVES SOLSOL (CT MORIMOTO - MT)</td><td>DANIEL DE OLIVEIRA JÚNIOR</td></tr>
+<tr><td>07:00</td><td>3</td><td>D15-4F-1-002</td><td>Quartas de final</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS / LUCAS ALVES BELO (ATMR - MT)</td><td>ANTHONY OTACÍLIO JACOB BARTH / ENZO GABRIEL KEHL (ALEL - MT)</td><td>MIGUEL DOS SANTOS</td></tr>
+<tr><td>07:00</td><td>4</td><td>D15-4F-1-003</td><td>Quartas de final</td><td>MAIKEL MANOEL APPELT DE OLIVEIRA / FELIPE CORDEIRO JULIANI BECCARDI (ADEMS - MT)</td><td>VICTOR SAMUEL SOUZA LIMA / RAYAN DAUZACKER RYBA (ALEL - MT)</td><td>LEVY GRUBERT</td></tr>
+<tr><td>07:20</td><td>3</td><td>D15-S-1-004</td><td>Semifinal</td><td>VINÍCIUS FERREIRA GRIGGI / GUILHERME RODRIGO BRITO LIMA CIVIDINI (DOM BOSCO - MT / ÁGAPE SINOP - MT)</td><td>Vencedor D15-4F-1-001</td><td>MARTHIM ALFREDO ZIMPEL DE SOUZA</td></tr>
+<tr><td>07:20</td><td>4</td><td>D15-S-1-005</td><td>Semifinal</td><td>Vencedor D15-4F-1-002</td><td>Vencedor D15-4F-1-003</td><td>WASHINGTON NERY</td></tr>
+<tr><td>07:40</td><td>2</td><td>D15-F-1-006</td><td>Final</td><td>Vencedor D15-S-1-004</td><td>Vencedor D15-S-1-005</td><td>RICARDO MOACIR MULLER (substituto: MIGUEL DOS SANTOS (alternativa: SABRINA LETÍCIA ALMEIDA))</td></tr>
+</tbody></table>
+<h2>DUPLAS SUB 17-ADULTO</h2>
+<table><thead><tr><th>Cabeça</th><th>Dupla</th><th>Clube(s)</th><th>Média</th></tr></thead><tbody>
+<tr><td>1</td><td>DANIEL BUCAIR COUTO / REBECCA KAROLINA CASTRO FIGUEIREDO</td><td>DOM BOSCO - MT</td><td>2353,0</td></tr>
+<tr><td>2</td><td>LUCAS HIDEO ONUKI / GABRIEL OTACIO PEREIRA PARDIN</td><td>DOM BOSCO - MT / ATMR - MT</td><td>2287,5</td></tr>
+<tr><td>3</td><td>BENJAMIM FERREIRA PRESTES / PAULO IRAM ALVES NETO</td><td>DOM BOSCO - MT</td><td>1339,0</td></tr>
+<tr><td>4</td><td>LUIS ROBERTO HIDEAKI KOHATSU FUJIKI / JOÃO GABRIEL VIEIRA JESUS</td><td>CT MORIMOTO - MT</td><td>979,0</td></tr>
+<tr><td>5</td><td>JEAN CAON GARCIA / JOÃO FELIPE ZANON MULLER</td><td>ALEL - MT / PRIMAVERA ATLETICO CLUBE - MT</td><td>863,0</td></tr>
+<tr><td>6</td><td>LUIZ HENRIQUE CAMARGO MORAES / HENRIQUE CORDEIRO JULIANI BECCARDI</td><td>ADEMS - MT</td><td>282,5</td></tr>
+</tbody></table>
+<table><thead><tr><th>Hora</th><th>Mesa</th><th>Jogo</th><th>Fase</th><th>Dupla A</th><th>Dupla B</th><th>Árbitro</th></tr></thead><tbody>
+<tr><td>07:00</td><td>5</td><td>DAD-4F-1-001</td><td>Quartas de final</td><td>LUIS ROBERTO HIDEAKI KOHATSU FUJIKI / JOÃO GABRIEL VIEIRA JESUS (CT MORIMOTO - MT)</td><td>JEAN CAON GARCIA / JOÃO FELIPE ZANON MULLER (ALEL - MT / PRIMAVERA ATLETICO CLUBE - MT)</td><td>CARLOS ALBERTO FRANCISCO DA COSTA</td></tr>
+<tr><td>07:00</td><td>6</td><td>DAD-4F-1-002</td><td>Quartas de final</td><td>BENJAMIM FERREIRA PRESTES / PAULO IRAM ALVES NETO (DOM BOSCO - MT)</td><td>LUIZ HENRIQUE CAMARGO MORAES / HENRIQUE CORDEIRO JULIANI BECCARDI (ADEMS - MT)</td><td>JUAN ALLEDI</td></tr>
+<tr><td>07:20</td><td>5</td><td>DAD-S-1-003</td><td>Semifinal</td><td>DANIEL BUCAIR COUTO / REBECCA KAROLINA CASTRO FIGUEIREDO (DOM BOSCO - MT)</td><td>Vencedor DAD-4F-1-001</td><td>JUAN ALLEDI</td></tr>
+<tr><td>07:20</td><td>6</td><td>DAD-S-1-004</td><td>Semifinal</td><td>LUCAS HIDEO ONUKI / GABRIEL OTACIO PEREIRA PARDIN (DOM BOSCO - MT / ATMR - MT)</td><td>Vencedor DAD-4F-1-002</td><td>VITO GABRIEL JUREWISK</td></tr>
+<tr><td>07:40</td><td>3</td><td>DAD-F-1-005</td><td>Final</td><td>Vencedor DAD-S-1-003</td><td>Vencedor DAD-S-1-004</td><td>JUAN ALLEDI</td></tr>
+</tbody></table>
+<h2>DUPLAS MASTER</h2>
+<table><thead><tr><th>Cabeça</th><th>Dupla</th><th>Clube(s)</th><th>Média</th></tr></thead><tbody>
+<tr><td>1</td><td>ADRIANO HENRIQUE DOS SANTOS SANCHES / SHUWAISER ARIYOSHI</td><td>CT MORIMOTO - MT</td><td>1036,0</td></tr>
+<tr><td>2</td><td>ANDRÉ VALENTE DO COUTO / HERICK ASSUNÇÃO DO NASCIMENTO</td><td>DOM BOSCO - MT</td><td>728,5</td></tr>
+<tr><td>3</td><td>RICARDO MOACIR MULLER / DEOCLECIANO NUNES SILVA</td><td>PRIMAVERA ATLETICO CLUBE - MT / ATMR - MT</td><td>689,5</td></tr>
+<tr><td>4</td><td>FABRÍCIO SPECHT / JACIONE ANTÔNIO PIRES DA CUNHA</td><td>ALEL - MT / ADEMS - MT</td><td>680,5</td></tr>
+<tr><td>5</td><td>HELDER AUGUSTO POMPEU DE BARROS DALTRO / WALTER NOBORU KAWAHARA</td><td>CT MORIMOTO - MT</td><td>307,0</td></tr>
+<tr><td>6</td><td>DIMAS MICHIURA / FERNANDO KENJI SASAKI</td><td>CT MORIMOTO - MT</td><td>286,5</td></tr>
+</tbody></table>
+<table><thead><tr><th>Hora</th><th>Mesa</th><th>Jogo</th><th>Fase</th><th>Dupla A</th><th>Dupla B</th><th>Árbitro</th></tr></thead><tbody>
+<tr><td>07:00</td><td>7</td><td>DMA-4F-1-001</td><td>Quartas de final</td><td>FABRÍCIO SPECHT / JACIONE ANTÔNIO PIRES DA CUNHA (ALEL - MT / ADEMS - MT)</td><td>HELDER AUGUSTO POMPEU DE BARROS DALTRO / WALTER NOBORU KAWAHARA (CT MORIMOTO - MT)</td><td>ANDRÉ KENJI</td></tr>
+<tr><td>07:00</td><td>8</td><td>DMA-4F-1-002</td><td>Quartas de final</td><td>RICARDO MOACIR MULLER / DEOCLECIANO NUNES SILVA (PRIMAVERA ATLETICO CLUBE - MT / ATMR - MT)</td><td>DIMAS MICHIURA / FERNANDO KENJI SASAKI (CT MORIMOTO - MT)</td><td>WASHINGTON NERY</td></tr>
+<tr><td>07:20</td><td>7</td><td>DMA-S-1-003</td><td>Semifinal</td><td>ADRIANO HENRIQUE DOS SANTOS SANCHES / SHUWAISER ARIYOSHI (CT MORIMOTO - MT)</td><td>Vencedor DMA-4F-1-001</td><td>ANDRÉ KENJI</td></tr>
+<tr><td>07:20</td><td>8</td><td>DMA-S-1-004</td><td>Semifinal</td><td>ANDRÉ VALENTE DO COUTO / HERICK ASSUNÇÃO DO NASCIMENTO (DOM BOSCO - MT)</td><td>Vencedor DMA-4F-1-002</td><td>CARLOS ALBERTO FRANCISCO DA COSTA</td></tr>
+<tr><td>07:40</td><td>4</td><td>DMA-F-1-005</td><td>Final</td><td>Vencedor DMA-S-1-003</td><td>Vencedor DMA-S-1-004</td><td>WASHINGTON NERY</td></tr>
+</tbody></table>
+<h2>Informação: atletas das duplas com jogo do individual logo às 08:00</h2>
+<p>Os eventos não foram misturados (pedido do usuário). Estes atletas podem sair da dupla direto para o individual:</p>
+<ul>
+<li>LAVYNIA DAUZACKER RYBA: ADF-G-1-003 às 08:00, mesa 14</li>
+<li>JOÃO FELIPE ZANON MULLER: ADM-G-1-004 às 08:00, mesa 4</li>
+<li>BENJAMIM FERREIRA PRESTES: ADM-G-1-004 às 08:00, mesa 4</li>
+<li>PAULO IRAM ALVES NETO: ABM-G-1-001 às 08:00, mesa 6</li>
+<li>VINÍCIUS FERREIRA GRIGGI: ADM-G-1-001 às 08:00, mesa 1</li>
+<li>GIOVANA BUCAIR COUTO: ADF-G-1-001 às 08:00, mesa 12</li>
+<li>LUCAS HIDEO ONUKI: ABM-G-1-002 às 08:00, mesa 7</li>
+<li>GABRIEL OTACIO PEREIRA PARDIN: ABM-G-1-002 às 08:00, mesa 7</li>
+<li>LUCAS ALVES BELO: ADM-G-1-002 às 08:00, mesa 2</li>
+<li>LUIS ROBERTO HIDEAKI KOHATSU FUJIKI: ADM-G-1-005 às 08:00, mesa 5</li>
+<li>JOÃO GABRIEL VIEIRA JESUS: ADM-G-1-001 às 08:00, mesa 1</li>
+<li>ANGELINA KASSANDRA ALVES SOLSOL: ADF-G-1-002 às 08:00, mesa 13</li>
+<li>HELLYSA CABRAL PEREIRA DA SILVA: ADF-G-1-002 às 08:00, mesa 13</li>
+</ul></main></body></html>
