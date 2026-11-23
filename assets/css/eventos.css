@@ -261,6 +261,8 @@
 }
 .evento-hero__meta-val.mono { font-family: var(--fonte-mono); font-weight: var(--peso-medio); }
 
+/* Trecho do título que não pode ser partido entre linhas (desce inteiro se não couber). */
+.sem-quebra { white-space: nowrap; }
 /* Cabeçalho compacto (página da Copa MT 4ª etapa): menos altura, título menor. */
 .evento-hero--compacto { padding-block: var(--s-6) var(--s-8); }
 .evento-hero--compacto .evento-hero__status { margin-bottom: var(--s-3); }

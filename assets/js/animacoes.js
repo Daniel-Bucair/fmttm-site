@@ -15,12 +15,36 @@
   //    Aplica em todo elemento com data-split-palavras
   //    e nos títulos de hero/página-cabeçalho automaticamente.
   // -------------------------------------------------------
+  //    Trechos marcados com <span class="sem-quebra"> continuam num grupo
+  //    que não quebra de linha (ex.: "IV Copa Mato Grosso" no celular).
   function splitPalavras(el) {
     if (!el || el.dataset.jaSplit) return;
-    const texto = el.textContent;
-    const palavras = texto.trim().split(/\s+/);
+    const palavras = [];
+    el.childNodes.forEach((no) => {
+      const grupo = no.nodeType === 1 && no.classList.contains('sem-quebra') ? no : null;
+      no.textContent.trim().split(/\s+/).filter(Boolean)
+        .forEach((palavra) => palavras.push({ palavra, grupo }));
+    });
     el.innerHTML = '';
-    palavras.forEach((palavra, i) => {
+    let grupoOrigem = null;
+    let destino = el;
+    palavras.forEach(({ palavra, grupo }, i) => {
+      if (i > 0) {
+        // o espaço entre um grupo e o texto de fora fica no título (pode quebrar ali);
+        // dentro do grupo, fica no grupo (não quebra)
+        const sp = document.createElement('span');
+        sp.textContent = ' ';
+        (grupo !== grupoOrigem ? el : destino).appendChild(sp);
+      }
+      if (grupo !== grupoOrigem) {
+        grupoOrigem = grupo;
+        destino = el;
+        if (grupo) {
+          destino = document.createElement('span');
+          destino.className = 'sem-quebra';
+          el.appendChild(destino);
+        }
+      }
       const wrap = document.createElement('span');
       wrap.className = 'palavra-wrap';
       wrap.style.display = 'inline-block';
@@ -34,12 +58,7 @@
       span.textContent = palavra;
 
       wrap.appendChild(span);
-      el.appendChild(wrap);
-      if (i < palavras.length - 1) {
-        const sp = document.createElement('span');
-        sp.textContent = ' ';
-        el.appendChild(sp);
-      }
+      destino.appendChild(wrap);
     });
     el.dataset.jaSplit = '1';
   }
