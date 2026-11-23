@@ -362,6 +362,14 @@
   border-top: 1px solid var(--borda);
   margin-block: var(--s-2);
 }
+/* Painel lateral completo (página da Copa MT 4ª etapa): Prazos, Programação, Categorias e Valores.
+   Mais alto que a tela, então não acompanha a rolagem; listas e categorias mais compactas. */
+.evento-acoes-painel--completo { position: static; }
+.evento-acoes-painel--completo .cronograma-item { grid-template-columns: 64px 1fr auto; gap: var(--s-3); padding: var(--s-3) 0; }
+.evento-acoes-painel--completo .cronograma-item__descricao { font-size: var(--ts-sm); }
+.evento-acoes-painel--completo .categorias-blocos { grid-template-columns: 1fr; gap: var(--s-2); }
+.evento-acoes-painel--completo .categoria-bloco { padding: var(--s-3) var(--s-4); }
+.evento-acoes-painel--completo .categoria-bloco__nome { font-size: var(--ts-md); }
 .evento-acoes-painel__nota {
   font-size: var(--ts-xs);
   color: var(--texto-fraco);
@@ -456,6 +464,11 @@ a.arquivo-card:hover .arquivo-card__seta { color: var(--cor-azul); }
 }
 .arquivo-card:has(> .arquivo-card__icone--agenda) { grid-template-columns: 48px 1fr auto; }
 .btn__icone { flex: none; }
+/* Botão ainda sem destino (ex.: Fotografias antes de haver fotos): aparência desativada e etiqueta "em breve". */
+.btn--em-breve, .btn--em-breve:hover { opacity: 0.55; cursor: not-allowed; background: var(--cor-azul); }
+.btn--em-breve small { font-size: 0.625rem; font-family: var(--fonte-mono); letter-spacing: var(--tracking-mono); padding: 2px 6px; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: var(--raio-sm); }
+/* Resultados (página do evento): dois botões lado a lado, abaixo da Agenda dos jogos. */
+.resultados-botoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--s-3); margin-bottom: var(--s-10); }
 /* Botões de resultado (Individual/Duplas): caixa alta e um pouco maiores, para destaque. */
 .btn--resultado {
   text-transform: uppercase;
