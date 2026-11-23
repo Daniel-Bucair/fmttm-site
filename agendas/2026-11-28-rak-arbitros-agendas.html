@@ -905,4 +905,37 @@ main h2{margin-top:6px}main td,main th{font-size:.82rem}@media print{main td,mai
 <tr><td>08:20</td><td>🏓 <b>joga</b></td><td>3</td><td>AFM-G-3-008</td><td>Absoluto F Masculino · Grupo 2 · 3ª rodada</td><td>VITOR CÉSAR WIECZOREK DOS SANTOS (ATMR) × MIGUEL DOS SANTOS (PRIMAVERA ATLETICO CLUBE)</td><td>jogo do próprio árbitro</td></tr>
 <tr><td>10:20</td><td>apita</td><td>12</td><td>AEM-S-1-028</td><td>Absoluto E Masculino · Semifinal</td><td>A definir × A definir</td><td>semifinal</td></tr>
 </tbody></table>
-<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p></main></body></html>
+<p>Em caso de troca de árbitro no dia (choque com o mata-mata, atraso), vale a decisão da mesa de controle.</p></main>
+<script>
+(function(){
+  var main=document.querySelector('main'); if(!main) return;
+  function norm(s){return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();}
+  var blocos=[];
+  main.querySelectorAll('h2').forEach(function(h,i){
+    var sec=document.createElement('section'); sec.className='arb'; sec.id='arb'+i;
+    sec.style.scrollMarginTop='70px';
+    h.parentNode.insertBefore(sec,h);
+    var n=h; do { var prox=n.nextSibling; sec.appendChild(n); n=prox; } while(n && n.nodeName!=='H2');
+    blocos.push({sec:sec, nome:h.textContent.replace(/\s*\(.*\)\s*$/,''), chave:norm(h.textContent)});
+  });
+  if(!blocos.length) return;
+  var barra=document.createElement('div'); barra.className='barra';
+  barra.innerHTML='<input id="busca" type="search" placeholder="Digite o nome do árbitro…" aria-label="Buscar árbitro" autocomplete="off">';
+  var chips=document.createElement('div'); chips.className='chips'; chips.style.cssText='margin:0;padding:10px 16px 0';
+  blocos.forEach(function(b){
+    var a=document.createElement('a'); a.href='#'+b.sec.id; a.textContent=b.nome; b.chip=a; chips.appendChild(a);
+  });
+  var vazio=document.createElement('p'); vazio.className='nota oculto'; vazio.textContent='Nenhum árbitro encontrado com esse nome.';
+  main.parentNode.insertBefore(barra,main); main.parentNode.insertBefore(chips,main); main.insertBefore(vazio,main.firstChild);
+  var campo=barra.querySelector('input');
+  campo.addEventListener('input',function(){
+    var q=norm(campo.value.trim()), vis=0;
+    blocos.forEach(function(b){
+      var ok=!q || b.chave.indexOf(q)>=0; if(ok) vis++;
+      b.sec.classList.toggle('oculto',!ok); b.chip.classList.toggle('oculto',!ok);
+    });
+    vazio.classList.toggle('oculto',vis>0);
+  });
+})();
+</script>
+</body></html>
